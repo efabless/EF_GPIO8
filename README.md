@@ -33,18 +33,18 @@ For RIS, MIS, IM and IC registers, the bit assignment is as follows:
 |.| |
 |.| |
 |15|Pin 7 is low |
-|16|Pin 0 has a rising edge |
-|17|Pin 1 has a rising edge |
+|16|Pin 0 has observed a rising edge |
+|17|Pin 1 has observed a rising edge |
 |.| |
 |.| |
 |.| |
 |23|Pin 7 has a rising edge |
-|24|Pin 0 has a falling edge |
-|0|Pin 1 has a Falling edge |
+|24|Pin 0 has observed a falling edge |
+|25|Pin 1 has observed a Falling edge |
 |.| |
 |.| |
 |.| |
-|31|Pin 7 has a Falling edge |
+|31|Pin 7 has observed a Falling edge |
 
 ## EF_GPIo_ahbl Interface
 <img src="./docs/bb.svg" width="70%" alt= “BlackBox” >
