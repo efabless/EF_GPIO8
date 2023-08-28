@@ -1,0 +1,275 @@
+{
+    "info": {
+        "name": "EF_GPIO",
+        "description": "A generic GPIO peripheral.",
+        "repo": "github.com/efabless/EF_GPIO",
+        "owner": "Efabless Corp.",
+        "license": "APACHE 2.0",
+        "author": "Mohamed Shalan",
+        "email": "mshalan@efabless.com",
+        "version": "v1.0.0",
+        "date": "8-28-2023",
+        "category": "1",
+        "tags": [
+            "peripheral",
+            "GPIO"
+        ],
+        "bus": [
+            "generic"
+        ],
+        "type": "soft",
+        "status": "verified",
+        "cell_count": "730",
+        "width": "0.0",
+        "height": "0.0",
+        "technology": "n/a",
+        "clock_freq_mhz": "10",
+        "supply_voltage": [
+            "n/a"
+        ]
+    },
+    "regs": [
+        {
+            "name": "datai",
+            "size": "8",
+            "mode": "ro",
+            "fields": [
+                {
+                    "name": "datai",
+                    "from": "0",
+                    "size": "8",
+                    "port": "bus_in"
+                }
+            ]
+        },
+        {
+            "name": "datao",
+            "size": "8",
+            "mode": "rw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "datao",
+                    "from": "0",
+                    "size": "8",
+                    "port": "bus_out"
+                }
+            ]
+        },
+        {
+            "name": "dir",
+            "size": "8",
+            "mode": "rw",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "dir",
+                    "from": "0",
+                    "size": "8",
+                    "port": "bus_oe"
+                }
+            ]
+        }
+    ],
+    "interface": [
+        {
+            "name": "io_in",
+            "port": "io_in",
+            "dir": "input",
+            "size": "8"
+        },
+        {
+            "name": "io_out",
+            "port": "io_out",
+            "dir": "output",
+            "size": "8"
+        },
+        {
+            "name": "io_oe",
+            "port": "io_oe",
+            "dir": "output",
+            "size": "8"
+        }
+    ],
+    "flags": [
+        {
+            "name": "pin0_hi",
+            "port": "pin0_hi"
+        },
+        {
+            "name": "pin1_hi",
+            "port": "pin1_hi"
+        },
+        {
+            "name": "pin2_hi",
+            "port": "pin2_hi"
+        },
+        {
+            "name": "pin3_hi",
+            "port": "pin3_hi"
+        },
+        {
+            "name": "pin4_hi",
+            "port": "pin4_hi"
+        },
+        {
+            "name": "pin5_hi",
+            "port": "pin5_hi"
+        },
+        {
+            "name": "pin6_hi",
+            "port": "pin6_hi"
+        },
+        {
+            "name": "pin7_hi",
+            "port": "pin7_hi"
+        },
+        {
+            "name": "pin0_lo",
+            "port": "pin0_lo"
+        },
+        {
+            "name": "pin1_lo",
+            "port": "pin1_lo"
+        },
+        {
+            "name": "pin2_lo",
+            "port": "pin2_lo"
+        },
+        {
+            "name": "pin3_lo",
+            "port": "pin3_lo"
+        },
+        {
+            "name": "pin4_lo",
+            "port": "pin4_lo"
+        },
+        {
+            "name": "pin5_lo",
+            "port": "pin5_lo"
+        },
+        {
+            "name": "pin6_lo",
+            "port": "pin6_lo"
+        },
+        {
+            "name": "pin7_lo",
+            "port": "pin7_lo"
+        },
+
+        {
+            "name": "pin0_pe",
+            "port": "pin0_pe"
+        },
+        {
+            "name": "pin1_pe",
+            "port": "pin1_pe"
+        },
+        {
+            "name": "pin2_pe",
+            "port": "pin2_pe"
+        },
+        {
+            "name": "pin3_pe",
+            "port": "pin3_pe"
+        },
+        {
+            "name": "pin4_pe",
+            "port": "pin4_pe"
+        },
+        {
+            "name": "pin5_pe",
+            "port": "pin5_pe"
+        },
+        {
+            "name": "pin6_pe",
+            "port": "pin6_pe"
+        },
+        {
+            "name": "pin7_pe",
+            "port": "pin7_pe"
+        },
+        
+        {
+            "name": "pin0_ne",
+            "port": "pin0_ne"
+        },
+        {
+            "name": "pin1_ne",
+            "port": "pin1_ne"
+        },
+        {
+            "name": "pin2_ne",
+            "port": "pin2_ne"
+        },
+        {
+            "name": "pin3_ne",
+            "port": "pin3_ne"
+        },
+        {
+            "name": "pin4_ne",
+            "port": "pin4_ne"
+        },
+        {
+            "name": "pin5_ne",
+            "port": "pin5_ne"
+        },
+        {
+            "name": "pin6_ne",
+            "port": "pin6_ne"
+        },
+        {
+            "name": "pin7_ne",
+            "port": "pin7_ne"
+        }
+    ],
+    "clock": "clk",
+    "reset": {
+        "name": "rst_n",
+        "pol": "0"
+    },
+    "ports":[
+      {"name": "io_in", "size": "8", "dir":"input"},
+      {"name": "bus_in", "size": "8", "dir":"output"},
+      {"name": "io_out", "size": "8", "dir":"output"},
+      {"name": "bus_out", "size": "8", "dir":"input"},
+      {"name": "io_oe", "size": "8", "dir":"output"},
+      {"name": "bus_oe", "size": "8", "dir":"input"},
+
+      {"name": "pin0_hi", "size": "1", "dir":"output"},
+      {"name": "pin1_hi", "size": "1", "dir":"output"},
+      {"name": "pin2_hi", "size": "1", "dir":"output"},
+      {"name": "pin3_hi", "size": "1", "dir":"output"},
+      {"name": "pin4_hi", "size": "1", "dir":"output"},
+      {"name": "pin5_hi", "size": "1", "dir":"output"},
+      {"name": "pin6_hi", "size": "1", "dir":"output"},
+      {"name": "pin7_hi", "size": "1", "dir":"output"},
+
+      {"name": "pin0_lo", "size": "1", "dir":"output"},
+      {"name": "pin1_lo", "size": "1", "dir":"output"},
+      {"name": "pin2_lo", "size": "1", "dir":"output"},
+      {"name": "pin3_lo", "size": "1", "dir":"output"},
+      {"name": "pin4_lo", "size": "1", "dir":"output"},
+      {"name": "pin5_lo", "size": "1", "dir":"output"},
+      {"name": "pin6_lo", "size": "1", "dir":"output"},
+      {"name": "pin7_lo", "size": "1", "dir":"output"},
+
+      {"name": "pin0_pe", "size": "1", "dir":"output"},
+      {"name": "pin1_pe", "size": "1", "dir":"output"},
+      {"name": "pin2_pe", "size": "1", "dir":"output"},
+      {"name": "pin3_pe", "size": "1", "dir":"output"},
+      {"name": "pin4_pe", "size": "1", "dir":"output"},
+      {"name": "pin5_pe", "size": "1", "dir":"output"},
+      {"name": "pin6_pe", "size": "1", "dir":"output"},
+      {"name": "pin7_pe", "size": "1", "dir":"output"},
+
+      {"name": "pin0_ne", "size": "1", "dir":"output"},
+      {"name": "pin1_ne", "size": "1", "dir":"output"},
+      {"name": "pin2_ne", "size": "1", "dir":"output"},
+      {"name": "pin3_ne", "size": "1", "dir":"output"},
+      {"name": "pin4_ne", "size": "1", "dir":"output"},
+      {"name": "pin5_ne", "size": "1", "dir":"output"},
+      {"name": "pin6_ne", "size": "1", "dir":"output"},
+      {"name": "pin7_ne", "size": "1", "dir":"output"}
+    ]
+}
