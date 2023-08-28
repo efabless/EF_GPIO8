@@ -53,14 +53,41 @@ module EF_GPIO8 (
     assign io_out = bus_out;
     assign io_oe  = bus_oe;
 
-
-    assign pin0_hi = (io_in[0] == 1'b1);
-
-    assign pin0_lo = (io_in[0] == 1'b0);
+    assign pin0_hi = (sync_io_in[0] == 1'b1);
+    assign pin1_hi = (sync_io_in[1] == 1'b1);
+    assign pin2_hi = (sync_io_in[2] == 1'b1);
+    assign pin3_hi = (sync_io_in[3] == 1'b1);
+    assign pin4_hi = (sync_io_in[4] == 1'b1);
+    assign pin5_hi = (sync_io_in[5] == 1'b1);
+    assign pin6_hi = (sync_io_in[6] == 1'b1);
+    assign pin7_hi = (sync_io_in[7] == 1'b1);
+    
+    assign pin0_lo = (sync_io_in[0] == 1'b0);
+    assign pin1_lo = (sync_io_in[1] == 1'b0);
+    assign pin2_lo = (sync_io_in[2] == 1'b0);
+    assign pin3_lo = (sync_io_in[3] == 1'b0);
+    assign pin4_lo = (sync_io_in[4] == 1'b0);
+    assign pin5_lo = (sync_io_in[5] == 1'b0);
+    assign pin6_lo = (sync_io_in[6] == 1'b0);
+    assign pin7_lo = (sync_io_in[7] == 1'b0);
 
     edge_detect_pe ped_0 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[0]), .pe(pin0_pe));
+    edge_detect_pe ped_1 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[1]), .pe(pin1_pe));
+    edge_detect_pe ped_2 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[2]), .pe(pin2_pe));
+    edge_detect_pe ped_3 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[3]), .pe(pin3_pe));
+    edge_detect_pe ped_4 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[4]), .pe(pin4_pe));
+    edge_detect_pe ped_5 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[5]), .pe(pin5_pe));
+    edge_detect_pe ped_6 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[6]), .pe(pin6_pe));
+    edge_detect_pe ped_7 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[7]), .pe(pin7_pe));
 
     edge_detect_ne ned_0 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[0]), .ne(pin0_ne));
+    edge_detect_ne ned_1 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[1]), .ne(pin1_ne));
+    edge_detect_ne ned_2 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[2]), .ne(pin2_ne));
+    edge_detect_ne ned_3 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[3]), .ne(pin3_ne));
+    edge_detect_ne ned_4 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[4]), .ne(pin4_ne));
+    edge_detect_ne ned_5 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[5]), .ne(pin5_ne));
+    edge_detect_ne ned_6 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[6]), .ne(pin6_ne));
+    edge_detect_ne ned_7 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[7]), .ne(pin7_ne));
 
     
 
