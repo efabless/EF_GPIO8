@@ -24,8 +24,8 @@
 `default_nettype	none
 
 `define		APB_BLOCK(name, init)	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) name <= init;
-`define		APB_REG(name, init)		`APB_BLOCK(name, init) else if(apb_we & (PADDR==``name``_ADDR)) name <= PWDATA;
-`define		APB_ICR(sz)				`APB_BLOCK(ICR_REG, sz'b0) else if(apb_we & (PADDR==ICR_REG_ADDR)) ICR_REG <= PWDATA; else ICR_REG <= sz'd0;
+`define		APB_REG(name, init)		`APB_BLOCK(name, init) else if(apb_we & (PADDR[15:0]==``name``_ADDR)) name <= PWDATA;
+`define		APB_ICR(sz)				`APB_BLOCK(ICR_REG, sz'b0) else if(apb_we & (PADDR[15:0]==ICR_REG_ADDR)) ICR_REG <= PWDATA; else ICR_REG <= sz'd0;
 
 module EF_GPIO_apb (
 	input	wire [7:0]	io_in,
@@ -221,13 +221,13 @@ module EF_GPIO_apb (
 	assign irq = |MIS_REG;
 
 	assign	PRDATA = 
-			(PADDR == DATAO_REG_ADDR) ? DATAO_REG :
-			(PADDR == DIR_REG_ADDR) ? DIR_REG :
-			(PADDR == RIS_REG_ADDR) ? RIS_REG :
-			(PADDR == ICR_REG_ADDR) ? ICR_REG :
-			(PADDR == IM_REG_ADDR) ? IM_REG :
-			(PADDR == DATAI_REG_ADDR) ? DATAI_REG :
-			(PADDR == MIS_REG_ADDR) ? MIS_REG :
+			(PADDR[15:0] == DATAO_REG_ADDR) ? DATAO_REG :
+			(PADDR[15:0] == DIR_REG_ADDR) ? DIR_REG :
+			(PADDR[15:0] == RIS_REG_ADDR) ? RIS_REG :
+			(PADDR[15:0] == ICR_REG_ADDR) ? ICR_REG :
+			(PADDR[15:0] == IM_REG_ADDR) ? IM_REG :
+			(PADDR[15:0] == DATAI_REG_ADDR) ? DATAI_REG :
+			(PADDR[15:0] == MIS_REG_ADDR) ? MIS_REG :
 			32'hDEADBEEF;
 
 
