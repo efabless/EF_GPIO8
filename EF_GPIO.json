@@ -9,7 +9,7 @@
         "email": "mshalan@efabless.com",
         "version": "v1.0.0",
         "date": "8-28-2023",
-        "category": "1",
+        "category": "digital",
         "tags": [
             "peripheral",
             "GPIO"
