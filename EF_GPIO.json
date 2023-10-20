@@ -1,6 +1,6 @@
 {
     "info": {
-        "name": "EF_GPIO",
+        "name": "EF_GPIO8",
         "description": "A generic GPIO peripheral.",
         "repo": "github.com/efabless/EF_GPIO",
         "owner": "Efabless Corp.",
