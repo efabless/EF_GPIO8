@@ -3,9 +3,6 @@
 
 #include <EF_GPIO.h>
 
-#define GPIO_INPUT 0
-#define GPIO_OUTPUT 1
-
 
 // inline int GPIO_readData(enum port_types port) __attribute__((always_inline));
 int EF_GPIO_readData(uint32_t gpio_base){
