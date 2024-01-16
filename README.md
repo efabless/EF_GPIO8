@@ -15,10 +15,10 @@ A generic 8-bit GPIO port with the following features
 |Port|Direction|Width|Description|
 |---|---|---|---|
 |io_in|input|8|GPIOs input (external interface)|
-|bus_in|output|8|Synchronized GPIOs input connected to the bus (it drives the DATAI register)|
 |io_out|output|8|GPIOs output (external interface)|
-|bus_out|input|8|GPIOs output connected to the bus (it's driven by wriring to DATAO register)|
 |io_oe|output|8|GPIOs output enable (external interface)|
+|bus_in|output|8|Synchronized GPIOs input connected to the bus (it drives the DATAI register)|
+|bus_out|input|8|GPIOs output connected to the bus (it's driven by wriring to DATAO register)|
 |bus_oe|input|8|GPIOs output enable connected to the bus (it's driven by wriring to DIR register)|
 |pin0_hi|output|1|Pin 0 high flag|
 |pin1_hi|output|1|Pin 1 high flag|
