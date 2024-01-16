@@ -8,7 +8,7 @@ A generic 8-bit GPIO port with the following features
 - Wrappers for AHB-Lite, APB and WB buses.
 
 ## The Interface 
-
+<img src="docs/EF_GPIO8.svg" width="600"/>
 
 ### Ports 
 
@@ -57,10 +57,10 @@ A generic 8-bit GPIO port with the following features
 
 |Module | Number of cells | Max. freq |
 |---|---|---|
-|EF_GPIO8|||
-|EF_GPIO8_APB|||
-|EF_GPIO8_AHBL|||
-|EF_GPIO8_WB|||
+|EF_GPIO|||
+|EF_GPIO_APB|||
+|EF_GPIO_AHBL|||
+|EF_GPIO_WB|||
 
 ## System Integration
 
@@ -134,9 +134,16 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |29|P5NE|1|Pin 5 has observed a falling edge|
 |30|P6NE|1|Pin 6 has observed a falling edge|
 |31|P7NE|1|Pin 7 has observed a falling edge|
-
 ## F/W Usage Guidelines:
 ## Installation:
+You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
+* To clone repo:
+```git clone https://github.com/efabless/EF_GPIO```
+* To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md) then run 
+```ipm install EF_GPIO```
 ## Simulation:
 ### Run Verilog Testbench:
+1. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo in the same directory as the IP
+2. In the directory ``EF_GPIO/verify/utb/`` run ``make APB-RTL`` to run testbench for APB or ``make AHBL-RTL`` to run textbench for AHBL
 ### Run cocotb UVM Testbench:
+TBD
