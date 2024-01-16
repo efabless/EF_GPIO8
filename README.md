@@ -1,4 +1,4 @@
-# EF_GPIO
+# EF_GPIO8
 
 A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following features
 
