@@ -63,7 +63,19 @@ A generic 8-bit GPIO port with the following features
 |EF_GPIO_WB|||
 
 ## System Integration
+```EF_GPIO``` comes with APB, AHB and WB bus wrappers in Verilog HDL; based on your use case, use one of these wrappers or create your own wrapper for your system bus type. 
 
+The ```EF_GPIO``` ```io_in```, ```io_out```, and ```io_oe``` ports must be connected to eight I/O pads.
+
+```verilog
+EF_GPIO_APB GPIO0 (
+		`TB_APB_SLAVE_CONN,
+		.io_in(io_in),
+		.io_out(io_out),
+		.io_oe(io_oe)
+	);
+```
+Note: ``` `TB_APB_SLAVE_CONN ``` is a convenient macro provided by [IP_Utilities](https://github.com/shalan/IP_Utilities).
 
 ## I/O Registers
 
@@ -134,7 +146,12 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |29|P5NE|1|Pin 5 has observed a falling edge|
 |30|P6NE|1|Pin 6 has observed a falling edge|
 |31|P7NE|1|Pin 7 has observed a falling edge|
+
 ## F/W Usage Guidelines:
+1. Write to the direction register the direction of the GPIOs where 1 means gpio is output and 0 gpio is input
+2. To drive a gpio pin, write to the ``DATAO`` register
+3. To read the value of a gpio pin , read from the ``DATAI`` register 
+
 ## Installation:
 You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
 * To clone repo:
