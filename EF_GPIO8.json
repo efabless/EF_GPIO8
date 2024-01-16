@@ -2,7 +2,7 @@
     "info": {
       "name": "EF_GPIO8",
       "description": "A generic GPIO peripheral",
-      "repo": "github.com/efabless/EF_GPIO",
+      "repo": "github.com/efabless/EF_GPIO8.git",
       "owner": "Efabless Corp.",
       "license": "APACHE 2.0",
       "author": "Mohamed Shalan",
