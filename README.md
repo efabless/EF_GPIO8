@@ -1,5 +1,7 @@
 # EF_GPIO
-A generic 8-bit GPIO port with the following features
+
+A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following features
+
 - Eight bidirectional pins.
 - Input synchronizers
 - Input edge detectors.
