@@ -1,4 +1,4 @@
-# EF_GPIO
+# EF_GPIO8
 
 A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following features
 
@@ -59,18 +59,18 @@ A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following feature
 
 |Module | Number of cells | Max. freq |
 |---|---|---|
-|EF_GPIO|||
-|EF_GPIO_APB|||
-|EF_GPIO_AHBL|||
-|EF_GPIO_WB|||
+|EF_GPIO8|||
+|EF_GPIO8_APB|||
+|EF_GPIO8_AHBL|||
+|EF_GPIO8_WB|||
 
 ## System Integration
-```EF_GPIO``` comes with APB, AHB and WB bus wrappers in Verilog HDL; based on your use case, use one of these wrappers or create your own wrapper for your system bus type. 
+```EF_GPIO8``` comes with APB, AHB and WB bus wrappers in Verilog HDL; based on your use case, use one of these wrappers or create your own wrapper for your system bus type. 
 
-The ```EF_GPIO``` ```io_in```, ```io_out```, and ```io_oe``` ports must be connected to eight I/O pads.
+The ```EF_GPIO8``` ```io_in```, ```io_out```, and ```io_oe``` ports must be connected to eight I/O pads.
 
 ```verilog
-EF_GPIO_APB GPIO0 (
+EF_GPIO8_APB GPIO0 (
 		`TB_APB_SLAVE_CONN,
 		.io_in(io_in),
 		.io_out(io_out),
@@ -157,12 +157,12 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 ## Installation:
 You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
 * To clone repo:
-```git clone https://github.com/efabless/EF_GPIO```
+```git clone https://github.com/efabless/EF_GPIO8```
 * To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md) then run 
-```ipm install EF_GPIO```
+```ipm install EF_GPIO8```
 ## Simulation:
 ### Run Verilog Testbench:
 1. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo in the same directory as the IP
-2. In the directory ``EF_GPIO/verify/utb/`` run ``make APB-RTL`` to run testbench for APB or ``make AHBL-RTL`` to run textbench for AHBL
+2. In the directory ``EF_GPIO8/verify/utb/`` run ``make APB-RTL`` to run testbench for APB or ``make AHBL-RTL`` to run textbench for AHBL
 ### Run cocotb UVM Testbench:
 TBD
