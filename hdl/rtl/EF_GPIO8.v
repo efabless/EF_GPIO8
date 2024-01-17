@@ -66,7 +66,7 @@ module EF_GPIO8 (
 );
     wire [7:0] sync_io_in;
 
-    bf_sync2 synchronizer[7:0] (.clk(clk), .sig(io_in), .sync_sig(sync_io_in));
+    aucohl_sync synchronizer[7:0] (.clk(clk), .in(io_in), .out(sync_io_in));
     
     assign bus_in = sync_io_in;
     assign io_out = bus_out;
@@ -90,71 +90,24 @@ module EF_GPIO8 (
     assign pin6_lo = (sync_io_in[6] == 1'b0);
     assign pin7_lo = (sync_io_in[7] == 1'b0);
 
-    edge_detect_pe ped_0 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[0]), .pe(pin0_pe));
-    edge_detect_pe ped_1 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[1]), .pe(pin1_pe));
-    edge_detect_pe ped_2 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[2]), .pe(pin2_pe));
-    edge_detect_pe ped_3 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[3]), .pe(pin3_pe));
-    edge_detect_pe ped_4 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[4]), .pe(pin4_pe));
-    edge_detect_pe ped_5 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[5]), .pe(pin5_pe));
-    edge_detect_pe ped_6 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[6]), .pe(pin6_pe));
-    edge_detect_pe ped_7 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[7]), .pe(pin7_pe));
+    aucohl_ped ped_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_pe));
+    aucohl_ped ped_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_pe));
+    aucohl_ped ped_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_pe));
+    aucohl_ped ped_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_pe));
+    aucohl_ped ped_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_pe));
+    aucohl_ped ped_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_pe));
+    aucohl_ped ped_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_pe));
+    aucohl_ped ped_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_pe));
 
-    edge_detect_ne ned_0 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[0]), .ne(pin0_ne));
-    edge_detect_ne ned_1 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[1]), .ne(pin1_ne));
-    edge_detect_ne ned_2 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[2]), .ne(pin2_ne));
-    edge_detect_ne ned_3 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[3]), .ne(pin3_ne));
-    edge_detect_ne ned_4 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[4]), .ne(pin4_ne));
-    edge_detect_ne ned_5 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[5]), .ne(pin5_ne));
-    edge_detect_ne ned_6 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[6]), .ne(pin6_ne));
-    edge_detect_ne ned_7 (.clk(clk), .rst_n(rst_n), .sig(sync_io_in[7]), .ne(pin7_ne));
+    aucohl_ned ned_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_ne));
+    aucohl_ned ned_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_ne));
+    aucohl_ned ned_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_ne));
+    aucohl_ned ned_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_ne));
+    aucohl_ned ned_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_ne));
+    aucohl_ned ned_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_ne));
+    aucohl_ned ned_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_ne));
+    aucohl_ned ned_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_ne));
 
     
-
-endmodule
-
-module edge_detect_pe(
-    input wire clk,
-    input wire rst_n,
-    input wire sig,
-    output wire pe
-);
-    reg sig_delayed;
-    always @(posedge clk or negedge rst_n)
-        if(!rst_n) 
-            sig_delayed <= 1'b0;
-        else
-            sig_delayed <= sig;
-            
-    assign pe = ~sig_delayed & sig;
-
-endmodule
-
-module edge_detect_ne(
-    input wire clk,
-    input wire rst_n,
-    input wire sig,
-    output wire ne
-);
-    reg sig_delayed;
-    always @(posedge clk or negedge rst_n)
-        if(!rst_n) 
-            sig_delayed <= 1'b0;
-        else
-            sig_delayed <= sig;
-            
-    assign ne = sig_delayed & ~sig;
-
-endmodule
-
-module bf_sync2(
-    input wire clk,
-    input wire sig,
-    output wire sync_sig    
-);
-    reg[1:0] sync_ff;
-    always @(posedge clk)
-        sync_ff <= {sync_ff[0], sig};
-    
-    assign sync_sig = sync_ff[1];
 
 endmodule
