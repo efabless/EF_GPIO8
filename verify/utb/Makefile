@@ -1,6 +1,6 @@
 SOURCE = ../../hdl/rtl/EF_GPIO8.v
 SOURCE_APB =  ../../hdl/rtl/bus_wrappers/EF_GPIO8_APB.v
-SOURCE_AHBL = ../../hdl/rtl/bus_wrappers/EF_GPIO8_APBL.v
+SOURCE_AHBL = ../../hdl/rtl/bus_wrappers/EF_GPIO8_AHBL.v
 TESTBENCH_APB = EF_GPIO8_APB_tb.v
 TESTBENCH_AHBL = EF_GPIO8_AHBL_tb.v
 RTL_LIB = ../../../IP_Utilities/rtl/aucohl_lib.v
