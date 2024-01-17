@@ -93,11 +93,14 @@ module EF_GPIO8_AHBL_tb;
 		// Test 1 code goes here
 		AHBL_W_WRITE(DIR_REG_OFFSET, 32'hFF);
 		AHBL_W_WRITE(DATAO_REG_OFFSET, 32'hA5);
-        #10;
+        #100;
         if(io_out === 8'hA5)
             $display("Test 1: Passed");
         else
-            $display("Test 1: Failed - Got (%X instead of %X)", data_out, 8'hA5);
+			begin
+			$display("Test 1: Failed - Got (%X instead of %X)", data_out, 8'hA5);
+			$finish;
+			end
         #100;
 
 	`TB_TEST_END(test1)
@@ -108,11 +111,14 @@ module EF_GPIO8_AHBL_tb;
         AHBL_W_WRITE(DIR_REG_OFFSET, 32'h00);
         io_in =  8'hAB;
         AHBL_W_READ(DATAI_REG_OFFSET, data_out);
-        #10;
+        #100;
         if(data_out === 8'hAB)
             $display("Test 2: Passed");
         else
+			begin
             $display("Test 2: Failed - Got (%X instead of %X)", data_out, 8'hAB);
+			$finish;
+			end
         #100;
 
 	`TB_TEST_END(test2)
