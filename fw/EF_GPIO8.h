@@ -1,7 +1,7 @@
 #ifndef EF_GPIO_H
 #define EF_GPIO_H
 
-#include <EF_GPIO_regs.h>
+#include <EF_GPIO8_regs.h>
 #include <stdint.h>
 
 #define GPIO_INPUT 0
