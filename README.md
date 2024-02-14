@@ -55,8 +55,8 @@ A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following feature
 |pin6_ne|output|1|Pin 6 negative edge flag|
 |pin7_ne|output|1|Pin 7 negative edge flag|
 
-## Sky130 Implementation 
-
+## Implementation example 
+The following table is the result for implmenting the EF_GPIO8 IP using Sky130 PDK and the [OpenLane2](https://github.com/efabless/openlane2) flow tool. You can find the configuration file used [here]()
 |Module | Number of cells | Max. freq |
 |---|---|---|
 |EF_GPIO8|||
