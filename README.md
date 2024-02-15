@@ -120,6 +120,7 @@ The following are the bit definitions for the interrupt registers:
 ### The Interface 
 
 <img src="docs/EF_GPIO8.svg" width="600"/>
+
 #### Ports 
 
 |Port|Direction|Width|Description|
