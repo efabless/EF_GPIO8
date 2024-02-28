@@ -17,11 +17,11 @@
       "bus": [
         "generic"
       ],
-      "type\"": "soft",
+      "type": "soft",
       "status": "verified",
       "cell_count": "730",
-      "width\"": "0.0",
-      "height\"": "0.0",
+      "width": "0.0",
+      "height": "0.0",
       "technology": "n/a",
       "clock_freq_mhz": "10",
       "digital_supply_voltage": "n/a",
