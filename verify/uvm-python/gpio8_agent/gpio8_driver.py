@@ -20,6 +20,7 @@ class gpio8_driver(ip_driver):
             await self.drive_delay()
             tr = []
             await self.seq_item_port.get_next_item(tr)
+            await self.drive_delay()
             tr = tr[0]
             uvm_info(self.tag, f"recieved transaction {tr.convert2string()}" , UVM_LOW)
             mask = 0
@@ -29,7 +30,7 @@ class gpio8_driver(ip_driver):
                         mask |= 1 << i  # Create a mask
             self.vif.io_in.value = mask
             # await NextTimeStep()
-            # uvm_info(self.tag, f"mask = {mask}, driving io_in to  {self.vif.io_in.value}" , UVM_LOW)
+            uvm_info(self.tag, f"mask = {mask}, driving io_in to  {self.vif.io_in.value}" , UVM_LOW)
             self.seq_item_port.item_done()
 
     async def drive_delay(self):

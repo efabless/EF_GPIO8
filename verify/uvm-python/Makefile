@@ -7,7 +7,7 @@ YAML_FILE = $(PWD)/../../EF_GPIO8.yaml
 MAKEFLAGS += --no-print-directory
 
 # List of tests
-TESTS := gpio8_all_out_test gpio8_rand_test
+TESTS := gpio8_rand_test gpio8_interrupts_test
 
 # Variable for tag - set this as required
 SIM_TAG ?= default_tag

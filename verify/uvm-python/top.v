@@ -4,8 +4,8 @@ module top();
 wire [7:0] io_in;
 wire [7:0] io_out;
 wire [7:0] io_oe;
-reg PCLK = 0;
-wire PRESETn;
+reg CLK = 0;
+wire RESETn;
 wire [31:0] PADDR;
 wire PWRITE;
 wire PSEL;
@@ -13,21 +13,22 @@ wire PENABLE;
 wire [31:0] PWDATA;
 wire [31:0] PRDATA;
 wire PREADY;
-wire irq =0;
+wire irq;
 
 EF_GPIO8_APB uut(
     .io_in(io_in),
     .io_out(io_out),
     .io_oe(io_oe),
-    .PCLK(PCLK),
-    .PRESETn(PRESETn),
+    .PCLK(CLK),
+    .PRESETn(RESETn),
     .PADDR(PADDR),
     .PWRITE(PWRITE),
     .PSEL(PSEL),
     .PENABLE(PENABLE),
     .PWDATA(PWDATA),
     .PRDATA(PRDATA),
-    .PREADY(PREADY)
+    .PREADY(PREADY),
+    .IRQ(irq)
 );
 
 `ifndef SKIP_WAVE_DUMP
@@ -37,7 +38,7 @@ initial begin
 end
 `endif
 
-always #5 PCLK = !PCLK;
+always #5 CLK = !CLK;
 
 
 endmodule

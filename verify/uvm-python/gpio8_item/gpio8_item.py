@@ -31,7 +31,13 @@ class gpio8_item(ip_item):
         return is_matching
         # return self.gpios == tr.gpios 
 
-    
+    def copy(self, tr):
+        for i in range(8):
+            tr.gpios[f"gpio{i}"].dir = self.gpios[f"gpio{i}"].dir
+            tr.gpios[f"gpio{i}"].val = self.gpios[f"gpio{i}"].val
+        return tr
+
+
     
     def set_or_randomize_gpios(self, gpios_dir=None, gpios_val=None):
 

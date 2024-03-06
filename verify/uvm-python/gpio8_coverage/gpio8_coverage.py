@@ -20,7 +20,7 @@ class gpio8_coverage(ip_coverage):
         super().build_phase(phase)
         
         regs_arr = []
-        if (not UVMConfigDb.get(self, "", "wrapper_regs", regs_arr)):
+        if (not UVMConfigDb.get(self, "", "bus_regs", regs_arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             self.regs = regs_arr[0]
