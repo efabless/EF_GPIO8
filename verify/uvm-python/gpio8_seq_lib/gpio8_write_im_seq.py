@@ -19,7 +19,13 @@ class gpio8_write_im_seq(bus_seq_base):
     async def body(self):
         # get register names/address conversion dict
         await super().body()
-        await self.send_req(is_write=True, reg="im", data_condition=lambda data: data == self.im ) # set interrupt mask
+        # self.req.rand_mode(0)
+        # self.req.addr = self.adress_dict["im"]
+        # self.req.data = self.im
+        # self.req.kind = bus_item.WRITE
+        # await uvm_do(self, self.req)
+
+        await self.send_req(is_write=True, reg="im"  ,data_value = self.im ) # set interrupt mask
 
     def set_im (self, im):
         self.im = im

@@ -18,7 +18,13 @@ class gpio8_write_dir_seq(bus_seq_base):
     async def body(self):
         # get register names/address conversion dict
         await super().body()
+        arr = []
+        if (not UVMConfigDb.get(self, "", "bus_regs", arr)):
+            uvm_fatal(self.tag, "No json file wrapper regs")
+        else:
+            adress_dict = arr[0].reg_name_to_address
         await self.send_req(is_write=True, reg="DIR", data_condition=lambda data: data == self.gpios_dir)
+        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["DIR"], lambda kind: kind == bus_item.READ) # read after writing (to verify writing to the reg)
 
     def set_gpios_dir (self, dir):
         self.gpios_dir = dir

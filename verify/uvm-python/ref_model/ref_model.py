@@ -46,7 +46,7 @@ class gpio8_ref_model(ref_model):
         super().run_phase(phase)
         uvm_info(self.tag, "run phase started", UVM_LOW)
         send_irq_tr = await cocotb.start (self.send_irq_tr())
-        # update_ris = await cocotb.start (self.update_ris())
+        update_ris = await cocotb.start (self.update_ris())
 
         # await Combine(update_ris, send_irq_tr)
 
@@ -62,6 +62,7 @@ class gpio8_ref_model(ref_model):
             self.bus_bus_export.write(tr)
             if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
                 self.icr_changed.set()
+                # uvm_info(self.tag, "setting icr changed event", UVM_LOW)
         elif tr.kind == bus_item.READ:
             data = self.regs.read_reg_value(tr.addr)
             td = tr.do_clone()
@@ -151,22 +152,22 @@ class gpio8_ref_model(ref_model):
 
     async def update_ris (self):
         while (True):
-            await icr_changed.wait()
+            await self.icr_changed.wait()
             icr_reg = self.regs.read_reg_value("icr")
-            uvm_info(self.tag, f" ref_model icr changed to =  {icr:X}", UVM_LOW)
+            # uvm_info(self.tag, f" ref_model icr changed to =  {icr_reg:X}", UVM_LOW)
             mask = ~icr_reg
             self.ris_reg = self.ris_reg & mask
-            uvm_info(self.tag, f" ref_model updated RIS after clearing icr {self.ris_reg:X}", UVM_LOW)
+            # uvm_info(self.tag, f" ref_model updated RIS after clearing icr {self.ris_reg:X}", UVM_LOW)
             self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
             im_reg = self.regs.read_reg_value("im")
             mis_reg_new = self.ris_reg & im_reg
-            uvm_info(self.tag, f" ref_model im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
+            # uvm_info(self.tag, f" ref_model im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
             if mis_reg_new != self.mis_reg:
                 self.mis_changed.set()
             self.mis_reg = mis_reg_new
             self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
             self.regs.write_reg_value("icr", 0, force_write=True)  # clear icr register 
-            icr_changed.clear()
+            self.icr_changed.clear()
     
     async def send_irq_tr(self):
         while (True):
@@ -177,14 +178,14 @@ class gpio8_ref_model(ref_model):
                 self.irq = 1 
                 tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 1
-                uvm_info(self.tag, "ref_model set interrupt = " + tr.convert2string(), UVM_MEDIUM)                       
+                # uvm_info(self.tag, "ref_model set interrupt = " + tr.convert2string(), UVM_MEDIUM)                       
                 self.bus_irq_export.write(tr)
             elif not irq_new and self.irq: # irq changed from high to low 
                 # send a tr irq
                 self.irq = 0
                 tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 0
-                uvm_info(self.tag, "ref_model clear interrupt = " + tr.convert2string(), UVM_MEDIUM)
+                # uvm_info(self.tag, "ref_model clear interrupt = " + tr.convert2string(), UVM_MEDIUM)
                 self.bus_irq_export.write(tr)
             
             self.mis_changed.clear()

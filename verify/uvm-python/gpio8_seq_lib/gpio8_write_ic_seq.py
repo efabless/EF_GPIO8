@@ -19,7 +19,9 @@ class gpio8_write_ic_seq(bus_seq_base):
     async def body(self):
         # get register names/address conversion dict
         await super().body()
-        await self.send_req(is_write=True, reg="icr", data_condition=lambda data: data == self.ic ) # set interrupt mask
+        # await self.send_req(is_write=True, reg="icr", data_condition=lambda data: data == self.ic ) # set interrupt mask
+        await self.send_req(is_write=True, reg="icr"  ,data_value = self.ic ) # set interrupt mask
+
 
     def set_ic (self, ic):
         self.ic = ic

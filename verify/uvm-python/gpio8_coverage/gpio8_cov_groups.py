@@ -38,7 +38,25 @@ class gpio8_cov_groups():
                 bins_labels=[("Output", "High") , ("Output", "Low")],
                 # at_least=3,
             ))
+        for i in range (8):
+            cov_points.append(CoverPoint(
+                f"{self.hierarchy}.GPIOs.Direction 0x{(i*32):X} : 0x{(((i+1)*32)-1):X}",
+                xf=lambda tr, i=i: ( (i*32) <= self.regs.read_reg_value("DIR") <= ((i+1)*32)-1 , self.get_gpios_value(tr)),
+                bins=[ (True , i*32 , ((i+1)*32)-1 ) for i in range(8)],
+                bins_labels=[(f"GPIOs Values 0x{(i*32):X} : 0x{(((i+1)*32)-1):X}") for i in range(8)],
+                rel=lambda val, b:  (val[0] == b[0]) and (b[1] <= val[1] <= b[2])
+            ))
+
         return cov_points
+    
+    def get_gpios_value(self, tr):
+        gpios_value = 0 
+        for i in range(8):
+            if(tr.gpios[f"gpio{i}"].val):
+                gpios_value |= 1 << i
+        return gpios_value
+
+
 
     def apply_decorators(self, decorators):
         def decorator_wrapper(func):
