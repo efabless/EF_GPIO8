@@ -9,7 +9,7 @@ from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
 from EF_UVM.top_env import top_env
 from gpio8_interface.gpio8_if import gpio8_if
-from EF_UVM.bus_env.bus_interface.bus_if import bus_apb_if, bus_irq_if
+from EF_UVM.bus_env.bus_interface.bus_if import bus_ahb_if, bus_apb_if, bus_wb_if, bus_irq_if
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First, Timer
 from EF_UVM.bus_env.bus_regs import bus_regs
@@ -39,6 +39,13 @@ from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 from gpio8_logger.gpio8_logger import gpio8_logger
 from EF_UVM.scoreboard import scoreboard
 from EF_UVM.bus_env.bus_coverage.bus_coverage import bus_coverage
+
+from EF_UVM.bus_env.bus_agent.bus_ahb_driver import bus_ahb_driver
+from EF_UVM.bus_env.bus_agent.bus_apb_driver import bus_apb_driver
+from EF_UVM.bus_env.bus_agent.bus_wb_driver import bus_wb_driver
+from EF_UVM.bus_env.bus_agent.bus_ahb_monitor import bus_ahb_monitor
+from EF_UVM.bus_env.bus_agent.bus_apb_monitor import bus_apb_monitor
+from EF_UVM.bus_env.bus_agent.bus_wb_monitor import bus_wb_monitor
 # import cProfile
 # import pstats
 
@@ -48,10 +55,18 @@ async def module_top(dut):
     # profiler.enable()
 
     pif = gpio8_if(dut)
-    apb_if = bus_apb_if(dut)
+    BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+    if BUS_TYPE == "APB":
+        w_if = bus_apb_if(dut)
+    elif BUS_TYPE == "AHB":
+        w_if = bus_ahb_if(dut)
+    elif BUS_TYPE == "WISHBONE":
+        w_if = bus_wb_if(dut)
+    else:
+        uvm_fatal("module_top", f"unknown bus type {BUS_TYPE}")
     w_irq_if = bus_irq_if(dut)
     UVMConfigDb.set(None, "*", "ip_if", pif)
-    UVMConfigDb.set(None, "*", "bus_if", apb_if)
+    UVMConfigDb.set(None, "*", "bus_if", w_if)
     UVMConfigDb.set(None, "*", "bus_irq_if", w_irq_if)
     yaml_file = []
     UVMRoot().clp.get_arg_values("+YAML_FILE=", yaml_file)
@@ -88,6 +103,13 @@ class base_test(UVMTest):
         self.set_type_override_by_type(ref_model.get_type(), gpio8_ref_model.get_type())
         self.set_type_override_by_type(ip_coverage.get_type(), gpio8_coverage.get_type())
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
+        BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+        if BUS_TYPE == "AHB":
+            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_ahb_driver.get_type())
+            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_ahb_monitor.get_type())
+        elif BUS_TYPE == "WISHBONE":
+            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_wb_driver.get_type())
+            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_wb_monitor.get_type())
         # self.set_type_override_by_type(scoreboard.get_type(), gpio8_scoreboard.get_type())
         # Enable transaction recording for everything
         UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
