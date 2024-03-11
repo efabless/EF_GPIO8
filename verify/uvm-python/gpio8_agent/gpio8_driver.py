@@ -34,6 +34,6 @@ class gpio8_driver(ip_driver):
             self.seq_item_port.item_done()
 
     async def drive_delay(self):
-        await RisingEdge(self.vif.PCLK)
+        await RisingEdge(self.vif.CLK)
 
 uvm_component_utils(gpio8_driver)

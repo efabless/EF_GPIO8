@@ -18,11 +18,11 @@ class gpio8_monitor(ip_monitor):
         await self.sample_gpios()
 
     async def sample_gpios(self):
-        await RisingEdge (self.vif.PRESETn)
+        await RisingEdge (self.vif.RESETn)
         while(True):
             tr = self.set_gpio()
             uvm_info(self.tag, "sampled GPIO value: " + tr.convert2string(), UVM_LOW)
-            await RisingEdge(self.vif.PCLK) # just to sync the vip with the monitor
+            await RisingEdge(self.vif.CLK) # just to sync the vip with the monitor
             self.monitor_port.write(tr)
             await self.wait_gpio_change()
     
