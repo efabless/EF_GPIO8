@@ -26,7 +26,7 @@ class gpio8_item(ip_item):
                 is_matching = True
             else:
                 is_matching = False
-                exit 
+                return False 
 
         return is_matching
         # return self.gpios == tr.gpios 
