@@ -16,7 +16,7 @@ class gpio8_monitor(ip_monitor):
 
     async def run_phase(self, phase):
         await self.sample_gpios()
-
+            
     async def sample_gpios(self):
         await RisingEdge (self.vif.RESETn)
         while(True):
@@ -52,7 +52,4 @@ class gpio8_monitor(ip_monitor):
         return tr
 
 
-
-
-    
 uvm_component_utils(gpio8_monitor)

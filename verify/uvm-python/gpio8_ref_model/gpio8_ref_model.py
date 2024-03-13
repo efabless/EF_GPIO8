@@ -1,22 +1,30 @@
 from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
-from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM 
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
-from EF_UVM.ref_model.ref_model import ref_model
-from EF_UVM.bus_env.bus_item import bus_irq_item
-from EF_UVM.bus_env.bus_item import bus_item
-from gpio8_item.gpio8_item import gpio8_item
-from EF_UVM.ip_env.ip_agent.ip_monitor import ip_monitor
-from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge, Combine, First
 import cocotb
+from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge, Combine, First
+from gpio8_item.gpio8_item import gpio8_item
+from EF_UVM.ref_model.ref_model import ref_model
+from EF_UVM.bus_env.bus_item import bus_item, bus_irq_item
+
 
 
 class gpio8_ref_model(ref_model):
+    """
+    The reference model is a crucial element within the top-level verification environment, designed to validate the functionality and performance of both the IP (Intellectual Property) and the bus system. Its primary role is to act as a representative or mimic of the actual hardware components, including the IP and the bus. Key features and functions of the reference model include:
+    1) Input Simulation: The reference model is capable of receiving the same inputs that would be provided to the actual IP and bus via connection with the monitors of the bus and IP.
+    2) Functional Emulation: It emulates the behavior and responses of the IP and bus under test. By replicating the operational characteristics of these components, the reference model serves as a benchmark for expected performance and behavior.
+    3) Output Generation: Upon receiving inputs, the reference model processes them in a manner akin to the real hardware, subsequently generating expected outputs. These outputs are essential for comparison in the verification process.
+    4) Interface with Scoreboard: The outputs from the reference model, representing the expected results, are forwarded to the scoreboard. The scoreboard then compares these expected results with the actual outputs from the IP and bus for verification.
+    5)Register Abstraction Layer (RAL) Integration: The reference model includes a RAL model that mirrors the register values of the RTL, ensuring synchronization between expected and actual register states. This model facilitates register-level tests and error detection, offering accessible and up-to-date register values for other verification components. It enhances the automation and coverage of register testing, playing a vital role in ensuring the accuracy and comprehensiveness of the verification process.
+    """
     def __init__(self, name="gpio8_ref_model", parent=None):
         super().__init__(name, parent)
+        self.tag = name
         self.prev_td = gpio8_item.type_id.create("td", self)
         self.first_tr = True
         self.ris_reg = 0 
@@ -27,6 +35,7 @@ class gpio8_ref_model(ref_model):
 
     def build_phase(self, phase):
         super().build_phase(phase)
+        # Here adding any initialize for user classes for the model
         arr = []
         if (not UVMConfigDb.get(self, "", "ip_if", arr)):
             uvm_fatal(self.tag, "No interface specified for self driver instance")
@@ -40,21 +49,18 @@ class gpio8_ref_model(ref_model):
         self.bus_write_event = Event("bus_write_event")
         self.clock_period = 10
 
-
-
     async def run_phase(self, phase):
         super().run_phase(phase)
         uvm_info(self.tag, "run phase started", UVM_LOW)
         send_irq_tr = await cocotb.start (self.send_irq_tr())
         update_ris = await cocotb.start (self.update_ris())
 
-        # await Combine(update_ris, send_irq_tr)
-
-
     def write_bus(self, tr):
-        uvm_info(self.tag, "ref_model write: " + tr.convert2string(), UVM_HIGH)
-        if tr.reset:
+        # Called when new transaction is received from the bus monitor
+        uvm_info(self.tag, " write: " + tr.convert2string(), UVM_HIGH)
+        if tr.kind == bus_item.RESET:
             self.bus_bus_export.write(tr)
+            uvm_info("vip", "reset from the vip", UVM_LOW)
             return
         if tr.kind == bus_item.WRITE:
             self.bus_write_event.set()
@@ -62,7 +68,6 @@ class gpio8_ref_model(ref_model):
             self.bus_bus_export.write(tr)
             if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
                 self.icr_changed.set()
-                # uvm_info(self.tag, "setting icr changed event", UVM_LOW)
         elif tr.kind == bus_item.READ:
             data = self.regs.read_reg_value(tr.addr)
             td = tr.do_clone()
@@ -71,8 +76,8 @@ class gpio8_ref_model(ref_model):
         self.bus_write_event.clear()
 
     def write_ip(self, tr):
-        uvm_info(self.tag, "ip ref_model write: " + tr.convert2string(), UVM_HIGH)
-        # when monitor detect patterns the ref_model should also send pattern
+        uvm_info(self.tag, "ip  write: " + tr.convert2string(), UVM_HIGH)
+        # Called when new transaction is received from the ip monitor
         td = gpio8_item.type_id.create("td", self)
         td.gpios = self.get_gpios_item(td, tr)
         if self.first_tr:
@@ -83,11 +88,6 @@ class gpio8_ref_model(ref_model):
         self.prev_td = td.copy(self.prev_td)
         self.ip_export.write(td)
     
-    # def write_ip_irq(self, tr):
-    #     uvm_info(self.tag, "ref_model recieved irq tr from monitor" + tr.convert2string(), UVM_MEDIUM)
-    #     # when irq_monitor detect firing interrupt the ref_model should also send an interrupt to scoreboard
-    #     # td = self.get_irq_item()
-    #     # self.bus_irq_export.write(td)
 
     def get_gpios_item (self, td, tr):
         direction = self.regs.read_reg_value("DIR")
@@ -189,8 +189,5 @@ class gpio8_ref_model(ref_model):
                 self.bus_irq_export.write(tr)
             
             self.mis_changed.clear()
-    
-
-
 
 uvm_component_utils(gpio8_ref_model)

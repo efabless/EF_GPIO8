@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
-from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from gpio8_coverage.gpio8_cov_groups import gpio8_cov_groups
@@ -18,7 +18,6 @@ class gpio8_coverage(ip_coverage):
 
     def build_phase(self, phase):
         super().build_phase(phase)
-        
         regs_arr = []
         if (not UVMConfigDb.get(self, "", "bus_regs", regs_arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
@@ -28,5 +27,6 @@ class gpio8_coverage(ip_coverage):
 
     def write(self, tr):
         self.cov_groups.ip_cov(tr)
+
 
 uvm_component_utils(gpio8_coverage)

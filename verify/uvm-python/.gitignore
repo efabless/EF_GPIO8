@@ -9,4 +9,5 @@
 /coverageReports/
 *.xml
 *.gtkw
-EF_UVM/
+/EF_UVM/
+IP_Utilities/

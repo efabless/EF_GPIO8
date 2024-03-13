@@ -1,7 +1,8 @@
 from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 import cocotb 
-from uvm.macros import uvm_component_utils
+from uvm.macros import uvm_component_utils, uvm_fatal
 from gpio8_item.gpio8_item import gpio8_item
+
 
 class gpio8_logger(ip_logger):
     def __init__(self, name="gpio8_logger", parent=None):
@@ -16,7 +17,6 @@ class gpio8_logger(ip_logger):
             for i in range (8):
                 gpios_list.append(f'{transaction.gpios[f"gpio{i}"]}')
             return [sim_time] + gpios_list
-            
 
 
 uvm_component_utils(gpio8_logger)

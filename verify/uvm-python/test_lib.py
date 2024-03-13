@@ -1,23 +1,18 @@
 import cocotb
-from uvm.comps import UVMTest
-from uvm import UVMCoreService
+import random
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
-from uvm.base.uvm_printer import UVMTablePrinter
-from uvm.base.sv import sv
-from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
+from uvm.base.uvm_object_globals import UVM_LOW
 from uvm.base.uvm_globals import run_test
-from EF_UVM.top_env import top_env
 from gpio8_interface.gpio8_if import gpio8_if
-from EF_UVM.bus_env.bus_interface.bus_if import bus_ahb_if, bus_apb_if, bus_wb_if, bus_irq_if
+from EF_UVM.bus_env.bus_interface.bus_if import bus_apb_if, bus_irq_if, bus_ahb_if, bus_wb_if
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First, Timer
 from EF_UVM.bus_env.bus_regs import bus_regs
-from uvm.base.uvm_report_server import UVMReportServer
 from uvm.base import UVMRoot
-import random
+from EF_UVM.base_test import base_test
 
-# seq
+# seqences import
 from EF_UVM.bus_env.bus_seq_lib.write_read_regs import write_read_regs
 from gpio8_seq_lib.gpio8_read_datai_seq import gpio8_read_datai_seq
 from gpio8_seq_lib.gpio8_write_dir_seq import gpio8_write_dir_seq
@@ -26,36 +21,26 @@ from gpio8_seq_lib.gpio8_set_io_in_seq import gpio8_set_io_in_seq
 from gpio8_seq_lib.gpio8_write_im_seq import gpio8_write_im_seq
 from gpio8_seq_lib.gpio8_write_ic_seq import gpio8_write_ic_seq
 
+
 # override classes
 from EF_UVM.ip_env.ip_agent.ip_driver import ip_driver
 from gpio8_agent.gpio8_driver import gpio8_driver
 from EF_UVM.ip_env.ip_agent.ip_monitor import ip_monitor
 from gpio8_agent.gpio8_monitor import gpio8_monitor
 from EF_UVM.ref_model.ref_model import ref_model
-from ref_model.ref_model import gpio8_ref_model
+from gpio8_ref_model.gpio8_ref_model import gpio8_ref_model
 from EF_UVM.ip_env.ip_coverage.ip_coverage import ip_coverage
 from gpio8_coverage.gpio8_coverage import gpio8_coverage
 from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 from gpio8_logger.gpio8_logger import gpio8_logger
-from EF_UVM.scoreboard import scoreboard
-from EF_UVM.bus_env.bus_coverage.bus_coverage import bus_coverage
 
-from EF_UVM.bus_env.bus_agent.bus_ahb_driver import bus_ahb_driver
-from EF_UVM.bus_env.bus_agent.bus_apb_driver import bus_apb_driver
-from EF_UVM.bus_env.bus_agent.bus_wb_driver import bus_wb_driver
-from EF_UVM.bus_env.bus_agent.bus_ahb_monitor import bus_ahb_monitor
-from EF_UVM.bus_env.bus_agent.bus_apb_monitor import bus_apb_monitor
-from EF_UVM.bus_env.bus_agent.bus_wb_monitor import bus_wb_monitor
-# import cProfile
-# import pstats
 
 @cocotb.test()
 async def module_top(dut):
     # profiler = cProfile.Profile()
     # profiler.enable()
-
-    pif = gpio8_if(dut)
     BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+    pif = gpio8_if(dut)
     if BUS_TYPE == "APB":
         w_if = bus_apb_if(dut)
     elif BUS_TYPE == "AHB":
@@ -85,89 +70,26 @@ async def module_top(dut):
     # profiler.dump_stats("profile_result.prof")
 
 
-
-
-class base_test(UVMTest):
-    def __init__(self, name="base_test", parent=None):
-        super().__init__(name, parent)
-        self.test_pass = True
-        self.top_env = None
-        self.printer = None
+class gpio8_base_test(base_test):
+    def __init__(self, name="gpio8_first_test", parent=None):
+        BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+        super().__init__(name, bus_type=BUS_TYPE , parent=parent)
+        self.tag = name
 
     def build_phase(self, phase):
-        # UVMConfigDb.set(self, "example_tb0.bus_env.bus_agent.bus_sequencer.run_phase", "default_sequence", write_seq.type_id.get())
         super().build_phase(phase)
-        # override 
+        # override
         self.set_type_override_by_type(ip_driver.get_type(), gpio8_driver.get_type())
         self.set_type_override_by_type(ip_monitor.get_type(), gpio8_monitor.get_type())
         self.set_type_override_by_type(ref_model.get_type(), gpio8_ref_model.get_type())
         self.set_type_override_by_type(ip_coverage.get_type(), gpio8_coverage.get_type())
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
-        BUS_TYPE = cocotb.plusargs['BUS_TYPE']
-        if BUS_TYPE == "AHB":
-            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_ahb_driver.get_type())
-            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_ahb_monitor.get_type())
-        elif BUS_TYPE == "WISHBONE":
-            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_wb_driver.get_type())
-            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_wb_monitor.get_type())
-        # self.set_type_override_by_type(scoreboard.get_type(), gpio8_scoreboard.get_type())
-        # Enable transaction recording for everything
-        UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
-        # Create the tb
-        self.example_tb0 = top_env.type_id.create("example_tb0", self)
-        # uvm_info(self.tag, f"Hellooo", UVM_LOW)
-        # Create a specific depth printer for printing the created topology
-        self.printer = UVMTablePrinter()
-        self.printer.knobs.depth = -1
-
-        arr = []
-        if UVMConfigDb.get(None, "*", "ip_if", arr) is True:
-            UVMConfigDb.set(self, "*", "ip_if", arr[0])
-        else:
-            uvm_fatal("NOVIF", "Could not get ip_if from config DB")
-
-        if UVMConfigDb.get(None, "*", "bus_if", arr) is True:
-            UVMConfigDb.set(self, "*", "bus_if", arr[0])
-        else:
-            uvm_fatal("NOVIF", "Could not get bus_if from config DB")
-        # set max number of uvm errors
-        server = UVMReportServer()
-        server.set_max_quit_count(5)
-        UVMCoreService.get().set_report_server(server)
 
 
-    def end_of_elaboration_phase(self, phase):
-        # Set verbosity for the bus monitor for this demo
-        uvm_info(self.get_type_name(), sv.sformatf("Printing the test topology :\n%s", self.sprint(self.printer)), UVM_LOW)
-
-    def start_of_simulation_phase(self, phase):
-        uvm_info(self.tag, f"start of simulation", UVM_LOW)
-        self.bus_sqr = self.example_tb0.bus_env.bus_agent.bus_sequencer
-        self.ip_sqr = self.example_tb0.ip_env.ip_agent.ip_sequencer
-
-    async def run_phase(self, phase):
-        uvm_info("sequence", "Starting test", UVM_LOW)
-
-    def extract_phase(self, phase):
-        super().check_phase(phase)
-        server = UVMCoreService.get().get_report_server()
-        errors = server.get_severity_count(UVM_ERROR)
-        if errors > 0:
-            uvm_fatal("FOUND ERRORS", "There were " + str(errors) + " UVM_ERRORs in the test")
-
-    def report_phase(self, phase):
-        uvm_info(self.get_type_name(), "report_phase", UVM_LOW)
-        if self.test_pass:
-            uvm_info(self.get_type_name(), "** UVM TEST PASSED **", UVM_LOW)
-        else:
-            uvm_fatal(self.get_type_name(), "** UVM TEST FAIL **\n" +
-                self.err_msg)
+uvm_component_utils(gpio8_base_test)
 
 
-uvm_component_utils(base_test)
-
-
-class gpio8_all_out_test(base_test):
+class gpio8_all_out_test(gpio8_base_test):
     def __init__(self, name="gpio8_all_out_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
@@ -186,7 +108,7 @@ class gpio8_all_out_test(base_test):
 
 uvm_component_utils(gpio8_all_out_test)
 
-class gpio8_all_in_test(base_test):
+class gpio8_all_in_test(gpio8_base_test):
     def __init__(self, name="gpio8_all_in_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
@@ -208,7 +130,7 @@ class gpio8_all_in_test(base_test):
 uvm_component_utils(gpio8_all_in_test)
 
 
-class gpio8_rand_test(base_test):
+class gpio8_rand_test(gpio8_base_test):
     def __init__(self, name="gpio8_rand_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
@@ -234,7 +156,7 @@ class gpio8_rand_test(base_test):
 
 uvm_component_utils(gpio8_rand_test)
 
-class gpio8_interrupts_test(base_test):
+class gpio8_interrupts_test(gpio8_base_test):
     def __init__(self, name="gpio8_interrupts_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
