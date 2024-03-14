@@ -9,14 +9,15 @@ from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 import random
 
 
-class gpio8_read_datai_seq(bus_seq_base):
+class gpio8_read_mis_seq(bus_seq_base):
 
-    def __init__(self, name="gpio8_read_datai_seq"):
+    def __init__(self, name="gpio8_read_mis_seq"):
         super().__init__(name)
 
     async def body(self):
         await super().body()
-        await self.send_req(is_write=False, reg="DATAO")
+        await self.send_nop()
+        await self.send_req(is_write=False, reg="mis")
 
 
-uvm_object_utils(gpio8_read_datai_seq)
+uvm_object_utils(gpio8_read_mis_seq)

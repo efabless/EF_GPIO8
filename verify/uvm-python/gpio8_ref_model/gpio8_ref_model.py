@@ -25,7 +25,8 @@ class gpio8_ref_model(ref_model):
     def __init__(self, name="gpio8_ref_model", parent=None):
         super().__init__(name, parent)
         self.tag = name
-        self.prev_td = gpio8_item.type_id.create("td", self)
+        self.prev_td_in = gpio8_item.type_id.create("prev_td", self)
+        self.td = gpio8_item.type_id.create("td", self)
         self.first_tr = True
         self.ris_reg = 0 
         self.mis_reg = 0
@@ -36,18 +37,6 @@ class gpio8_ref_model(ref_model):
     def build_phase(self, phase):
         super().build_phase(phase)
         # Here adding any initialize for user classes for the model
-        arr = []
-        if (not UVMConfigDb.get(self, "", "ip_if", arr)):
-            uvm_fatal(self.tag, "No interface specified for self driver instance")
-        else:
-            self.vif = arr[0]
-        arr = []
-        if (not UVMConfigDb.get(self, "", "bus_regs", arr)):
-            uvm_fatal(self.tag, "No json file wrapper regs")
-        else:
-            self.regs = arr[0]
-        self.bus_write_event = Event("bus_write_event")
-        self.clock_period = 10
 
     async def run_phase(self, phase):
         super().run_phase(phase)
@@ -63,7 +52,6 @@ class gpio8_ref_model(ref_model):
             uvm_info("vip", "reset from the vip", UVM_LOW)
             return
         if tr.kind == bus_item.WRITE:
-            self.bus_write_event.set()
             self.regs.write_reg_value(tr.addr, tr.data)
             self.bus_bus_export.write(tr)
             if tr.addr == self.regs.reg_name_to_address["icr"] and tr.data != 0:
@@ -73,75 +61,72 @@ class gpio8_ref_model(ref_model):
             td = tr.do_clone()
             td.data = data
             self.bus_bus_export.write(td)
-        self.bus_write_event.clear()
 
     def write_ip(self, tr):
         uvm_info(self.tag, "ip  write: " + tr.convert2string(), UVM_HIGH)
         # Called when new transaction is received from the ip monitor
-        td = gpio8_item.type_id.create("td", self)
-        td.gpios = self.get_gpios_item(td, tr)
+        # td = gpio8_item.type_id.create("td", self)
+        self.td.gpios = self.get_gpios_item(tr)
         if self.first_tr:
-            self.update_interrupts(td)
+            self.update_interrupts()
             self.first_tr = False
         else:
-            self.update_interrupts(td)
-        self.prev_td = td.copy(self.prev_td)
-        self.ip_export.write(td)
+            self.update_interrupts()
+        for i in range(8):
+            if(self.td.gpios[f"gpio{i}"].dir == "input"):
+                self.prev_td_in.gpios[f"gpio{i}"].dir = "input"
+                self.prev_td_in.gpios[f"gpio{i}"].val = self.td.gpios[f"gpio{i}"].val
+            else:
+                self.prev_td_in.gpios[f"gpio{i}"].dir = "input"
+                self.prev_td_in.gpios[f"gpio{i}"].val = 0
+        self.ip_export.write(self.td)
     
 
-    def get_gpios_item (self, td, tr):
+    def get_gpios_item (self, tr):
         direction = self.regs.read_reg_value("DIR")
         gpios_datao = self.regs.read_reg_value("DATAO")
         uvm_info(self.tag, f"in ref_model item creation direction = {direction}, gpios_datao= {gpios_datao}", UVM_LOW)
         gpios_datai = 0
         for i in range (8):
-            td.gpios[f"gpio{i}"].dir = "output" if (direction >> i) & 0b1 else "input"
-            if(td.gpios[f"gpio{i}"].dir == "output"):
-                td.gpios[f"gpio{i}"].val = (gpios_datao >> i) & 0b1
+            self.td.gpios[f"gpio{i}"].dir = "output" if (direction >> i) & 0b1 else "input"
+            if(self.td.gpios[f"gpio{i}"].dir == "output"):
+                self.td.gpios[f"gpio{i}"].val = (gpios_datao >> i) & 0b1
                 # td.gpios[f"gpio{i}"].val = 0
             else:
                 io_in_val =  tr.gpios[f"gpio{i}"].val
                 if io_in_val != 'z':
-                    td.gpios[f"gpio{i}"].val = io_in_val
+                    self.td.gpios[f"gpio{i}"].val = io_in_val
                     gpios_datai |= io_in_val << i
                 else:
                     gpios_datai = 0 
         self.regs.write_reg_value("DATAI", gpios_datai, force_write=True)
-        return td.gpios
+        return self.td.gpios
     
 
-    def update_interrupts(self, td):
-        uvm_info(self.tag, "calculate ris td = " + td.convert2string(), UVM_MEDIUM)
-        uvm_info(self.tag, "calculate ris previous td = " + self.prev_td.convert2string(), UVM_MEDIUM)
+    def update_interrupts(self):
+        uvm_info(self.tag, "calculate ris previous td = " + self.prev_td_in.convert2string(), UVM_LOW)
+        uvm_info(self.tag, "calculate ris td = " + self.td.convert2string(), UVM_LOW)
         for i in range(8):
         # check what irqs should be triggered
-            if (td.gpios[f"gpio{i}"].dir == "input"):  
-                if (td.gpios[f"gpio{i}"].val): # gpio is high
-                    self.ris_reg |= 1 << i
-                    # uvm_info(self.tag, f"gpio{i}: high", UVM_LOW)
-                    if (not self.first_tr):                                                                         
-                        if (self.prev_td.gpios[f"gpio{i}"].val==0): # rising edge (from low to high)
-                            self.ris_reg |= 1 << (i+16)
-                            # uvm_info(self.tag, f"gpio{i}: rising edge low to high", UVM_LOW)
+            current_val = self.td.gpios[f"gpio{i}"].val if self.td.gpios[f"gpio{i}"].dir == "input" else 0 
+            prev_val = self.prev_td_in.gpios[f"gpio{i}"].val
 
-                else:
-                    # uvm_info(self.tag, f"gpio{i}: low", UVM_LOW)                       # gpio is low
-                    self.ris_reg |= 1 << (i+8)
-                    if (not self.first_tr):   
-                        if (self.prev_td.gpios[f"gpio{i}"].val): # falling edge (from high to low)
-                            self.ris_reg |= 1 << (i+24)
-                            # uvm_info(self.tag, f"gpio{i}: falling edge high to low", UVM_LOW)
+            if (current_val): # current gpio is high
+                self.ris_reg |= 1 << i
+                if (not self.first_tr):                                                                         
+                    if (prev_val==0): # rising edge (from low to high)
+                        self.ris_reg |= 1 << (i+16)
 
-                # uvm_info(self.tag, f" ref_model calculated RIS {self.ris_reg:X}", UVM_LOW)
-                # check for bits in icr to clear if 1
-                
-            
+            else:   # current gpio is low
+                self.ris_reg |= 1 << (i+8)
+                if (not self.first_tr):   
+                    if (prev_val==1): # falling edge (from high to low)
+                        self.ris_reg |= 1 << (i+24)
         
-        # uvm_info(self.tag, f" ref_model calculated RIS without clearing icr {self.ris_reg:X}", UVM_LOW)
         self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
         im_reg = self.regs.read_reg_value("im")
         mis_reg_new = self.ris_reg & im_reg
-        uvm_info(self.tag, f" ref_model im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
+        uvm_info(self.tag, f" ref_model new tr :  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
         if mis_reg_new != self.mis_reg:
             self.mis_changed.set()
         self.mis_reg = mis_reg_new
@@ -166,7 +151,25 @@ class gpio8_ref_model(ref_model):
                 self.mis_changed.set()
             self.mis_reg = mis_reg_new
             self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
-            self.regs.write_reg_value("icr", 0, force_write=True)  # clear icr register 
+            
+            # recheck for high and low interrupts because they might be fired again right after clearing without getting a new tr
+            for i in range(8):
+                current_val = self.td.gpios[f"gpio{i}"].val if self.td.gpios[f"gpio{i}"].dir == "input" else 0 
+                if (current_val): # current gpio is high
+                    self.ris_reg |= 1 << i
+                else:   # current gpio is low
+                    self.ris_reg |= 1 << (i+8)
+        
+            self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
+            im_reg = self.regs.read_reg_value("im")
+            mis_reg_new = self.ris_reg & im_reg
+            uvm_info(self.tag, f" ref_model update ris:  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
+            if mis_reg_new != self.mis_reg:
+                self.mis_changed.set()
+            self.mis_reg = mis_reg_new
+            self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
+            
+            self.regs.write_reg_value("icr", 0, force_write=True)  # clear icr register
             self.icr_changed.clear()
     
     async def send_irq_tr(self):
