@@ -42,7 +42,7 @@ class gpio8_ref_model(ref_model):
         super().run_phase(phase)
         uvm_info(self.tag, "run phase started", UVM_LOW)
         send_irq_tr = await cocotb.start (self.send_irq_tr())
-        update_ris = await cocotb.start (self.update_ris())
+        clear_ris_reg = await cocotb.start (self.clear_ris_reg())
 
     def write_bus(self, tr):
         # Called when new transaction is received from the bus monitor
@@ -65,13 +65,12 @@ class gpio8_ref_model(ref_model):
     def write_ip(self, tr):
         uvm_info(self.tag, "ip  write: " + tr.convert2string(), UVM_HIGH)
         # Called when new transaction is received from the ip monitor
-        # td = gpio8_item.type_id.create("td", self)
         self.td.gpios = self.get_gpios_item(tr)
         if self.first_tr:
-            self.update_interrupts()
+            self.set_ris_reg()
             self.first_tr = False
         else:
-            self.update_interrupts()
+            self.set_ris_reg()
         for i in range(8):
             if(self.td.gpios[f"gpio{i}"].dir == "input"):
                 self.prev_td_in.gpios[f"gpio{i}"].dir = "input"
@@ -103,7 +102,7 @@ class gpio8_ref_model(ref_model):
         return self.td.gpios
     
 
-    def update_interrupts(self):
+    def set_ris_reg(self):
         uvm_info(self.tag, "calculate ris previous td = " + self.prev_td_in.convert2string(), UVM_LOW)
         uvm_info(self.tag, "calculate ris td = " + self.td.convert2string(), UVM_LOW)
         for i in range(8):
@@ -123,34 +122,17 @@ class gpio8_ref_model(ref_model):
                     if (prev_val==1): # falling edge (from high to low)
                         self.ris_reg |= 1 << (i+24)
         
-        self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
-        im_reg = self.regs.read_reg_value("im")
-        mis_reg_new = self.ris_reg & im_reg
-        uvm_info(self.tag, f" ref_model new tr :  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
-        if mis_reg_new != self.mis_reg:
-            self.mis_changed.set()
-        self.mis_reg = mis_reg_new
-        self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
+        self.update_interrupt_regs()
         
-        # function  executed while true  --> check on ic , calculate ris , write it , check on im and update mis 
         
 
-    async def update_ris (self):
+    async def clear_ris_reg (self):
         while (True):
             await self.icr_changed.wait()
             icr_reg = self.regs.read_reg_value("icr")
-            # uvm_info(self.tag, f" ref_model icr changed to =  {icr_reg:X}", UVM_LOW)
             mask = ~icr_reg
-            self.ris_reg = self.ris_reg & mask
-            # uvm_info(self.tag, f" ref_model updated RIS after clearing icr {self.ris_reg:X}", UVM_LOW)
-            self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
-            im_reg = self.regs.read_reg_value("im")
-            mis_reg_new = self.ris_reg & im_reg
-            # uvm_info(self.tag, f" ref_model im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
-            if mis_reg_new != self.mis_reg:
-                self.mis_changed.set()
-            self.mis_reg = mis_reg_new
-            self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
+            self.ris_reg &= mask
+            self.update_interrupt_regs()
             
             # recheck for high and low interrupts because they might be fired again right after clearing without getting a new tr
             for i in range(8):
@@ -160,35 +142,34 @@ class gpio8_ref_model(ref_model):
                 else:   # current gpio is low
                     self.ris_reg |= 1 << (i+8)
         
-            self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
-            im_reg = self.regs.read_reg_value("im")
-            mis_reg_new = self.ris_reg & im_reg
-            uvm_info(self.tag, f" ref_model update ris:  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
-            if mis_reg_new != self.mis_reg:
-                self.mis_changed.set()
-            self.mis_reg = mis_reg_new
-            self.regs.write_reg_value("mis", self.mis_reg, force_write=True)
+            self.update_interrupt_regs()
             
             self.regs.write_reg_value("icr", 0, force_write=True)  # clear icr register
             self.icr_changed.clear()
+    
+    def update_interrupt_regs(self):
+        self.regs.write_reg_value("ris", self.ris_reg, force_write=True)
+        im_reg = self.regs.read_reg_value("im")
+        mis_reg_new = self.ris_reg & im_reg
+        uvm_info(self.tag, f" Update interrupts :  im =  {im_reg:X}, ris =  {self.ris_reg:X}, mis = {mis_reg_new:X}", UVM_LOW)
+        if mis_reg_new != self.mis_reg:
+            self.mis_changed.set()
+        self.mis_reg = mis_reg_new
+        self.regs.write_reg_value("mis", self.mis_reg, force_write=True)   
     
     async def send_irq_tr(self):
         while (True):
             await self.mis_changed.wait()
             irq_new = 1 if self.mis_reg else 0                                        
             if irq_new and not self.irq: # irq changed from low to high 
-                # send a tr irq
                 self.irq = 1 
                 tr = bus_irq_item.type_id.create("tr", self)
-                tr.trg_irq = 1
-                # uvm_info(self.tag, "ref_model set interrupt = " + tr.convert2string(), UVM_MEDIUM)                       
+                tr.trg_irq = 1                      
                 self.bus_irq_export.write(tr)
             elif not irq_new and self.irq: # irq changed from high to low 
-                # send a tr irq
                 self.irq = 0
                 tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 0
-                # uvm_info(self.tag, "ref_model clear interrupt = " + tr.convert2string(), UVM_MEDIUM)
                 self.bus_irq_export.write(tr)
             
             self.mis_changed.clear()
