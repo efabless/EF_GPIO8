@@ -2,7 +2,7 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error, uvm_
 from uvm.comps.uvm_monitor import UVMMonitor
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisPort
 from uvm.base.uvm_config_db import UVMConfigDb
-from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge, Combine, First, Edge
+from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge, Combine, First, Edge, NextTimeStep
 from gpio8_item.gpio8_item import gpio8_item
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 import cocotb
@@ -20,6 +20,7 @@ class gpio8_monitor(ip_monitor):
     async def sample_gpios(self):
         await RisingEdge (self.vif.RESETn)
         while(True):
+            await NextTimeStep()
             tr = self.set_gpio()
             uvm_info(self.tag, "sampled GPIO value: " + tr.convert2string(), UVM_LOW)
             await RisingEdge(self.vif.CLK) # just to sync the vip with the monitor
