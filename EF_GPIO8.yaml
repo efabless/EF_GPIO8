@@ -33,11 +33,11 @@ ports:
   - name: bus_out
     width: 8
     direction: input
-    description: GPIOs output connected to the bus (it's driven by wriring to DATAO register)
+    description: GPIOs output connected to the bus (it's driven by writing to DATAO register)
   - name: bus_oe
     width: 8
     direction: input
-    description: GPIOs output enable connected to the bus (it's driven by wriring to DIR register)
+    description: GPIOs output enable connected to the bus (it's driven by writing to DIR register)
   - name: pin0_hi
     width: 1
     direction: output
