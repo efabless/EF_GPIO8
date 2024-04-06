@@ -1,0 +1,439 @@
+\doxysection{EF\+\_\+\+GPIO8.\+h File Reference}
+\hypertarget{EF__GPIO8_8h}{}\label{EF__GPIO8_8h}\index{EF\_GPIO8.h@{EF\_GPIO8.h}}
+
+
+C header file for GPIO8 APIs which contains the function prototypes.  
+
+
+{\ttfamily \#include $<$EF\+\_\+\+GPIO8\+\_\+regs.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{EF__GPIO8_8h_a3f5894641ec0c93ff19287ef1347b727}{GPIO8\+\_\+\+INPUT}}~0
+\item 
+\#define \mbox{\hyperlink{EF__GPIO8_8h_a96bc3cc2f4657d3171959d8fc4e900a6}{GPIO8\+\_\+\+OUTPUT}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{EF__GPIO8_8h_ac2d3b1328f4af182cdaa9ea85d30320e}{EF\+\_\+\+GPIO8\+\_\+read\+Data}} (uint32\+\_\+t gpio\+\_\+base)
+\begin{DoxyCompactList}\small\item\em reads the input value of the GPIOs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_a11a210f31a40a77f4d5695f68ca96db0}{EF\+\_\+\+GPIO8\+\_\+wait\+Input}} (uint32\+\_\+t gpio\+\_\+base, int data)
+\begin{DoxyCompactList}\small\item\em wait until the input GPIOs have a certain value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_a7a91d97215700e0c5d98c62fc4e93f3b}{EF\+\_\+\+GPIO8\+\_\+wait\+\_\+\+Input\+Pin}} (uint32\+\_\+t gpio\+\_\+base, int pin, int data)
+\begin{DoxyCompactList}\small\item\em wait until a GPIO pin have a certain value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_a3e52b62cdc2fac0763e251aa2cfad7b2}{EF\+\_\+\+GPIO8\+\_\+write\+Data}} (uint32\+\_\+t gpio\+\_\+base, int data)
+\begin{DoxyCompactList}\small\item\em drives the output value of the GPIOs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_a9735d898e3bacb8e570fbe4633340815}{EF\+\_\+\+GPIO8\+\_\+write\+All\+Direction}} (uint32\+\_\+t gpio\+\_\+base, int data)
+\begin{DoxyCompactList}\small\item\em sets the direction of all GPIOs \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{EF__GPIO8_8h_abe9b220c41dd4b1da1d388f971557f5c}{EF\+\_\+\+GPIO8\+\_\+read\+Direction}} (uint32\+\_\+t gpio\+\_\+base)
+\begin{DoxyCompactList}\small\item\em gets the direction of all GPIOs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_af1714d4461187dc58e12d3e5d08bafb8}{EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Direction}} (uint32\+\_\+t gpio\+\_\+base, int pin, int dir)
+\begin{DoxyCompactList}\small\item\em sets the direction of one GPIO pin \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{EF__GPIO8_8h_ab75c8482b2d2637a332784d3ca3a6100}{EF\+\_\+\+GPIO8\+\_\+get\+RIS}} (uint32\+\_\+t gpio\+\_\+base)
+\item 
+int \mbox{\hyperlink{EF__GPIO8_8h_aecca22aace03f05a032638d54f869076}{EF\+\_\+\+GPIO8\+\_\+get\+MIS}} (uint32\+\_\+t gpio\+\_\+base)
+\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_ad7fbf3928d46ec632b98f8f7b74c132b}{EF\+\_\+\+GPIO8\+\_\+set\+IM}} (uint32\+\_\+t gpio\+\_\+base, int mask)
+\item 
+int \mbox{\hyperlink{EF__GPIO8_8h_a13a3cd3e71518fcd6512cb0e08f6553e}{EF\+\_\+\+GPIO8\+\_\+get\+IM}} (uint32\+\_\+t gpio\+\_\+base)
+\item 
+void \mbox{\hyperlink{EF__GPIO8_8h_af0c678d406b04dc6b64c81fa82beff3b}{EF\+\_\+\+GPIO8\+\_\+set\+ICR}} (uint32\+\_\+t gpio\+\_\+base, int mask)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C header file for GPIO8 APIs which contains the function prototypes. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{EF__GPIO8_8h_a3f5894641ec0c93ff19287ef1347b727}\label{EF__GPIO8_8h_a3f5894641ec0c93ff19287ef1347b727} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!GPIO8\_INPUT@{GPIO8\_INPUT}}
+\index{GPIO8\_INPUT@{GPIO8\_INPUT}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{GPIO8\_INPUT}{GPIO8\_INPUT}}
+{\footnotesize\ttfamily \#define GPIO8\+\_\+\+INPUT~0}
+
+\Hypertarget{EF__GPIO8_8h_a96bc3cc2f4657d3171959d8fc4e900a6}\label{EF__GPIO8_8h_a96bc3cc2f4657d3171959d8fc4e900a6} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!GPIO8\_OUTPUT@{GPIO8\_OUTPUT}}
+\index{GPIO8\_OUTPUT@{GPIO8\_OUTPUT}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{GPIO8\_OUTPUT}{GPIO8\_OUTPUT}}
+{\footnotesize\ttfamily \#define GPIO8\+\_\+\+OUTPUT~1}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{EF__GPIO8_8h_a13a3cd3e71518fcd6512cb0e08f6553e}\label{EF__GPIO8_8h_a13a3cd3e71518fcd6512cb0e08f6553e} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getIM@{EF\_GPIO8\_getIM}}
+\index{EF\_GPIO8\_getIM@{EF\_GPIO8\_getIM}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getIM()}{EF\_GPIO8\_getIM()}}
+{\footnotesize\ttfamily int EF\+\_\+\+GPIO8\+\_\+get\+IM (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base }\end{DoxyParamCaption})}
+
+returns the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IM register value 
+\end{DoxyReturn}
+\Hypertarget{EF__GPIO8_8h_aecca22aace03f05a032638d54f869076}\label{EF__GPIO8_8h_aecca22aace03f05a032638d54f869076} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getMIS@{EF\_GPIO8\_getMIS}}
+\index{EF\_GPIO8\_getMIS@{EF\_GPIO8\_getMIS}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getMIS()}{EF\_GPIO8\_getMIS()}}
+{\footnotesize\ttfamily int EF\+\_\+\+GPIO8\+\_\+get\+MIS (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base }\end{DoxyParamCaption})}
+
+returns the value of the Masked Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MIS register value 
+\end{DoxyReturn}
+\Hypertarget{EF__GPIO8_8h_ab75c8482b2d2637a332784d3ca3a6100}\label{EF__GPIO8_8h_ab75c8482b2d2637a332784d3ca3a6100} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getRIS@{EF\_GPIO8\_getRIS}}
+\index{EF\_GPIO8\_getRIS@{EF\_GPIO8\_getRIS}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getRIS()}{EF\_GPIO8\_getRIS()}}
+{\footnotesize\ttfamily int EF\+\_\+\+GPIO8\+\_\+get\+RIS (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base }\end{DoxyParamCaption})}
+
+returns the value of the Raw Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RIS register value 
+\end{DoxyReturn}
+\Hypertarget{EF__GPIO8_8h_ac2d3b1328f4af182cdaa9ea85d30320e}\label{EF__GPIO8_8h_ac2d3b1328f4af182cdaa9ea85d30320e} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_readData@{EF\_GPIO8\_readData}}
+\index{EF\_GPIO8\_readData@{EF\_GPIO8\_readData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_readData()}{EF\_GPIO8\_readData()}}
+{\footnotesize\ttfamily int EF\+\_\+\+GPIO8\+\_\+read\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base }\end{DoxyParamCaption})}
+
+
+
+reads the input value of the GPIOs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+input GPIOs value 
+\end{DoxyReturn}
+\Hypertarget{EF__GPIO8_8h_abe9b220c41dd4b1da1d388f971557f5c}\label{EF__GPIO8_8h_abe9b220c41dd4b1da1d388f971557f5c} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_readDirection@{EF\_GPIO8\_readDirection}}
+\index{EF\_GPIO8\_readDirection@{EF\_GPIO8\_readDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_readDirection()}{EF\_GPIO8\_readDirection()}}
+{\footnotesize\ttfamily int EF\+\_\+\+GPIO8\+\_\+read\+Direction (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base }\end{DoxyParamCaption})}
+
+
+
+gets the direction of all GPIOs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the direction of all GPIOs where each bit represents the direction of a GPIO pin 
+\end{DoxyReturn}
+\Hypertarget{EF__GPIO8_8h_af0c678d406b04dc6b64c81fa82beff3b}\label{EF__GPIO8_8h_af0c678d406b04dc6b64c81fa82beff3b} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setICR@{EF\_GPIO8\_setICR}}
+\index{EF\_GPIO8\_setICR@{EF\_GPIO8\_setICR}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setICR()}{EF\_GPIO8\_setICR()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+set\+ICR (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Clear Register; write 1 to clear the flag
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em mask} & The required mask value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_ad7fbf3928d46ec632b98f8f7b74c132b}\label{EF__GPIO8_8h_ad7fbf3928d46ec632b98f8f7b74c132b} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setIM@{EF\_GPIO8\_setIM}}
+\index{EF\_GPIO8\_setIM@{EF\_GPIO8\_setIM}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setIM()}{EF\_GPIO8\_setIM()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+set\+IM (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em mask} & The required mask value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_af1714d4461187dc58e12d3e5d08bafb8}\label{EF__GPIO8_8h_af1714d4461187dc58e12d3e5d08bafb8} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setPinDirection@{EF\_GPIO8\_setPinDirection}}
+\index{EF\_GPIO8\_setPinDirection@{EF\_GPIO8\_setPinDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setPinDirection()}{EF\_GPIO8\_setPinDirection()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Direction (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{pin,  }\item[{int}]{dir }\end{DoxyParamCaption})}
+
+
+
+sets the direction of one GPIO pin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em pin} & pin number from 0 to 7 \\
+\hline
+{\em dir} & GPIO pin direction where 1 is output and 0 means input. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_a7a91d97215700e0c5d98c62fc4e93f3b}\label{EF__GPIO8_8h_a7a91d97215700e0c5d98c62fc4e93f3b} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_wait\_InputPin@{EF\_GPIO8\_wait\_InputPin}}
+\index{EF\_GPIO8\_wait\_InputPin@{EF\_GPIO8\_wait\_InputPin}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_wait\_InputPin()}{EF\_GPIO8\_wait\_InputPin()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+wait\+\_\+\+Input\+Pin (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{pin,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+wait until a GPIO pin have a certain value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em pin} & pin number from 0 to 7 \\
+\hline
+{\em data} & the value to compare the GPIO with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_a11a210f31a40a77f4d5695f68ca96db0}\label{EF__GPIO8_8h_a11a210f31a40a77f4d5695f68ca96db0} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_waitInput@{EF\_GPIO8\_waitInput}}
+\index{EF\_GPIO8\_waitInput@{EF\_GPIO8\_waitInput}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_waitInput()}{EF\_GPIO8\_waitInput()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+wait\+Input (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+wait until the input GPIOs have a certain value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em data} & the value to compare the input GPIOs with \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_a9735d898e3bacb8e570fbe4633340815}\label{EF__GPIO8_8h_a9735d898e3bacb8e570fbe4633340815} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_writeAllDirection@{EF\_GPIO8\_writeAllDirection}}
+\index{EF\_GPIO8\_writeAllDirection@{EF\_GPIO8\_writeAllDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_writeAllDirection()}{EF\_GPIO8\_writeAllDirection()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+write\+All\+Direction (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+sets the direction of all GPIOs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em data} & GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EF__GPIO8_8h_a3e52b62cdc2fac0763e251aa2cfad7b2}\label{EF__GPIO8_8h_a3e52b62cdc2fac0763e251aa2cfad7b2} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_writeData@{EF\_GPIO8\_writeData}}
+\index{EF\_GPIO8\_writeData@{EF\_GPIO8\_writeData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_writeData()}{EF\_GPIO8\_writeData()}}
+{\footnotesize\ttfamily void EF\+\_\+\+GPIO8\+\_\+write\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gpio\+\_\+base,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+drives the output value of the GPIOs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+\_\+base} & The base memory address of GPIO registers. \\
+\hline
+{\em data} & value to be driven to output GPIOs \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,56 @@
+\doxysection{EF\+\_\+\+GPIO8.\+h}
+\hypertarget{EF__GPIO8_8h_source}{}\label{EF__GPIO8_8h_source}\mbox{\hyperlink{EF__GPIO8_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ EF\_GPIO8\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{EF__GPIO8__regs_8h}{EF\_GPIO8\_regs.h}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GPIO8\_INPUT\ 0}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GPIO8\_OUTPUT\ 1}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__GPIO8_8h_ac2d3b1328f4af182cdaa9ea85d30320e}{EF\_GPIO8\_readData}}(uint32\_t\ gpio\_base);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_a11a210f31a40a77f4d5695f68ca96db0}{EF\_GPIO8\_waitInput}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_a7a91d97215700e0c5d98c62fc4e93f3b}{EF\_GPIO8\_wait\_InputPin}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ pin,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_a3e52b62cdc2fac0763e251aa2cfad7b2}{EF\_GPIO8\_writeData}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_a9735d898e3bacb8e570fbe4633340815}{EF\_GPIO8\_writeAllDirection}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__GPIO8_8h_abe9b220c41dd4b1da1d388f971557f5c}{EF\_GPIO8\_readDirection}}(uint32\_t\ gpio\_base);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_af1714d4461187dc58e12d3e5d08bafb8}{EF\_GPIO8\_setPinDirection}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ pin,\ \textcolor{keywordtype}{int}\ dir);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__GPIO8_8h_ab75c8482b2d2637a332784d3ca3a6100}{EF\_GPIO8\_getRIS}}(uint32\_t\ gpio\_base);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__GPIO8_8h_aecca22aace03f05a032638d54f869076}{EF\_GPIO8\_getMIS}}(uint32\_t\ gpio\_base);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_ad7fbf3928d46ec632b98f8f7b74c132b}{EF\_GPIO8\_setIM}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ mask);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00223\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__GPIO8_8h_a13a3cd3e71518fcd6512cb0e08f6553e}{EF\_GPIO8\_getIM}}(uint32\_t\ gpio\_base);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00263\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__GPIO8_8h_af0c678d406b04dc6b64c81fa82beff3b}{EF\_GPIO8\_setICR}}(uint32\_t\ gpio\_base,\ \textcolor{keywordtype}{int}\ mask);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
