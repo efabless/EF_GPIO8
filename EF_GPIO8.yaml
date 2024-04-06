@@ -6,7 +6,7 @@ info:
   owner: Efabless Corp.
   license: APACHE 2.0
   author: Mohamed Shalan
-  email: mshalan@aucegypt.edu
+  email: mshalan@efabless.com
   version: v1.0.0
   date: 8-28-2023
   category: digital
@@ -15,7 +15,7 @@ info:
     - GPIO
   bus:
     - generic
-  type": soft
+  type: soft
   status: verified
   cell_count: "730"
   width": "0.0"

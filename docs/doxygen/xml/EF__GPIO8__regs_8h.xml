@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="EF__GPIO8__regs_8h" kind="file" language="C++">
+    <compoundname>EF_GPIO8_regs.h</compoundname>
+    <includedby refid="EF__GPIO8_8h" local="no">EF_GPIO8.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>EF_GPIO8.c</label>
+        <link refid="EF__GPIO8_8c"/>
+      </node>
+      <node id="2">
+        <label>EF_GPIO8.h</label>
+        <link refid="EF__GPIO8_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_GPIO8_regs.h</label>
+        <link refid="EF__GPIO8__regs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct__EF__GPIO8__TYPE__" prot="public">_EF_GPIO8_TYPE_</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" prot="public" static="no">
+        <name>IO_TYPES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="24" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" prot="public" static="no">
+        <name>__R</name>
+        <initializer>volatile const unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="25" column="11" bodyfile="EF_GPIO8_regs.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" prot="public" static="no">
+        <name>__W</name>
+        <initializer>volatile       unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="26" column="11" bodyfile="EF_GPIO8_regs.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a81f369079976a46554fd9798ab035697" prot="public" static="no">
+        <name>__RW</name>
+        <initializer>volatile       unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="27" column="11" bodyfile="EF_GPIO8_regs.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a8fe3dbaa5fce14c734e986f43608604f" prot="public" static="no">
+        <name>EF_GPIO8_P0HI_FLAG</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="31" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a96c4791e2715264bf791a72e5d9528c5" prot="public" static="no">
+        <name>EF_GPIO8_P1HI_FLAG</name>
+        <initializer>0x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="32" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a8fc181d8a1c7d32c091f825f7069d4b1" prot="public" static="no">
+        <name>EF_GPIO8_P2HI_FLAG</name>
+        <initializer>0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="33" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a4ee4754f1f864412d3b798c3e5d031bc" prot="public" static="no">
+        <name>EF_GPIO8_P3HI_FLAG</name>
+        <initializer>0x8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="34" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1ad75b0adf5b03a314ce1df1284e9302e5" prot="public" static="no">
+        <name>EF_GPIO8_P4HI_FLAG</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="35" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a2ae515e48ad605a97d133bb7b4e31f69" prot="public" static="no">
+        <name>EF_GPIO8_P5HI_FLAG</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="36" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a54e0cf26e70cf3bc1a0013ec89b2d34f" prot="public" static="no">
+        <name>EF_GPIO8_P6HI_FLAG</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="37" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a8c4a215f33f643d6f33ec14c0313a682" prot="public" static="no">
+        <name>EF_GPIO8_P7HI_FLAG</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="38" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a843b502dc23cb147bf1c2b18064ec657" prot="public" static="no">
+        <name>EF_GPIO8_P0LO_FLAG</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="39" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a22dafdfe3391eb921aaab40ca885fd37" prot="public" static="no">
+        <name>EF_GPIO8_P1LO_FLAG</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="40" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a7b24b02b19071291aefbf61be2d7595b" prot="public" static="no">
+        <name>EF_GPIO8_P2LO_FLAG</name>
+        <initializer>0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="41" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a1b253a3bbcc874b55f87e18c5cf4b952" prot="public" static="no">
+        <name>EF_GPIO8_P3LO_FLAG</name>
+        <initializer>0x800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="42" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a1fdc29ba8664c6f74c0c09f6d7474c31" prot="public" static="no">
+        <name>EF_GPIO8_P4LO_FLAG</name>
+        <initializer>0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="43" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1ad99eebb038fc4e5a3add780595c4e5f0" prot="public" static="no">
+        <name>EF_GPIO8_P5LO_FLAG</name>
+        <initializer>0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="44" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1aecdb1021f6e4ce00d3acd534674bbead" prot="public" static="no">
+        <name>EF_GPIO8_P6LO_FLAG</name>
+        <initializer>0x4000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="45" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1af58f97eed9b8d23abe5a8887b5602e9d" prot="public" static="no">
+        <name>EF_GPIO8_P7LO_FLAG</name>
+        <initializer>0x8000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="46" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a6d25a6d415ada1d55702b58ca2ac90be" prot="public" static="no">
+        <name>EF_GPIO8_P0PE_FLAG</name>
+        <initializer>0x10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="47" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a20dd1a150afb19e09db0b9154ca1dd1e" prot="public" static="no">
+        <name>EF_GPIO8_P1PE_FLAG</name>
+        <initializer>0x20000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="48" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a49ff61052593985c4ff49b38bd243785" prot="public" static="no">
+        <name>EF_GPIO8_P2PE_FLAG</name>
+        <initializer>0x40000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="49" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1aa8a2bdf60973d3c3419c1fa9eff869ee" prot="public" static="no">
+        <name>EF_GPIO8_P3PE_FLAG</name>
+        <initializer>0x80000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="50" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1aed9d006315c325967c96938220f025f2" prot="public" static="no">
+        <name>EF_GPIO8_P4PE_FLAG</name>
+        <initializer>0x100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="51" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a1fe9dd81690308265c5934f6a70860e6" prot="public" static="no">
+        <name>EF_GPIO8_P5PE_FLAG</name>
+        <initializer>0x200000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="52" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a02d9be9025db18574675b7a34d724e30" prot="public" static="no">
+        <name>EF_GPIO8_P6PE_FLAG</name>
+        <initializer>0x400000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="53" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a32bb8d2a4b834cd06b1ff5c1cb8dea16" prot="public" static="no">
+        <name>EF_GPIO8_P7PE_FLAG</name>
+        <initializer>0x800000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="54" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a487f2840607f9935fe972ab75d62312a" prot="public" static="no">
+        <name>EF_GPIO8_P0NE_FLAG</name>
+        <initializer>0x1000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="55" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1acd9fee8f00bd441e1e1777a8165e62b0" prot="public" static="no">
+        <name>EF_GPIO8_P1NE_FLAG</name>
+        <initializer>0x2000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="56" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1ad40de3bbca3d0bbd2623ccc6d89143b9" prot="public" static="no">
+        <name>EF_GPIO8_P2NE_FLAG</name>
+        <initializer>0x4000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="57" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1ad39f04f5e208f0c113aa212311197f67" prot="public" static="no">
+        <name>EF_GPIO8_P3NE_FLAG</name>
+        <initializer>0x8000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="58" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a0ab79c2bd0fb81bc28b0b9a653694969" prot="public" static="no">
+        <name>EF_GPIO8_P4NE_FLAG</name>
+        <initializer>0x10000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="59" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a0e58675d2c32db6c17cba2403d25541f" prot="public" static="no">
+        <name>EF_GPIO8_P5NE_FLAG</name>
+        <initializer>0x20000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="60" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1a58a896d299901aec5f9b52cffee9445d" prot="public" static="no">
+        <name>EF_GPIO8_P6NE_FLAG</name>
+        <initializer>0x40000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="61" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__GPIO8__regs_8h_1adca99bbc23c89ddd4c5cdaa161be8930" prot="public" static="no">
+        <name>EF_GPIO8_P7NE_FLAG</name>
+        <initializer>0x80000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="62" column="9" bodyfile="EF_GPIO8_regs.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="EF__GPIO8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" prot="public" static="no">
+        <type>struct <ref refid="struct__EF__GPIO8__TYPE__" kindref="compound">_EF_GPIO8_TYPE_</ref></type>
+        <definition>typedef struct _EF_GPIO8_TYPE_ EF_GPIO8_TYPE</definition>
+        <argsstring></argsstring>
+        <name>EF_GPIO8_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="73" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2023<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>Author:<sp/>Mohamed<sp/>Shalan<sp/>(mshalan@aucegypt.edu)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_GPIO8REGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8REGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IO_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="EF__GPIO8__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IO_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__R<sp/><sp/><sp/><sp/><sp/>volatile<sp/>const<sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="EF__GPIO8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__W<sp/><sp/><sp/><sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="EF__GPIO8__regs_8h_1a81f369079976a46554fd9798ab035697" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__RW<sp/><sp/><sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="EF__GPIO8__regs_8h_1a8fe3dbaa5fce14c734e986f43608604f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0HI_FLAG<sp/><sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="EF__GPIO8__regs_8h_1a96c4791e2715264bf791a72e5d9528c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1HI_FLAG<sp/><sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="EF__GPIO8__regs_8h_1a8fc181d8a1c7d32c091f825f7069d4b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2HI_FLAG<sp/><sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="EF__GPIO8__regs_8h_1a4ee4754f1f864412d3b798c3e5d031bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3HI_FLAG<sp/><sp/>0x8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="EF__GPIO8__regs_8h_1ad75b0adf5b03a314ce1df1284e9302e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4HI_FLAG<sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="EF__GPIO8__regs_8h_1a2ae515e48ad605a97d133bb7b4e31f69" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5HI_FLAG<sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="EF__GPIO8__regs_8h_1a54e0cf26e70cf3bc1a0013ec89b2d34f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6HI_FLAG<sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="EF__GPIO8__regs_8h_1a8c4a215f33f643d6f33ec14c0313a682" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7HI_FLAG<sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="EF__GPIO8__regs_8h_1a843b502dc23cb147bf1c2b18064ec657" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0LO_FLAG<sp/><sp/>0x100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="EF__GPIO8__regs_8h_1a22dafdfe3391eb921aaab40ca885fd37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1LO_FLAG<sp/><sp/>0x200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="EF__GPIO8__regs_8h_1a7b24b02b19071291aefbf61be2d7595b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2LO_FLAG<sp/><sp/>0x400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="EF__GPIO8__regs_8h_1a1b253a3bbcc874b55f87e18c5cf4b952" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3LO_FLAG<sp/><sp/>0x800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="EF__GPIO8__regs_8h_1a1fdc29ba8664c6f74c0c09f6d7474c31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4LO_FLAG<sp/><sp/>0x1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="EF__GPIO8__regs_8h_1ad99eebb038fc4e5a3add780595c4e5f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5LO_FLAG<sp/><sp/>0x2000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="EF__GPIO8__regs_8h_1aecdb1021f6e4ce00d3acd534674bbead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6LO_FLAG<sp/><sp/>0x4000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="EF__GPIO8__regs_8h_1af58f97eed9b8d23abe5a8887b5602e9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7LO_FLAG<sp/><sp/>0x8000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="EF__GPIO8__regs_8h_1a6d25a6d415ada1d55702b58ca2ac90be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0PE_FLAG<sp/><sp/>0x10000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="EF__GPIO8__regs_8h_1a20dd1a150afb19e09db0b9154ca1dd1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1PE_FLAG<sp/><sp/>0x20000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="EF__GPIO8__regs_8h_1a49ff61052593985c4ff49b38bd243785" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2PE_FLAG<sp/><sp/>0x40000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="EF__GPIO8__regs_8h_1aa8a2bdf60973d3c3419c1fa9eff869ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3PE_FLAG<sp/><sp/>0x80000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="EF__GPIO8__regs_8h_1aed9d006315c325967c96938220f025f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4PE_FLAG<sp/><sp/>0x100000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="EF__GPIO8__regs_8h_1a1fe9dd81690308265c5934f6a70860e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5PE_FLAG<sp/><sp/>0x200000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="EF__GPIO8__regs_8h_1a02d9be9025db18574675b7a34d724e30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6PE_FLAG<sp/><sp/>0x400000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="EF__GPIO8__regs_8h_1a32bb8d2a4b834cd06b1ff5c1cb8dea16" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7PE_FLAG<sp/><sp/>0x800000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="EF__GPIO8__regs_8h_1a487f2840607f9935fe972ab75d62312a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0NE_FLAG<sp/><sp/>0x1000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="EF__GPIO8__regs_8h_1acd9fee8f00bd441e1e1777a8165e62b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1NE_FLAG<sp/><sp/>0x2000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="EF__GPIO8__regs_8h_1ad40de3bbca3d0bbd2623ccc6d89143b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2NE_FLAG<sp/><sp/>0x4000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="EF__GPIO8__regs_8h_1ad39f04f5e208f0c113aa212311197f67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3NE_FLAG<sp/><sp/>0x8000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="EF__GPIO8__regs_8h_1a0ab79c2bd0fb81bc28b0b9a653694969" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4NE_FLAG<sp/><sp/>0x10000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="EF__GPIO8__regs_8h_1a0e58675d2c32db6c17cba2403d25541f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5NE_FLAG<sp/><sp/>0x20000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="EF__GPIO8__regs_8h_1a58a896d299901aec5f9b52cffee9445d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6NE_FLAG<sp/><sp/>0x40000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="EF__GPIO8__regs_8h_1adca99bbc23c89ddd4c5cdaa161be8930" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7NE_FLAG<sp/><sp/>0x80000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="struct__EF__GPIO8__TYPE__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__EF__GPIO8__TYPE__" kindref="compound">_EF_GPIO8_TYPE_</ref><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="struct__EF__GPIO8__TYPE___1a16078caf5a7f895c69daf902611c83d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1a16078caf5a7f895c69daf902611c83d4" kindref="member">DATAI</ref>;</highlight></codeline>
+<codeline lineno="66" refid="struct__EF__GPIO8__TYPE___1aeb4b18d6fec67e77cb6ee29bac77bf44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1aeb4b18d6fec67e77cb6ee29bac77bf44" kindref="member">DATAO</ref>;</highlight></codeline>
+<codeline lineno="67" refid="struct__EF__GPIO8__TYPE___1a5c419047eeed433dc1f43d97afc71f63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref>;</highlight></codeline>
+<codeline lineno="68" refid="struct__EF__GPIO8__TYPE___1af5af35481eb0f831ad543ea6394d44e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1af5af35481eb0f831ad543ea6394d44e2" kindref="member">reserved</ref>[957];</highlight></codeline>
+<codeline lineno="69" refid="struct__EF__GPIO8__TYPE___1ada0d820cfa5c567470b4435394d2f55b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1ada0d820cfa5c567470b4435394d2f55b" kindref="member">im</ref>;</highlight></codeline>
+<codeline lineno="70" refid="struct__EF__GPIO8__TYPE___1a9514ef08eb5fce2851974d5c0577ecc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1a9514ef08eb5fce2851974d5c0577ecc3" kindref="member">mis</ref>;</highlight></codeline>
+<codeline lineno="71" refid="struct__EF__GPIO8__TYPE___1ad1a09287fdef501a90c21cad11039f69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1ad1a09287fdef501a90c21cad11039f69" kindref="member">ris</ref>;</highlight></codeline>
+<codeline lineno="72" refid="struct__EF__GPIO8__TYPE___1abf31c15fca6d2d9cf0315a99c91010f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__GPIO8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__GPIO8__TYPE___1abf31c15fca6d2d9cf0315a99c91010f9" kindref="member">icr</ref>;</highlight></codeline>
+<codeline lineno="73" refid="EF__GPIO8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" refkind="member"><highlight class="normal">}<sp/><ref refid="EF__GPIO8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="EF_GPIO8_regs.h"/>
+  </compounddef>
+</doxygen>
