@@ -17,11 +17,17 @@ info:
     - generic
   type: soft
   status: verified
-  cell_count: "730"
+  cell_count: 
+    - IP: 72
+    - APB: 476
+    - AHBL: 493
   width": "0.0"
   height": "0.0"
   technology: n/a
-  clock_freq_mhz: "10"
+  clock_freq_mhz: 
+    - IP: 1666
+    - APB: 1250
+    - AHBL: 294
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
 
