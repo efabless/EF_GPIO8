@@ -16,7 +16,6 @@
 	limitations under the License.
 
 */
-`include "aucohl_lib.v"
 
 module EF_GPIO8 (
     input  wire         clk,
