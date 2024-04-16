@@ -7,7 +7,9 @@ module top();
     wire [7:0] io_in;
     wire [7:0] io_out;
     wire [7:0] io_oe;
+    
     `ifdef BUS_TYPE_APB
+
         wire [31:0]	PADDR;
         wire 		PWRITE;
         wire 		PSEL;
@@ -59,6 +61,8 @@ module top();
         .IRQ(irq)
         );
         
+    `endif // BUS_TYPE_AHB
+    `ifdef BUS_TYPE_WISHBONE
         wire [31:0] adr_i;
         wire [31:0] dat_i;
         wire [31:0] dat_o;
@@ -66,9 +70,22 @@ module top();
         wire        cyc_i;
         wire        stb_i;
         reg         ack_o;
-        // TODO: initialize the Wishbone wrapper here
-        // for example
-        // EF_skeleton_WB dut(.clk_i(CLK), .rst_i(~RESETn), .adr_i(adr_i), .dat_i(dat_i), .dat_o(dat_o), .sel_i(sel_i), .cyc_i(cyc_i), .stb_i(stb_i), .ack_o(ack_o), .we_i(we_i), .irq(irq));
+        
+        EF_GPIO8_WB uut(
+            .io_in(io_in),
+            .io_out(io_out),
+            .io_oe(io_oe),
+            .clk_i(CLK), 
+            .rst_i(~RESETn), 
+            .adr_i(adr_i), 
+            .dat_i(dat_i), 
+            .dat_o(dat_o), 
+            .sel_i(sel_i), 
+            .cyc_i(cyc_i), 
+            .stb_i(stb_i), 
+            .ack_o(ack_o), 
+            .we_i(we_i), 
+            .IRQ(irq));
     `endif // BUS_TYPE_WISHBONE
     // monitor inside signals
     `ifndef SKIP_WAVE_DUMP

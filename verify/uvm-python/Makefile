@@ -3,7 +3,7 @@ TOPLEVEL := top
 MODULE   ?= top_module
 AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_AHBL.pp.v
 APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_APB.pp.v
-WB_FILES ?= ""
+WB_FILES ?=  $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_WB.pp.v
 HDL_FILES ?= $(PWD)/../../hdl/rtl/EF_GPIO8.pp.v
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
@@ -20,7 +20,9 @@ else ifeq ($(BUS_TYPE),AHB)
     export RST_MAKEFILE = HRESETn
 else ifeq ($(BUS_TYPE),WISHBONE)
     RTL_MACROS += -DBUS_TYPE_WISHBONE
-    DESIGN_NAME = EF_GPIO8_wb
+    DESIGN_NAME = EF_GPIO8_WB
+    export CLK_MAKEFILE = clk_i
+    export RST_MAKEFILE = rst_i
 endif
 ## netlist Gen 
 GL_MACROS += -DFUNCTIONAL  $(RTL_MACROS) -DUNIT_DELAY=\#1
