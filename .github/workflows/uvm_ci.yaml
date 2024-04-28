@@ -12,3 +12,4 @@ jobs:
       test-names: "gpio8_all_out_test gpio8_all_in_test"
       name: EF_GPIO
       buses: APB
+      is-ip: true
