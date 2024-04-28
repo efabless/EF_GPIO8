@@ -5,11 +5,18 @@ on:
   pull_request: # This now triggers on pull requests to any branch
 
 jobs:
-  Run-IP-Tests:
-    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@support-ip-ci
-    with:
-      url: "n/a"
-      test-names: "gpio8_all_out_test gpio8_all_in_test"
-      name: EF_GPIO
-      buses: APB
-      is-ip: true
+  Test:
+    runs-on: ubuntu-latest
+    outputs:
+      IPs: ${{ steps.set-IPs-matrix.outputs.IPs }}
+    steps:
+      - name: test
+        uses: efabless/EF_UVM/.github/actions/get-bus@support-ip-ci
+  #  Run-IP-Tests:
+  #    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@support-ip-ci
+  #    with:
+  #      url: "n/a"
+  #      test-names: "gpio8_all_out_test gpio8_all_in_test"
+  #      name: EF_GPIO
+  #      buses: APB
+  #      is-ip: true
