@@ -1,4 +1,4 @@
-name: Run UVM all tests
+name: Run UVM tests
 
 on:
   push: # This now triggers on pushes to any branch
