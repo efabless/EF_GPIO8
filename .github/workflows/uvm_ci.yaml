@@ -10,8 +10,11 @@ jobs:
     outputs:
       IPs: ${{ steps.set-IPs-matrix.outputs.IPs }}
     steps:
-      - name: test
+      - name: Fetch Supported Buses
+        id: fetch_buses
         uses: efabless/EF_UVM/.github/actions/get-bus@support-ip-ci
+      - name: Check Output
+        runs: echo ${{ steps.fetch_buses.outputs.buses }}
   #  Run-IP-Tests:
   #    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@support-ip-ci
   #    with:
