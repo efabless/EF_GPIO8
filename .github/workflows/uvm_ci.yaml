@@ -22,7 +22,7 @@ jobs:
     needs: [Extract-Buses]
     steps:
       - name: Check Output
-        run: echo ${{ needs.jobs.Extract-Buses.outputs.buses }}
+        run: echo ${{ needs.Extract-Buses.outputs.buses }}
     #with:
     #  test-names: "all_tests"
     #  name: ${{ github.event.repository.name }}
