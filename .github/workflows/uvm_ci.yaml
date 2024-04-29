@@ -18,7 +18,7 @@ jobs:
         run: echo ${{ steps.extract_buses.outputs.buses }}
   Run-IP-Tests:
     uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@support-ip-ci
-    needs: [Fetch-Buses]
+    needs: [Extract-Buses]
     with:
       test-names: "all_tests"
       name: ${{ github.event.repository.name }}
