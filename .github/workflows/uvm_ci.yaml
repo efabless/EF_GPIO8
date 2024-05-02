@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Extract Supported Buses
         id: extract_buses
-        uses: efabless/EF_UVM/.github/actions/get-bus@support-ip-ci
+        uses: efabless/EF_UVM/.github/actions/get-bus
       - name: Check Output
         run: echo ${{ steps.extract_buses.outputs.buses }}
   Run-IP-Tests:
-    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@support-ip-ci
+    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml
     needs: [Extract-Buses]
     with:
       test-names: "all_tests"
