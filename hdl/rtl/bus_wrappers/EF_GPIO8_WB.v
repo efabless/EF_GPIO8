@@ -1,5 +1,5 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
 	Author: Mohamed Shalan (mshalan@efabless.com)
 
@@ -28,19 +28,18 @@
 
 module EF_GPIO8_WB (
 	`WB_SLAVE_PORTS,
-	input	[7:0]	io_in,
-	output	[7:0]	io_out,
-	output	[7:0]	io_oe
+	input	[8-1:0]	io_in,
+	output	[8-1:0]	io_out,
+	output	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = `WB_AW'd0;
-	localparam	DATAO_REG_OFFSET = `WB_AW'd4;
-	localparam	DIR_REG_OFFSET = `WB_AW'd8;
-	localparam	IM_REG_OFFSET = `WB_AW'd3840;
-	localparam	MIS_REG_OFFSET = `WB_AW'd3844;
-	localparam	RIS_REG_OFFSET = `WB_AW'd3848;
-	localparam	IC_REG_OFFSET = `WB_AW'd3852;
-
+	localparam	DATAI_REG_OFFSET = `WB_AW'h0000;
+	localparam	DATAO_REG_OFFSET = `WB_AW'h0004;
+	localparam	DIR_REG_OFFSET = `WB_AW'h0008;
+	localparam	IM_REG_OFFSET = `WB_AW'hFF00;
+	localparam	MIS_REG_OFFSET = `WB_AW'hFF04;
+	localparam	RIS_REG_OFFSET = `WB_AW'hFF08;
+	localparam	IC_REG_OFFSET = `WB_AW'hFF0C;
 	wire		clk = clk_i;
 	wire		rst_n = (~rst_i);
 
@@ -83,14 +82,15 @@ module EF_GPIO8_WB (
 	wire [1-1:0]	pin6_ne;
 	wire [1-1:0]	pin7_ne;
 
+	// Register Definitions
 	wire [8-1:0]	DATAI_WIRE;
 	assign	DATAI_WIRE = bus_in;
 
-	reg [8-1:0]	DATAO_REG;
+	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
 	`WB_REG(DATAO_REG, 0, 8)
 
-	reg [8-1:0]	DIR_REG;
+	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	`WB_REG(DIR_REG, 0, 8)
 

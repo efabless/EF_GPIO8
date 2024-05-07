@@ -1,7 +1,7 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -22,25 +22,24 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
-`define				APB_AW			16
+`define				APB_AW		16
 
 `include			"apb_wrapper.vh"
 
 module EF_GPIO8_APB (
 	`APB_SLAVE_PORTS,
-	input	[7:0]	io_in,
-	output	[7:0]	io_out,
-	output	[7:0]	io_oe
+	input	[8-1:0]	io_in,
+	output	[8-1:0]	io_out,
+	output	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = `APB_AW'd0;
-	localparam	DATAO_REG_OFFSET = `APB_AW'd4;
-	localparam	DIR_REG_OFFSET = `APB_AW'd8;
-	localparam	IM_REG_OFFSET = `APB_AW'd3840;
-	localparam	MIS_REG_OFFSET = `APB_AW'd3844;
-	localparam	RIS_REG_OFFSET = `APB_AW'd3848;
-	localparam	IC_REG_OFFSET = `APB_AW'd3852;
-
+	localparam	DATAI_REG_OFFSET = `APB_AW'h0000;
+	localparam	DATAO_REG_OFFSET = `APB_AW'h0004;
+	localparam	DIR_REG_OFFSET = `APB_AW'h0008;
+	localparam	IM_REG_OFFSET = `APB_AW'hFF00;
+	localparam	MIS_REG_OFFSET = `APB_AW'hFF04;
+	localparam	RIS_REG_OFFSET = `APB_AW'hFF08;
+	localparam	IC_REG_OFFSET = `APB_AW'hFF0C;
 	wire		clk = PCLK;
 	wire		rst_n = PRESETn;
 
@@ -83,15 +82,15 @@ module EF_GPIO8_APB (
 	wire [1-1:0]	pin6_ne;
 	wire [1-1:0]	pin7_ne;
 
-
+	// Register Definitions
 	wire [8-1:0]	DATAI_WIRE;
 	assign	DATAI_WIRE = bus_in;
 
-	reg [8-1:0]	DATAO_REG;
+	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
 	`APB_REG(DATAO_REG, 0, 8)
 
-	reg [8-1:0]	DIR_REG;
+	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	`APB_REG(DIR_REG, 0, 8)
 
@@ -292,6 +291,6 @@ module EF_GPIO8_APB (
 			(PADDR[`APB_AW-1:0] == IC_REG_OFFSET)	? IC_REG :
 			32'hDEADBEEF;
 
-	assign PREADY = 1'b1;
+	assign	PREADY = 1'b1;
 
 endmodule

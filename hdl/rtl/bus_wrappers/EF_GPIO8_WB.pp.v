@@ -1,5 +1,5 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
 	Author: Mohamed Shalan (mshalan@efabless.com)
 
@@ -22,7 +22,6 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
-
 module EF_GPIO8_WB (
 	input   wire            ext_clk,
                                         input   wire            clk_i,
@@ -36,19 +35,18 @@ module EF_GPIO8_WB (
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-	input	[7:0]	io_in,
-	output	[7:0]	io_out,
-	output	[7:0]	io_oe
+	input	[8-1:0]	io_in,
+	output	[8-1:0]	io_out,
+	output	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = 16'd0;
-	localparam	DATAO_REG_OFFSET = 16'd4;
-	localparam	DIR_REG_OFFSET = 16'd8;
-	localparam	IM_REG_OFFSET = 16'd3840;
-	localparam	MIS_REG_OFFSET = 16'd3844;
-	localparam	RIS_REG_OFFSET = 16'd3848;
-	localparam	IC_REG_OFFSET = 16'd3852;
-
+	localparam	DATAI_REG_OFFSET = 16'h0000;
+	localparam	DATAO_REG_OFFSET = 16'h0004;
+	localparam	DIR_REG_OFFSET = 16'h0008;
+	localparam	IM_REG_OFFSET = 16'hFF00;
+	localparam	MIS_REG_OFFSET = 16'hFF04;
+	localparam	RIS_REG_OFFSET = 16'hFF08;
+	localparam	IC_REG_OFFSET = 16'hFF0C;
 	wire		clk = clk_i;
 	wire		rst_n = (~rst_i);
 
@@ -94,14 +92,15 @@ module EF_GPIO8_WB (
 	wire [1-1:0]	pin6_ne;
 	wire [1-1:0]	pin7_ne;
 
+	// Register Definitions
 	wire [8-1:0]	DATAI_WIRE;
 	assign	DATAI_WIRE = bus_in;
 
-	reg [8-1:0]	DATAO_REG;
+	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) DATAO_REG <= 0; else if(wb_we & (adr_i[16-1:0]==DATAO_REG_OFFSET)) DATAO_REG <= dat_i[8-1:0];
 
-	reg [8-1:0]	DIR_REG;
+	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) DIR_REG <= 0; else if(wb_we & (adr_i[16-1:0]==DIR_REG_OFFSET)) DIR_REG <= dat_i[8-1:0];
 

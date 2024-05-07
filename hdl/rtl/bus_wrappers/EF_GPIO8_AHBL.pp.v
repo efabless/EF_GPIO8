@@ -1,7 +1,7 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
-
 module EF_GPIO8_AHBL (
 	input wire          HCLK,
                                         input wire          HRESETn,
@@ -36,26 +35,30 @@ module EF_GPIO8_AHBL (
                                         output wire [31:0]  HRDATA,
                                         output wire         IRQ
 ,
-	input	[7:0]	io_in,
-	output	[7:0]	io_out,
-	output	[7:0]	io_oe
+	input	[8-1:0]	io_in,
+	output	[8-1:0]	io_out,
+	output	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = 16'd0;
-	localparam	DATAO_REG_OFFSET = 16'd4;
-	localparam	DIR_REG_OFFSET = 16'd8;
-	localparam	IM_REG_OFFSET = 16'd3840;
-	localparam	MIS_REG_OFFSET = 16'd3844;
-	localparam	RIS_REG_OFFSET = 16'd3848;
-	localparam	IC_REG_OFFSET = 16'd3852;
-
+	localparam	DATAI_REG_OFFSET = 16'h0000;
+	localparam	DATAO_REG_OFFSET = 16'h0004;
+	localparam	DIR_REG_OFFSET = 16'h0008;
+	localparam	IM_REG_OFFSET = 16'hFF00;
+	localparam	MIS_REG_OFFSET = 16'hFF04;
+	localparam	RIS_REG_OFFSET = 16'hFF08;
+	localparam	IC_REG_OFFSET = 16'hFF0C;
 	wire		clk = HCLK;
 	wire		rst_n = HRESETn;
 
 
 	reg  last_HSEL, last_HWRITE; reg [31:0] last_HADDR; reg [1:0] last_HTRANS;
-                                        always@ (posedge HCLK) begin
-                                            if(HREADY) begin
+                                        always@ (posedge HCLK or negedge HRESETn) begin
+					   if(~HRESETn) begin
+					       last_HSEL       <= 1'b0;
+					       last_HADDR      <= 1'b0;
+					       last_HWRITE     <= 1'b0;
+					       last_HTRANS     <= 1'b0;
+				            end else if(HREADY) begin
                                                 last_HSEL       <= HSEL;
                                                 last_HADDR      <= HADDR;
                                                 last_HWRITE     <= HWRITE;
@@ -102,17 +105,17 @@ module EF_GPIO8_AHBL (
 	wire [1-1:0]	pin6_ne;
 	wire [1-1:0]	pin7_ne;
 
-
+	// Register Definitions
 	wire [8-1:0]	DATAI_WIRE;
 	assign	DATAI_WIRE = bus_in;
 
-	reg [8-1:0]	DATAO_REG;
+	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
 	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) DATAO_REG <= 0;
                                         else if(ahbl_we & (last_HADDR[16-1:0]==DATAO_REG_OFFSET))
                                             DATAO_REG <= HWDATA[8-1:0];
 
-	reg [8-1:0]	DIR_REG;
+	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) DIR_REG <= 0;
                                         else if(ahbl_we & (last_HADDR[16-1:0]==DIR_REG_OFFSET))

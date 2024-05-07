@@ -1,7 +1,7 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -23,54 +23,6 @@
 `default_nettype	none
 
 
-
-/*
-	Copyright 2020 AUCOHL
-
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-	
-	Licensed under the Apache License, Version 2.0 (the "License"); 
-	you may not use this file except in compliance with the License. 
-	You may obtain a copy of the License at:
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software 
-	distributed under the License is distributed on an "AS IS" BASIS, 
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	See the License for the specific language governing permissions and 
-	limitations under the License.
-*/
-
-
-
-
-
-
-                                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_GPIO8_APB (
 	input wire          PCLK,
                                         input wire          PRESETn,
@@ -83,19 +35,18 @@ module EF_GPIO8_APB (
                                         output wire [31:0]  PRDATA,
                                         output wire         IRQ
 ,
-	input	[7:0]	io_in,
-	output	[7:0]	io_out,
-	output	[7:0]	io_oe
+	input	[8-1:0]	io_in,
+	output	[8-1:0]	io_out,
+	output	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = 16'd0;
-	localparam	DATAO_REG_OFFSET = 16'd4;
-	localparam	DIR_REG_OFFSET = 16'd8;
-	localparam	IM_REG_OFFSET = 16'd3840;
-	localparam	MIS_REG_OFFSET = 16'd3844;
-	localparam	RIS_REG_OFFSET = 16'd3848;
-	localparam	IC_REG_OFFSET = 16'd3852;
-
+	localparam	DATAI_REG_OFFSET = 16'h0000;
+	localparam	DATAO_REG_OFFSET = 16'h0004;
+	localparam	DIR_REG_OFFSET = 16'h0008;
+	localparam	IM_REG_OFFSET = 16'hFF00;
+	localparam	MIS_REG_OFFSET = 16'hFF04;
+	localparam	RIS_REG_OFFSET = 16'hFF08;
+	localparam	IC_REG_OFFSET = 16'hFF0C;
 	wire		clk = PCLK;
 	wire		rst_n = PRESETn;
 
@@ -140,17 +91,17 @@ module EF_GPIO8_APB (
 	wire [1-1:0]	pin6_ne;
 	wire [1-1:0]	pin7_ne;
 
-
+	// Register Definitions
 	wire [8-1:0]	DATAI_WIRE;
 	assign	DATAI_WIRE = bus_in;
 
-	reg [8-1:0]	DATAO_REG;
+	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) DATAO_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==DATAO_REG_OFFSET))
                                             DATAO_REG <= PWDATA[8-1:0];
 
-	reg [8-1:0]	DIR_REG;
+	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) DIR_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==DIR_REG_OFFSET))
@@ -359,6 +310,6 @@ module EF_GPIO8_APB (
 			(PADDR[16-1:0] == IC_REG_OFFSET)	? IC_REG :
 			32'hDEADBEEF;
 
-	assign PREADY = 1'b1;
+	assign	PREADY = 1'b1;
 
 endmodule

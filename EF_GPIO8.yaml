@@ -32,6 +32,8 @@ info:
     - WB: 588
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
+  irq_reg_offset: 0xFF00
+  fifo_reg_offset: 0xFE00
 
 ports:
   - name: bus_in
