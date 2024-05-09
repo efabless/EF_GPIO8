@@ -27,6 +27,7 @@ from gpio8_seq_lib.gpio8_write_im_seq import gpio8_write_im_seq
 from gpio8_seq_lib.gpio8_write_ic_seq import gpio8_write_ic_seq
 from gpio8_seq_lib.gpio8_read_ris_seq import gpio8_read_ris_seq
 from gpio8_seq_lib.gpio8_read_mis_seq import gpio8_read_mis_seq
+from gpio8_seq_lib.gpio8_send_nop_seq import gpio8_send_nop_seq
 
 
 # override classes
@@ -94,6 +95,12 @@ class gpio8_base_test(base_test):
         )
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
 
+    async def delay(self, cycles=None):
+        bus_gpio8_send_nop_seq = gpio8_send_nop_seq("gpio8_send_nop_seq")
+        if cycles is None:
+            cycles = 1
+        for _ in range(cycles):
+            await bus_gpio8_send_nop_seq.start(self.bus_sqr)
 
 uvm_component_utils(gpio8_base_test)
 
@@ -236,6 +243,7 @@ class gpio8_interrupts_test(gpio8_base_test):
                 1 << i
             )  # set IO {i} to high (to preven the rising of the irq again)
             await ip_gpio_set_io_in_seq.start(self.ip_sqr)
+            bus_gpio8_write_ic_seq.set_ic(0xFFFFFFFF)
             await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
 
         # Positive Edge interrupts
@@ -271,6 +279,7 @@ class gpio8_interrupts_test(gpio8_base_test):
             await bus_gpio8_read_mis_seq.start(
                 self.bus_sqr
             )  # read mis to check that it has the correct value
+            bus_gpio8_write_ic_seq.set_ic(0xFFFFFFFF)
             await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
 
         await Timer(1000, "ns")
