@@ -1,7 +1,7 @@
 /*
-	Copyright 2023 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -65,11 +65,11 @@ typedef struct _EF_GPIO8_TYPE_ {
 	__R 	DATAI;
 	__W 	DATAO;
 	__W 	DIR;
-	__R 	reserved[957];
-	__RW	im;
-	__R 	mis;
-	__R 	ris;
-	__W 	icr;
+	__R 	reserved_0[16317];
+	__RW	IM;
+	__R 	MIS;
+	__R 	RIS;
+	__W 	IC;
 } EF_GPIO8_TYPE;
 
 #endif

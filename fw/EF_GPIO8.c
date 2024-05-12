@@ -53,11 +53,7 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir){
     gpio->DIR = directions;
 }
 
-void EF_GPIO8_setIM(uint32_t gpio_base, int data){
-    
-    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    gpio->im = data;
-}
+
 
 // Interrupts bits in RIS, MIS, IM, and ICR
  // bit 0: TX FIFO is Empty
@@ -74,31 +70,31 @@ void EF_GPIO8_setIM(uint32_t gpio_base, int data){
 int EF_GPIO8_getRIS(uint32_t gpio_base){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    return (gpio->ris);
+    return (gpio->RIS);
 }
 
 int EF_GPIO8_getMIS(uint32_t gpio_base){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    return (gpio->mis);
+    return (gpio->MIS);
 }
 
 void EF_GPIO8_setIM(uint32_t gpio_base, int mask){
    
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    gpio->im |= mask;
+    gpio->IM |= mask;
 }
 
 int EF_GPIO8_getIM(uint32_t gpio_base){
 
    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    return (gpio->im);
+    return (gpio->IM);
 }
 
 void EF_GPIO8_setICR(uint32_t gpio_base, int mask){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    (gpio->icr) |= mask;
+    (gpio->IC) |= mask;
 }	
 
 #endif // GPIO_H
