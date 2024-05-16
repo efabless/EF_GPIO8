@@ -12,12 +12,12 @@ int EF_GPIO8_readData(uint32_t gpio_base){
 
 void EF_GPIO8_waitInput(uint32_t gpio_base, int data){
      EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    while (EF_GPIO_readData(gpio_base) != data);
+    while (EF_GPIO8_readData(gpio_base) != data);
 }
 
 void EF_GPIO8_wait_InputPin(uint32_t gpio_base, int pin, int data){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    while ((EF_GPIO_readData(gpio_base) & (1 << pin)) != data);
+    while ((EF_GPIO8_readData(gpio_base) & (1 << pin)) != data);
 }
 
 // inline void GPIO_writeData(enum port_types port, int data) __attribute__((always_inline));
