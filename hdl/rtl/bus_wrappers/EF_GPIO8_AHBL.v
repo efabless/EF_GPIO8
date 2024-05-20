@@ -28,9 +28,9 @@
 
 module EF_GPIO8_AHBL (
 	`AHBL_SLAVE_PORTS,
-	input	[8-1:0]	io_in,
-	output	[8-1:0]	io_out,
-	output	[8-1:0]	io_oe
+	input	wire	[8-1:0]	io_in,
+	output	wire	[8-1:0]	io_out,
+	output	wire	[8-1:0]	io_oe
 );
 
 	localparam	DATAI_REG_OFFSET = `AHBL_AW'h0000;

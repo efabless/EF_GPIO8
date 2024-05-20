@@ -35,9 +35,9 @@ module EF_GPIO8_WB (
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-	input	[8-1:0]	io_in,
-	output	[8-1:0]	io_out,
-	output	[8-1:0]	io_oe
+										input	wire	[8-1:0]	io_in,
+										output	wire	[8-1:0]	io_out,
+										output	wire	[8-1:0]	io_oe
 );
 
 	localparam	DATAI_REG_OFFSET = 16'h0000;

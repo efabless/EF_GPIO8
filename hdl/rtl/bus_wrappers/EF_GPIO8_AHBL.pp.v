@@ -35,9 +35,9 @@ module EF_GPIO8_AHBL (
                                         output wire [31:0]  HRDATA,
                                         output wire         IRQ
 ,
-	input	[8-1:0]	io_in,
-	output	[8-1:0]	io_out,
-	output	[8-1:0]	io_oe
+input	wire	[8-1:0]	io_in,
+output	wire	[8-1:0]	io_out,
+output	wire	[8-1:0]	io_oe
 );
 
 	localparam	DATAI_REG_OFFSET = 16'h0000;
