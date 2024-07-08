@@ -28,8 +28,8 @@
 
 module EF_GPIO8_APB (
 `ifdef USE_POWER_PINS
-	input wire VPWR,
-	input wire VGND,
+	inout VPWR,
+	inout VGND,
 `endif
 	`APB_SLAVE_PORTS,
 	input	wire	[8-1:0]	io_in,
