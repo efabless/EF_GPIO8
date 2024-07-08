@@ -22,8 +22,11 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
-
 module EF_GPIO8_APB (
+`ifdef USE_POWER_PINS 
+	input wire VPWR,
+	input wire VGND,
+`endif 
 	input wire          PCLK,
                                         input wire          PRESETn,
                                         input wire          PWRITE,
@@ -35,9 +38,9 @@ module EF_GPIO8_APB (
                                         output wire [31:0]  PRDATA,
                                         output wire         IRQ
 ,
-input	wire	[8-1:0]	io_in,
-output	wire	[8-1:0]	io_out,
-output	wire	[8-1:0]	io_oe
+	input	wire	[8-1:0]	io_in,
+	output	wire	[8-1:0]	io_out,
+	output	wire	[8-1:0]	io_oe
 );
 
 	localparam	DATAI_REG_OFFSET = 16'h0000;
@@ -47,7 +50,23 @@ output	wire	[8-1:0]	io_oe
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = PCLK;
+
+        wire clk_g;
+        wire clk_gated_en = GCLK_REG[0];
+
+    (* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
+	`ifdef USE_POWER_PINS 
+        .VPWR(VPWR), 
+        .VGND(VGND), 
+        .VNB(VGND),
+		.VPB(VPWR),
+    `endif
+        .GCLK(clk_g), 
+        .GATE(clk_gated_en), 
+        .CLK(PCLK)
+        );
+        
+	wire		clk = clk_g;
 	wire		rst_n = PRESETn;
 
 
@@ -106,6 +125,12 @@ output	wire	[8-1:0]	io_oe
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) DIR_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==DIR_REG_OFFSET))
                                             DIR_REG <= PWDATA[8-1:0];
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	reg [0:0] GCLK_REG;
+	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) GCLK_REG <= 0;
+                                        else if(apb_we & (PADDR[16-1:0]==GCLK_REG_OFFSET))
+                                            GCLK_REG <= PWDATA[1-1:0];
 
 	reg [31:0] IM_REG;
 	reg [31:0] IC_REG;
@@ -308,6 +333,7 @@ output	wire	[8-1:0]	io_oe
 			(PADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(PADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(PADDR[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(PADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	PREADY = 1'b1;

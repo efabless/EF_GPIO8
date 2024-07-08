@@ -70,6 +70,7 @@ typedef struct _EF_GPIO8_TYPE_ {
 	__R 	MIS;
 	__R 	RIS;
 	__W 	IC;
+	__W 	GCLK;
 } EF_GPIO8_TYPE;
 
 #endif

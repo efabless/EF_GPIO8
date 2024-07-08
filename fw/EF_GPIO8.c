@@ -3,6 +3,10 @@
 
 #include <EF_GPIO8.h>
 
+void EF_GPIO_setGclkEnable (uint32_t gpio_base, int value){
+    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
+    gpio->GCLK = value;
+}
 
 // inline int GPIO_readData(enum port_types port) __attribute__((always_inline));
 int EF_GPIO8_readData(uint32_t gpio_base){
