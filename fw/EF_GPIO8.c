@@ -3,7 +3,7 @@
 
 #include <EF_GPIO8.h>
 
-void EF_GPIO_setGclkEnable (uint32_t gpio_base, int value){
+void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->GCLK = value;
 }
