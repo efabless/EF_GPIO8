@@ -45,6 +45,7 @@ module EF_GPIO8_APB (
 	localparam	RIS_REG_OFFSET = `APB_AW'hFF08;
 	localparam	IC_REG_OFFSET = `APB_AW'hFF0C;
 
+        reg [0:0] GCLK_REG;
         wire clk_g;
         wire clk_gated_en = GCLK_REG[0];
 
@@ -115,7 +116,6 @@ module EF_GPIO8_APB (
 	`APB_REG(DIR_REG, 0, 8)
 
 	localparam	GCLK_REG_OFFSET = `APB_AW'hFF10;
-	reg [0:0] GCLK_REG;
 	`APB_REG(GCLK_REG, 0, 1)
 
 	reg [31:0] IM_REG;
