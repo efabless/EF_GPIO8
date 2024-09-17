@@ -7,8 +7,8 @@ info:
   license: APACHE 2.0
   author: Mohamed Shalan
   email: mshalan@efabless.com
-  version: v1.0.9
-  date: 09-07-2024
+  version: v1.0.10
+  date: 17-09-2024
   category: digital
   tags:
     - peripheral
