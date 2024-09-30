@@ -12,6 +12,9 @@
 #define GPIO8_INPUT 0
 #define GPIO8_OUTPUT 1
 
+void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value);
+
+
 //! reads the input value of the GPIOs
     /*!
       \param gpio_base The base memory address of GPIO registers.

@@ -7,8 +7,8 @@ info:
   license: APACHE 2.0
   author: Mohamed Shalan
   email: mshalan@efabless.com
-  version: v1.0.1
-  date: 15-4-2024
+  version: v1.0.10
+  date: 17-09-2024
   category: digital
   tags:
     - peripheral
@@ -21,6 +21,7 @@ info:
     - IP: 72
     - APB: 476
     - AHBL: 493
+    - WB: 574
   width": "0.0"
   height": "0.0"
   technology: n/a
@@ -28,8 +29,11 @@ info:
     - IP: 1666
     - APB: 1250
     - AHBL: 294
+    - WB: 588
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
+  irq_reg_offset: 0xFF00
+  fifo_reg_offset: 0xFE00
 
 ports:
   - name: bus_in

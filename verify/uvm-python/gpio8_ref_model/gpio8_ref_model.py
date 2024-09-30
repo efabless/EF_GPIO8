@@ -164,12 +164,14 @@ class gpio8_ref_model(ref_model):
             if irq_new and not self.irq: # irq changed from low to high 
                 self.irq = 1 
                 tr = bus_irq_item.type_id.create("tr", self)
-                tr.trg_irq = 1                      
+                tr.trg_irq = 1         
+                uvm_info (self.tag, f"sending irq tr {tr}", UVM_LOW)   
                 self.bus_irq_export.write(tr)
             elif not irq_new and self.irq: # irq changed from high to low 
                 self.irq = 0
                 tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 0
+                uvm_info (self.tag, f"sending irq tr {tr}", UVM_LOW)   
                 self.bus_irq_export.write(tr)
             
             self.mis_changed.clear()

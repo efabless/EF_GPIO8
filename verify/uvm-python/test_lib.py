@@ -5,7 +5,12 @@ from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.base.uvm_object_globals import UVM_LOW
 from uvm.base.uvm_globals import run_test
 from gpio8_interface.gpio8_if import gpio8_if
-from EF_UVM.bus_env.bus_interface.bus_if import bus_apb_if, bus_irq_if, bus_ahb_if, bus_wb_if
+from EF_UVM.bus_env.bus_interface.bus_if import (
+    bus_apb_if,
+    bus_irq_if,
+    bus_ahb_if,
+    bus_wb_if,
+)
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First, Timer
 from EF_UVM.bus_env.bus_regs import bus_regs
@@ -22,6 +27,7 @@ from gpio8_seq_lib.gpio8_write_im_seq import gpio8_write_im_seq
 from gpio8_seq_lib.gpio8_write_ic_seq import gpio8_write_ic_seq
 from gpio8_seq_lib.gpio8_read_ris_seq import gpio8_read_ris_seq
 from gpio8_seq_lib.gpio8_read_mis_seq import gpio8_read_mis_seq
+from gpio8_seq_lib.gpio8_send_nop_seq import gpio8_send_nop_seq
 
 
 # override classes
@@ -41,7 +47,7 @@ from gpio8_logger.gpio8_logger import gpio8_logger
 async def module_top(dut):
     # profiler = cProfile.Profile()
     # profiler.enable()
-    BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+    BUS_TYPE = cocotb.plusargs["BUS_TYPE"]
     pif = gpio8_if(dut)
     if BUS_TYPE == "APB":
         w_if = bus_apb_if(dut)
@@ -74,8 +80,8 @@ async def module_top(dut):
 
 class gpio8_base_test(base_test):
     def __init__(self, name="gpio8_first_test", parent=None):
-        BUS_TYPE = cocotb.plusargs['BUS_TYPE']
-        super().__init__(name, bus_type=BUS_TYPE , parent=parent)
+        BUS_TYPE = cocotb.plusargs["BUS_TYPE"]
+        super().__init__(name, bus_type=BUS_TYPE, parent=parent)
         self.tag = name
 
     def build_phase(self, phase):
@@ -84,9 +90,17 @@ class gpio8_base_test(base_test):
         self.set_type_override_by_type(ip_driver.get_type(), gpio8_driver.get_type())
         self.set_type_override_by_type(ip_monitor.get_type(), gpio8_monitor.get_type())
         self.set_type_override_by_type(ref_model.get_type(), gpio8_ref_model.get_type())
-        self.set_type_override_by_type(ip_coverage.get_type(), gpio8_coverage.get_type())
+        self.set_type_override_by_type(
+            ip_coverage.get_type(), gpio8_coverage.get_type()
+        )
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
 
+    async def delay(self, cycles=None):
+        bus_gpio8_send_nop_seq = gpio8_send_nop_seq("gpio8_send_nop_seq")
+        if cycles is None:
+            cycles = 1
+        for _ in range(cycles):
+            await bus_gpio8_send_nop_seq.start(self.bus_sqr)
 
 uvm_component_utils(gpio8_base_test)
 
@@ -96,7 +110,7 @@ class gpio8_all_out_test(gpio8_base_test):
         super().__init__(name, parent)
         self.tag = name
 
-    async def run_phase(self, phase):
+    async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         bus_gpio8_write_dir_seq = gpio8_write_dir_seq("gpio8_write_dir_seq")
@@ -108,14 +122,16 @@ class gpio8_all_out_test(gpio8_base_test):
         await bus_gpio8_write_datao_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
+
 uvm_component_utils(gpio8_all_out_test)
+
 
 class gpio8_all_in_test(gpio8_base_test):
     def __init__(self, name="gpio8_all_in_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
 
-    async def run_phase(self, phase):
+    async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         bus_gpio8_write_dir_seq = gpio8_write_dir_seq("gpio8_write_dir_seq")
@@ -129,6 +145,7 @@ class gpio8_all_in_test(gpio8_base_test):
         await bus_gpio8_read_datai_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
+
 uvm_component_utils(gpio8_all_in_test)
 
 
@@ -137,7 +154,7 @@ class gpio8_rand_test(gpio8_base_test):
         super().__init__(name, parent)
         self.tag = name
 
-    async def run_phase(self, phase):
+    async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         bus_gpio8_write_dir_seq = gpio8_write_dir_seq("gpio8_write_dir_seq")
@@ -146,100 +163,127 @@ class gpio8_rand_test(gpio8_base_test):
         bus_gpio8_read_datai_seq = gpio8_read_datai_seq("gpio8_read_datai_seq")
         bus_gpio8_read_ris_seq = gpio8_read_ris_seq("gpio8_read_ris_seq")
         bus_gpio8_write_ic_seq = gpio8_write_ic_seq("gpio8_write_ic_seq")
-        bus_gpio8_write_ic_seq.set_ic (0xFFFFFFFF)
-        
+        bus_gpio8_write_ic_seq.set_ic(0xFFFFFFFF)
+
         for _ in range(70):
-            rand_dir = random.choice (range(0, 0xFF))
+            rand_dir = random.choice(range(0, 0xFF))
             bus_gpio8_write_dir_seq.set_gpios_dir(rand_dir)
             bus_gpio8_write_datao_seq.set_gpios_dir(rand_dir)
             ip_gpio_set_io_in_seq.set_gpios_dir(rand_dir)
             await bus_gpio8_write_dir_seq.start(self.bus_sqr)
             await bus_gpio8_write_datao_seq.start(self.bus_sqr)
             await ip_gpio_set_io_in_seq.start(self.ip_sqr)
-            await bus_gpio8_read_ris_seq.start(self.bus_sqr)        # read ris to check that it has the correct value 
-            await bus_gpio8_write_ic_seq.start(self.bus_sqr)        # clear all interrupts 
+            await bus_gpio8_read_ris_seq.start(
+                self.bus_sqr
+            )  # read ris to check that it has the correct value
+            await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear all interrupts
             await bus_gpio8_read_datai_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
+
 uvm_component_utils(gpio8_rand_test)
+
 
 class gpio8_interrupts_test(gpio8_base_test):
     def __init__(self, name="gpio8_interrupts_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
 
-    async def run_phase(self, phase):
+    async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
-        bus_gpio8_write_dir_seq = gpio8_write_dir_seq("gpio8_write_dir_seq") 
+        bus_gpio8_write_dir_seq = gpio8_write_dir_seq("gpio8_write_dir_seq")
         ip_gpio_set_io_in_seq = gpio8_set_io_in_seq("gpio8_set_io_in_seq")
-        bus_gpio8_write_dir_seq.set_gpios_dir(0) # set all IOs dir to input 
+        bus_gpio8_write_dir_seq.set_gpios_dir(0)  # set all IOs dir to input
         ip_gpio_set_io_in_seq.set_gpios_dir(0)
         bus_gpio8_write_im_seq = gpio8_write_im_seq("gpio8_write_im_seq")
         bus_gpio8_write_ic_seq = gpio8_write_ic_seq("gpio8_write_ic_seq")
         bus_gpio8_read_ris_seq = gpio8_read_ris_seq("gpio8_read_ris_seq")
         bus_gpio8_read_mis_seq = gpio8_read_mis_seq("gpio8_read_mis_seq")
 
+        await bus_gpio8_write_dir_seq.start(
+            self.bus_sqr
+        )  # set all IOs direction to input because interrupts are for input IOs
 
-        await bus_gpio8_write_dir_seq.start(self.bus_sqr)          # set all IOs direction to input because interrupts are for input IOs 
-        
-        # IO is high 
-        for i in range (8):
+        # IO is high
+        for i in range(8):
             bus_gpio8_write_im_seq.set_im(1 << i)
-            ip_gpio_set_io_in_seq.set_gpios_in (1 << i)
-            bus_gpio8_write_ic_seq.set_ic (1 << i)
-            await bus_gpio8_write_im_seq.start( self.bus_sqr)       # mask the interrupt 
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          # set the IO
-            await bus_gpio8_read_ris_seq.start(self.bus_sqr)        # read ris to check that it has the correct value 
-            await bus_gpio8_read_mis_seq.start(self.bus_sqr)        # read mis to check that it has the correct value 
-            ip_gpio_set_io_in_seq.set_gpios_in (0x00)               # set the IOs to low (to prevent the rising of the irq again)
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          
-            await bus_gpio8_write_ic_seq.start(self.bus_sqr)        # clear the interrupt 
-        
-        # IO is low 
-        ip_gpio_set_io_in_seq.set_gpios_in (0xFF)                   # set all IOs to low
-        await ip_gpio_set_io_in_seq.start(self.ip_sqr)              
-        for i in range (8):
-            bus_gpio8_write_im_seq.set_im(1 << (i+8))
-            ip_gpio_set_io_in_seq.set_gpios_in (~(1 << i))          
-            bus_gpio8_write_ic_seq.set_ic (1 << (i+8))
-            await bus_gpio8_write_im_seq.start( self.bus_sqr)       # mask the interrupt 
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          # clear IO i 
-            await bus_gpio8_read_ris_seq.start(self.bus_sqr)        # read ris to check that it has the correct value 
-            await bus_gpio8_read_mis_seq.start(self.bus_sqr)        # read mis to check that it has the correct value 
-            ip_gpio_set_io_in_seq.set_gpios_in (1<<i)               # set IO {i} to high (to preven the rising of the irq again)
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          
-            await bus_gpio8_write_ic_seq.start(self.bus_sqr)        # clear the interrupt 
+            ip_gpio_set_io_in_seq.set_gpios_in(1 << i)
+            bus_gpio8_write_ic_seq.set_ic(1 << i)
+            await bus_gpio8_write_im_seq.start(self.bus_sqr)  # mask the interrupt
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # set the IO
+            await bus_gpio8_read_ris_seq.start(
+                self.bus_sqr
+            )  # read ris to check that it has the correct value
+            await bus_gpio8_read_mis_seq.start(
+                self.bus_sqr
+            )  # read mis to check that it has the correct value
+            ip_gpio_set_io_in_seq.set_gpios_in(
+                0x00
+            )  # set the IOs to low (to prevent the rising of the irq again)
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)
+            await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
+
+        # IO is low
+        ip_gpio_set_io_in_seq.set_gpios_in(0xFF)  # set all IOs to low
+        await ip_gpio_set_io_in_seq.start(self.ip_sqr)
+        for i in range(8):
+            bus_gpio8_write_im_seq.set_im(1 << (i + 8))
+            ip_gpio_set_io_in_seq.set_gpios_in(~(1 << i))
+            bus_gpio8_write_ic_seq.set_ic(1 << (i + 8))
+            await bus_gpio8_write_im_seq.start(self.bus_sqr)  # mask the interrupt
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # clear IO i
+            await bus_gpio8_read_ris_seq.start(
+                self.bus_sqr
+            )  # read ris to check that it has the correct value
+            await bus_gpio8_read_mis_seq.start(
+                self.bus_sqr
+            )  # read mis to check that it has the correct value
+            ip_gpio_set_io_in_seq.set_gpios_in(
+                1 << i
+            )  # set IO {i} to high (to preven the rising of the irq again)
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)
+            bus_gpio8_write_ic_seq.set_ic(0xFFFFFFFF)
+            await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
 
         # Positive Edge interrupts
-        ip_gpio_set_io_in_seq.set_gpios_in (0x00)
-        await ip_gpio_set_io_in_seq.start(self.ip_sqr)              # set all IOs to low
-        for i in range (8):
-            bus_gpio8_write_im_seq.set_im(1 << (i+16))
-            ip_gpio_set_io_in_seq.set_gpios_in (1 << i)
-            bus_gpio8_write_ic_seq.set_ic (1 << (i+16))
-            await bus_gpio8_write_im_seq.start( self.bus_sqr)       # mask the interrupt 
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          # set the IO
-            await bus_gpio8_read_ris_seq.start(self.bus_sqr)        # read ris to check that it has the correct value 
-            await bus_gpio8_read_mis_seq.start(self.bus_sqr)        # read mis to check that it has the correct value 
-            await bus_gpio8_write_ic_seq.start(self.bus_sqr)        # clear the interrupt 
+        ip_gpio_set_io_in_seq.set_gpios_in(0x00)
+        await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # set all IOs to low
+        for i in range(8):
+            bus_gpio8_write_im_seq.set_im(1 << (i + 16))
+            ip_gpio_set_io_in_seq.set_gpios_in(1 << i)
+            bus_gpio8_write_ic_seq.set_ic(1 << (i + 16))
+            await bus_gpio8_write_im_seq.start(self.bus_sqr)  # mask the interrupt
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # set the IO
+            await bus_gpio8_read_ris_seq.start(
+                self.bus_sqr
+            )  # read ris to check that it has the correct value
+            await bus_gpio8_read_mis_seq.start(
+                self.bus_sqr
+            )  # read mis to check that it has the correct value
+            await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
 
         # Negative edge interrupts
-        ip_gpio_set_io_in_seq.set_gpios_in (0xFF)
-        await ip_gpio_set_io_in_seq.start(self.ip_sqr)              # set all IOs to high
-        for i in range (8):
-            gpios_in = 0xFF & ~(1 << i)                             # set IO {i} to low (to create a negative edge)
-            bus_gpio8_write_im_seq.set_im(1 << (i+24))
-            ip_gpio_set_io_in_seq.set_gpios_in (gpios_in)
-            bus_gpio8_write_ic_seq.set_ic (1 << (i+24))
-            await bus_gpio8_write_im_seq.start( self.bus_sqr)       # mask the interrupt 
-            await ip_gpio_set_io_in_seq.start(self.ip_sqr)          # set the IO
-            await bus_gpio8_read_ris_seq.start(self.bus_sqr)        # read ris to check that it has the correct value 
-            await bus_gpio8_read_mis_seq.start(self.bus_sqr)        # read mis to check that it has the correct value 
-            await bus_gpio8_write_ic_seq.start(self.bus_sqr)        # clear the interrupt 
-            
-            
-        await Timer(1000 , "ns")
+        ip_gpio_set_io_in_seq.set_gpios_in(0xFF)
+        await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # set all IOs to high
+        for i in range(8):
+            gpios_in = 0xFF & ~(1 << i)  # set IO {i} to low (to create a negative edge)
+            bus_gpio8_write_im_seq.set_im(1 << (i + 24))
+            ip_gpio_set_io_in_seq.set_gpios_in(gpios_in)
+            bus_gpio8_write_ic_seq.set_ic(1 << (i + 24))
+            await bus_gpio8_write_im_seq.start(self.bus_sqr)  # mask the interrupt
+            await ip_gpio_set_io_in_seq.start(self.ip_sqr)  # set the IO
+            await bus_gpio8_read_ris_seq.start(
+                self.bus_sqr
+            )  # read ris to check that it has the correct value
+            await bus_gpio8_read_mis_seq.start(
+                self.bus_sqr
+            )  # read mis to check that it has the correct value
+            bus_gpio8_write_ic_seq.set_ic(0xFFFFFFFF)
+            await bus_gpio8_write_ic_seq.start(self.bus_sqr)  # clear the interrupt
+
+        await Timer(1000, "ns")
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
+
 
 uvm_component_utils(gpio8_interrupts_test)
