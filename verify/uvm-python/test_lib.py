@@ -95,6 +95,10 @@ class gpio8_base_test(base_test):
         )
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
 
+    def end_of_elaboration_phase(self, phase):
+        super().end_of_elaboration_phase(phase)
+        self.update_min_checkers(4)
+
     async def delay(self, cycles=None):
         bus_gpio8_send_nop_seq = gpio8_send_nop_seq("gpio8_send_nop_seq")
         if cycles is None:
