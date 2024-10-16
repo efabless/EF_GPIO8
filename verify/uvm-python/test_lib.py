@@ -95,9 +95,6 @@ class gpio8_base_test(base_test):
         )
         self.set_type_override_by_type(ip_logger.get_type(), gpio8_logger.get_type())
 
-    def end_of_elaboration_phase(self, phase):
-        super().end_of_elaboration_phase(phase)
-        self.update_min_checkers(4)
 
     async def delay(self, cycles=None):
         bus_gpio8_send_nop_seq = gpio8_send_nop_seq("gpio8_send_nop_seq")
@@ -113,6 +110,10 @@ class gpio8_all_out_test(gpio8_base_test):
     def __init__(self, name="gpio8_all_out_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
+
+    def end_of_elaboration_phase(self, phase):
+        super().end_of_elaboration_phase(phase)
+        self.update_min_checkers(3)
 
     async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
@@ -134,6 +135,10 @@ class gpio8_all_in_test(gpio8_base_test):
     def __init__(self, name="gpio8_all_in_test", parent=None):
         super().__init__(name, parent)
         self.tag = name
+
+    def end_of_elaboration_phase(self, phase):
+        super().end_of_elaboration_phase(phase)
+        self.update_min_checkers(4)
 
     async def main_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
