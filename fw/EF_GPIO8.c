@@ -101,4 +101,36 @@ void EF_GPIO8_setICR(uint32_t gpio_base, int mask){
     (gpio->IC) |= mask;
 }	
 
+// The following functions are not verified yet
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+
+void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, int dir){
+    
+    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
+    int directions  = gpio->DIR;
+    if (dir == GPIO8_OUTPUT)
+        directions |= pins;
+    else
+        directions &= ~pins;
+    gpio->DIR = directions;
+    return;
+}
+
+uint32_t EF_GPIO8_readPackedData(uint32_t gpio_base, uint8_t pins){
+    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
+    return (gpio->DATAI & pins);
+}
+
+void EF_GPIO8_writePackedData(uint32_t gpio_base, uint8_t pins, uint8_t data){
+    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
+    gpio->DATAO = (gpio->DATAO & ~pins) | (data & pins);
+    return;
+}
+
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+
 #endif // GPIO_H

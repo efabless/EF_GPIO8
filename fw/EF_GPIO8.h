@@ -265,4 +265,47 @@ int EF_GPIO8_getIM(uint32_t gpio_base);
     */
 void EF_GPIO8_setICR(uint32_t gpio_base, int mask);
 
+
+
+
+// The following functions are not verified yet
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+
+//! This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value.
+//! Note that all the specified pins are set to the same direction (dir).
+//! Note that the function does not affect the direction of the other pins in the port.
+    /*!
+      \param gpio_base The base memory address of GPIO registers.
+      \param pins The bit-packed representation of the pin(s).
+      \param dir The required direction value
+    */
+void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, int dir);
+
+
+//! This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s).
+    /*!
+      \param gpio_base The base memory address of GPIO registers.
+      \param pins The bit-packed representation of the pin(s).
+      \return The data read from the pin(s)
+    */
+uint32_t EF_GPIO8_readPackedData(uint32_t gpio_base, uint8_t pins);
+
+//! This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s).
+//! Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.
+    /*!
+      \param gpio_base The base memory address of GPIO registers.
+      \param pins The bit-packed representation of the pin(s).
+      \param data The data to be written to the pin(s)
+    */
+void EF_GPIO8_writePackedData(uint32_t gpio_base, uint8_t pins, uint8_t data);
+
+
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+
+
+
 #endif
