@@ -27,6 +27,10 @@
 `include			"wb_wrapper.vh"
 
 module EF_GPIO8_WB (
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
 	`WB_SLAVE_PORTS,
 	input	wire	[8-1:0]	io_in,
 	output	wire	[8-1:0]	io_out,
@@ -40,7 +44,21 @@ module EF_GPIO8_WB (
 	localparam	MIS_REG_OFFSET = `WB_AW'hFF04;
 	localparam	RIS_REG_OFFSET = `WB_AW'hFF08;
 	localparam	IC_REG_OFFSET = `WB_AW'hFF0C;
-	wire		clk = clk_i;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
+        .clk(clk_i),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = (~rst_i);
 
 
@@ -93,6 +111,9 @@ module EF_GPIO8_WB (
 	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	`WB_REG(DIR_REG, 0, 8)
+
+	localparam	GCLK_REG_OFFSET = `WB_AW'hFF10;
+	`WB_REG(GCLK_REG, 0, 1)
 
 	reg [31:0] IM_REG;
 	reg [31:0] IC_REG;

@@ -22,7 +22,65 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+
+
+/*
+	Copyright 2020 AUCOHL
+
+    Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at:
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software 
+	distributed under the License is distributed on an "AS IS" BASIS, 
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	See the License for the specific language governing permissions and 
+	limitations under the License.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        
+
+
 module EF_GPIO8_WB (
+
+
+
+
 	input   wire            ext_clk,
                                         input   wire            clk_i,
                                         input   wire            rst_i,
@@ -35,9 +93,9 @@ module EF_GPIO8_WB (
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-										input	wire	[8-1:0]	io_in,
-										output	wire	[8-1:0]	io_out,
-										output	wire	[8-1:0]	io_oe
+	input	wire	[8-1:0]	io_in,
+	output	wire	[8-1:0]	io_out,
+	output	wire	[8-1:0]	io_oe
 );
 
 	localparam	DATAI_REG_OFFSET = 16'h0000;
@@ -47,7 +105,21 @@ module EF_GPIO8_WB (
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = clk_i;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
+
+
+ // USE_POWER_PINS
+        .clk(clk_i),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = (~rst_i);
 
 
@@ -103,6 +175,9 @@ module EF_GPIO8_WB (
 	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) DIR_REG <= 0; else if(wb_we & (adr_i[16-1:0]==DIR_REG_OFFSET)) DIR_REG <= dat_i[8-1:0];
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) GCLK_REG <= 0; else if(wb_we & (adr_i[16-1:0]==GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
 
 	reg [31:0] IM_REG;
 	reg [31:0] IC_REG;
