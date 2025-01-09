@@ -7,7 +7,7 @@
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
 
-	    http://www.apache.org/licenses/LICENSE-2.0
+	    www.apache.org/licenses/LICENSE-2.0
 
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,12 +25,37 @@
 #ifndef EF_GPIO8_H
 #define EF_GPIO8_H
 
+
+/******************************************************************************
+* Includes
+******************************************************************************/
 #include <EF_GPIO8_regs.h>
 #include <stdint.h>
 
+/******************************************************************************
+* Macros and Constants
+******************************************************************************/
 #define GPIO8_INPUT 0
 #define GPIO8_OUTPUT 1
 
+
+/******************************************************************************
+* Typedefs and Enums
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Function Prototypes
+******************************************************************************/
+
+//! sets the GCLK enable bit in the UART register to a certain value
+    /*!
+        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] value The value of the GCLK enable bit
+        
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
 void EF_GPIO8_setGclkEnable (uint32_t gpio_base, uint32_t value);
 
 
@@ -321,10 +346,16 @@ uint32_t EF_GPIO8_readPackedData(uint32_t gpio_base, uint8_t pins);
 void EF_GPIO8_writePackedData(uint32_t gpio_base, uint8_t pins, uint8_t data);
 
 
-/******************************************************************************************************************************************/
-/******************************************************************************************************************************************/
+
+/******************************************************************************
+* External Variables
+******************************************************************************/
 
 
 
 
-#endif
+#endif // EF_GPIO8_H
+
+/******************************************************************************
+* End of File
+******************************************************************************/

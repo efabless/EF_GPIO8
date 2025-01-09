@@ -7,7 +7,7 @@
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
 
-	    http://www.apache.org/licenses/LICENSE-2.0
+	    www.apache.org/licenses/LICENSE-2.0
 
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,17 +17,49 @@
 
 */
 
+/*! \file EF_GPIO8.c
+    \brief C file for GPIO8 APIs which contains the function Implementations
+    
+*/
+
 #ifndef EF_GPIO8_C
 #define EF_GPIO8_C
 
-#include <EF_GPIO8.h>
+
+/******************************************************************************
+* Includes
+******************************************************************************/
+#include "EF_GPIO8.h"
+
+
+
+/******************************************************************************
+* File-Specific Macros and Constants
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Static Variables
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Static Function Prototypes
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Function Definitions
+******************************************************************************/
 
 void EF_GPIO8_setGclkEnable (uint32_t gpio_base, uint32_t value){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->GCLK = value;
 }
 
-// inline uint32_t GPIO_readData(enum port_types port) __attribute__((always_inline));
 uint32_t EF_GPIO8_readData(uint32_t gpio_base){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->DATAI);
@@ -42,8 +74,6 @@ void EF_GPIO8_wait_InputPin(uint32_t gpio_base, uint32_t pin, uint32_t data){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     while ((EF_GPIO8_readData(gpio_base) & (1 << pin)) != data);
 }
-
-// inline void GPIO_writeData(enum port_types port, uint32_t data) __attribute__((always_inline));
 
 void EF_GPIO8_writeData(uint32_t gpio_base, uint32_t data){
     
@@ -64,7 +94,6 @@ uint32_t EF_GPIO8_readDirection(uint32_t gpio_base){
     return (gpio->DIR);
 }
 
-
 void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
@@ -75,8 +104,6 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir){
         directions &= ~(1 << pin);
     gpio->DIR = directions;
 }
-
-
 
 // Interrupts bits in RIS, MIS, IM, and ICR
  // bit 0: TX FIFO is Empty
@@ -148,8 +175,17 @@ void EF_GPIO8_writePackedData(uint32_t gpio_base, uint8_t pins, uint8_t data){
     return;
 }
 
-/******************************************************************************************************************************************/
-/******************************************************************************************************************************************/
+
+/******************************************************************************
+* Static Function Definitions
+******************************************************************************/
 
 
-#endif // GPIO_H
+
+
+
+#endif // EF_GPIO8_C
+
+/******************************************************************************
+* End of File
+******************************************************************************/
