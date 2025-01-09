@@ -29,8 +29,8 @@
 /******************************************************************************
 * Includes
 ******************************************************************************/
-#include <EF_GPIO8_regs.h>
-#include <stdint.h>
+#include "EF_GPIO8_regs.h"
+#include "EF_Driver_Common.h"
 
 /******************************************************************************
 * Macros and Constants
@@ -49,66 +49,66 @@
 * Function Prototypes
 ******************************************************************************/
 
-//! sets the GCLK enable bit in the UART register to a certain value
+//! sets the GCLK enable bit in the GPIO register to a certain value
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
-        \param [in] value The value of the GCLK enable bit
-        
+        \param [in] "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in] "value" The value of the GCLK enable bit
+
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_setGclkEnable (uint32_t gpio_base, uint32_t value);
+void EF_GPIO8_setGclkEnable (EF_GPIO8_TYPE* gpio, uint32_t value);
 
 
 //! reads the input value of the GPIOs
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-       \return input GPIOs value 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [out]  "gpio_data" The value of the input GPIOs
     */
-uint32_t EF_GPIO8_readData(uint32_t gpio_base);
+void EF_GPIO8_readData(EF_GPIO8_TYPE* gpio, uint32_t* gpio_data);
 
 //! wait until the input GPIOs have a certain value 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data the value to compare the input GPIOs with 
+      \param [in] "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in] "compare_value" the value to compare the input GPIOs with 
     */
-void EF_GPIO8_waitInput(uint32_t gpio_base, uint32_t data);
+void EF_GPIO8_waitInput(EF_GPIO8_TYPE* gpio, uint32_t compare_value);
 
 //! wait until a  GPIO pin have a certain value 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pin pin number from 0 to 7 
-      \param data the value to compare the GPIO with 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "pin" The pin number from 0 to 7 
+      \param [in]   "compare_value" The value to compare the GPIO with 
     */
-void EF_GPIO8_wait_InputPin(uint32_t gpio_base, uint32_t pin, uint32_t data);
+void EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE* gpio, uint32_t pin, uint32_t compare_value);
 
 //! drives the output value of the GPIOs
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data value to be driven to output GPIOs 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "data" value to be driven to output GPIOs 
     */
-void EF_GPIO8_writeData(uint32_t gpio_base, uint32_t data);
+void EF_GPIO8_writeData(EF_GPIO8_TYPE* gpio, uint32_t data);
 
 //! sets the direction of all GPIOs 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "data" GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin 
     */
-void EF_GPIO8_writeAllDirection(uint32_t gpio_base, uint32_t data);
+void EF_GPIO8_writeAllDirection(EF_GPIO8_TYPE* gpio, uint32_t data);
 
 //! gets the direction of all GPIOs 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return the direction of all GPIOs where each bit represents the direction of a GPIO pin 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [out]  "gpio_dir" GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin
     */
-uint32_t EF_GPIO8_readDirection(uint32_t gpio_base);
+void EF_GPIO8_readDirection(EF_GPIO8_TYPE* gpio, uint32_t* gpio_dir);
 
 //! sets the direction of one GPIO pin 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pin pin number from 0 to 7 
-      \param dir GPIO pin direction where 1 is output and 0 means input.
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "pin" pin number from 0 to 7 
+      \param [in]   "dir" GPIO pin direction where 1 is output and 0 means input.
     */
-void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir);
+void EF_GPIO8_setPinDirection(EF_GPIO8_TYPE* gpio, uint32_t pin, uint32_t dir);
 
 //! returns the value of the Raw Interrupt Status Register
 //! *  bit 0 P0HI : Pin 0 is high
@@ -144,10 +144,10 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return RIS register value 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [out]  "gpio_ris" The value of the RIS register
     */
-uint32_t EF_GPIO8_getRIS(uint32_t gpio_base);
+void EF_GPIO8_getRIS(EF_GPIO8_TYPE* gpio, uint32_t* gpio_ris);
 
 
 //! returns the value of the Masked Interrupt Status Register
@@ -184,10 +184,10 @@ uint32_t EF_GPIO8_getRIS(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return MIS register value 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [out]  "gpio_mis" The value of the MIS register
     */
-uint32_t EF_GPIO8_getMIS(uint32_t gpio_base);
+void EF_GPIO8_getMIS(EF_GPIO8_TYPE* gpio, uint32_t* gpio_mis);
 
 
 //! sets the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -224,10 +224,10 @@ uint32_t EF_GPIO8_getMIS(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param mask The required mask value
+      \param [in]   gpio An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "mask" The required mask value
     */
-void EF_GPIO8_setIM(uint32_t gpio_base, uint32_t mask);
+void EF_GPIO8_setIM(EF_GPIO8_TYPE* gpio, uint32_t mask);
 
 
 //! returns the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -264,10 +264,10 @@ void EF_GPIO8_setIM(uint32_t gpio_base, uint32_t mask);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return IM register value 
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [out]  "gpio_im" The value of the IM register
     */
-uint32_t EF_GPIO8_getIM(uint32_t gpio_base);
+void EF_GPIO8_getIM(EF_GPIO8_TYPE* gpio, uint32_t* gpio_im);
 
 
 //! sets the value of the Interrupts Clear Register; write 1 to clear the flag
@@ -304,10 +304,10 @@ uint32_t EF_GPIO8_getIM(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param mask The required mask value
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "mask" The required mask value
     */
-void EF_GPIO8_setICR(uint32_t gpio_base, uint32_t mask);
+void EF_GPIO8_setICR(EF_GPIO8_TYPE* gpio, uint32_t mask);
 
 
 
@@ -316,34 +316,33 @@ void EF_GPIO8_setICR(uint32_t gpio_base, uint32_t mask);
 /******************************************************************************************************************************************/
 /******************************************************************************************************************************************/
 
-
 //! This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value.
-//! Note that all the specified pins are set to the same direction (dir).
-//! Note that the function does not affect the direction of the other pins in the port.
+/// \note All the specified pins are set to the same direction (dir).
+/// \note  The function does not affect the direction of the other pins in the port.
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pins The bit-packed representation of the pin(s).
-      \param dir The required direction value
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "pins" The bit-packed representation of the pin(s).
+      \param [in]   "dir" The required direction value
     */
-void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, uint32_t dir);
+void EF_GPIO8_setPinPackedDirection(EF_GPIO8_TYPE* gpio, uint8_t pins, uint32_t dir);
 
 
 //! This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s).
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pins The bit-packed representation of the pin(s).
-      \return The data read from the pin(s)
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "pins" The bit-packed representation of the pin(s).
+      \param [out]  "packed_data" The data read from the pin(s)
     */
-uint32_t EF_GPIO8_readPackedData(uint32_t gpio_base, uint8_t pins);
+void EF_GPIO8_readPackedData(EF_GPIO8_TYPE* gpio, uint8_t pins, uint32_t* packed_data);
 
 //! This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s).
 //! Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pins The bit-packed representation of the pin(s).
-      \param data The data to be written to the pin(s)
+      \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+      \param [in]   "pins" The bit-packed representation of the pin(s).
+      \param [in]   "data" The data to be written to the pin(s)
     */
-void EF_GPIO8_writePackedData(uint32_t gpio_base, uint8_t pins, uint8_t data);
+void EF_GPIO8_writePackedData(EF_GPIO8_TYPE* gpio, uint8_t pins, uint8_t data);
 
 
 
