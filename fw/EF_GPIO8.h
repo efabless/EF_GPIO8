@@ -12,7 +12,7 @@
 #define GPIO8_INPUT 0
 #define GPIO8_OUTPUT 1
 
-void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value);
+void EF_GPIO8_setGclkEnable (uint32_t gpio_base, uint32_t value);
 
 
 //! reads the input value of the GPIOs
@@ -20,14 +20,14 @@ void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value);
       \param gpio_base The base memory address of GPIO registers.
        \return input GPIOs value 
     */
-int EF_GPIO8_readData(uint32_t gpio_base);
+uint32_t EF_GPIO8_readData(uint32_t gpio_base);
 
 //! wait until the input GPIOs have a certain value 
     /*!
       \param gpio_base The base memory address of GPIO registers.
       \param data the value to compare the input GPIOs with 
     */
-void EF_GPIO8_waitInput(uint32_t gpio_base, int data);
+void EF_GPIO8_waitInput(uint32_t gpio_base, uint32_t data);
 
 //! wait until a  GPIO pin have a certain value 
     /*!
@@ -35,28 +35,28 @@ void EF_GPIO8_waitInput(uint32_t gpio_base, int data);
       \param pin pin number from 0 to 7 
       \param data the value to compare the GPIO with 
     */
-void EF_GPIO8_wait_InputPin(uint32_t gpio_base, int pin, int data);
+void EF_GPIO8_wait_InputPin(uint32_t gpio_base, uint32_t pin, uint32_t data);
 
 //! drives the output value of the GPIOs
     /*!
       \param gpio_base The base memory address of GPIO registers.
       \param data value to be driven to output GPIOs 
     */
-void EF_GPIO8_writeData(uint32_t gpio_base, int data);
+void EF_GPIO8_writeData(uint32_t gpio_base, uint32_t data);
 
 //! sets the direction of all GPIOs 
     /*!
       \param gpio_base The base memory address of GPIO registers.
       \param data GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin 
     */
-void EF_GPIO8_writeAllDirection(uint32_t gpio_base, int data);
+void EF_GPIO8_writeAllDirection(uint32_t gpio_base, uint32_t data);
 
 //! gets the direction of all GPIOs 
     /*!
       \param gpio_base The base memory address of GPIO registers.
       \return the direction of all GPIOs where each bit represents the direction of a GPIO pin 
     */
-int EF_GPIO8_readDirection(uint32_t gpio_base);
+uint32_t EF_GPIO8_readDirection(uint32_t gpio_base);
 
 //! sets the direction of one GPIO pin 
     /*!
@@ -64,7 +64,7 @@ int EF_GPIO8_readDirection(uint32_t gpio_base);
       \param pin pin number from 0 to 7 
       \param dir GPIO pin direction where 1 is output and 0 means input.
     */
-void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir);
+void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir);
 
 //! returns the value of the Raw Interrupt Status Register
 //! *  bit 0 P0HI : Pin 0 is high
@@ -103,7 +103,7 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir);
       \param gpio_base The base memory address of GPIO registers.
       \return RIS register value 
     */
-int EF_GPIO8_getRIS(uint32_t gpio_base);
+uint32_t EF_GPIO8_getRIS(uint32_t gpio_base);
 
 
 //! returns the value of the Masked Interrupt Status Register
@@ -143,7 +143,7 @@ int EF_GPIO8_getRIS(uint32_t gpio_base);
       \param gpio_base The base memory address of GPIO registers.
       \return MIS register value 
     */
-int EF_GPIO8_getMIS(uint32_t gpio_base);
+uint32_t EF_GPIO8_getMIS(uint32_t gpio_base);
 
 
 //! sets the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -183,7 +183,7 @@ int EF_GPIO8_getMIS(uint32_t gpio_base);
       \param gpio_base The base memory address of GPIO registers.
       \param mask The required mask value
     */
-void EF_GPIO8_setIM(uint32_t gpio_base, int mask);
+void EF_GPIO8_setIM(uint32_t gpio_base, uint32_t mask);
 
 
 //! returns the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -223,7 +223,7 @@ void EF_GPIO8_setIM(uint32_t gpio_base, int mask);
       \param gpio_base The base memory address of GPIO registers.
       \return IM register value 
     */
-int EF_GPIO8_getIM(uint32_t gpio_base);
+uint32_t EF_GPIO8_getIM(uint32_t gpio_base);
 
 
 //! sets the value of the Interrupts Clear Register; write 1 to clear the flag
@@ -263,7 +263,7 @@ int EF_GPIO8_getIM(uint32_t gpio_base);
       \param gpio_base The base memory address of GPIO registers.
       \param mask The required mask value
     */
-void EF_GPIO8_setICR(uint32_t gpio_base, int mask);
+void EF_GPIO8_setICR(uint32_t gpio_base, uint32_t mask);
 
 
 
@@ -281,7 +281,7 @@ void EF_GPIO8_setICR(uint32_t gpio_base, int mask);
       \param pins The bit-packed representation of the pin(s).
       \param dir The required direction value
     */
-void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, int dir);
+void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, uint32_t dir);
 
 
 //! This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s).

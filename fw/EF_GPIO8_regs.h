@@ -22,9 +22,9 @@
 
 #ifndef IO_TYPES
 #define IO_TYPES
-#define   __R     volatile const unsigned int
-#define   __W     volatile       unsigned int
-#define   __RW    volatile       unsigned int
+#define   __R     volatile const uint32_t
+#define   __W     volatile       uint32_t
+#define   __RW    volatile       uint32_t
 #endif
 
 

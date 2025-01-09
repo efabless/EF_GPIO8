@@ -3,53 +3,53 @@
 
 #include <EF_GPIO8.h>
 
-void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value){
+void EF_GPIO8_setGclkEnable (uint32_t gpio_base, uint32_t value){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->GCLK = value;
 }
 
-// inline int GPIO_readData(enum port_types port) __attribute__((always_inline));
-int EF_GPIO8_readData(uint32_t gpio_base){
+// inline uint32_t GPIO_readData(enum port_types port) __attribute__((always_inline));
+uint32_t EF_GPIO8_readData(uint32_t gpio_base){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->DATAI);
 }
 
-void EF_GPIO8_waitInput(uint32_t gpio_base, int data){
+void EF_GPIO8_waitInput(uint32_t gpio_base, uint32_t data){
      EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     while (EF_GPIO8_readData(gpio_base) != data);
 }
 
-void EF_GPIO8_wait_InputPin(uint32_t gpio_base, int pin, int data){
+void EF_GPIO8_wait_InputPin(uint32_t gpio_base, uint32_t pin, uint32_t data){
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     while ((EF_GPIO8_readData(gpio_base) & (1 << pin)) != data);
 }
 
-// inline void GPIO_writeData(enum port_types port, int data) __attribute__((always_inline));
+// inline void GPIO_writeData(enum port_types port, uint32_t data) __attribute__((always_inline));
 
-void EF_GPIO8_writeData(uint32_t gpio_base, int data){
+void EF_GPIO8_writeData(uint32_t gpio_base, uint32_t data){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->DATAO = data;
 }
 
-void EF_GPIO8_writeAllDirection(uint32_t gpio_base, int data){
+void EF_GPIO8_writeAllDirection(uint32_t gpio_base, uint32_t data){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->DIR = data;
 }
 
 
-int EF_GPIO8_readDirection(uint32_t gpio_base){
+uint32_t EF_GPIO8_readDirection(uint32_t gpio_base){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->DIR);
 }
 
 
-void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir){
+void EF_GPIO8_setPinDirection(uint32_t gpio_base, uint32_t pin, uint32_t dir){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    int directions  = gpio->DIR;
+    uint32_t directions  = gpio->DIR;
     if (dir == GPIO8_OUTPUT)
         directions |= (1 << pin);
     else
@@ -71,31 +71,31 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir){
  // bit 8: overrun 
  // bit 9: timeout 
 
-int EF_GPIO8_getRIS(uint32_t gpio_base){
+uint32_t EF_GPIO8_getRIS(uint32_t gpio_base){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->RIS);
 }
 
-int EF_GPIO8_getMIS(uint32_t gpio_base){
+uint32_t EF_GPIO8_getMIS(uint32_t gpio_base){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->MIS);
 }
 
-void EF_GPIO8_setIM(uint32_t gpio_base, int mask){
+void EF_GPIO8_setIM(uint32_t gpio_base, uint32_t mask){
    
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     gpio->IM |= mask;
 }
 
-int EF_GPIO8_getIM(uint32_t gpio_base){
+uint32_t EF_GPIO8_getIM(uint32_t gpio_base){
 
    EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     return (gpio->IM);
 }
 
-void EF_GPIO8_setICR(uint32_t gpio_base, int mask){
+void EF_GPIO8_setICR(uint32_t gpio_base, uint32_t mask){
 
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
     (gpio->IC) |= mask;
@@ -106,10 +106,10 @@ void EF_GPIO8_setICR(uint32_t gpio_base, int mask){
 /******************************************************************************************************************************************/
 
 
-void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, int dir){
+void EF_GPIO8_setPinPackedDirection(uint32_t gpio_base, uint8_t pins, uint32_t dir){
     
     EF_GPIO8_TYPE* gpio = (EF_GPIO8_TYPE*)gpio_base;
-    int directions  = gpio->DIR;
+    uint32_t directions  = gpio->DIR;
     if (dir == GPIO8_OUTPUT)
         directions |= pins;
     else
