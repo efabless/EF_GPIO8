@@ -44,7 +44,6 @@
 #define EF_DRIVER_ERROR_UNSUPPORTED     4   ///< Operation not supported
 #define EF_DRIVER_ERROR_PARAMETER       5   ///< Parameter error
 #define EF_DRIVER_ERROR_SPECIFIC        6   ///< Start of driver specific errors 
-#define EF_DRIVER_ERROR_NO_DATA         7   ///< No data available
 
 
 /******************************************************************************
