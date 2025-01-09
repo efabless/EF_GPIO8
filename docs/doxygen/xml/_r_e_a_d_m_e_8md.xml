@@ -7,15 +7,15 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline><highlight class="normal">#<sp/>API<sp/>Reference</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Firmware<sp/>Documentation</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Header<sp/>files</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_driver_commonh)</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_gpio8h)</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_gpio8_regsh)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_Driver_Common.h](#file-ef_driver_commonh)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_GPIO8.h](#file-ef_gpio8h)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_GPIO8_regs.h](#file-ef_gpio8_regsh)</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_Driver_Common.h</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>common<sp/>driver<sp/>definitions<sp/>and<sp/>types._</highlight></codeline>
 <codeline></codeline>
@@ -111,7 +111,7 @@
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_GPIO8.h</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>GPIO8<sp/>APIs<sp/>which<sp/>contains<sp/>the<sp/>function<sp/>prototypes._</highlight></codeline>
 <codeline></codeline>
@@ -735,7 +735,7 @@
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_GPIO8_regs.h</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
 <codeline></codeline>

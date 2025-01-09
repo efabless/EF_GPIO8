@@ -2,21 +2,21 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
   <compounddef id="md__r_e_a_d_m_e" kind="page">
     <compoundname>md_README</compoundname>
-    <title>API Reference</title>
+    <title>Firmware Documentation</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
 <title>Header files</title>
 <para><itemizedlist>
-<listitem><para>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h</para>
-</listitem><listitem><para>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h</para>
-</listitem><listitem><para>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h</para>
+<listitem><para>EF_Driver_Common.h</para>
+</listitem><listitem><para>EF_GPIO8.h</para>
+</listitem><listitem><para>EF_GPIO8_regs.h</para>
 </listitem></itemizedlist>
 </para>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
-<title>File /Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h</title>
+<title>File EF_Driver_Common.h</title>
 <para><emphasis>C header file for common driver definitions and types.</emphasis></para>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
@@ -134,7 +134,7 @@
 </sect2>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md16">
-<title>File /Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h</title>
+<title>File EF_GPIO8.h</title>
 <para><emphasis>C header file for GPIO8 APIs which contains the function prototypes.</emphasis></para>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md17">
@@ -754,7 +754,7 @@
 </sect2>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md43">
-<title>File /Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h</title>
+<title>File EF_GPIO8_regs.h</title>
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md44">
 <title>Structures and Types</title>

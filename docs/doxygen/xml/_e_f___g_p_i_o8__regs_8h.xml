@@ -96,7 +96,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a8fe3dbaa5fce14c734e986f43608604f" prot="public" static="no">
         <name>EF_GPIO8_P0HI_FLAG</name>
-        <initializer>0x1</initializer>
+        <initializer>((uint32_t)0x1)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -107,7 +107,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a96c4791e2715264bf791a72e5d9528c5" prot="public" static="no">
         <name>EF_GPIO8_P1HI_FLAG</name>
-        <initializer>0x2</initializer>
+        <initializer>((uint32_t)0x2)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -118,7 +118,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a8fc181d8a1c7d32c091f825f7069d4b1" prot="public" static="no">
         <name>EF_GPIO8_P2HI_FLAG</name>
-        <initializer>0x4</initializer>
+        <initializer>((uint32_t)0x4)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -129,7 +129,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a4ee4754f1f864412d3b798c3e5d031bc" prot="public" static="no">
         <name>EF_GPIO8_P3HI_FLAG</name>
-        <initializer>0x8</initializer>
+        <initializer>((uint32_t)0x8)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -140,7 +140,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1ad75b0adf5b03a314ce1df1284e9302e5" prot="public" static="no">
         <name>EF_GPIO8_P4HI_FLAG</name>
-        <initializer>0x10</initializer>
+        <initializer>((uint32_t)0x10)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -151,7 +151,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a2ae515e48ad605a97d133bb7b4e31f69" prot="public" static="no">
         <name>EF_GPIO8_P5HI_FLAG</name>
-        <initializer>0x20</initializer>
+        <initializer>((uint32_t)0x20)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -162,7 +162,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a54e0cf26e70cf3bc1a0013ec89b2d34f" prot="public" static="no">
         <name>EF_GPIO8_P6HI_FLAG</name>
-        <initializer>0x40</initializer>
+        <initializer>((uint32_t)0x40)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -173,7 +173,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a8c4a215f33f643d6f33ec14c0313a682" prot="public" static="no">
         <name>EF_GPIO8_P7HI_FLAG</name>
-        <initializer>0x80</initializer>
+        <initializer>((uint32_t)0x80)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -184,7 +184,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a843b502dc23cb147bf1c2b18064ec657" prot="public" static="no">
         <name>EF_GPIO8_P0LO_FLAG</name>
-        <initializer>0x100</initializer>
+        <initializer>((uint32_t)0x100)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -195,7 +195,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a22dafdfe3391eb921aaab40ca885fd37" prot="public" static="no">
         <name>EF_GPIO8_P1LO_FLAG</name>
-        <initializer>0x200</initializer>
+        <initializer>((uint32_t)0x200)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -206,7 +206,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a7b24b02b19071291aefbf61be2d7595b" prot="public" static="no">
         <name>EF_GPIO8_P2LO_FLAG</name>
-        <initializer>0x400</initializer>
+        <initializer>((uint32_t)0x400)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -217,7 +217,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a1b253a3bbcc874b55f87e18c5cf4b952" prot="public" static="no">
         <name>EF_GPIO8_P3LO_FLAG</name>
-        <initializer>0x800</initializer>
+        <initializer>((uint32_t)0x800)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -228,7 +228,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a1fdc29ba8664c6f74c0c09f6d7474c31" prot="public" static="no">
         <name>EF_GPIO8_P4LO_FLAG</name>
-        <initializer>0x1000</initializer>
+        <initializer>((uint32_t)0x1000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -239,7 +239,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1ad99eebb038fc4e5a3add780595c4e5f0" prot="public" static="no">
         <name>EF_GPIO8_P5LO_FLAG</name>
-        <initializer>0x2000</initializer>
+        <initializer>((uint32_t)0x2000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -250,7 +250,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1aecdb1021f6e4ce00d3acd534674bbead" prot="public" static="no">
         <name>EF_GPIO8_P6LO_FLAG</name>
-        <initializer>0x4000</initializer>
+        <initializer>((uint32_t)0x4000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -261,7 +261,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1af58f97eed9b8d23abe5a8887b5602e9d" prot="public" static="no">
         <name>EF_GPIO8_P7LO_FLAG</name>
-        <initializer>0x8000</initializer>
+        <initializer>((uint32_t)0x8000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -272,7 +272,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a6d25a6d415ada1d55702b58ca2ac90be" prot="public" static="no">
         <name>EF_GPIO8_P0PE_FLAG</name>
-        <initializer>0x10000</initializer>
+        <initializer>((uint32_t)0x10000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -283,7 +283,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a20dd1a150afb19e09db0b9154ca1dd1e" prot="public" static="no">
         <name>EF_GPIO8_P1PE_FLAG</name>
-        <initializer>0x20000</initializer>
+        <initializer>((uint32_t)0x20000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -294,7 +294,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a49ff61052593985c4ff49b38bd243785" prot="public" static="no">
         <name>EF_GPIO8_P2PE_FLAG</name>
-        <initializer>0x40000</initializer>
+        <initializer>((uint32_t)0x40000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -305,7 +305,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1aa8a2bdf60973d3c3419c1fa9eff869ee" prot="public" static="no">
         <name>EF_GPIO8_P3PE_FLAG</name>
-        <initializer>0x80000</initializer>
+        <initializer>((uint32_t)0x80000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -316,7 +316,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1aed9d006315c325967c96938220f025f2" prot="public" static="no">
         <name>EF_GPIO8_P4PE_FLAG</name>
-        <initializer>0x100000</initializer>
+        <initializer>((uint32_t)0x100000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -327,7 +327,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a1fe9dd81690308265c5934f6a70860e6" prot="public" static="no">
         <name>EF_GPIO8_P5PE_FLAG</name>
-        <initializer>0x200000</initializer>
+        <initializer>((uint32_t)0x200000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -338,7 +338,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a02d9be9025db18574675b7a34d724e30" prot="public" static="no">
         <name>EF_GPIO8_P6PE_FLAG</name>
-        <initializer>0x400000</initializer>
+        <initializer>((uint32_t)0x400000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -349,7 +349,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a32bb8d2a4b834cd06b1ff5c1cb8dea16" prot="public" static="no">
         <name>EF_GPIO8_P7PE_FLAG</name>
-        <initializer>0x800000</initializer>
+        <initializer>((uint32_t)0x800000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -360,7 +360,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a487f2840607f9935fe972ab75d62312a" prot="public" static="no">
         <name>EF_GPIO8_P0NE_FLAG</name>
-        <initializer>0x1000000</initializer>
+        <initializer>((uint32_t)0x1000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -371,7 +371,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1acd9fee8f00bd441e1e1777a8165e62b0" prot="public" static="no">
         <name>EF_GPIO8_P1NE_FLAG</name>
-        <initializer>0x2000000</initializer>
+        <initializer>((uint32_t)0x2000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -382,7 +382,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1ad40de3bbca3d0bbd2623ccc6d89143b9" prot="public" static="no">
         <name>EF_GPIO8_P2NE_FLAG</name>
-        <initializer>0x4000000</initializer>
+        <initializer>((uint32_t)0x4000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -393,7 +393,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1ad39f04f5e208f0c113aa212311197f67" prot="public" static="no">
         <name>EF_GPIO8_P3NE_FLAG</name>
-        <initializer>0x8000000</initializer>
+        <initializer>((uint32_t)0x8000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -404,7 +404,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a0ab79c2bd0fb81bc28b0b9a653694969" prot="public" static="no">
         <name>EF_GPIO8_P4NE_FLAG</name>
-        <initializer>0x10000000</initializer>
+        <initializer>((uint32_t)0x10000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -415,7 +415,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a0e58675d2c32db6c17cba2403d25541f" prot="public" static="no">
         <name>EF_GPIO8_P5NE_FLAG</name>
-        <initializer>0x20000000</initializer>
+        <initializer>((uint32_t)0x20000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -426,7 +426,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1a58a896d299901aec5f9b52cffee9445d" prot="public" static="no">
         <name>EF_GPIO8_P6NE_FLAG</name>
-        <initializer>0x40000000</initializer>
+        <initializer>((uint32_t)0x40000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -437,7 +437,7 @@
       </memberdef>
       <memberdef kind="define" id="_e_f___g_p_i_o8__regs_8h_1adca99bbc23c89ddd4c5cdaa161be8930" prot="public" static="no">
         <name>EF_GPIO8_P7NE_FLAG</name>
-        <initializer>0x80000000</initializer>
+        <initializer>((uint32_t)0x80000000)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -519,38 +519,38 @@
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="_e_f___g_p_i_o8__regs_8h_1a8fe3dbaa5fce14c734e986f43608604f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0HI_FLAG<sp/><sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="_e_f___g_p_i_o8__regs_8h_1a96c4791e2715264bf791a72e5d9528c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1HI_FLAG<sp/><sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42" refid="_e_f___g_p_i_o8__regs_8h_1a8fc181d8a1c7d32c091f825f7069d4b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2HI_FLAG<sp/><sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="_e_f___g_p_i_o8__regs_8h_1a4ee4754f1f864412d3b798c3e5d031bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3HI_FLAG<sp/><sp/>0x8</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="_e_f___g_p_i_o8__regs_8h_1ad75b0adf5b03a314ce1df1284e9302e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4HI_FLAG<sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45" refid="_e_f___g_p_i_o8__regs_8h_1a2ae515e48ad605a97d133bb7b4e31f69" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5HI_FLAG<sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="_e_f___g_p_i_o8__regs_8h_1a54e0cf26e70cf3bc1a0013ec89b2d34f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6HI_FLAG<sp/><sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="_e_f___g_p_i_o8__regs_8h_1a8c4a215f33f643d6f33ec14c0313a682" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7HI_FLAG<sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="_e_f___g_p_i_o8__regs_8h_1a843b502dc23cb147bf1c2b18064ec657" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0LO_FLAG<sp/><sp/>0x100</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="_e_f___g_p_i_o8__regs_8h_1a22dafdfe3391eb921aaab40ca885fd37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1LO_FLAG<sp/><sp/>0x200</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="_e_f___g_p_i_o8__regs_8h_1a7b24b02b19071291aefbf61be2d7595b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2LO_FLAG<sp/><sp/>0x400</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51" refid="_e_f___g_p_i_o8__regs_8h_1a1b253a3bbcc874b55f87e18c5cf4b952" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3LO_FLAG<sp/><sp/>0x800</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52" refid="_e_f___g_p_i_o8__regs_8h_1a1fdc29ba8664c6f74c0c09f6d7474c31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4LO_FLAG<sp/><sp/>0x1000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="_e_f___g_p_i_o8__regs_8h_1ad99eebb038fc4e5a3add780595c4e5f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5LO_FLAG<sp/><sp/>0x2000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="_e_f___g_p_i_o8__regs_8h_1aecdb1021f6e4ce00d3acd534674bbead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6LO_FLAG<sp/><sp/>0x4000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55" refid="_e_f___g_p_i_o8__regs_8h_1af58f97eed9b8d23abe5a8887b5602e9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7LO_FLAG<sp/><sp/>0x8000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56" refid="_e_f___g_p_i_o8__regs_8h_1a6d25a6d415ada1d55702b58ca2ac90be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0PE_FLAG<sp/><sp/>0x10000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="_e_f___g_p_i_o8__regs_8h_1a20dd1a150afb19e09db0b9154ca1dd1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1PE_FLAG<sp/><sp/>0x20000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="_e_f___g_p_i_o8__regs_8h_1a49ff61052593985c4ff49b38bd243785" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2PE_FLAG<sp/><sp/>0x40000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="_e_f___g_p_i_o8__regs_8h_1aa8a2bdf60973d3c3419c1fa9eff869ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3PE_FLAG<sp/><sp/>0x80000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="_e_f___g_p_i_o8__regs_8h_1aed9d006315c325967c96938220f025f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4PE_FLAG<sp/><sp/>0x100000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="_e_f___g_p_i_o8__regs_8h_1a1fe9dd81690308265c5934f6a70860e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5PE_FLAG<sp/><sp/>0x200000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62" refid="_e_f___g_p_i_o8__regs_8h_1a02d9be9025db18574675b7a34d724e30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6PE_FLAG<sp/><sp/>0x400000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63" refid="_e_f___g_p_i_o8__regs_8h_1a32bb8d2a4b834cd06b1ff5c1cb8dea16" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7PE_FLAG<sp/><sp/>0x800000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64" refid="_e_f___g_p_i_o8__regs_8h_1a487f2840607f9935fe972ab75d62312a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0NE_FLAG<sp/><sp/>0x1000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="_e_f___g_p_i_o8__regs_8h_1acd9fee8f00bd441e1e1777a8165e62b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1NE_FLAG<sp/><sp/>0x2000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66" refid="_e_f___g_p_i_o8__regs_8h_1ad40de3bbca3d0bbd2623ccc6d89143b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2NE_FLAG<sp/><sp/>0x4000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="_e_f___g_p_i_o8__regs_8h_1ad39f04f5e208f0c113aa212311197f67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3NE_FLAG<sp/><sp/>0x8000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="_e_f___g_p_i_o8__regs_8h_1a0ab79c2bd0fb81bc28b0b9a653694969" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4NE_FLAG<sp/><sp/>0x10000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69" refid="_e_f___g_p_i_o8__regs_8h_1a0e58675d2c32db6c17cba2403d25541f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5NE_FLAG<sp/><sp/>0x20000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70" refid="_e_f___g_p_i_o8__regs_8h_1a58a896d299901aec5f9b52cffee9445d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6NE_FLAG<sp/><sp/>0x40000000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="_e_f___g_p_i_o8__regs_8h_1adca99bbc23c89ddd4c5cdaa161be8930" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7NE_FLAG<sp/><sp/>0x80000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_e_f___g_p_i_o8__regs_8h_1a8fe3dbaa5fce14c734e986f43608604f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0HI_FLAG<sp/><sp/>((uint32_t)0x1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="_e_f___g_p_i_o8__regs_8h_1a96c4791e2715264bf791a72e5d9528c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1HI_FLAG<sp/><sp/>((uint32_t)0x2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_e_f___g_p_i_o8__regs_8h_1a8fc181d8a1c7d32c091f825f7069d4b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2HI_FLAG<sp/><sp/>((uint32_t)0x4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_e_f___g_p_i_o8__regs_8h_1a4ee4754f1f864412d3b798c3e5d031bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3HI_FLAG<sp/><sp/>((uint32_t)0x8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_e_f___g_p_i_o8__regs_8h_1ad75b0adf5b03a314ce1df1284e9302e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4HI_FLAG<sp/><sp/>((uint32_t)0x10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="_e_f___g_p_i_o8__regs_8h_1a2ae515e48ad605a97d133bb7b4e31f69" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5HI_FLAG<sp/><sp/>((uint32_t)0x20)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="_e_f___g_p_i_o8__regs_8h_1a54e0cf26e70cf3bc1a0013ec89b2d34f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6HI_FLAG<sp/><sp/>((uint32_t)0x40)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_e_f___g_p_i_o8__regs_8h_1a8c4a215f33f643d6f33ec14c0313a682" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7HI_FLAG<sp/><sp/>((uint32_t)0x80)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_e_f___g_p_i_o8__regs_8h_1a843b502dc23cb147bf1c2b18064ec657" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0LO_FLAG<sp/><sp/>((uint32_t)0x100)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_e_f___g_p_i_o8__regs_8h_1a22dafdfe3391eb921aaab40ca885fd37" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1LO_FLAG<sp/><sp/>((uint32_t)0x200)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_e_f___g_p_i_o8__regs_8h_1a7b24b02b19071291aefbf61be2d7595b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2LO_FLAG<sp/><sp/>((uint32_t)0x400)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="_e_f___g_p_i_o8__regs_8h_1a1b253a3bbcc874b55f87e18c5cf4b952" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3LO_FLAG<sp/><sp/>((uint32_t)0x800)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="_e_f___g_p_i_o8__regs_8h_1a1fdc29ba8664c6f74c0c09f6d7474c31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4LO_FLAG<sp/><sp/>((uint32_t)0x1000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="_e_f___g_p_i_o8__regs_8h_1ad99eebb038fc4e5a3add780595c4e5f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5LO_FLAG<sp/><sp/>((uint32_t)0x2000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="_e_f___g_p_i_o8__regs_8h_1aecdb1021f6e4ce00d3acd534674bbead" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6LO_FLAG<sp/><sp/>((uint32_t)0x4000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="_e_f___g_p_i_o8__regs_8h_1af58f97eed9b8d23abe5a8887b5602e9d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7LO_FLAG<sp/><sp/>((uint32_t)0x8000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="_e_f___g_p_i_o8__regs_8h_1a6d25a6d415ada1d55702b58ca2ac90be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0PE_FLAG<sp/><sp/>((uint32_t)0x10000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="_e_f___g_p_i_o8__regs_8h_1a20dd1a150afb19e09db0b9154ca1dd1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1PE_FLAG<sp/><sp/>((uint32_t)0x20000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="_e_f___g_p_i_o8__regs_8h_1a49ff61052593985c4ff49b38bd243785" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2PE_FLAG<sp/><sp/>((uint32_t)0x40000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_e_f___g_p_i_o8__regs_8h_1aa8a2bdf60973d3c3419c1fa9eff869ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3PE_FLAG<sp/><sp/>((uint32_t)0x80000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_e_f___g_p_i_o8__regs_8h_1aed9d006315c325967c96938220f025f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4PE_FLAG<sp/><sp/>((uint32_t)0x100000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="_e_f___g_p_i_o8__regs_8h_1a1fe9dd81690308265c5934f6a70860e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5PE_FLAG<sp/><sp/>((uint32_t)0x200000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="_e_f___g_p_i_o8__regs_8h_1a02d9be9025db18574675b7a34d724e30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6PE_FLAG<sp/><sp/>((uint32_t)0x400000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_e_f___g_p_i_o8__regs_8h_1a32bb8d2a4b834cd06b1ff5c1cb8dea16" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7PE_FLAG<sp/><sp/>((uint32_t)0x800000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_e_f___g_p_i_o8__regs_8h_1a487f2840607f9935fe972ab75d62312a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P0NE_FLAG<sp/><sp/>((uint32_t)0x1000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_e_f___g_p_i_o8__regs_8h_1acd9fee8f00bd441e1e1777a8165e62b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P1NE_FLAG<sp/><sp/>((uint32_t)0x2000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_e_f___g_p_i_o8__regs_8h_1ad40de3bbca3d0bbd2623ccc6d89143b9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P2NE_FLAG<sp/><sp/>((uint32_t)0x4000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_e_f___g_p_i_o8__regs_8h_1ad39f04f5e208f0c113aa212311197f67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P3NE_FLAG<sp/><sp/>((uint32_t)0x8000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="_e_f___g_p_i_o8__regs_8h_1a0ab79c2bd0fb81bc28b0b9a653694969" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P4NE_FLAG<sp/><sp/>((uint32_t)0x10000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="_e_f___g_p_i_o8__regs_8h_1a0e58675d2c32db6c17cba2403d25541f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P5NE_FLAG<sp/><sp/>((uint32_t)0x20000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_e_f___g_p_i_o8__regs_8h_1a58a896d299901aec5f9b52cffee9445d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P6NE_FLAG<sp/><sp/>((uint32_t)0x40000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_e_f___g_p_i_o8__regs_8h_1adca99bbc23c89ddd4c5cdaa161be8930" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_P7NE_FLAG<sp/><sp/>((uint32_t)0x80000000)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>

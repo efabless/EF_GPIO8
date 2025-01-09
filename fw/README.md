@@ -1,4 +1,4 @@
-# Firmware Documentation
+# API Reference
 
 ## Header files
 
@@ -23,14 +23,13 @@ _C header file for common driver definitions and types._
 
 | Type | Name |
 | ---: | :--- |
-| define  | [**EF\_DRIVER\_ERROR**](#define-ef_driver_error)  1<br>_Unspecified error._ |
-| define  | [**EF\_DRIVER\_ERROR\_BUSY**](#define-ef_driver_error_busy)  2<br>_Driver is busy._ |
-| define  | [**EF\_DRIVER\_ERROR\_NO\_DATA**](#define-ef_driver_error_no_data)  7<br>_No data available._ |
-| define  | [**EF\_DRIVER\_ERROR\_PARAMETER**](#define-ef_driver_error_parameter)  5<br>_Parameter error._ |
-| define  | [**EF\_DRIVER\_ERROR\_SPECIFIC**](#define-ef_driver_error_specific)  6<br>_Start of driver specific errors._ |
-| define  | [**EF\_DRIVER\_ERROR\_TIMEOUT**](#define-ef_driver_error_timeout)  3<br>_Timeout occurred._ |
-| define  | [**EF\_DRIVER\_ERROR\_UNSUPPORTED**](#define-ef_driver_error_unsupported)  4<br>_Operation not supported._ |
-| define  | [**EF\_DRIVER\_OK**](#define-ef_driver_ok)  0<br>_Operation succeeded._ |
+| define  | [**EF\_DRIVER\_ERROR**](#define-ef_driver_error)  ((uint32\_t)1)<br>_Unspecified error._ |
+| define  | [**EF\_DRIVER\_ERROR\_BUSY**](#define-ef_driver_error_busy)  ((uint32\_t)2)<br>_Driver is busy._ |
+| define  | [**EF\_DRIVER\_ERROR\_PARAMETER**](#define-ef_driver_error_parameter)  ((uint32\_t)5)<br>_Parameter error._ |
+| define  | [**EF\_DRIVER\_ERROR\_SPECIFIC**](#define-ef_driver_error_specific)  ((uint32\_t)6)<br>_Start of driver specific errors._ |
+| define  | [**EF\_DRIVER\_ERROR\_TIMEOUT**](#define-ef_driver_error_timeout)  ((uint32\_t)3)<br>_Timeout occurred._ |
+| define  | [**EF\_DRIVER\_ERROR\_UNSUPPORTED**](#define-ef_driver_error_unsupported)  ((uint32\_t)4)<br>_Operation not supported._ |
+| define  | [**EF\_DRIVER\_OK**](#define-ef_driver_ok)  ((uint32\_t)0)<br>_Operation succeeded._ |
 
 ## Structures and Types Documentation
 
@@ -49,56 +48,49 @@ typedef uint32_t EF_DRIVER_STATUS;
 
 _Unspecified error._
 ```c
-#define EF_DRIVER_ERROR 1
+#define EF_DRIVER_ERROR ((uint32_t)1)
 ```
 
 ### define `EF_DRIVER_ERROR_BUSY`
 
 _Driver is busy._
 ```c
-#define EF_DRIVER_ERROR_BUSY 2
-```
-
-### define `EF_DRIVER_ERROR_NO_DATA`
-
-_No data available._
-```c
-#define EF_DRIVER_ERROR_NO_DATA 7
+#define EF_DRIVER_ERROR_BUSY ((uint32_t)2)
 ```
 
 ### define `EF_DRIVER_ERROR_PARAMETER`
 
 _Parameter error._
 ```c
-#define EF_DRIVER_ERROR_PARAMETER 5
+#define EF_DRIVER_ERROR_PARAMETER ((uint32_t)5)
 ```
 
 ### define `EF_DRIVER_ERROR_SPECIFIC`
 
 _Start of driver specific errors._
 ```c
-#define EF_DRIVER_ERROR_SPECIFIC 6
+#define EF_DRIVER_ERROR_SPECIFIC ((uint32_t)6)
 ```
 
 ### define `EF_DRIVER_ERROR_TIMEOUT`
 
 _Timeout occurred._
 ```c
-#define EF_DRIVER_ERROR_TIMEOUT 3
+#define EF_DRIVER_ERROR_TIMEOUT ((uint32_t)3)
 ```
 
 ### define `EF_DRIVER_ERROR_UNSUPPORTED`
 
 _Operation not supported._
 ```c
-#define EF_DRIVER_ERROR_UNSUPPORTED 4
+#define EF_DRIVER_ERROR_UNSUPPORTED ((uint32_t)4)
 ```
 
 ### define `EF_DRIVER_OK`
 
 _Operation succeeded._
 ```c
-#define EF_DRIVER_OK 0
+#define EF_DRIVER_OK ((uint32_t)0)
 ```
 
 
@@ -134,12 +126,12 @@ _C header file for GPIO8 APIs which contains the function prototypes._
 
 | Type | Name |
 | ---: | :--- |
-| define  | [**EF\_GPIO8\_DATAI\_MAX\_VALUE**](#define-ef_gpio8_datai_max_value)  0x000000FF<br> |
-| define  | [**EF\_GPIO8\_DATAO\_MAX\_VALUE**](#define-ef_gpio8_datao_max_value)  0x000000FF<br> |
-| define  | [**EF\_GPIO8\_DIR\_MAX\_VALUE**](#define-ef_gpio8_dir_max_value)  0x000000FF<br> |
-| define  | [**EF\_GPIO8\_NUM\_PINS**](#define-ef_gpio8_num_pins)  0x00000008<br> |
-| define  | [**GPIO8\_INPUT**](#define-gpio8_input)  0<br> |
-| define  | [**GPIO8\_OUTPUT**](#define-gpio8_output)  1<br> |
+| define  | [**EF\_GPIO8\_DATAI\_MAX\_VALUE**](#define-ef_gpio8_datai_max_value)  ((uint32\_t)0x000000FF)<br> |
+| define  | [**EF\_GPIO8\_DATAO\_MAX\_VALUE**](#define-ef_gpio8_datao_max_value)  ((uint32\_t)0x000000FF)<br> |
+| define  | [**EF\_GPIO8\_DIR\_MAX\_VALUE**](#define-ef_gpio8_dir_max_value)  ((uint32\_t)0x000000FF)<br> |
+| define  | [**EF\_GPIO8\_NUM\_PINS**](#define-ef_gpio8_num_pins)  ((uint32\_t)0x00000008)<br> |
+| define  | [**GPIO8\_INPUT**](#define-gpio8_input)  ((uint32\_t)0)<br> |
+| define  | [**GPIO8\_OUTPUT**](#define-gpio8_output)  ((uint32\_t)1)<br> |
 
 
 ## Functions Documentation
@@ -692,37 +684,37 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 ### define `EF_GPIO8_DATAI_MAX_VALUE`
 
 ```c
-#define EF_GPIO8_DATAI_MAX_VALUE 0x000000FF
+#define EF_GPIO8_DATAI_MAX_VALUE ((uint32_t)0x000000FF)
 ```
 
 ### define `EF_GPIO8_DATAO_MAX_VALUE`
 
 ```c
-#define EF_GPIO8_DATAO_MAX_VALUE 0x000000FF
+#define EF_GPIO8_DATAO_MAX_VALUE ((uint32_t)0x000000FF)
 ```
 
 ### define `EF_GPIO8_DIR_MAX_VALUE`
 
 ```c
-#define EF_GPIO8_DIR_MAX_VALUE 0x000000FF
+#define EF_GPIO8_DIR_MAX_VALUE ((uint32_t)0x000000FF)
 ```
 
 ### define `EF_GPIO8_NUM_PINS`
 
 ```c
-#define EF_GPIO8_NUM_PINS 0x00000008
+#define EF_GPIO8_NUM_PINS ((uint32_t)0x00000008)
 ```
 
 ### define `GPIO8_INPUT`
 
 ```c
-#define GPIO8_INPUT 0
+#define GPIO8_INPUT ((uint32_t)0)
 ```
 
 ### define `GPIO8_OUTPUT`
 
 ```c
-#define GPIO8_OUTPUT 1
+#define GPIO8_OUTPUT ((uint32_t)1)
 ```
 
 
@@ -745,38 +737,38 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 
 | Type | Name |
 | ---: | :--- |
-| define  | [**EF\_GPIO8\_P0HI\_FLAG**](#define-ef_gpio8_p0hi_flag)  0x1<br> |
-| define  | [**EF\_GPIO8\_P0LO\_FLAG**](#define-ef_gpio8_p0lo_flag)  0x100<br> |
-| define  | [**EF\_GPIO8\_P0NE\_FLAG**](#define-ef_gpio8_p0ne_flag)  0x1000000<br> |
-| define  | [**EF\_GPIO8\_P0PE\_FLAG**](#define-ef_gpio8_p0pe_flag)  0x10000<br> |
-| define  | [**EF\_GPIO8\_P1HI\_FLAG**](#define-ef_gpio8_p1hi_flag)  0x2<br> |
-| define  | [**EF\_GPIO8\_P1LO\_FLAG**](#define-ef_gpio8_p1lo_flag)  0x200<br> |
-| define  | [**EF\_GPIO8\_P1NE\_FLAG**](#define-ef_gpio8_p1ne_flag)  0x2000000<br> |
-| define  | [**EF\_GPIO8\_P1PE\_FLAG**](#define-ef_gpio8_p1pe_flag)  0x20000<br> |
-| define  | [**EF\_GPIO8\_P2HI\_FLAG**](#define-ef_gpio8_p2hi_flag)  0x4<br> |
-| define  | [**EF\_GPIO8\_P2LO\_FLAG**](#define-ef_gpio8_p2lo_flag)  0x400<br> |
-| define  | [**EF\_GPIO8\_P2NE\_FLAG**](#define-ef_gpio8_p2ne_flag)  0x4000000<br> |
-| define  | [**EF\_GPIO8\_P2PE\_FLAG**](#define-ef_gpio8_p2pe_flag)  0x40000<br> |
-| define  | [**EF\_GPIO8\_P3HI\_FLAG**](#define-ef_gpio8_p3hi_flag)  0x8<br> |
-| define  | [**EF\_GPIO8\_P3LO\_FLAG**](#define-ef_gpio8_p3lo_flag)  0x800<br> |
-| define  | [**EF\_GPIO8\_P3NE\_FLAG**](#define-ef_gpio8_p3ne_flag)  0x8000000<br> |
-| define  | [**EF\_GPIO8\_P3PE\_FLAG**](#define-ef_gpio8_p3pe_flag)  0x80000<br> |
-| define  | [**EF\_GPIO8\_P4HI\_FLAG**](#define-ef_gpio8_p4hi_flag)  0x10<br> |
-| define  | [**EF\_GPIO8\_P4LO\_FLAG**](#define-ef_gpio8_p4lo_flag)  0x1000<br> |
-| define  | [**EF\_GPIO8\_P4NE\_FLAG**](#define-ef_gpio8_p4ne_flag)  0x10000000<br> |
-| define  | [**EF\_GPIO8\_P4PE\_FLAG**](#define-ef_gpio8_p4pe_flag)  0x100000<br> |
-| define  | [**EF\_GPIO8\_P5HI\_FLAG**](#define-ef_gpio8_p5hi_flag)  0x20<br> |
-| define  | [**EF\_GPIO8\_P5LO\_FLAG**](#define-ef_gpio8_p5lo_flag)  0x2000<br> |
-| define  | [**EF\_GPIO8\_P5NE\_FLAG**](#define-ef_gpio8_p5ne_flag)  0x20000000<br> |
-| define  | [**EF\_GPIO8\_P5PE\_FLAG**](#define-ef_gpio8_p5pe_flag)  0x200000<br> |
-| define  | [**EF\_GPIO8\_P6HI\_FLAG**](#define-ef_gpio8_p6hi_flag)  0x40<br> |
-| define  | [**EF\_GPIO8\_P6LO\_FLAG**](#define-ef_gpio8_p6lo_flag)  0x4000<br> |
-| define  | [**EF\_GPIO8\_P6NE\_FLAG**](#define-ef_gpio8_p6ne_flag)  0x40000000<br> |
-| define  | [**EF\_GPIO8\_P6PE\_FLAG**](#define-ef_gpio8_p6pe_flag)  0x400000<br> |
-| define  | [**EF\_GPIO8\_P7HI\_FLAG**](#define-ef_gpio8_p7hi_flag)  0x80<br> |
-| define  | [**EF\_GPIO8\_P7LO\_FLAG**](#define-ef_gpio8_p7lo_flag)  0x8000<br> |
-| define  | [**EF\_GPIO8\_P7NE\_FLAG**](#define-ef_gpio8_p7ne_flag)  0x80000000<br> |
-| define  | [**EF\_GPIO8\_P7PE\_FLAG**](#define-ef_gpio8_p7pe_flag)  0x800000<br> |
+| define  | [**EF\_GPIO8\_P0HI\_FLAG**](#define-ef_gpio8_p0hi_flag)  ((uint32\_t)0x1)<br> |
+| define  | [**EF\_GPIO8\_P0LO\_FLAG**](#define-ef_gpio8_p0lo_flag)  ((uint32\_t)0x100)<br> |
+| define  | [**EF\_GPIO8\_P0NE\_FLAG**](#define-ef_gpio8_p0ne_flag)  ((uint32\_t)0x1000000)<br> |
+| define  | [**EF\_GPIO8\_P0PE\_FLAG**](#define-ef_gpio8_p0pe_flag)  ((uint32\_t)0x10000)<br> |
+| define  | [**EF\_GPIO8\_P1HI\_FLAG**](#define-ef_gpio8_p1hi_flag)  ((uint32\_t)0x2)<br> |
+| define  | [**EF\_GPIO8\_P1LO\_FLAG**](#define-ef_gpio8_p1lo_flag)  ((uint32\_t)0x200)<br> |
+| define  | [**EF\_GPIO8\_P1NE\_FLAG**](#define-ef_gpio8_p1ne_flag)  ((uint32\_t)0x2000000)<br> |
+| define  | [**EF\_GPIO8\_P1PE\_FLAG**](#define-ef_gpio8_p1pe_flag)  ((uint32\_t)0x20000)<br> |
+| define  | [**EF\_GPIO8\_P2HI\_FLAG**](#define-ef_gpio8_p2hi_flag)  ((uint32\_t)0x4)<br> |
+| define  | [**EF\_GPIO8\_P2LO\_FLAG**](#define-ef_gpio8_p2lo_flag)  ((uint32\_t)0x400)<br> |
+| define  | [**EF\_GPIO8\_P2NE\_FLAG**](#define-ef_gpio8_p2ne_flag)  ((uint32\_t)0x4000000)<br> |
+| define  | [**EF\_GPIO8\_P2PE\_FLAG**](#define-ef_gpio8_p2pe_flag)  ((uint32\_t)0x40000)<br> |
+| define  | [**EF\_GPIO8\_P3HI\_FLAG**](#define-ef_gpio8_p3hi_flag)  ((uint32\_t)0x8)<br> |
+| define  | [**EF\_GPIO8\_P3LO\_FLAG**](#define-ef_gpio8_p3lo_flag)  ((uint32\_t)0x800)<br> |
+| define  | [**EF\_GPIO8\_P3NE\_FLAG**](#define-ef_gpio8_p3ne_flag)  ((uint32\_t)0x8000000)<br> |
+| define  | [**EF\_GPIO8\_P3PE\_FLAG**](#define-ef_gpio8_p3pe_flag)  ((uint32\_t)0x80000)<br> |
+| define  | [**EF\_GPIO8\_P4HI\_FLAG**](#define-ef_gpio8_p4hi_flag)  ((uint32\_t)0x10)<br> |
+| define  | [**EF\_GPIO8\_P4LO\_FLAG**](#define-ef_gpio8_p4lo_flag)  ((uint32\_t)0x1000)<br> |
+| define  | [**EF\_GPIO8\_P4NE\_FLAG**](#define-ef_gpio8_p4ne_flag)  ((uint32\_t)0x10000000)<br> |
+| define  | [**EF\_GPIO8\_P4PE\_FLAG**](#define-ef_gpio8_p4pe_flag)  ((uint32\_t)0x100000)<br> |
+| define  | [**EF\_GPIO8\_P5HI\_FLAG**](#define-ef_gpio8_p5hi_flag)  ((uint32\_t)0x20)<br> |
+| define  | [**EF\_GPIO8\_P5LO\_FLAG**](#define-ef_gpio8_p5lo_flag)  ((uint32\_t)0x2000)<br> |
+| define  | [**EF\_GPIO8\_P5NE\_FLAG**](#define-ef_gpio8_p5ne_flag)  ((uint32\_t)0x20000000)<br> |
+| define  | [**EF\_GPIO8\_P5PE\_FLAG**](#define-ef_gpio8_p5pe_flag)  ((uint32\_t)0x200000)<br> |
+| define  | [**EF\_GPIO8\_P6HI\_FLAG**](#define-ef_gpio8_p6hi_flag)  ((uint32\_t)0x40)<br> |
+| define  | [**EF\_GPIO8\_P6LO\_FLAG**](#define-ef_gpio8_p6lo_flag)  ((uint32\_t)0x4000)<br> |
+| define  | [**EF\_GPIO8\_P6NE\_FLAG**](#define-ef_gpio8_p6ne_flag)  ((uint32\_t)0x40000000)<br> |
+| define  | [**EF\_GPIO8\_P6PE\_FLAG**](#define-ef_gpio8_p6pe_flag)  ((uint32\_t)0x400000)<br> |
+| define  | [**EF\_GPIO8\_P7HI\_FLAG**](#define-ef_gpio8_p7hi_flag)  ((uint32\_t)0x80)<br> |
+| define  | [**EF\_GPIO8\_P7LO\_FLAG**](#define-ef_gpio8_p7lo_flag)  ((uint32\_t)0x8000)<br> |
+| define  | [**EF\_GPIO8\_P7NE\_FLAG**](#define-ef_gpio8_p7ne_flag)  ((uint32\_t)0x80000000)<br> |
+| define  | [**EF\_GPIO8\_P7PE\_FLAG**](#define-ef_gpio8_p7pe_flag)  ((uint32\_t)0x800000)<br> |
 | define  | [**IO\_TYPES**](#define-io_types)  <br> |
 | define  | [**\_\_R**](#define-__r)  volatile const uint32\_t<br> |
 | define  | [**\_\_RW**](#define-__rw)  volatile       uint32\_t<br> |
@@ -826,193 +818,193 @@ Variables:
 ### define `EF_GPIO8_P0HI_FLAG`
 
 ```c
-#define EF_GPIO8_P0HI_FLAG 0x1
+#define EF_GPIO8_P0HI_FLAG ((uint32_t)0x1)
 ```
 
 ### define `EF_GPIO8_P0LO_FLAG`
 
 ```c
-#define EF_GPIO8_P0LO_FLAG 0x100
+#define EF_GPIO8_P0LO_FLAG ((uint32_t)0x100)
 ```
 
 ### define `EF_GPIO8_P0NE_FLAG`
 
 ```c
-#define EF_GPIO8_P0NE_FLAG 0x1000000
+#define EF_GPIO8_P0NE_FLAG ((uint32_t)0x1000000)
 ```
 
 ### define `EF_GPIO8_P0PE_FLAG`
 
 ```c
-#define EF_GPIO8_P0PE_FLAG 0x10000
+#define EF_GPIO8_P0PE_FLAG ((uint32_t)0x10000)
 ```
 
 ### define `EF_GPIO8_P1HI_FLAG`
 
 ```c
-#define EF_GPIO8_P1HI_FLAG 0x2
+#define EF_GPIO8_P1HI_FLAG ((uint32_t)0x2)
 ```
 
 ### define `EF_GPIO8_P1LO_FLAG`
 
 ```c
-#define EF_GPIO8_P1LO_FLAG 0x200
+#define EF_GPIO8_P1LO_FLAG ((uint32_t)0x200)
 ```
 
 ### define `EF_GPIO8_P1NE_FLAG`
 
 ```c
-#define EF_GPIO8_P1NE_FLAG 0x2000000
+#define EF_GPIO8_P1NE_FLAG ((uint32_t)0x2000000)
 ```
 
 ### define `EF_GPIO8_P1PE_FLAG`
 
 ```c
-#define EF_GPIO8_P1PE_FLAG 0x20000
+#define EF_GPIO8_P1PE_FLAG ((uint32_t)0x20000)
 ```
 
 ### define `EF_GPIO8_P2HI_FLAG`
 
 ```c
-#define EF_GPIO8_P2HI_FLAG 0x4
+#define EF_GPIO8_P2HI_FLAG ((uint32_t)0x4)
 ```
 
 ### define `EF_GPIO8_P2LO_FLAG`
 
 ```c
-#define EF_GPIO8_P2LO_FLAG 0x400
+#define EF_GPIO8_P2LO_FLAG ((uint32_t)0x400)
 ```
 
 ### define `EF_GPIO8_P2NE_FLAG`
 
 ```c
-#define EF_GPIO8_P2NE_FLAG 0x4000000
+#define EF_GPIO8_P2NE_FLAG ((uint32_t)0x4000000)
 ```
 
 ### define `EF_GPIO8_P2PE_FLAG`
 
 ```c
-#define EF_GPIO8_P2PE_FLAG 0x40000
+#define EF_GPIO8_P2PE_FLAG ((uint32_t)0x40000)
 ```
 
 ### define `EF_GPIO8_P3HI_FLAG`
 
 ```c
-#define EF_GPIO8_P3HI_FLAG 0x8
+#define EF_GPIO8_P3HI_FLAG ((uint32_t)0x8)
 ```
 
 ### define `EF_GPIO8_P3LO_FLAG`
 
 ```c
-#define EF_GPIO8_P3LO_FLAG 0x800
+#define EF_GPIO8_P3LO_FLAG ((uint32_t)0x800)
 ```
 
 ### define `EF_GPIO8_P3NE_FLAG`
 
 ```c
-#define EF_GPIO8_P3NE_FLAG 0x8000000
+#define EF_GPIO8_P3NE_FLAG ((uint32_t)0x8000000)
 ```
 
 ### define `EF_GPIO8_P3PE_FLAG`
 
 ```c
-#define EF_GPIO8_P3PE_FLAG 0x80000
+#define EF_GPIO8_P3PE_FLAG ((uint32_t)0x80000)
 ```
 
 ### define `EF_GPIO8_P4HI_FLAG`
 
 ```c
-#define EF_GPIO8_P4HI_FLAG 0x10
+#define EF_GPIO8_P4HI_FLAG ((uint32_t)0x10)
 ```
 
 ### define `EF_GPIO8_P4LO_FLAG`
 
 ```c
-#define EF_GPIO8_P4LO_FLAG 0x1000
+#define EF_GPIO8_P4LO_FLAG ((uint32_t)0x1000)
 ```
 
 ### define `EF_GPIO8_P4NE_FLAG`
 
 ```c
-#define EF_GPIO8_P4NE_FLAG 0x10000000
+#define EF_GPIO8_P4NE_FLAG ((uint32_t)0x10000000)
 ```
 
 ### define `EF_GPIO8_P4PE_FLAG`
 
 ```c
-#define EF_GPIO8_P4PE_FLAG 0x100000
+#define EF_GPIO8_P4PE_FLAG ((uint32_t)0x100000)
 ```
 
 ### define `EF_GPIO8_P5HI_FLAG`
 
 ```c
-#define EF_GPIO8_P5HI_FLAG 0x20
+#define EF_GPIO8_P5HI_FLAG ((uint32_t)0x20)
 ```
 
 ### define `EF_GPIO8_P5LO_FLAG`
 
 ```c
-#define EF_GPIO8_P5LO_FLAG 0x2000
+#define EF_GPIO8_P5LO_FLAG ((uint32_t)0x2000)
 ```
 
 ### define `EF_GPIO8_P5NE_FLAG`
 
 ```c
-#define EF_GPIO8_P5NE_FLAG 0x20000000
+#define EF_GPIO8_P5NE_FLAG ((uint32_t)0x20000000)
 ```
 
 ### define `EF_GPIO8_P5PE_FLAG`
 
 ```c
-#define EF_GPIO8_P5PE_FLAG 0x200000
+#define EF_GPIO8_P5PE_FLAG ((uint32_t)0x200000)
 ```
 
 ### define `EF_GPIO8_P6HI_FLAG`
 
 ```c
-#define EF_GPIO8_P6HI_FLAG 0x40
+#define EF_GPIO8_P6HI_FLAG ((uint32_t)0x40)
 ```
 
 ### define `EF_GPIO8_P6LO_FLAG`
 
 ```c
-#define EF_GPIO8_P6LO_FLAG 0x4000
+#define EF_GPIO8_P6LO_FLAG ((uint32_t)0x4000)
 ```
 
 ### define `EF_GPIO8_P6NE_FLAG`
 
 ```c
-#define EF_GPIO8_P6NE_FLAG 0x40000000
+#define EF_GPIO8_P6NE_FLAG ((uint32_t)0x40000000)
 ```
 
 ### define `EF_GPIO8_P6PE_FLAG`
 
 ```c
-#define EF_GPIO8_P6PE_FLAG 0x400000
+#define EF_GPIO8_P6PE_FLAG ((uint32_t)0x400000)
 ```
 
 ### define `EF_GPIO8_P7HI_FLAG`
 
 ```c
-#define EF_GPIO8_P7HI_FLAG 0x80
+#define EF_GPIO8_P7HI_FLAG ((uint32_t)0x80)
 ```
 
 ### define `EF_GPIO8_P7LO_FLAG`
 
 ```c
-#define EF_GPIO8_P7LO_FLAG 0x8000
+#define EF_GPIO8_P7LO_FLAG ((uint32_t)0x8000)
 ```
 
 ### define `EF_GPIO8_P7NE_FLAG`
 
 ```c
-#define EF_GPIO8_P7NE_FLAG 0x80000000
+#define EF_GPIO8_P7NE_FLAG ((uint32_t)0x80000000)
 ```
 
 ### define `EF_GPIO8_P7PE_FLAG`
 
 ```c
-#define EF_GPIO8_P7PE_FLAG 0x800000
+#define EF_GPIO8_P7PE_FLAG ((uint32_t)0x800000)
 ```
 
 ### define `IO_TYPES`

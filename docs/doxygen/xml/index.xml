@@ -19,7 +19,6 @@
     <member refid="_e_f___driver___common_8h_1abd8e6eb4870238ef0f900911e3935d91" kind="define"><name>EF_DRIVER_ERROR_UNSUPPORTED</name></member>
     <member refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kind="define"><name>EF_DRIVER_ERROR_PARAMETER</name></member>
     <member refid="_e_f___driver___common_8h_1a89de2e78c0ce8d5b48c0cef064ae3aab" kind="define"><name>EF_DRIVER_ERROR_SPECIFIC</name></member>
-    <member refid="_e_f___driver___common_8h_1a42a5cb31efb4e28fa9d16016485de643" kind="define"><name>EF_DRIVER_ERROR_NO_DATA</name></member>
     <member refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kind="typedef"><name>EF_DRIVER_STATUS</name></member>
   </compound>
   <compound refid="_e_f___g_p_i_o8_8c" kind="file"><name>EF_GPIO8.c</name>

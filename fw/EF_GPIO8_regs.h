@@ -37,38 +37,38 @@
 #endif
 
 
-#define EF_GPIO8_P0HI_FLAG	0x1
-#define EF_GPIO8_P1HI_FLAG	0x2
-#define EF_GPIO8_P2HI_FLAG	0x4
-#define EF_GPIO8_P3HI_FLAG	0x8
-#define EF_GPIO8_P4HI_FLAG	0x10
-#define EF_GPIO8_P5HI_FLAG	0x20
-#define EF_GPIO8_P6HI_FLAG	0x40
-#define EF_GPIO8_P7HI_FLAG	0x80
-#define EF_GPIO8_P0LO_FLAG	0x100
-#define EF_GPIO8_P1LO_FLAG	0x200
-#define EF_GPIO8_P2LO_FLAG	0x400
-#define EF_GPIO8_P3LO_FLAG	0x800
-#define EF_GPIO8_P4LO_FLAG	0x1000
-#define EF_GPIO8_P5LO_FLAG	0x2000
-#define EF_GPIO8_P6LO_FLAG	0x4000
-#define EF_GPIO8_P7LO_FLAG	0x8000
-#define EF_GPIO8_P0PE_FLAG	0x10000
-#define EF_GPIO8_P1PE_FLAG	0x20000
-#define EF_GPIO8_P2PE_FLAG	0x40000
-#define EF_GPIO8_P3PE_FLAG	0x80000
-#define EF_GPIO8_P4PE_FLAG	0x100000
-#define EF_GPIO8_P5PE_FLAG	0x200000
-#define EF_GPIO8_P6PE_FLAG	0x400000
-#define EF_GPIO8_P7PE_FLAG	0x800000
-#define EF_GPIO8_P0NE_FLAG	0x1000000
-#define EF_GPIO8_P1NE_FLAG	0x2000000
-#define EF_GPIO8_P2NE_FLAG	0x4000000
-#define EF_GPIO8_P3NE_FLAG	0x8000000
-#define EF_GPIO8_P4NE_FLAG	0x10000000
-#define EF_GPIO8_P5NE_FLAG	0x20000000
-#define EF_GPIO8_P6NE_FLAG	0x40000000
-#define EF_GPIO8_P7NE_FLAG	0x80000000
+#define EF_GPIO8_P0HI_FLAG	((uint32_t)0x1)
+#define EF_GPIO8_P1HI_FLAG	((uint32_t)0x2)
+#define EF_GPIO8_P2HI_FLAG	((uint32_t)0x4)
+#define EF_GPIO8_P3HI_FLAG	((uint32_t)0x8)
+#define EF_GPIO8_P4HI_FLAG	((uint32_t)0x10)
+#define EF_GPIO8_P5HI_FLAG	((uint32_t)0x20)
+#define EF_GPIO8_P6HI_FLAG	((uint32_t)0x40)
+#define EF_GPIO8_P7HI_FLAG	((uint32_t)0x80)
+#define EF_GPIO8_P0LO_FLAG	((uint32_t)0x100)
+#define EF_GPIO8_P1LO_FLAG	((uint32_t)0x200)
+#define EF_GPIO8_P2LO_FLAG	((uint32_t)0x400)
+#define EF_GPIO8_P3LO_FLAG	((uint32_t)0x800)
+#define EF_GPIO8_P4LO_FLAG	((uint32_t)0x1000)
+#define EF_GPIO8_P5LO_FLAG	((uint32_t)0x2000)
+#define EF_GPIO8_P6LO_FLAG	((uint32_t)0x4000)
+#define EF_GPIO8_P7LO_FLAG	((uint32_t)0x8000)
+#define EF_GPIO8_P0PE_FLAG	((uint32_t)0x10000)
+#define EF_GPIO8_P1PE_FLAG	((uint32_t)0x20000)
+#define EF_GPIO8_P2PE_FLAG	((uint32_t)0x40000)
+#define EF_GPIO8_P3PE_FLAG	((uint32_t)0x80000)
+#define EF_GPIO8_P4PE_FLAG	((uint32_t)0x100000)
+#define EF_GPIO8_P5PE_FLAG	((uint32_t)0x200000)
+#define EF_GPIO8_P6PE_FLAG	((uint32_t)0x400000)
+#define EF_GPIO8_P7PE_FLAG	((uint32_t)0x800000)
+#define EF_GPIO8_P0NE_FLAG	((uint32_t)0x1000000)
+#define EF_GPIO8_P1NE_FLAG	((uint32_t)0x2000000)
+#define EF_GPIO8_P2NE_FLAG	((uint32_t)0x4000000)
+#define EF_GPIO8_P3NE_FLAG	((uint32_t)0x8000000)
+#define EF_GPIO8_P4NE_FLAG	((uint32_t)0x10000000)
+#define EF_GPIO8_P5NE_FLAG	((uint32_t)0x20000000)
+#define EF_GPIO8_P6NE_FLAG	((uint32_t)0x40000000)
+#define EF_GPIO8_P7NE_FLAG	((uint32_t)0x80000000)
 
 
 /******************************************************************************

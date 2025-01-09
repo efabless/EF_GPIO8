@@ -63,7 +63,7 @@ EF_DRIVER_STATUS EF_GPIO8_setGclkEnable (EF_GPIO8_TYPE_PTR gpio, uint32_t value)
 
     if (gpio == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
-    }else if (value < 0 || value > 1) {  
+    }else if ((value < (uint32_t)0x0) || (value > (uint32_t)0x1)) {  
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if value is out of range
     }else {
         gpio->GCLK = value;                     // Set the GCLK enable bit to the given value
@@ -100,7 +100,7 @@ EF_DRIVER_STATUS EF_GPIO8_waitInput(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_val
         uint32_t gpio_data;
         do {
             status = EF_GPIO8_readData(gpio, &gpio_data);   // Read the input value of the GPIOs
-        } while ((status == EF_DRIVER_OK) & (gpio_data != compare_value));               // Wait until the input GPIOs have the required value
+        } while ((status == EF_DRIVER_OK) && (gpio_data != compare_value));               // Wait until the input GPIOs have the required value
     }
 
     return status;
@@ -112,7 +112,7 @@ EF_DRIVER_STATUS EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, ui
 
     if (gpio == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
-    }else if (pin > 7) {
+    }else if (pin > (uint32_t)7) {
         status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if pin is out of range
     }else if (compare_value > EF_GPIO8_DATAI_MAX_VALUE) {
         status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if compare_value is out of range
@@ -120,7 +120,7 @@ EF_DRIVER_STATUS EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, ui
         uint32_t gpio_data;
         do {
             status = EF_GPIO8_readData(gpio, &gpio_data);   // Read the input value of the GPIOs
-        } while ((status == EF_DRIVER_OK) & ((gpio_data & (1 << pin)) != compare_value));  // Wait until the input GPIO pin has the required value
+        } while ((status == EF_DRIVER_OK) && ((gpio_data & ((uint32_t)0x1 << pin)) != compare_value));  // Wait until the input GPIO pin has the required value
     }
 
     return status;
@@ -183,14 +183,14 @@ EF_DRIVER_STATUS EF_GPIO8_setPinDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, 
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
     }else if (pin > EF_GPIO8_NUM_PINS) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if pin is out of range
-    }else if (gpio_dir > 1) {
+    }else if (gpio_dir > (uint32_t)0x1) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio_dir is out of range
     }else {
         uint32_t directions  = gpio->DIR;
         if (gpio_dir == GPIO8_OUTPUT)
-            directions |= (1 << pin);
+            {directions |= ((uint32_t)0x1 << pin);}
         else
-            directions &= ~(1 << pin);
+            {directions &= ~((uint32_t)0x1 << pin);}
         gpio->DIR = directions;                 // Set the direction of the specified GPIO pin
     }
 
@@ -284,14 +284,14 @@ EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection(EF_GPIO8_TYPE_PTR gpio, uint8_t 
 
     if (gpio == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
-    }else if (dir > 1) {
+    }else if (dir > (uint32_t)0x1) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if dir is out of range
     }else {
         uint32_t directions  = gpio->DIR;
         if (dir == GPIO8_OUTPUT)
-            directions |= pins;
+            {directions |= pins;}
         else
-            directions &= ~pins;
+            {directions &= ~pins;}
         gpio->DIR = directions;                 // Set the direction of the specified set of pins
     }
 
@@ -322,7 +322,7 @@ EF_DRIVER_STATUS EF_GPIO8_writePackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, 
     if (gpio == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
     }else {
-        gpio->DATAO = (gpio->DATAO & ~pins) | (data & pins);  // Write the data to the specified set of pins
+        gpio->DATAO = (gpio->DATAO & (~pins)) | (data & pins);  // Write the data to the specified set of pins
     }
 
     return status;
