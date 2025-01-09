@@ -73,5 +73,7 @@ typedef struct _EF_GPIO8_TYPE_ {
 	__W 	GCLK;
 } EF_GPIO8_TYPE;
 
+typedef EF_GPIO8_TYPE* EF_GPIO8_TYPE_PTR;
+
 #endif 
 
