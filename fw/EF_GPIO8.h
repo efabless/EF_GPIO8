@@ -38,6 +38,10 @@
 #define GPIO8_INPUT 0
 #define GPIO8_OUTPUT 1
 
+#define EF_GPIO8_DATAI_MAX_VALUE    0x000000FF         // Maximum value of the DATAI register, 8 bits
+#define EF_GPIO8_DATAO_MAX_VALUE    0x000000FF         // Maximum value of the DATAO register, 8 bits
+#define EF_GPIO8_DIR_MAX_VALUE      0x000000FF         // Maximum value of the DIR register, 8 bits
+#define EF_GPIO8_NUM_PINS           0x00000008         // Number of GPIO pins
 
 /******************************************************************************
 * Typedefs and Enums

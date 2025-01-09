@@ -1,0 +1,115 @@
+\hypertarget{_e_f___g_p_i_o8__regs_8h_source}{}\doxysection{EF\+\_\+\+GPIO8\+\_\+regs.\+h}
+\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Copyright\ 2024\ Efabless\ Corp.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Author:\ Mohamed\ Shalan\ (mshalan@efabless.com)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ \ \ \ www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ EF\_GPIO8REGS\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ EF\_GPIO8REGS\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___driver___common_8h}{EF\_Driver\_Common.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ Macros\ and\ Constants}}
+\DoxyCodeLine{00031\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ IO\_TYPES}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ IO\_TYPES}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ \ \_\_R\ \ \ \ \ volatile\ const\ uint32\_t}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ \ \_\_W\ \ \ \ \ volatile\ \ \ \ \ \ \ uint32\_t}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \ \ \_\_RW\ \ \ \ volatile\ \ \ \ \ \ \ uint32\_t}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P0HI\_FLAG\ \ 0x1}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P1HI\_FLAG\ \ 0x2}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P2HI\_FLAG\ \ 0x4}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P3HI\_FLAG\ \ 0x8}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P4HI\_FLAG\ \ 0x10}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P5HI\_FLAG\ \ 0x20}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P6HI\_FLAG\ \ 0x40}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P7HI\_FLAG\ \ 0x80}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P0LO\_FLAG\ \ 0x100}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P1LO\_FLAG\ \ 0x200}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P2LO\_FLAG\ \ 0x400}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P3LO\_FLAG\ \ 0x800}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P4LO\_FLAG\ \ 0x1000}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P5LO\_FLAG\ \ 0x2000}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P6LO\_FLAG\ \ 0x4000}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P7LO\_FLAG\ \ 0x8000}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P0PE\_FLAG\ \ 0x10000}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P1PE\_FLAG\ \ 0x20000}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P2PE\_FLAG\ \ 0x40000}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P3PE\_FLAG\ \ 0x80000}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P4PE\_FLAG\ \ 0x100000}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P5PE\_FLAG\ \ 0x200000}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P6PE\_FLAG\ \ 0x400000}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P7PE\_FLAG\ \ 0x800000}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P0NE\_FLAG\ \ 0x1000000}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P1NE\_FLAG\ \ 0x2000000}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P2NE\_FLAG\ \ 0x4000000}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P3NE\_FLAG\ \ 0x8000000}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P4NE\_FLAG\ \ 0x10000000}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P5NE\_FLAG\ \ 0x20000000}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P6NE\_FLAG\ \ 0x40000000}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_P7NE\_FLAG\ \ 0x80000000}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00075\ \textcolor{comment}{*\ Typedefs\ and\ Enums}}
+\DoxyCodeLine{00076\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{\_EF\_GPIO8\_TYPE\_}}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___a16078caf5a7f895c69daf902611c83d4}{DATAI}};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___aeb4b18d6fec67e77cb6ee29bac77bf44}{DATAO}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___a5c419047eeed433dc1f43d97afc71f63}{DIR}};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___a3e9d3c2b038a4a4afd654bc7b3aaafc8}{reserved\_0}}[16317];}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a81f369079976a46554fd9798ab035697}{\_\_RW}}\ \ \ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___a9d39406048f21e4503487bcffa9b2930}{IM}};}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___adff0bc8274b8afdfe1eb159f8aa2d40e}{MIS}};}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\_\_R}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___abdcf04c00728788279e72b3442f19660}{RIS}};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___ad26d302dfa71011629ffb91191820c5f}{IC}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\_\_W}}\ \ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e___a286fc90fa566e761c67f42b59d759e2b}{GCLK}};}
+\DoxyCodeLine{00087\ \}\ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\_GPIO8\_TYPE}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE}}*\ \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\_GPIO8\_TYPE\_PTR}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00093\ \textcolor{comment}{*\ Function\ Prototypes}}
+\DoxyCodeLine{00094\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00099\ \textcolor{comment}{*\ External\ Variables}}
+\DoxyCodeLine{00100\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EF\_GPIO8\_REGS\_H}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00108\ \textcolor{comment}{*\ End\ of\ File}}
+\DoxyCodeLine{00109\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00110\ }
+
+\end{DoxyCode}

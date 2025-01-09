@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['icr_0',['icr',['../struct__EF__GPIO8__TYPE__.html#abf31c15fca6d2d9cf0315a99c91010f9',1,'_EF_GPIO8_TYPE_']]],
-  ['im_1',['im',['../struct__EF__GPIO8__TYPE__.html#ada0d820cfa5c567470b4435394d2f55b',1,'_EF_GPIO8_TYPE_']]]
+  ['gclk_0',['GCLK',['../struct___e_f___g_p_i_o8___t_y_p_e__.html#a286fc90fa566e761c67f42b59d759e2b',1,'_EF_GPIO8_TYPE_']]]
 ];

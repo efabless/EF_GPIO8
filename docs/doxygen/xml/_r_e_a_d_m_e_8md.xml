@@ -1,0 +1,1055 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>API<sp/>Reference</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Header<sp/>files</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_driver_commonh)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_gpio8h)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h](#file-usersyoussefdocumentsworkefablessef_gpio8fwef_gpio8_regsh)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_Driver_Common.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>common<sp/>driver<sp/>definitions<sp/>and<sp/>types._</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>uint32\_t<sp/>|<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/><sp/>&lt;br&gt;_A<sp/>type<sp/>that<sp/>is<sp/>used<sp/>to<sp/>return<sp/>the<sp/>status<sp/>of<sp/>the<sp/>driver<sp/>functions._<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR**](#define-ef_driver_error)<sp/><sp/>1&lt;br&gt;_Unspecified<sp/>error._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_BUSY**](#define-ef_driver_error_busy)<sp/><sp/>2&lt;br&gt;_Driver<sp/>is<sp/>busy._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_NO\_DATA**](#define-ef_driver_error_no_data)<sp/><sp/>7&lt;br&gt;_No<sp/>data<sp/>available._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_PARAMETER**](#define-ef_driver_error_parameter)<sp/><sp/>5&lt;br&gt;_Parameter<sp/>error._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_SPECIFIC**](#define-ef_driver_error_specific)<sp/><sp/>6&lt;br&gt;_Start<sp/>of<sp/>driver<sp/>specific<sp/>errors._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_TIMEOUT**](#define-ef_driver_error_timeout)<sp/><sp/>3&lt;br&gt;_Timeout<sp/>occurred._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_ERROR\_UNSUPPORTED**](#define-ef_driver_error_unsupported)<sp/><sp/>4&lt;br&gt;_Operation<sp/>not<sp/>supported._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_DRIVER\_OK**](#define-ef_driver_ok)<sp/><sp/>0&lt;br&gt;_Operation<sp/>succeeded._<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_DRIVER_STATUS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_A<sp/>type<sp/>that<sp/>is<sp/>used<sp/>to<sp/>return<sp/>the<sp/>status<sp/>of<sp/>the<sp/>driver<sp/>functions._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>uint32_t<sp/>EF_DRIVER_STATUS;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Unspecified<sp/>error._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_BUSY`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Driver<sp/>is<sp/>busy._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_BUSY<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_NO_DATA`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_No<sp/>data<sp/>available._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_NO_DATA<sp/>7</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_PARAMETER`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Parameter<sp/>error._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>5</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_SPECIFIC`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Start<sp/>of<sp/>driver<sp/>specific<sp/>errors._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_SPECIFIC<sp/>6</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_TIMEOUT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Timeout<sp/>occurred._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_TIMEOUT<sp/>3</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_ERROR_UNSUPPORTED`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Operation<sp/>not<sp/>supported._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_ERROR_UNSUPPORTED<sp/>4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_DRIVER_OK`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Operation<sp/>succeeded._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_DRIVER_OK<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>for<sp/>GPIO8<sp/>APIs<sp/>which<sp/>contains<sp/>the<sp/>function<sp/>prototypes._</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_getIM**](#function-ef_gpio8_getim)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>\*gpio\_im)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_getMIS**](#function-ef_gpio8_getmis)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>\*gpio\_mis)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_getRIS**](#function-ef_gpio8_getris)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>\*gpio\_ris)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_readData**](#function-ef_gpio8_readdata)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>\*gpio\_data)<sp/>&lt;br&gt;_reads<sp/>the<sp/>input<sp/>value<sp/>of<sp/>the<sp/>GPIOs_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_readDirection**](#function-ef_gpio8_readdirection)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>\*gpio\_dir)<sp/>&lt;br&gt;_gets<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_readPackedData**](#function-ef_gpio8_readpackeddata)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint8\_t<sp/>pins,<sp/>uint32\_t<sp/>\*packed\_data)<sp/>&lt;br&gt;_This<sp/>function<sp/>reads<sp/>the<sp/>data<sp/>from<sp/>a<sp/>specified<sp/>set<sp/>of<sp/>pins<sp/>in<sp/>a<sp/>GPIO<sp/>port.<sp/>Given<sp/>a<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s),<sp/>it<sp/>reads<sp/>the<sp/>data<sp/>from<sp/>the<sp/>pin(s)._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_setGclkEnable**](#function-ef_gpio8_setgclkenable)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>value)<sp/>&lt;br&gt;_sets<sp/>the<sp/>GCLK<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>GPIO<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_setICR**](#function-ef_gpio8_seticr)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_setIM**](#function-ef_gpio8_setim)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>mask)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_setPinDirection**](#function-ef_gpio8_setpindirection)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>pin,<sp/>uint32\_t<sp/>dir)<sp/>&lt;br&gt;_sets<sp/>the<sp/>direction<sp/>of<sp/>one<sp/>GPIO<sp/>pin_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_setPinPackedDirection**](#function-ef_gpio8_setpinpackeddirection)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint8\_t<sp/>pins,<sp/>uint32\_t<sp/>dir)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_waitInput**](#function-ef_gpio8_waitinput)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>compare\_value)<sp/>&lt;br&gt;_wait<sp/>until<sp/>the<sp/>input<sp/>GPIOs<sp/>have<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_wait\_InputPin**](#function-ef_gpio8_wait_inputpin)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>pin,<sp/>uint32\_t<sp/>compare\_value)<sp/>&lt;br&gt;_wait<sp/>until<sp/>a<sp/>GPIO<sp/>pin<sp/>have<sp/>a<sp/>certain<sp/>value_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_writeAllDirection**](#function-ef_gpio8_writealldirection)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>data)<sp/>&lt;br&gt;_sets<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_writeData**](#function-ef_gpio8_writedata)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint32\_t<sp/>data)<sp/>&lt;br&gt;_drives<sp/>the<sp/>output<sp/>value<sp/>of<sp/>the<sp/>GPIOs_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_GPIO8\_writePackedData**](#function-ef_gpio8_writepackeddata)<sp/>([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/>gpio,<sp/>uint8\_t<sp/>pins,<sp/>uint8\_t<sp/>data)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_DATAI\_MAX\_VALUE**](#define-ef_gpio8_datai_max_value)<sp/><sp/>0x000000FF&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_DATAO\_MAX\_VALUE**](#define-ef_gpio8_datao_max_value)<sp/><sp/>0x000000FF&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_DIR\_MAX\_VALUE**](#define-ef_gpio8_dir_max_value)<sp/><sp/>0x000000FF&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_NUM\_PINS**](#define-ef_gpio8_num_pins)<sp/><sp/>0x00000008&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**GPIO8\_INPUT**](#define-gpio8_input)<sp/><sp/>0&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**GPIO8\_OUTPUT**](#define-gpio8_output)<sp/><sp/>1&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_getIM`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_getIM<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*gpio_im</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>P0HI<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>P1HI<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>P2HI<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>P3HI<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>P4HI<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>P5HI<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>P6HI<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>P7HI<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>P0LO<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>P1LO<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>10<sp/>P2LO<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>11<sp/>P3LO<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>12<sp/>P4LO<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>13<sp/>P5LO<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>14<sp/>P6LO<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>15<sp/>P7LO<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>16<sp/>P0PE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>17<sp/>P1PE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>18<sp/>P2PE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>19<sp/>P3PE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>20<sp/>P4PE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>21<sp/>P5PE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>22<sp/>P6PE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>23<sp/>P7PE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>24<sp/>P0NE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>25<sp/>P1NE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>26<sp/>P2NE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>27<sp/>P3NE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>28<sp/>P4NE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>29<sp/>P5NE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>30<sp/>P6NE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>31<sp/>P7NE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio_im`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>IM<sp/>register</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_getMIS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_getMIS<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*gpio_mis</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Masked<sp/>Interrupt<sp/>Status<sp/>Register</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>P0HI<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>P1HI<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>P2HI<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>P3HI<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>P4HI<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>P5HI<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>P6HI<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>P7HI<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>P0LO<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>P1LO<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>10<sp/>P2LO<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>11<sp/>P3LO<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>12<sp/>P4LO<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>13<sp/>P5LO<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>14<sp/>P6LO<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>15<sp/>P7LO<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>16<sp/>P0PE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>17<sp/>P1PE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>18<sp/>P2PE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>19<sp/>P3PE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>20<sp/>P4PE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>21<sp/>P5PE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>22<sp/>P6PE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>23<sp/>P7PE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>24<sp/>P0NE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>25<sp/>P1NE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>26<sp/>P2NE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>27<sp/>P3NE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>28<sp/>P4NE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>29<sp/>P5NE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>30<sp/>P6NE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>31<sp/>P7NE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio_mis`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>MIS<sp/>register</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_getRIS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_getRIS<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*gpio_ris</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Raw<sp/>Interrupt<sp/>Status<sp/>Register</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>P0HI<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>P1HI<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>P2HI<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>P3HI<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>P4HI<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>P5HI<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>P6HI<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>P7HI<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>P0LO<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>P1LO<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>10<sp/>P2LO<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>11<sp/>P3LO<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>12<sp/>P4LO<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>13<sp/>P5LO<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>14<sp/>P6LO<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>15<sp/>P7LO<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>16<sp/>P0PE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>17<sp/>P1PE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>18<sp/>P2PE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>19<sp/>P3PE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>20<sp/>P4PE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>21<sp/>P5PE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>22<sp/>P6PE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>23<sp/>P7PE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>24<sp/>P0NE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>25<sp/>P1NE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>26<sp/>P2NE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>27<sp/>P3NE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>28<sp/>P4NE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>29<sp/>P5NE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>30<sp/>P6NE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>31<sp/>P7NE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio_ris`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>RIS<sp/>register</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_readData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_reads<sp/>the<sp/>input<sp/>value<sp/>of<sp/>the<sp/>GPIOs_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_readData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*gpio_data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio_data`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>input<sp/>GPIOs</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_readDirection`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_gets<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_readDirection<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*gpio_dir</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio_dir`<sp/>GPIOs<sp/>direction<sp/>where<sp/>1<sp/>is<sp/>output<sp/>and<sp/>0<sp/>means<sp/>input.<sp/>It<sp/>should<sp/>be<sp/>an<sp/>eight<sp/>bit<sp/>value<sp/>where<sp/>each<sp/>bit<sp/>represents<sp/>the<sp/>direction<sp/>of<sp/>certain<sp/>GPIO<sp/>pin</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_readPackedData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_This<sp/>function<sp/>reads<sp/>the<sp/>data<sp/>from<sp/>a<sp/>specified<sp/>set<sp/>of<sp/>pins<sp/>in<sp/>a<sp/>GPIO<sp/>port.<sp/>Given<sp/>a<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s),<sp/>it<sp/>reads<sp/>the<sp/>data<sp/>from<sp/>the<sp/>pin(s)._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_readPackedData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pins,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*packed_data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pins`<sp/>The<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s).<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`packed_data`<sp/>The<sp/>data<sp/>read<sp/>from<sp/>the<sp/>pin(s)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_setGclkEnable`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>GCLK<sp/>enable<sp/>bit<sp/>in<sp/>the<sp/>GPIO<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_setGclkEnable<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`value`<sp/>The<sp/>value<sp/>of<sp/>the<sp/>GCLK<sp/>enable<sp/>bit</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_setICR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_setICR<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Clear<sp/>Register;<sp/>write<sp/>1<sp/>to<sp/>clear<sp/>the<sp/>flag</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>P0HI<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>P1HI<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>P2HI<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>P3HI<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>P4HI<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>P5HI<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>P6HI<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>P7HI<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>P0LO<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>P1LO<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>10<sp/>P2LO<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>11<sp/>P3LO<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>12<sp/>P4LO<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>13<sp/>P5LO<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>14<sp/>P6LO<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>15<sp/>P7LO<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>16<sp/>P0PE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>17<sp/>P1PE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>18<sp/>P2PE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>19<sp/>P3PE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>20<sp/>P4PE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>21<sp/>P5PE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>22<sp/>P6PE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>23<sp/>P7PE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>24<sp/>P0NE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>25<sp/>P1NE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>26<sp/>P2NE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>27<sp/>P3NE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>28<sp/>P4NE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>29<sp/>P5NE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>30<sp/>P6NE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>31<sp/>P7NE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_setIM`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_setIM<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>P0HI<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>P1HI<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>P2HI<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>P3HI<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>P4HI<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>P5HI<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>P6HI<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>P7HI<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>high</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>P0LO<sp/>:<sp/>Pin<sp/>0<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>P1LO<sp/>:<sp/>Pin<sp/>1<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>10<sp/>P2LO<sp/>:<sp/>Pin<sp/>2<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>11<sp/>P3LO<sp/>:<sp/>Pin<sp/>3<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>12<sp/>P4LO<sp/>:<sp/>Pin<sp/>4<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>13<sp/>P5LO<sp/>:<sp/>Pin<sp/>5<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>14<sp/>P6LO<sp/>:<sp/>Pin<sp/>6<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>15<sp/>P7LO<sp/>:<sp/>Pin<sp/>7<sp/>is<sp/>low</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>16<sp/>P0PE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>17<sp/>P1PE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>18<sp/>P2PE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>19<sp/>P3PE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>20<sp/>P4PE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>21<sp/>P5PE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>22<sp/>P6PE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>23<sp/>P7PE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>rising<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>24<sp/>P0NE<sp/>:<sp/>Pin<sp/>0<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>25<sp/>P1NE<sp/>:<sp/>Pin<sp/>1<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>26<sp/>P2NE<sp/>:<sp/>Pin<sp/>2<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>27<sp/>P3NE<sp/>:<sp/>Pin<sp/>3<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>28<sp/>P4NE<sp/>:<sp/>Pin<sp/>4<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>29<sp/>P5NE<sp/>:<sp/>Pin<sp/>5<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>30<sp/>P6NE<sp/>:<sp/>Pin<sp/>6<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>31<sp/>P7NE<sp/>:<sp/>Pin<sp/>7<sp/>has<sp/>observed<sp/>a<sp/>falling<sp/>edge</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`mask`<sp/>The<sp/>required<sp/>mask<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_setPinDirection`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>direction<sp/>of<sp/>one<sp/>GPIO<sp/>pin_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_setPinDirection<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>pin,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>dir</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pin`<sp/>pin<sp/>number<sp/>from<sp/>0<sp/>to<sp/>7<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`dir`<sp/>GPIO<sp/>pin<sp/>direction<sp/>where<sp/>1<sp/>is<sp/>output<sp/>and<sp/>0<sp/>means<sp/>input.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_setPinPackedDirection`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_setPinPackedDirection<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pins,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>dir</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>function<sp/>sets<sp/>the<sp/>direction<sp/>of<sp/>a<sp/>specified<sp/>set<sp/>of<sp/>pins<sp/>in<sp/>a<sp/>GPIO<sp/>port.<sp/>Given<sp/>a<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s),<sp/>it<sp/>sets<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>pin(s)<sp/>to<sp/>the<sp/>required<sp/>value.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>specified<sp/>pins<sp/>are<sp/>set<sp/>to<sp/>the<sp/>same<sp/>direction<sp/>(dir).<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>function<sp/>does<sp/>not<sp/>affect<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>other<sp/>pins<sp/>in<sp/>the<sp/>port.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pins`<sp/>The<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s).<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`dir`<sp/>The<sp/>required<sp/>direction<sp/>value</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_waitInput`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_wait<sp/>until<sp/>the<sp/>input<sp/>GPIOs<sp/>have<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_waitInput<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>compare_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`compare_value`<sp/>the<sp/>value<sp/>to<sp/>compare<sp/>the<sp/>input<sp/>GPIOs<sp/>with</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_wait_InputPin`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_wait<sp/>until<sp/>a<sp/>GPIO<sp/>pin<sp/>have<sp/>a<sp/>certain<sp/>value_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_wait_InputPin<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>pin,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>compare_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pin`<sp/>The<sp/>pin<sp/>number<sp/>from<sp/>0<sp/>to<sp/>7<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`compare_value`<sp/>The<sp/>value<sp/>to<sp/>compare<sp/>the<sp/>GPIO<sp/>with</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_writeAllDirection`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_sets<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_writeAllDirection<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data`<sp/>GPIOs<sp/>direction<sp/>where<sp/>1<sp/>is<sp/>output<sp/>and<sp/>0<sp/>means<sp/>input.<sp/>It<sp/>should<sp/>be<sp/>an<sp/>eight<sp/>bit<sp/>value<sp/>where<sp/>each<sp/>bit<sp/>represents<sp/>the<sp/>direction<sp/>of<sp/>certain<sp/>GPIO<sp/>pin</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_writeData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_drives<sp/>the<sp/>output<sp/>value<sp/>of<sp/>the<sp/>GPIOs_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_writeData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data`<sp/>value<sp/>to<sp/>be<sp/>driven<sp/>to<sp/>output<sp/>GPIOs</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_GPIO8_writePackedData`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_GPIO8_writePackedData<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_GPIO8_TYPE_PTR<sp/>gpio,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pins,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>function<sp/>writes<sp/>the<sp/>data<sp/>to<sp/>a<sp/>specified<sp/>set<sp/>of<sp/>pins<sp/>in<sp/>a<sp/>GPIO<sp/>port.<sp/>Given<sp/>a<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s),<sp/>it<sp/>writes<sp/>the<sp/>data<sp/>to<sp/>the<sp/>pin(s).<sp/>Note<sp/>that<sp/>all<sp/>the<sp/>specified<sp/>pins<sp/>are<sp/>set<sp/>to<sp/>the<sp/>corresponding<sp/>value<sp/>of<sp/>the<sp/>corresponding<sp/>bit<sp/>in<sp/>the<sp/>data<sp/>parameter.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`gpio`<sp/>An<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>pointer,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>GPIO<sp/>registers.[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>GPIO<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pins`<sp/>The<sp/>bit-packed<sp/>representation<sp/>of<sp/>the<sp/>pin(s).<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data`<sp/>The<sp/>data<sp/>to<sp/>be<sp/>written<sp/>to<sp/>the<sp/>pin(s)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_DATAI_MAX_VALUE`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_DATAI_MAX_VALUE<sp/>0x000000FF</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_DATAO_MAX_VALUE`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_DATAO_MAX_VALUE<sp/>0x000000FF</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_DIR_MAX_VALUE`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_DIR_MAX_VALUE<sp/>0x000000FF</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_NUM_PINS`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_NUM_PINS<sp/>0x00000008</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`GPIO8_INPUT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>GPIO8_INPUT<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`GPIO8_OUTPUT`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>GPIO8_OUTPUT<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/EF_GPIO8_regs.h</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>struct<sp/>[**\_EF\_GPIO8\_TYPE\_**](#struct-_ef_gpio8_type_)<sp/>|<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>typedef<sp/>[**EF\_GPIO8\_TYPE**](#typedef-ef_gpio8_type)<sp/>\*<sp/>|<sp/>[**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>struct<sp/>|<sp/>[**\_EF\_GPIO8\_TYPE\_**](#struct-_ef_gpio8_type_)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P0HI\_FLAG**](#define-ef_gpio8_p0hi_flag)<sp/><sp/>0x1&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P0LO\_FLAG**](#define-ef_gpio8_p0lo_flag)<sp/><sp/>0x100&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P0NE\_FLAG**](#define-ef_gpio8_p0ne_flag)<sp/><sp/>0x1000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P0PE\_FLAG**](#define-ef_gpio8_p0pe_flag)<sp/><sp/>0x10000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P1HI\_FLAG**](#define-ef_gpio8_p1hi_flag)<sp/><sp/>0x2&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P1LO\_FLAG**](#define-ef_gpio8_p1lo_flag)<sp/><sp/>0x200&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P1NE\_FLAG**](#define-ef_gpio8_p1ne_flag)<sp/><sp/>0x2000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P1PE\_FLAG**](#define-ef_gpio8_p1pe_flag)<sp/><sp/>0x20000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P2HI\_FLAG**](#define-ef_gpio8_p2hi_flag)<sp/><sp/>0x4&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P2LO\_FLAG**](#define-ef_gpio8_p2lo_flag)<sp/><sp/>0x400&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P2NE\_FLAG**](#define-ef_gpio8_p2ne_flag)<sp/><sp/>0x4000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P2PE\_FLAG**](#define-ef_gpio8_p2pe_flag)<sp/><sp/>0x40000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P3HI\_FLAG**](#define-ef_gpio8_p3hi_flag)<sp/><sp/>0x8&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P3LO\_FLAG**](#define-ef_gpio8_p3lo_flag)<sp/><sp/>0x800&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P3NE\_FLAG**](#define-ef_gpio8_p3ne_flag)<sp/><sp/>0x8000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P3PE\_FLAG**](#define-ef_gpio8_p3pe_flag)<sp/><sp/>0x80000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P4HI\_FLAG**](#define-ef_gpio8_p4hi_flag)<sp/><sp/>0x10&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P4LO\_FLAG**](#define-ef_gpio8_p4lo_flag)<sp/><sp/>0x1000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P4NE\_FLAG**](#define-ef_gpio8_p4ne_flag)<sp/><sp/>0x10000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P4PE\_FLAG**](#define-ef_gpio8_p4pe_flag)<sp/><sp/>0x100000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P5HI\_FLAG**](#define-ef_gpio8_p5hi_flag)<sp/><sp/>0x20&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P5LO\_FLAG**](#define-ef_gpio8_p5lo_flag)<sp/><sp/>0x2000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P5NE\_FLAG**](#define-ef_gpio8_p5ne_flag)<sp/><sp/>0x20000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P5PE\_FLAG**](#define-ef_gpio8_p5pe_flag)<sp/><sp/>0x200000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P6HI\_FLAG**](#define-ef_gpio8_p6hi_flag)<sp/><sp/>0x40&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P6LO\_FLAG**](#define-ef_gpio8_p6lo_flag)<sp/><sp/>0x4000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P6NE\_FLAG**](#define-ef_gpio8_p6ne_flag)<sp/><sp/>0x40000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P6PE\_FLAG**](#define-ef_gpio8_p6pe_flag)<sp/><sp/>0x400000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P7HI\_FLAG**](#define-ef_gpio8_p7hi_flag)<sp/><sp/>0x80&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P7LO\_FLAG**](#define-ef_gpio8_p7lo_flag)<sp/><sp/>0x8000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P7NE\_FLAG**](#define-ef_gpio8_p7ne_flag)<sp/><sp/>0x80000000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**EF\_GPIO8\_P7PE\_FLAG**](#define-ef_gpio8_p7pe_flag)<sp/><sp/>0x800000&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**IO\_TYPES**](#define-io_types)<sp/><sp/>&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_R**](#define-__r)<sp/><sp/>volatile<sp/>const<sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_RW**](#define-__rw)<sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>define<sp/><sp/>|<sp/>[**\_\_W**](#define-__w)<sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32\_t&lt;br&gt;<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Structures<sp/>and<sp/>Types<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_GPIO8_TYPE`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>struct<sp/>_EF_GPIO8_TYPE_<sp/>EF_GPIO8_TYPE;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>typedef<sp/>`EF_GPIO8_TYPE_PTR`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>EF_GPIO8_TYPE*<sp/>EF_GPIO8_TYPE_PTR;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>struct<sp/>`_EF_GPIO8_TYPE_`</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Variables:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>DATAI<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>DATAO<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>DIR<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>GCLK<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_W**](#define-__w)<sp/>IC<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_RW**](#define-__rw)<sp/>IM<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>MIS<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>RIS<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/>[**\_\_R**](#define-__r)<sp/>reserved_0<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P0HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P0HI_FLAG<sp/>0x1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P0LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P0LO_FLAG<sp/>0x100</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P0NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P0NE_FLAG<sp/>0x1000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P0PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P0PE_FLAG<sp/>0x10000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P1HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P1HI_FLAG<sp/>0x2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P1LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P1LO_FLAG<sp/>0x200</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P1NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P1NE_FLAG<sp/>0x2000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P1PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P1PE_FLAG<sp/>0x20000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P2HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P2HI_FLAG<sp/>0x4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P2LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P2LO_FLAG<sp/>0x400</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P2NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P2NE_FLAG<sp/>0x4000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P2PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P2PE_FLAG<sp/>0x40000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P3HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P3HI_FLAG<sp/>0x8</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P3LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P3LO_FLAG<sp/>0x800</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P3NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P3NE_FLAG<sp/>0x8000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P3PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P3PE_FLAG<sp/>0x80000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P4HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P4HI_FLAG<sp/>0x10</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P4LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P4LO_FLAG<sp/>0x1000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P4NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P4NE_FLAG<sp/>0x10000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P4PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P4PE_FLAG<sp/>0x100000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P5HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P5HI_FLAG<sp/>0x20</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P5LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P5LO_FLAG<sp/>0x2000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P5NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P5NE_FLAG<sp/>0x20000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P5PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P5PE_FLAG<sp/>0x200000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P6HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P6HI_FLAG<sp/>0x40</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P6LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P6LO_FLAG<sp/>0x4000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P6NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P6NE_FLAG<sp/>0x40000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P6PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P6PE_FLAG<sp/>0x400000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P7HI_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P7HI_FLAG<sp/>0x80</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P7LO_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P7LO_FLAG<sp/>0x8000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P7NE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P7NE_FLAG<sp/>0x80000000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`EF_GPIO8_P7PE_FLAG`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>EF_GPIO8_P7PE_FLAG<sp/>0x800000</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`IO_TYPES`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>IO_TYPES<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__R`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__R<sp/>volatile<sp/>const<sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__RW`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__RW<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>define<sp/>`__W`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>__W<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['icr_0',['icr',['../struct__EF__GPIO8__TYPE__.html#abf31c15fca6d2d9cf0315a99c91010f9',1,'_EF_GPIO8_TYPE_']]],
-  ['im_1',['im',['../struct__EF__GPIO8__TYPE__.html#ada0d820cfa5c567470b4435394d2f55b',1,'_EF_GPIO8_TYPE_']]],
-  ['io_5ftypes_2',['IO_TYPES',['../EF__GPIO8__regs_8h.html#a470cd5845bed94d8b8b358933e4a3442',1,'EF_GPIO8_regs.h']]]
+  ['gclk_0',['GCLK',['../struct___e_f___g_p_i_o8___t_y_p_e__.html#a286fc90fa566e761c67f42b59d759e2b',1,'_EF_GPIO8_TYPE_']]],
+  ['gpio8_5finput_1',['GPIO8_INPUT',['../_e_f___g_p_i_o8_8h.html#a3f5894641ec0c93ff19287ef1347b727',1,'EF_GPIO8.h']]],
+  ['gpio8_5foutput_2',['GPIO8_OUTPUT',['../_e_f___g_p_i_o8_8h.html#a96bc3cc2f4657d3171959d8fc4e900a6',1,'EF_GPIO8.h']]]
 ];

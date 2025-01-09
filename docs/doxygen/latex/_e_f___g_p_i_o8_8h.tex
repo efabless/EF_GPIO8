@@ -1,0 +1,595 @@
+\hypertarget{_e_f___g_p_i_o8_8h}{}\doxysection{EF\+\_\+\+GPIO8.\+h File Reference}
+\label{_e_f___g_p_i_o8_8h}\index{EF\_GPIO8.h@{EF\_GPIO8.h}}
+
+
+C header file for GPIO8 APIs which contains the function prototypes.  
+
+
+{\ttfamily \#include \char`\"{}EF\+\_\+\+GPIO8\+\_\+regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}EF\+\_\+\+Driver\+\_\+\+Common.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a3f5894641ec0c93ff19287ef1347b727}{GPIO8\+\_\+\+INPUT}}~0
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a96bc3cc2f4657d3171959d8fc4e900a6}{GPIO8\+\_\+\+OUTPUT}}~1
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a1e4c029b31aec2c41e9a7286721d80e4}{EF\+\_\+\+GPIO8\+\_\+\+DATAI\+\_\+\+MAX\+\_\+\+VALUE}}~0x000000\+FF
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a0dc4434c690c1871837aafd082b5f233}{EF\+\_\+\+GPIO8\+\_\+\+DATAO\+\_\+\+MAX\+\_\+\+VALUE}}~0x000000\+FF
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a448ed35a320aa1c91999da88ccda2e51}{EF\+\_\+\+GPIO8\+\_\+\+DIR\+\_\+\+MAX\+\_\+\+VALUE}}~0x000000\+FF
+\item 
+\#define \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a604f73736ca69355b59019d7e12ad0d4}{EF\+\_\+\+GPIO8\+\_\+\+NUM\+\_\+\+PINS}}~0x00000008
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_ae56d9d2b99680c6e53b438675fabb37b}{EF\+\_\+\+GPIO8\+\_\+set\+Gclk\+Enable}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em sets the GCLK enable bit in the GPIO register to a certain value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a3252af5bb5b85e2922a86528e5f0cd13}{EF\+\_\+\+GPIO8\+\_\+read\+Data}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t $\ast$gpio\+\_\+data)
+\begin{DoxyCompactList}\small\item\em reads the input value of the GPIOs \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a7111b115a38098132696435345f5cf23}{EF\+\_\+\+GPIO8\+\_\+wait\+Input}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t compare\+\_\+value)
+\begin{DoxyCompactList}\small\item\em wait until the input GPIOs have a certain value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_aec184e54ce749ec6c59128719bddaa25}{EF\+\_\+\+GPIO8\+\_\+wait\+\_\+\+Input\+Pin}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t pin, uint32\+\_\+t compare\+\_\+value)
+\begin{DoxyCompactList}\small\item\em wait until a GPIO pin have a certain value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a874721ec9b2c206ed51134d114290085}{EF\+\_\+\+GPIO8\+\_\+write\+Data}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em drives the output value of the GPIOs \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a64a2355737be318f9fe19193e70ba4bd}{EF\+\_\+\+GPIO8\+\_\+write\+All\+Direction}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em sets the direction of all GPIOs \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a62ca6895f83a606c0b61e55f3db62f97}{EF\+\_\+\+GPIO8\+\_\+read\+Direction}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t $\ast$gpio\+\_\+dir)
+\begin{DoxyCompactList}\small\item\em gets the direction of all GPIOs \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_af85f815482df3eb9641d628a1666f554}{EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Direction}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t pin, uint32\+\_\+t dir)
+\begin{DoxyCompactList}\small\item\em sets the direction of one GPIO pin \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a3e41416bfcc55c3abbedc8fddaae761b}{EF\+\_\+\+GPIO8\+\_\+get\+RIS}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t $\ast$gpio\+\_\+ris)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_ad682e81ce28629ff1456f1305c24e319}{EF\+\_\+\+GPIO8\+\_\+get\+MIS}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t $\ast$gpio\+\_\+mis)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a174d9f729f90844e4505867469c90607}{EF\+\_\+\+GPIO8\+\_\+set\+IM}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t mask)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_aced8806671264bd3dc9ed067626a19dd}{EF\+\_\+\+GPIO8\+\_\+get\+IM}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t $\ast$gpio\+\_\+im)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_af9616feb345e968f951b17178ee82e3b}{EF\+\_\+\+GPIO8\+\_\+set\+ICR}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint32\+\_\+t mask)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a04430fed83ba6201f9e6e92a31714a2e}{EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Packed\+Direction}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint8\+\_\+t pins, uint32\+\_\+t dir)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a0f1fdac888e9b0d2a90626ad8a0493d7}{EF\+\_\+\+GPIO8\+\_\+read\+Packed\+Data}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint8\+\_\+t pins, uint32\+\_\+t $\ast$packed\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This function reads the data from a specified set of pins in a GPIO port. Given a bit-\/packed representation of the pin(s), it reads the data from the pin(s). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a7cf44000255990ea628fb9dd6155f777}{EF\+\_\+\+GPIO8\+\_\+write\+Packed\+Data}} (\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}} gpio, uint8\+\_\+t pins, uint8\+\_\+t data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C header file for GPIO8 APIs which contains the function prototypes. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a1e4c029b31aec2c41e9a7286721d80e4}\label{_e_f___g_p_i_o8_8h_a1e4c029b31aec2c41e9a7286721d80e4}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_DATAI\_MAX\_VALUE@{EF\_GPIO8\_DATAI\_MAX\_VALUE}}
+\index{EF\_GPIO8\_DATAI\_MAX\_VALUE@{EF\_GPIO8\_DATAI\_MAX\_VALUE}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_DATAI\_MAX\_VALUE}{EF\_GPIO8\_DATAI\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+GPIO8\+\_\+\+DATAI\+\_\+\+MAX\+\_\+\+VALUE~0x000000\+FF}
+
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a0dc4434c690c1871837aafd082b5f233}\label{_e_f___g_p_i_o8_8h_a0dc4434c690c1871837aafd082b5f233}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_DATAO\_MAX\_VALUE@{EF\_GPIO8\_DATAO\_MAX\_VALUE}}
+\index{EF\_GPIO8\_DATAO\_MAX\_VALUE@{EF\_GPIO8\_DATAO\_MAX\_VALUE}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_DATAO\_MAX\_VALUE}{EF\_GPIO8\_DATAO\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+GPIO8\+\_\+\+DATAO\+\_\+\+MAX\+\_\+\+VALUE~0x000000\+FF}
+
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a448ed35a320aa1c91999da88ccda2e51}\label{_e_f___g_p_i_o8_8h_a448ed35a320aa1c91999da88ccda2e51}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_DIR\_MAX\_VALUE@{EF\_GPIO8\_DIR\_MAX\_VALUE}}
+\index{EF\_GPIO8\_DIR\_MAX\_VALUE@{EF\_GPIO8\_DIR\_MAX\_VALUE}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_DIR\_MAX\_VALUE}{EF\_GPIO8\_DIR\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+GPIO8\+\_\+\+DIR\+\_\+\+MAX\+\_\+\+VALUE~0x000000\+FF}
+
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a604f73736ca69355b59019d7e12ad0d4}\label{_e_f___g_p_i_o8_8h_a604f73736ca69355b59019d7e12ad0d4}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_NUM\_PINS@{EF\_GPIO8\_NUM\_PINS}}
+\index{EF\_GPIO8\_NUM\_PINS@{EF\_GPIO8\_NUM\_PINS}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_NUM\_PINS}{EF\_GPIO8\_NUM\_PINS}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+GPIO8\+\_\+\+NUM\+\_\+\+PINS~0x00000008}
+
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a3f5894641ec0c93ff19287ef1347b727}\label{_e_f___g_p_i_o8_8h_a3f5894641ec0c93ff19287ef1347b727}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!GPIO8\_INPUT@{GPIO8\_INPUT}}
+\index{GPIO8\_INPUT@{GPIO8\_INPUT}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{GPIO8\_INPUT}{GPIO8\_INPUT}}
+{\footnotesize\ttfamily \#define GPIO8\+\_\+\+INPUT~0}
+
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a96bc3cc2f4657d3171959d8fc4e900a6}\label{_e_f___g_p_i_o8_8h_a96bc3cc2f4657d3171959d8fc4e900a6}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!GPIO8\_OUTPUT@{GPIO8\_OUTPUT}}
+\index{GPIO8\_OUTPUT@{GPIO8\_OUTPUT}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{GPIO8\_OUTPUT}{GPIO8\_OUTPUT}}
+{\footnotesize\ttfamily \#define GPIO8\+\_\+\+OUTPUT~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_aced8806671264bd3dc9ed067626a19dd}\label{_e_f___g_p_i_o8_8h_aced8806671264bd3dc9ed067626a19dd}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getIM@{EF\_GPIO8\_getIM}}
+\index{EF\_GPIO8\_getIM@{EF\_GPIO8\_getIM}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getIM()}{EF\_GPIO8\_getIM()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+get\+IM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t $\ast$}]{gpio\+\_\+im }\end{DoxyParamCaption})}
+
+returns the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em gpio\+\_\+im} & The value of the IM register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_ad682e81ce28629ff1456f1305c24e319}\label{_e_f___g_p_i_o8_8h_ad682e81ce28629ff1456f1305c24e319}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getMIS@{EF\_GPIO8\_getMIS}}
+\index{EF\_GPIO8\_getMIS@{EF\_GPIO8\_getMIS}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getMIS()}{EF\_GPIO8\_getMIS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+get\+MIS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t $\ast$}]{gpio\+\_\+mis }\end{DoxyParamCaption})}
+
+returns the value of the Masked Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em gpio\+\_\+mis} & The value of the MIS register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a3e41416bfcc55c3abbedc8fddaae761b}\label{_e_f___g_p_i_o8_8h_a3e41416bfcc55c3abbedc8fddaae761b}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_getRIS@{EF\_GPIO8\_getRIS}}
+\index{EF\_GPIO8\_getRIS@{EF\_GPIO8\_getRIS}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_getRIS()}{EF\_GPIO8\_getRIS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+get\+RIS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t $\ast$}]{gpio\+\_\+ris }\end{DoxyParamCaption})}
+
+returns the value of the Raw Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em gpio\+\_\+ris} & The value of the RIS register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a3252af5bb5b85e2922a86528e5f0cd13}\label{_e_f___g_p_i_o8_8h_a3252af5bb5b85e2922a86528e5f0cd13}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_readData@{EF\_GPIO8\_readData}}
+\index{EF\_GPIO8\_readData@{EF\_GPIO8\_readData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_readData()}{EF\_GPIO8\_readData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+read\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t $\ast$}]{gpio\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+reads the input value of the GPIOs 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em gpio\+\_\+data} & The value of the input GPIOs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a62ca6895f83a606c0b61e55f3db62f97}\label{_e_f___g_p_i_o8_8h_a62ca6895f83a606c0b61e55f3db62f97}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_readDirection@{EF\_GPIO8\_readDirection}}
+\index{EF\_GPIO8\_readDirection@{EF\_GPIO8\_readDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_readDirection()}{EF\_GPIO8\_readDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+read\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t $\ast$}]{gpio\+\_\+dir }\end{DoxyParamCaption})}
+
+
+
+gets the direction of all GPIOs 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em gpio\+\_\+dir} & GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a0f1fdac888e9b0d2a90626ad8a0493d7}\label{_e_f___g_p_i_o8_8h_a0f1fdac888e9b0d2a90626ad8a0493d7}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_readPackedData@{EF\_GPIO8\_readPackedData}}
+\index{EF\_GPIO8\_readPackedData@{EF\_GPIO8\_readPackedData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_readPackedData()}{EF\_GPIO8\_readPackedData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+read\+Packed\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint8\+\_\+t}]{pins,  }\item[{uint32\+\_\+t $\ast$}]{packed\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This function reads the data from a specified set of pins in a GPIO port. Given a bit-\/packed representation of the pin(s), it reads the data from the pin(s). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pins} & The bit-\/packed representation of the pin(s). \\
+\hline
+\mbox{\texttt{ out}}  & {\em packed\+\_\+data} & The data read from the pin(s)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_ae56d9d2b99680c6e53b438675fabb37b}\label{_e_f___g_p_i_o8_8h_ae56d9d2b99680c6e53b438675fabb37b}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setGclkEnable@{EF\_GPIO8\_setGclkEnable}}
+\index{EF\_GPIO8\_setGclkEnable@{EF\_GPIO8\_setGclkEnable}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setGclkEnable()}{EF\_GPIO8\_setGclkEnable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+set\+Gclk\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+sets the GCLK enable bit in the GPIO register to a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value of the GCLK enable bit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_af9616feb345e968f951b17178ee82e3b}\label{_e_f___g_p_i_o8_8h_af9616feb345e968f951b17178ee82e3b}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setICR@{EF\_GPIO8\_setICR}}
+\index{EF\_GPIO8\_setICR@{EF\_GPIO8\_setICR}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setICR()}{EF\_GPIO8\_setICR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+set\+ICR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Clear Register; write 1 to clear the flag
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & The required mask value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a174d9f729f90844e4505867469c90607}\label{_e_f___g_p_i_o8_8h_a174d9f729f90844e4505867469c90607}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setIM@{EF\_GPIO8\_setIM}}
+\index{EF\_GPIO8\_setIM@{EF\_GPIO8\_setIM}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setIM()}{EF\_GPIO8\_setIM()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+set\+IM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 P0\+HI \+: Pin 0 is high
+\item bit 1 P1\+HI \+: Pin 1 is high
+\item bit 2 P2\+HI \+: Pin 2 is high
+\item bit 3 P3\+HI \+: Pin 3 is high
+\item bit 4 P4\+HI \+: Pin 4 is high
+\item bit 5 P5\+HI \+: Pin 5 is high
+\item bit 6 P6\+HI \+: Pin 6 is high
+\item bit 7 P7\+HI \+: Pin 7 is high
+\item bit 8 P0\+LO \+: Pin 0 is low
+\item bit 9 P1\+LO \+: Pin 1 is low
+\item bit 10 P2\+LO \+: Pin 2 is low
+\item bit 11 P3\+LO \+: Pin 3 is low
+\item bit 12 P4\+LO \+: Pin 4 is low
+\item bit 13 P5\+LO \+: Pin 5 is low
+\item bit 14 P6\+LO \+: Pin 6 is low
+\item bit 15 P7\+LO \+: Pin 7 is low
+\item bit 16 P0\+PE \+: Pin 0 has observed a rising edge
+\item bit 17 P1\+PE \+: Pin 1 has observed a rising edge
+\item bit 18 P2\+PE \+: Pin 2 has observed a rising edge
+\item bit 19 P3\+PE \+: Pin 3 has observed a rising edge
+\item bit 20 P4\+PE \+: Pin 4 has observed a rising edge
+\item bit 21 P5\+PE \+: Pin 5 has observed a rising edge
+\item bit 22 P6\+PE \+: Pin 6 has observed a rising edge
+\item bit 23 P7\+PE \+: Pin 7 has observed a rising edge
+\item bit 24 P0\+NE \+: Pin 0 has observed a falling edge
+\item bit 25 P1\+NE \+: Pin 1 has observed a falling edge
+\item bit 26 P2\+NE \+: Pin 2 has observed a falling edge
+\item bit 27 P3\+NE \+: Pin 3 has observed a falling edge
+\item bit 28 P4\+NE \+: Pin 4 has observed a falling edge
+\item bit 29 P5\+NE \+: Pin 5 has observed a falling edge
+\item bit 30 P6\+NE \+: Pin 6 has observed a falling edge
+\item bit 31 P7\+NE \+: Pin 7 has observed a falling edge
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & The required mask value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_af85f815482df3eb9641d628a1666f554}\label{_e_f___g_p_i_o8_8h_af85f815482df3eb9641d628a1666f554}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setPinDirection@{EF\_GPIO8\_setPinDirection}}
+\index{EF\_GPIO8\_setPinDirection@{EF\_GPIO8\_setPinDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setPinDirection()}{EF\_GPIO8\_setPinDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{pin,  }\item[{uint32\+\_\+t}]{dir }\end{DoxyParamCaption})}
+
+
+
+sets the direction of one GPIO pin 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & pin number from 0 to 7 \\
+\hline
+\mbox{\texttt{ in}}  & {\em dir} & GPIO pin direction where 1 is output and 0 means input.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a04430fed83ba6201f9e6e92a31714a2e}\label{_e_f___g_p_i_o8_8h_a04430fed83ba6201f9e6e92a31714a2e}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_setPinPackedDirection@{EF\_GPIO8\_setPinPackedDirection}}
+\index{EF\_GPIO8\_setPinPackedDirection@{EF\_GPIO8\_setPinPackedDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_setPinPackedDirection()}{EF\_GPIO8\_setPinPackedDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+set\+Pin\+Packed\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint8\+\_\+t}]{pins,  }\item[{uint32\+\_\+t}]{dir }\end{DoxyParamCaption})}
+
+This function sets the direction of a specified set of pins in a GPIO port. Given a bit-\/packed representation of the pin(s), it sets the direction of the pin(s) to the required value. \begin{DoxyNote}{Note}
+All the specified pins are set to the same direction (dir). 
+
+The function does not affect the direction of the other pins in the port.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pins} & The bit-\/packed representation of the pin(s). \\
+\hline
+\mbox{\texttt{ in}}  & {\em dir} & The required direction value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_aec184e54ce749ec6c59128719bddaa25}\label{_e_f___g_p_i_o8_8h_aec184e54ce749ec6c59128719bddaa25}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_wait\_InputPin@{EF\_GPIO8\_wait\_InputPin}}
+\index{EF\_GPIO8\_wait\_InputPin@{EF\_GPIO8\_wait\_InputPin}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_wait\_InputPin()}{EF\_GPIO8\_wait\_InputPin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+wait\+\_\+\+Input\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{pin,  }\item[{uint32\+\_\+t}]{compare\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+wait until a GPIO pin have a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pin} & The pin number from 0 to 7 \\
+\hline
+\mbox{\texttt{ in}}  & {\em compare\+\_\+value} & The value to compare the GPIO with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a7111b115a38098132696435345f5cf23}\label{_e_f___g_p_i_o8_8h_a7111b115a38098132696435345f5cf23}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_waitInput@{EF\_GPIO8\_waitInput}}
+\index{EF\_GPIO8\_waitInput@{EF\_GPIO8\_waitInput}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_waitInput()}{EF\_GPIO8\_waitInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+wait\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{compare\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+wait until the input GPIOs have a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em compare\+\_\+value} & the value to compare the input GPIOs with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a64a2355737be318f9fe19193e70ba4bd}\label{_e_f___g_p_i_o8_8h_a64a2355737be318f9fe19193e70ba4bd}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_writeAllDirection@{EF\_GPIO8\_writeAllDirection}}
+\index{EF\_GPIO8\_writeAllDirection@{EF\_GPIO8\_writeAllDirection}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_writeAllDirection()}{EF\_GPIO8\_writeAllDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+write\+All\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+sets the direction of all GPIOs 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a874721ec9b2c206ed51134d114290085}\label{_e_f___g_p_i_o8_8h_a874721ec9b2c206ed51134d114290085}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_writeData@{EF\_GPIO8\_writeData}}
+\index{EF\_GPIO8\_writeData@{EF\_GPIO8\_writeData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_writeData()}{EF\_GPIO8\_writeData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+write\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+drives the output value of the GPIOs 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & value to be driven to output GPIOs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___g_p_i_o8_8h_a7cf44000255990ea628fb9dd6155f777}\label{_e_f___g_p_i_o8_8h_a7cf44000255990ea628fb9dd6155f777}} 
+\index{EF\_GPIO8.h@{EF\_GPIO8.h}!EF\_GPIO8\_writePackedData@{EF\_GPIO8\_writePackedData}}
+\index{EF\_GPIO8\_writePackedData@{EF\_GPIO8\_writePackedData}!EF\_GPIO8.h@{EF\_GPIO8.h}}
+\doxysubsubsection{\texorpdfstring{EF\_GPIO8\_writePackedData()}{EF\_GPIO8\_writePackedData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+GPIO8\+\_\+write\+Packed\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a65482e6dfefdf37a4291d52a8444d560}{EF\+\_\+\+GPIO8\+\_\+\+TYPE\+\_\+\+PTR}}}]{gpio,  }\item[{uint8\+\_\+t}]{pins,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+This function writes the data to a specified set of pins in a GPIO port. Given a bit-\/packed representation of the pin(s), it writes the data to the pin(s). Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gpio} & An \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} pointer, which points to the base memory address of GPIO registers. \mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h_a4e7962d913e6d2cfafb87592d2be93d0}{EF\+\_\+\+GPIO8\+\_\+\+TYPE}} is a structure that contains the GPIO registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pins} & The bit-\/packed representation of the pin(s). \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The data to be written to the pin(s)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}

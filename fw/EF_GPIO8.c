@@ -88,11 +88,6 @@ EF_DRIVER_STATUS EF_GPIO8_readData(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_data){
     return status;
 }
 
-#define EF_GPIO8_DATAI_MAX_VALUE    0x000000FF         // Maximum value of the DATAI register, 8 bits
-#define EF_GPIO8_DATAO_MAX_VALUE    0x000000FF         // Maximum value of the DATAO register, 8 bits
-#define EF_GPIO8_DIR_MAX_VALUE      0x000000FF         // Maximum value of the DIR register, 8 bits
-#define EF_GPIO8_NUM_PINS           0x00000008         // Number of GPIO pins
-
 EF_DRIVER_STATUS EF_GPIO8_waitInput(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;

@@ -1,0 +1,130 @@
+\hypertarget{_e_f___g_p_i_o8_8h_source}{}\doxysection{EF\+\_\+\+GPIO8.\+h}
+\mbox{\hyperlink{_e_f___g_p_i_o8_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Copyright\ 2025\ Efabless\ Corp.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ \ \ Author:\ Mohamed\ Shalan\ (mshalan@efabless.com)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ \ \ \ www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ EF\_GPIO8\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ Includes}}
+\DoxyCodeLine{00031\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___g_p_i_o8__regs_8h}{EF\_GPIO8\_regs.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___driver___common_8h}{EF\_Driver\_Common.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ Macros\ and\ Constants}}
+\DoxyCodeLine{00037\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ GPIO8\_INPUT\ 0}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ GPIO8\_OUTPUT\ 1}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_DATAI\_MAX\_VALUE\ \ \ \ 0x000000FF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Maximum\ value\ of\ the\ DATAI\ register,\ 8\ bits}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_DATAO\_MAX\_VALUE\ \ \ \ 0x000000FF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Maximum\ value\ of\ the\ DATAO\ register,\ 8\ bits}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_DIR\_MAX\_VALUE\ \ \ \ \ \ 0x000000FF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Maximum\ value\ of\ the\ DIR\ register,\ 8\ bits}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ EF\_GPIO8\_NUM\_PINS\ \ \ \ \ \ \ \ \ \ \ 0x00000008\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Number\ of\ GPIO\ pins}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00047\ \textcolor{comment}{*\ Typedefs\ and\ Enums}}
+\DoxyCodeLine{00048\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00053\ \textcolor{comment}{*\ Function\ Prototypes}}
+\DoxyCodeLine{00054\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_ae56d9d2b99680c6e53b438675fabb37b}{EF\_GPIO8\_setGclkEnable}}\ (\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ value);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a3252af5bb5b85e2922a86528e5f0cd13}{EF\_GPIO8\_readData}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t*\ gpio\_data);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a7111b115a38098132696435345f5cf23}{EF\_GPIO8\_waitInput}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ compare\_value);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_aec184e54ce749ec6c59128719bddaa25}{EF\_GPIO8\_wait\_InputPin}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ pin,\ uint32\_t\ compare\_value);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a874721ec9b2c206ed51134d114290085}{EF\_GPIO8\_writeData}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ data);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a64a2355737be318f9fe19193e70ba4bd}{EF\_GPIO8\_writeAllDirection}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ data);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a62ca6895f83a606c0b61e55f3db62f97}{EF\_GPIO8\_readDirection}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t*\ gpio\_dir);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00129\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_af85f815482df3eb9641d628a1666f554}{EF\_GPIO8\_setPinDirection}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ pin,\ uint32\_t\ dir);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a3e41416bfcc55c3abbedc8fddaae761b}{EF\_GPIO8\_getRIS}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t*\ gpio\_ris);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00212\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_ad682e81ce28629ff1456f1305c24e319}{EF\_GPIO8\_getMIS}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t*\ gpio\_mis);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00254\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a174d9f729f90844e4505867469c90607}{EF\_GPIO8\_setIM}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ mask);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00296\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_aced8806671264bd3dc9ed067626a19dd}{EF\_GPIO8\_getIM}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t*\ gpio\_im);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00338\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_af9616feb345e968f951b17178ee82e3b}{EF\_GPIO8\_setICR}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint32\_t\ mask);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{comment}{//\ The\ following\ functions\ are\ not\ verified\ yet}}
+\DoxyCodeLine{00344\ \textcolor{comment}{/******************************************************************************************************************************************/}}
+\DoxyCodeLine{00345\ \textcolor{comment}{/******************************************************************************************************************************************/}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00357\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a04430fed83ba6201f9e6e92a31714a2e}{EF\_GPIO8\_setPinPackedDirection}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint8\_t\ pins,\ uint32\_t\ dir);}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00368\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a0f1fdac888e9b0d2a90626ad8a0493d7}{EF\_GPIO8\_readPackedData}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint8\_t\ pins,\ uint32\_t*\ packed\_data);}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00379\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___g_p_i_o8_8h_a7cf44000255990ea628fb9dd6155f777}{EF\_GPIO8\_writePackedData}}(\mbox{\hyperlink{struct___e_f___g_p_i_o8___t_y_p_e__}{EF\_GPIO8\_TYPE\_PTR}}\ gpio,\ uint8\_t\ pins,\ uint8\_t\ data);}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00384\ \textcolor{comment}{*\ External\ Variables}}
+\DoxyCodeLine{00385\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EF\_GPIO8\_H}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00393\ \textcolor{comment}{*\ End\ of\ File}}
+\DoxyCodeLine{00394\ \textcolor{comment}{******************************************************************************/}}
+
+\end{DoxyCode}
