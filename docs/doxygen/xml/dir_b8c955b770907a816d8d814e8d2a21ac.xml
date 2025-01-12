@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_b8c955b770907a816d8d814e8d2a21ac" kind="dir">
+    <compoundname>/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw</compoundname>
+    <innerfile refid="_e_f___driver___common_8h">EF_Driver_Common.h</innerfile>
+    <innerfile refid="_e_f___g_p_i_o8_8c">EF_GPIO8.c</innerfile>
+    <innerfile refid="_e_f___g_p_i_o8_8h">EF_GPIO8.h</innerfile>
+    <innerfile refid="_e_f___g_p_i_o8__regs_8h">EF_GPIO8_regs.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/youssef/Documents/Work/Efabless/EF_GPIO8/fw/"/>
+  </compounddef>
+</doxygen>

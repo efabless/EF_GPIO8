@@ -1,0 +1,1164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_e_f___g_p_i_o8_8h" kind="file" language="C++">
+    <compoundname>EF_GPIO8.h</compoundname>
+    <includes refid="_e_f___g_p_i_o8__regs_8h" local="yes">EF_GPIO8_regs.h</includes>
+    <includes refid="_e_f___driver___common_8h" local="yes">EF_Driver_Common.h</includes>
+    <includedby refid="_e_f___g_p_i_o8_8c" local="yes">EF_GPIO8.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>EF_Driver_Common.h</label>
+        <link refid="_e_f___driver___common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_GPIO8.h</label>
+        <link refid="_e_f___g_p_i_o8_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EF_GPIO8_regs.h</label>
+        <link refid="_e_f___g_p_i_o8__regs_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>EF_GPIO8.c</label>
+        <link refid="_e_f___g_p_i_o8_8c"/>
+      </node>
+      <node id="1">
+        <label>EF_GPIO8.h</label>
+        <link refid="_e_f___g_p_i_o8_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a3f5894641ec0c93ff19287ef1347b727" prot="public" static="no">
+        <name>GPIO8_INPUT</name>
+        <initializer>((uint32_t)0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="38" column="9" bodyfile="EF_GPIO8.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a96bc3cc2f4657d3171959d8fc4e900a6" prot="public" static="no">
+        <name>GPIO8_OUTPUT</name>
+        <initializer>((uint32_t)1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="39" column="9" bodyfile="EF_GPIO8.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a1e4c029b31aec2c41e9a7286721d80e4" prot="public" static="no">
+        <name>EF_GPIO8_DATAI_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000000FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="41" column="9" bodyfile="EF_GPIO8.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a0dc4434c690c1871837aafd082b5f233" prot="public" static="no">
+        <name>EF_GPIO8_DATAO_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000000FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="42" column="9" bodyfile="EF_GPIO8.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a448ed35a320aa1c91999da88ccda2e51" prot="public" static="no">
+        <name>EF_GPIO8_DIR_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000000FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="43" column="9" bodyfile="EF_GPIO8.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8h_1a604f73736ca69355b59019d7e12ad0d4" prot="public" static="no">
+        <name>EF_GPIO8_NUM_PINS</name>
+        <initializer>((uint32_t)0x00000008)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="44" column="9" bodyfile="EF_GPIO8.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1ae56d9d2b99680c6e53b438675fabb37b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setGclkEnable</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t value)</argsstring>
+        <name>EF_GPIO8_setGclkEnable</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the GCLK enable bit in the GPIO register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the GCLK enable bit</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="63" column="18" bodyfile="EF_GPIO8.c" bodystart="60" bodyend="73" declfile="EF_GPIO8.h" declline="63" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a3252af5bb5b85e2922a86528e5f0cd13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_data)</argsstring>
+        <name>EF_GPIO8_readData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_data</declname>
+        </param>
+        <briefdescription>
+<para>reads the input value of the GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the input GPIOs</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="73" column="18" bodyfile="EF_GPIO8.c" bodystart="75" bodyend="89" declfile="EF_GPIO8.h" declline="73" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a7111b115a38098132696435345f5cf23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_waitInput</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value)</argsstring>
+        <name>EF_GPIO8_waitInput</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>compare_value</declname>
+        </param>
+        <briefdescription>
+<para>wait until the input GPIOs have a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">compare_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to compare the input GPIOs with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="82" column="18" bodyfile="EF_GPIO8.c" bodystart="91" bodyend="107" declfile="EF_GPIO8.h" declline="82" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1aec184e54ce749ec6c59128719bddaa25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_wait_InputPin</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t compare_value)</argsstring>
+        <name>EF_GPIO8_wait_InputPin</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>compare_value</declname>
+        </param>
+        <briefdescription>
+<para>wait until a GPIO pin have a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pin number from 0 to 7 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">compare_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare the GPIO with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="92" column="18" bodyfile="EF_GPIO8.c" bodystart="109" bodyend="127" declfile="EF_GPIO8.h" declline="92" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a874721ec9b2c206ed51134d114290085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writeData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</argsstring>
+        <name>EF_GPIO8_writeData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>drives the output value of the GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to be driven to output GPIOs</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="101" column="18" bodyfile="EF_GPIO8.c" bodystart="130" bodyend="144" declfile="EF_GPIO8.h" declline="101" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a64a2355737be318f9fe19193e70ba4bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writeAllDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</argsstring>
+        <name>EF_GPIO8_writeAllDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>sets the direction of all GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="110" column="18" bodyfile="EF_GPIO8.c" bodystart="147" bodyend="160" declfile="EF_GPIO8.h" declline="110" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a62ca6895f83a606c0b61e55f3db62f97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_dir)</argsstring>
+        <name>EF_GPIO8_readDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_dir</declname>
+        </param>
+        <briefdescription>
+<para>gets the direction of all GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="119" column="18" bodyfile="EF_GPIO8.c" bodystart="162" bodyend="176" declfile="EF_GPIO8.h" declline="119" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1af85f815482df3eb9641d628a1666f554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setPinDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t dir)</argsstring>
+        <name>EF_GPIO8_setPinDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>sets the direction of one GPIO pin </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number from 0 to 7 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIO pin direction where 1 is output and 0 means input.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="129" column="18" bodyfile="EF_GPIO8.c" bodystart="178" bodyend="198" declfile="EF_GPIO8.h" declline="129" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a3e41416bfcc55c3abbedc8fddaae761b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getRIS</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_ris)</argsstring>
+        <name>EF_GPIO8_getRIS</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_ris</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Raw Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_ris</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the RIS register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="170" column="18" bodyfile="EF_GPIO8.c" bodystart="200" bodyend="214" declfile="EF_GPIO8.h" declline="170" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1ad682e81ce28629ff1456f1305c24e319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getMIS</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_mis)</argsstring>
+        <name>EF_GPIO8_getMIS</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_mis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Masked Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_mis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the MIS register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="212" column="18" bodyfile="EF_GPIO8.c" bodystart="216" bodyend="230" declfile="EF_GPIO8.h" declline="212" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a174d9f729f90844e4505867469c90607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setIM</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</argsstring>
+        <name>EF_GPIO8_setIM</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="254" column="18" bodyfile="EF_GPIO8.c" bodystart="232" bodyend="243" declfile="EF_GPIO8.h" declline="254" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1aced8806671264bd3dc9ed067626a19dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getIM</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_im)</argsstring>
+        <name>EF_GPIO8_getIM</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_im</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_im</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the IM register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="296" column="18" bodyfile="EF_GPIO8.c" bodystart="245" bodyend="259" declfile="EF_GPIO8.h" declline="296" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1af9616feb345e968f951b17178ee82e3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setICR</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</argsstring>
+        <name>EF_GPIO8_setICR</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Clear Register; write 1 to clear the flag<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="338" column="18" bodyfile="EF_GPIO8.c" bodystart="261" bodyend="272" declfile="EF_GPIO8.h" declline="338" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a04430fed83ba6201f9e6e92a31714a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t dir)</argsstring>
+        <name>EF_GPIO8_setPinPackedDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value. <simplesect kind="note"><para>All the specified pins are set to the same direction (dir). </para>
+</simplesect>
+<simplesect kind="note"><para>The function does not affect the direction of the other pins in the port.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required direction value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="357" column="18" bodyfile="EF_GPIO8.c" bodystart="280" bodyend="299" declfile="EF_GPIO8.h" declline="357" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a0f1fdac888e9b0d2a90626ad8a0493d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readPackedData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t *packed_data)</argsstring>
+        <name>EF_GPIO8_readPackedData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>packed_data</declname>
+        </param>
+        <briefdescription>
+<para>This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">packed_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data read from the pin(s)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="368" column="18" bodyfile="EF_GPIO8.c" bodystart="301" bodyend="316" declfile="EF_GPIO8.h" declline="368" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8h_1a7cf44000255990ea628fb9dd6155f777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writePackedData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint8_t data)</argsstring>
+        <name>EF_GPIO8_writePackedData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s). Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to be written to the pin(s)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.h" line="379" column="18" bodyfile="EF_GPIO8.c" bodystart="318" bodyend="329" declfile="EF_GPIO8.h" declline="379" declcolumn="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C header file for GPIO8 APIs which contains the function prototypes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2025<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>Author:<sp/>Mohamed<sp/>Shalan<sp/>(mshalan@efabless.com)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_GPIO8_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">*<sp/>Includes</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___g_p_i_o8__regs_8h" kindref="compound">EF_GPIO8_regs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___driver___common_8h" kindref="compound">EF_Driver_Common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">*<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="_e_f___g_p_i_o8_8h_1a3f5894641ec0c93ff19287ef1347b727" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO8_INPUT<sp/><sp/><sp/><sp/><sp/>((uint32_t)0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="_e_f___g_p_i_o8_8h_1a96bc3cc2f4657d3171959d8fc4e900a6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO8_OUTPUT<sp/><sp/><sp/><sp/>((uint32_t)1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="_e_f___g_p_i_o8_8h_1a1e4c029b31aec2c41e9a7286721d80e4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_DATAI_MAX_VALUE<sp/><sp/><sp/><sp/>((uint32_t)0x000000FF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>value<sp/>of<sp/>the<sp/>DATAI<sp/>register,<sp/>8<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_e_f___g_p_i_o8_8h_1a0dc4434c690c1871837aafd082b5f233" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_DATAO_MAX_VALUE<sp/><sp/><sp/><sp/>((uint32_t)0x000000FF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>value<sp/>of<sp/>the<sp/>DATAO<sp/>register,<sp/>8<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_e_f___g_p_i_o8_8h_1a448ed35a320aa1c91999da88ccda2e51" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_DIR_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x000000FF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>value<sp/>of<sp/>the<sp/>DIR<sp/>register,<sp/>8<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_e_f___g_p_i_o8_8h_1a604f73736ca69355b59019d7e12ad0d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_NUM_PINS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000008)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>GPIO<sp/>pins</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1ae56d9d2b99680c6e53b438675fabb37b" kindref="member">EF_GPIO8_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a3252af5bb5b85e2922a86528e5f0cd13" kindref="member">EF_GPIO8_readData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_data);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a7111b115a38098132696435345f5cf23" kindref="member">EF_GPIO8_waitInput</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>compare_value);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1aec184e54ce749ec6c59128719bddaa25" kindref="member">EF_GPIO8_wait_InputPin</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>pin,<sp/>uint32_t<sp/>compare_value);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a874721ec9b2c206ed51134d114290085" kindref="member">EF_GPIO8_writeData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>data);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a64a2355737be318f9fe19193e70ba4bd" kindref="member">EF_GPIO8_writeAllDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>data);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a62ca6895f83a606c0b61e55f3db62f97" kindref="member">EF_GPIO8_readDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_dir);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1af85f815482df3eb9641d628a1666f554" kindref="member">EF_GPIO8_setPinDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>pin,<sp/>uint32_t<sp/>dir);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a3e41416bfcc55c3abbedc8fddaae761b" kindref="member">EF_GPIO8_getRIS</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_ris);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1ad682e81ce28629ff1456f1305c24e319" kindref="member">EF_GPIO8_getMIS</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_mis);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a174d9f729f90844e4505867469c90607" kindref="member">EF_GPIO8_setIM</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1aced8806671264bd3dc9ed067626a19dd" kindref="member">EF_GPIO8_getIM</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_im);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1af9616feb345e968f951b17178ee82e3b" kindref="member">EF_GPIO8_setICR</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a04430fed83ba6201f9e6e92a31714a2e" kindref="member">EF_GPIO8_setPinPackedDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint32_t<sp/>dir);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a0f1fdac888e9b0d2a90626ad8a0493d7" kindref="member">EF_GPIO8_readPackedData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint32_t*<sp/>packed_data);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8h_1a7cf44000255990ea628fb9dd6155f777" kindref="member">EF_GPIO8_writePackedData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="384"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
+<codeline lineno="385"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_GPIO8_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="393"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="394"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="EF_GPIO8.h"/>
+  </compounddef>
+</doxygen>

@@ -1,3 +1,22 @@
+/*
+	Copyright 2025 Efabless Corp.
+
+	Author: Mohamed Shalan (mshalan@efabless.com)
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	    www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+
+*/
+
 /*! \file EF_GPIO8.h
     \brief C header file for GPIO8 APIs which contains the function prototypes 
     
@@ -6,65 +25,108 @@
 #ifndef EF_GPIO8_H
 #define EF_GPIO8_H
 
-#include <EF_GPIO8_regs.h>
-#include <stdint.h>
 
-#define GPIO8_INPUT 0
-#define GPIO8_OUTPUT 1
+/******************************************************************************
+* Includes
+******************************************************************************/
+#include "EF_GPIO8_regs.h"
+#include "EF_Driver_Common.h"
 
-void EF_GPIO8_setGclkEnable (uint32_t gpio_base, int value);
+/******************************************************************************
+* Macros and Constants
+******************************************************************************/
+#define GPIO8_INPUT     ((uint32_t)0)
+#define GPIO8_OUTPUT    ((uint32_t)1)
+
+#define EF_GPIO8_DATAI_MAX_VALUE    ((uint32_t)0x000000FF)         // Maximum value of the DATAI register, 8 bits
+#define EF_GPIO8_DATAO_MAX_VALUE    ((uint32_t)0x000000FF)         // Maximum value of the DATAO register, 8 bits
+#define EF_GPIO8_DIR_MAX_VALUE      ((uint32_t)0x000000FF)         // Maximum value of the DIR register, 8 bits
+#define EF_GPIO8_NUM_PINS           ((uint32_t)0x00000008)         // Number of GPIO pins
+
+/******************************************************************************
+* Typedefs and Enums
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Function Prototypes
+******************************************************************************/
+
+//! sets the GCLK enable bit in the GPIO register to a certain value
+    /*!
+        \param [in] "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in] "value" The value of the GCLK enable bit
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_GPIO8_setGclkEnable (EF_GPIO8_TYPE_PTR gpio, uint32_t value);
 
 
 //! reads the input value of the GPIOs
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-       \return input GPIOs value 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [out]  "gpio_data" The value of the input GPIOs
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-int EF_GPIO8_readData(uint32_t gpio_base);
+EF_DRIVER_STATUS EF_GPIO8_readData(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_data);
 
 //! wait until the input GPIOs have a certain value 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data the value to compare the input GPIOs with 
+        \param [in] "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in] "compare_value" the value to compare the input GPIOs with 
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_waitInput(uint32_t gpio_base, int data);
+EF_DRIVER_STATUS EF_GPIO8_waitInput(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value);
 
 //! wait until a  GPIO pin have a certain value 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pin pin number from 0 to 7 
-      \param data the value to compare the GPIO with 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "pin" The pin number from 0 to 7 
+        \param [in]   "compare_value" The value to compare the GPIO with 
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_wait_InputPin(uint32_t gpio_base, int pin, int data);
+EF_DRIVER_STATUS EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t compare_value);
 
 //! drives the output value of the GPIOs
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data value to be driven to output GPIOs 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "data" value to be driven to output GPIOs 
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_writeData(uint32_t gpio_base, int data);
+EF_DRIVER_STATUS EF_GPIO8_writeData(EF_GPIO8_TYPE_PTR gpio, uint32_t data);
 
 //! sets the direction of all GPIOs 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param data GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "data" GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin 
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_writeAllDirection(uint32_t gpio_base, int data);
+EF_DRIVER_STATUS EF_GPIO8_writeAllDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t data);
 
 //! gets the direction of all GPIOs 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return the direction of all GPIOs where each bit represents the direction of a GPIO pin 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [out]  "gpio_dir" GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-int EF_GPIO8_readDirection(uint32_t gpio_base);
+EF_DRIVER_STATUS EF_GPIO8_readDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_dir);
 
 //! sets the direction of one GPIO pin 
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param pin pin number from 0 to 7 
-      \param dir GPIO pin direction where 1 is output and 0 means input.
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "pin" pin number from 0 to 7 
+        \param [in]   "dir" GPIO pin direction where 1 is output and 0 means input.
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir);
+EF_DRIVER_STATUS EF_GPIO8_setPinDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t dir);
 
 //! returns the value of the Raw Interrupt Status Register
 //! *  bit 0 P0HI : Pin 0 is high
@@ -100,10 +162,12 @@ void EF_GPIO8_setPinDirection(uint32_t gpio_base, int pin, int dir);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return RIS register value 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [out]  "gpio_ris" The value of the RIS register
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-int EF_GPIO8_getRIS(uint32_t gpio_base);
+EF_DRIVER_STATUS EF_GPIO8_getRIS(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_ris);
 
 
 //! returns the value of the Masked Interrupt Status Register
@@ -140,10 +204,12 @@ int EF_GPIO8_getRIS(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return MIS register value 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [out]  "gpio_mis" The value of the MIS register
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-int EF_GPIO8_getMIS(uint32_t gpio_base);
+EF_DRIVER_STATUS EF_GPIO8_getMIS(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_mis);
 
 
 //! sets the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -180,10 +246,12 @@ int EF_GPIO8_getMIS(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param mask The required mask value
+        \param [in]   gpio An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "mask" The required mask value
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-void EF_GPIO8_setIM(uint32_t gpio_base, int mask);
+EF_DRIVER_STATUS EF_GPIO8_setIM(EF_GPIO8_TYPE_PTR gpio, uint32_t mask);
 
 
 //! returns the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -220,10 +288,12 @@ void EF_GPIO8_setIM(uint32_t gpio_base, int mask);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \return IM register value 
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [out]  "gpio_im" The value of the IM register
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-int EF_GPIO8_getIM(uint32_t gpio_base);
+EF_DRIVER_STATUS EF_GPIO8_getIM(EF_GPIO8_TYPE_PTR gpio, uint32_t* gpio_im);
 
 
 //! sets the value of the Interrupts Clear Register; write 1 to clear the flag
@@ -260,9 +330,65 @@ int EF_GPIO8_getIM(uint32_t gpio_base);
 //! *  bit 30 P6NE : Pin 6 has observed a falling edge
 //! *  bit 31 P7NE : Pin 7 has observed a falling edge
     /*!
-      \param gpio_base The base memory address of GPIO registers.
-      \param mask The required mask value
-    */
-void EF_GPIO8_setICR(uint32_t gpio_base, int mask);
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "mask" The required mask value
 
-#endif
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_GPIO8_setICR(EF_GPIO8_TYPE_PTR gpio, uint32_t mask);
+
+
+
+
+// The following functions are not verified yet
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+//! This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value.
+/// \note All the specified pins are set to the same direction (dir).
+/// \note  The function does not affect the direction of the other pins in the port.
+    /*!
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "pins" The bit-packed representation of the pin(s).
+        \param [in]   "dir" The required direction value
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t dir);
+
+
+//! This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s).
+    /*!
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "pins" The bit-packed representation of the pin(s).
+        \param [out]  "packed_data" The data read from the pin(s)
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_GPIO8_readPackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t* packed_data);
+
+//! This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s).
+//! Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.
+    /*!
+        \param [in]   "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
+        \param [in]   "pins" The bit-packed representation of the pin(s).
+        \param [in]   "data" The data to be written to the pin(s)
+
+        \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_GPIO8_writePackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint8_t data);
+
+
+
+/******************************************************************************
+* External Variables
+******************************************************************************/
+
+
+
+
+#endif // EF_GPIO8_H
+
+/******************************************************************************
+* End of File
+******************************************************************************/

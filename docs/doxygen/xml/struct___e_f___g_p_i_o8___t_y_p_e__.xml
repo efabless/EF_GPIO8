@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct___e_f___g_p_i_o8___t_y_p_e__" kind="struct" language="C++" prot="public">
+    <compoundname>_EF_GPIO8_TYPE_</compoundname>
+    <includes refid="_e_f___g_p_i_o8__regs_8h" local="no">EF_GPIO8_regs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1a16078caf5a7f895c69daf902611c83d4" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_GPIO8_TYPE_::DATAI</definition>
+        <argsstring></argsstring>
+        <name>DATAI</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::DATAI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="78" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1aeb4b18d6fec67e77cb6ee29bac77bf44" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_GPIO8_TYPE_::DATAO</definition>
+        <argsstring></argsstring>
+        <name>DATAO</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::DATAO</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="79" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_GPIO8_TYPE_::DIR</definition>
+        <argsstring></argsstring>
+        <name>DIR</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::DIR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="80" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1a3e9d3c2b038a4a4afd654bc7b3aaafc8" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_GPIO8_TYPE_::reserved_0[16317]</definition>
+        <argsstring>[16317]</argsstring>
+        <name>reserved_0</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::reserved_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="81" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1a9d39406048f21e4503487bcffa9b2930" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref></type>
+        <definition>__RW _EF_GPIO8_TYPE_::IM</definition>
+        <argsstring></argsstring>
+        <name>IM</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::IM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="82" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1adff0bc8274b8afdfe1eb159f8aa2d40e" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_GPIO8_TYPE_::MIS</definition>
+        <argsstring></argsstring>
+        <name>MIS</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::MIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="83" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1abdcf04c00728788279e72b3442f19660" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_GPIO8_TYPE_::RIS</definition>
+        <argsstring></argsstring>
+        <name>RIS</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::RIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="84" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1ad26d302dfa71011629ffb91191820c5f" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_GPIO8_TYPE_::IC</definition>
+        <argsstring></argsstring>
+        <name>IC</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::IC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="85" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___g_p_i_o8___t_y_p_e___1a286fc90fa566e761c67f42b59d759e2b" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___g_p_i_o8__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_GPIO8_TYPE_::GCLK</definition>
+        <argsstring></argsstring>
+        <name>GCLK</name>
+        <qualifiedname>_EF_GPIO8_TYPE_::GCLK</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8_regs.h" line="86" column="5" bodyfile="EF_GPIO8_regs.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="EF_GPIO8_regs.h" line="77" column="1" bodyfile="EF_GPIO8_regs.h" bodystart="77" bodyend="87"/>
+    <listofallmembers>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1a16078caf5a7f895c69daf902611c83d4" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>DATAI</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1aeb4b18d6fec67e77cb6ee29bac77bf44" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>DATAO</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>DIR</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1a286fc90fa566e761c67f42b59d759e2b" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>GCLK</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1ad26d302dfa71011629ffb91191820c5f" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>IC</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1a9d39406048f21e4503487bcffa9b2930" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>IM</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1adff0bc8274b8afdfe1eb159f8aa2d40e" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>MIS</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1a3e9d3c2b038a4a4afd654bc7b3aaafc8" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>reserved_0</name></member>
+      <member refid="struct___e_f___g_p_i_o8___t_y_p_e___1abdcf04c00728788279e72b3442f19660" prot="public" virt="non-virtual"><scope>_EF_GPIO8_TYPE_</scope><name>RIS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

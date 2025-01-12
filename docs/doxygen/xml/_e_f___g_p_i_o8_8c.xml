@@ -1,0 +1,1315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_e_f___g_p_i_o8_8c" kind="file" language="C++">
+    <compoundname>EF_GPIO8.c</compoundname>
+    <includes refid="_e_f___g_p_i_o8_8h" local="yes">EF_GPIO8.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>EF_Driver_Common.h</label>
+        <link refid="_e_f___driver___common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_GPIO8.c</label>
+        <link refid="_e_f___g_p_i_o8_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EF_GPIO8.h</label>
+        <link refid="_e_f___g_p_i_o8_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>EF_GPIO8_regs.h</label>
+        <link refid="_e_f___g_p_i_o8__regs_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_f___g_p_i_o8_8c_1acddbfa9e298f7320971a249e0b143708" prot="public" static="no">
+        <name>EF_GPIO8_C</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="26" column="9" bodyfile="EF_GPIO8.c" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1ae56d9d2b99680c6e53b438675fabb37b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setGclkEnable</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t value)</argsstring>
+        <name>EF_GPIO8_setGclkEnable</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the GCLK enable bit in the GPIO register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the GCLK enable bit</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="60" column="18" bodyfile="EF_GPIO8.c" bodystart="60" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a3252af5bb5b85e2922a86528e5f0cd13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_data)</argsstring>
+        <name>EF_GPIO8_readData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_data</declname>
+        </param>
+        <briefdescription>
+<para>reads the input value of the GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the input GPIOs</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="75" column="18" bodyfile="EF_GPIO8.c" bodystart="75" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a7111b115a38098132696435345f5cf23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_waitInput</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value)</argsstring>
+        <name>EF_GPIO8_waitInput</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>compare_value</declname>
+        </param>
+        <briefdescription>
+<para>wait until the input GPIOs have a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">compare_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to compare the input GPIOs with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="91" column="18" bodyfile="EF_GPIO8.c" bodystart="91" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1aec184e54ce749ec6c59128719bddaa25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_wait_InputPin</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t compare_value)</argsstring>
+        <name>EF_GPIO8_wait_InputPin</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>compare_value</declname>
+        </param>
+        <briefdescription>
+<para>wait until a GPIO pin have a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pin number from 0 to 7 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">compare_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare the GPIO with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="109" column="18" bodyfile="EF_GPIO8.c" bodystart="109" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a874721ec9b2c206ed51134d114290085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writeData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</argsstring>
+        <name>EF_GPIO8_writeData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>drives the output value of the GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to be driven to output GPIOs</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="130" column="18" bodyfile="EF_GPIO8.c" bodystart="130" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a64a2355737be318f9fe19193e70ba4bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writeAllDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</argsstring>
+        <name>EF_GPIO8_writeAllDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>sets the direction of all GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="147" column="18" bodyfile="EF_GPIO8.c" bodystart="147" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a62ca6895f83a606c0b61e55f3db62f97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_dir)</argsstring>
+        <name>EF_GPIO8_readDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_dir</declname>
+        </param>
+        <briefdescription>
+<para>gets the direction of all GPIOs </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIOs direction where 1 is output and 0 means input. It should be an eight bit value where each bit represents the direction of certain GPIO pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="162" column="18" bodyfile="EF_GPIO8.c" bodystart="162" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a2ad46517b23125771d0dd47ace9fba25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setPinDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t gpio_dir)</argsstring>
+        <name>EF_GPIO8_setPinDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dir</declname>
+          <defname>gpio_dir</defname>
+        </param>
+        <briefdescription>
+<para>sets the direction of one GPIO pin </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number from 0 to 7 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPIO pin direction where 1 is output and 0 means input.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="178" column="18" bodyfile="EF_GPIO8.c" bodystart="178" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a3e41416bfcc55c3abbedc8fddaae761b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getRIS</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_ris)</argsstring>
+        <name>EF_GPIO8_getRIS</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_ris</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Raw Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_ris</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the RIS register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="200" column="18" bodyfile="EF_GPIO8.c" bodystart="200" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1ad682e81ce28629ff1456f1305c24e319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getMIS</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_mis)</argsstring>
+        <name>EF_GPIO8_getMIS</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_mis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Masked Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_mis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the MIS register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="216" column="18" bodyfile="EF_GPIO8.c" bodystart="216" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a174d9f729f90844e4505867469c90607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setIM</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</argsstring>
+        <name>EF_GPIO8_setIM</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="232" column="18" bodyfile="EF_GPIO8.c" bodystart="232" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1aced8806671264bd3dc9ed067626a19dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_getIM</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_im)</argsstring>
+        <name>EF_GPIO8_getIM</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>gpio_im</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">gpio_im</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the IM register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="245" column="18" bodyfile="EF_GPIO8.c" bodystart="245" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1af9616feb345e968f951b17178ee82e3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setICR</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</argsstring>
+        <name>EF_GPIO8_setICR</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Clear Register; write 1 to clear the flag<itemizedlist>
+<listitem><para>bit 0 P0HI : Pin 0 is high</para>
+</listitem><listitem><para>bit 1 P1HI : Pin 1 is high</para>
+</listitem><listitem><para>bit 2 P2HI : Pin 2 is high</para>
+</listitem><listitem><para>bit 3 P3HI : Pin 3 is high</para>
+</listitem><listitem><para>bit 4 P4HI : Pin 4 is high</para>
+</listitem><listitem><para>bit 5 P5HI : Pin 5 is high</para>
+</listitem><listitem><para>bit 6 P6HI : Pin 6 is high</para>
+</listitem><listitem><para>bit 7 P7HI : Pin 7 is high</para>
+</listitem><listitem><para>bit 8 P0LO : Pin 0 is low</para>
+</listitem><listitem><para>bit 9 P1LO : Pin 1 is low</para>
+</listitem><listitem><para>bit 10 P2LO : Pin 2 is low</para>
+</listitem><listitem><para>bit 11 P3LO : Pin 3 is low</para>
+</listitem><listitem><para>bit 12 P4LO : Pin 4 is low</para>
+</listitem><listitem><para>bit 13 P5LO : Pin 5 is low</para>
+</listitem><listitem><para>bit 14 P6LO : Pin 6 is low</para>
+</listitem><listitem><para>bit 15 P7LO : Pin 7 is low</para>
+</listitem><listitem><para>bit 16 P0PE : Pin 0 has observed a rising edge</para>
+</listitem><listitem><para>bit 17 P1PE : Pin 1 has observed a rising edge</para>
+</listitem><listitem><para>bit 18 P2PE : Pin 2 has observed a rising edge</para>
+</listitem><listitem><para>bit 19 P3PE : Pin 3 has observed a rising edge</para>
+</listitem><listitem><para>bit 20 P4PE : Pin 4 has observed a rising edge</para>
+</listitem><listitem><para>bit 21 P5PE : Pin 5 has observed a rising edge</para>
+</listitem><listitem><para>bit 22 P6PE : Pin 6 has observed a rising edge</para>
+</listitem><listitem><para>bit 23 P7PE : Pin 7 has observed a rising edge</para>
+</listitem><listitem><para>bit 24 P0NE : Pin 0 has observed a falling edge</para>
+</listitem><listitem><para>bit 25 P1NE : Pin 1 has observed a falling edge</para>
+</listitem><listitem><para>bit 26 P2NE : Pin 2 has observed a falling edge</para>
+</listitem><listitem><para>bit 27 P3NE : Pin 3 has observed a falling edge</para>
+</listitem><listitem><para>bit 28 P4NE : Pin 4 has observed a falling edge</para>
+</listitem><listitem><para>bit 29 P5NE : Pin 5 has observed a falling edge</para>
+</listitem><listitem><para>bit 30 P6NE : Pin 6 has observed a falling edge</para>
+</listitem><listitem><para>bit 31 P7NE : Pin 7 has observed a falling edge</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="261" column="18" bodyfile="EF_GPIO8.c" bodystart="261" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a04430fed83ba6201f9e6e92a31714a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t dir)</argsstring>
+        <name>EF_GPIO8_setPinPackedDirection</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value. <simplesect kind="note"><para>All the specified pins are set to the same direction (dir). </para>
+</simplesect>
+<simplesect kind="note"><para>The function does not affect the direction of the other pins in the port.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required direction value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="280" column="18" bodyfile="EF_GPIO8.c" bodystart="280" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a0f1fdac888e9b0d2a90626ad8a0493d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_readPackedData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t *packed_data)</argsstring>
+        <name>EF_GPIO8_readPackedData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>packed_data</declname>
+        </param>
+        <briefdescription>
+<para>This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">packed_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data read from the pin(s)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="301" column="18" bodyfile="EF_GPIO8.c" bodystart="301" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___g_p_i_o8_8c_1a7cf44000255990ea628fb9dd6155f777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_GPIO8_writePackedData</definition>
+        <argsstring>(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint8_t data)</argsstring>
+        <name>EF_GPIO8_writePackedData</name>
+        <param>
+          <type><ref refid="_e_f___g_p_i_o8__regs_8h_1a65482e6dfefdf37a4291d52a8444d560" kindref="member">EF_GPIO8_TYPE_PTR</ref></type>
+          <declname>gpio</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pins</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s). Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gpio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> pointer, which points to the base memory address of GPIO registers. <ref refid="_e_f___g_p_i_o8__regs_8h_1a4e7962d913e6d2cfafb87592d2be93d0" kindref="member">EF_GPIO8_TYPE</ref> is a structure that contains the GPIO registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bit-packed representation of the pin(s). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to be written to the pin(s)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_GPIO8.c" line="318" column="18" bodyfile="EF_GPIO8.c" bodystart="318" bodyend="329"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C file for GPIO8 APIs which contains the function Implementations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2025<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>Author:<sp/>Mohamed<sp/>Shalan<sp/>(mshalan@efabless.com)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_GPIO8_C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_GPIO8_C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">*<sp/>Includes</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___g_p_i_o8_8h" kindref="compound">EF_GPIO8.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">*<sp/>File-Specific<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">*<sp/>Static<sp/>Variables</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">*<sp/>Static<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">*<sp/>Function<sp/>Definitions</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1ae56d9d2b99680c6e53b438675fabb37b" kindref="member">EF_GPIO8_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>value){</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((value<sp/>&lt;<sp/>(uint32_t)0x0)<sp/>||<sp/>(value<sp/>&gt;<sp/>(uint32_t)0x1))<sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>value<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a286fc90fa566e761c67f42b59d759e2b" kindref="member">GCLK</ref><sp/>=<sp/>value;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>GCLK<sp/>enable<sp/>bit<sp/>to<sp/>the<sp/>given<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a3252af5bb5b85e2922a86528e5f0cd13" kindref="member">EF_GPIO8_readData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_data){</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_data<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_data<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gpio_data<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a16078caf5a7f895c69daf902611c83d4" kindref="member">DATAI</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>input<sp/>value<sp/>of<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a7111b115a38098132696435345f5cf23" kindref="member">EF_GPIO8_waitInput</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>compare_value){</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(compare_value<sp/>&gt;<sp/><ref refid="_e_f___g_p_i_o8_8h_1a1e4c029b31aec2c41e9a7286721d80e4" kindref="member">EF_GPIO8_DATAI_MAX_VALUE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>compare_value<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>gpio_data;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___g_p_i_o8_8c_1a3252af5bb5b85e2922a86528e5f0cd13" kindref="member">EF_GPIO8_readData</ref>(gpio,<sp/>&amp;gpio_data);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>input<sp/>value<sp/>of<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((status<sp/>==<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>)<sp/>&amp;&amp;<sp/>(gpio_data<sp/>!=<sp/>compare_value));<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>until<sp/>the<sp/>input<sp/>GPIOs<sp/>have<sp/>the<sp/>required<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1aec184e54ce749ec6c59128719bddaa25" kindref="member">EF_GPIO8_wait_InputPin</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>pin,<sp/>uint32_t<sp/>compare_value){</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pin<sp/>&gt;<sp/>(uint32_t)7)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>pin<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(compare_value<sp/>&gt;<sp/><ref refid="_e_f___g_p_i_o8_8h_1a1e4c029b31aec2c41e9a7286721d80e4" kindref="member">EF_GPIO8_DATAI_MAX_VALUE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>compare_value<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>gpio_data;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___g_p_i_o8_8c_1a3252af5bb5b85e2922a86528e5f0cd13" kindref="member">EF_GPIO8_readData</ref>(gpio,<sp/>&amp;gpio_data);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>input<sp/>value<sp/>of<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((status<sp/>==<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>)<sp/>&amp;&amp;<sp/>((gpio_data<sp/>&amp;<sp/>((uint32_t)0x1<sp/>&lt;&lt;<sp/>pin))<sp/>!=<sp/>compare_value));<sp/><sp/></highlight><highlight class="comment">//<sp/>Wait<sp/>until<sp/>the<sp/>input<sp/>GPIO<sp/>pin<sp/>has<sp/>the<sp/>required<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a874721ec9b2c206ed51134d114290085" kindref="member">EF_GPIO8_writeData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>data){</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>&gt;<sp/><ref refid="_e_f___g_p_i_o8_8h_1a0dc4434c690c1871837aafd082b5f233" kindref="member">EF_GPIO8_DATAO_MAX_VALUE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>data<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1aeb4b18d6fec67e77cb6ee29bac77bf44" kindref="member">DATAO</ref><sp/>=<sp/>data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Drive<sp/>the<sp/>output<sp/>value<sp/>of<sp/>the<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a64a2355737be318f9fe19193e70ba4bd" kindref="member">EF_GPIO8_writeAllDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>data){</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>&gt;<sp/><ref refid="_e_f___g_p_i_o8_8h_1a448ed35a320aa1c91999da88ccda2e51" kindref="member">EF_GPIO8_DIR_MAX_VALUE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>data<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref><sp/>=<sp/>data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a62ca6895f83a606c0b61e55f3db62f97" kindref="member">EF_GPIO8_readDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_dir){</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_dir<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_dir<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gpio_dir<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>direction<sp/>of<sp/>all<sp/>GPIOs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a2ad46517b23125771d0dd47ace9fba25" kindref="member">EF_GPIO8_setPinDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>pin,<sp/>uint32_t<sp/>gpio_dir){</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pin<sp/>&gt;<sp/><ref refid="_e_f___g_p_i_o8_8h_1a604f73736ca69355b59019d7e12ad0d4" kindref="member">EF_GPIO8_NUM_PINS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>pin<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_dir<sp/>&gt;<sp/>(uint32_t)0x1)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_dir<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>directions<sp/><sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_dir<sp/>==<sp/><ref refid="_e_f___g_p_i_o8_8h_1a96bc3cc2f4657d3171959d8fc4e900a6" kindref="member">GPIO8_OUTPUT</ref>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{directions<sp/>|=<sp/>((uint32_t)0x1<sp/>&lt;&lt;<sp/>pin);}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{directions<sp/>&amp;=<sp/>~((uint32_t)0x1<sp/>&lt;&lt;<sp/>pin);}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref><sp/>=<sp/>directions;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>specified<sp/>GPIO<sp/>pin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a3e41416bfcc55c3abbedc8fddaae761b" kindref="member">EF_GPIO8_getRIS</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_ris){</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_ris<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_ris<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gpio_ris<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1abdcf04c00728788279e72b3442f19660" kindref="member">RIS</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>value<sp/>of<sp/>the<sp/>RIS<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1ad682e81ce28629ff1456f1305c24e319" kindref="member">EF_GPIO8_getMIS</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_mis){</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_mis<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_mis<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gpio_mis<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1adff0bc8274b8afdfe1eb159f8aa2d40e" kindref="member">MIS</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>value<sp/>of<sp/>the<sp/>MIS<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a174d9f729f90844e4505867469c90607" kindref="member">EF_GPIO8_setIM</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>mask){</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a9d39406048f21e4503487bcffa9b2930" kindref="member">IM</ref><sp/>|=<sp/>mask;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>IM<sp/>register<sp/>with<sp/>the<sp/>required<sp/>mask<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1aced8806671264bd3dc9ed067626a19dd" kindref="member">EF_GPIO8_getIM</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t*<sp/>gpio_im){</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio_im<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio_im<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*gpio_im<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a9d39406048f21e4503487bcffa9b2930" kindref="member">IM</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>value<sp/>of<sp/>the<sp/>IM<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1af9616feb345e968f951b17178ee82e3b" kindref="member">EF_GPIO8_setICR</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint32_t<sp/>mask){</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1ad26d302dfa71011629ffb91191820c5f" kindref="member">IC</ref><sp/>|=<sp/>mask;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>IC<sp/>register<sp/>with<sp/>the<sp/>required<sp/>mask<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a04430fed83ba6201f9e6e92a31714a2e" kindref="member">EF_GPIO8_setPinPackedDirection</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint32_t<sp/>dir){</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dir<sp/>&gt;<sp/>(uint32_t)0x1)<sp/>{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>dir<sp/>is<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>directions<sp/><sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dir<sp/>==<sp/><ref refid="_e_f___g_p_i_o8_8h_1a96bc3cc2f4657d3171959d8fc4e900a6" kindref="member">GPIO8_OUTPUT</ref>)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{directions<sp/>|=<sp/>pins;}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{directions<sp/>&amp;=<sp/>~pins;}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a5c419047eeed433dc1f43d97afc71f63" kindref="member">DIR</ref><sp/>=<sp/>directions;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>direction<sp/>of<sp/>the<sp/>specified<sp/>set<sp/>of<sp/>pins</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a0f1fdac888e9b0d2a90626ad8a0493d7" kindref="member">EF_GPIO8_readPackedData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint32_t*<sp/>packed_data){</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packed_data<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>packed_data<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>i.e.<sp/>there<sp/>is<sp/>no<sp/>memory<sp/>location<sp/>to<sp/>store<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*packed_data<sp/>=<sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1a16078caf5a7f895c69daf902611c83d4" kindref="member">DATAI</ref><sp/>&amp;<sp/>pins;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>data<sp/>from<sp/>the<sp/>specified<sp/>set<sp/>of<sp/>pins</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___g_p_i_o8_8c_1a7cf44000255990ea628fb9dd6155f777" kindref="member">EF_GPIO8_writePackedData</ref>(<ref refid="struct___e_f___g_p_i_o8___t_y_p_e__" kindref="compound">EF_GPIO8_TYPE_PTR</ref><sp/>gpio,<sp/>uint8_t<sp/>pins,<sp/>uint8_t<sp/>data){</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpio<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kindref="member">EF_DRIVER_ERROR_PARAMETER</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>if<sp/>gpio<sp/>is<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1aeb4b18d6fec67e77cb6ee29bac77bf44" kindref="member">DATAO</ref><sp/>=<sp/>(gpio-&gt;<ref refid="struct___e_f___g_p_i_o8___t_y_p_e___1aeb4b18d6fec67e77cb6ee29bac77bf44" kindref="member">DATAO</ref><sp/>&amp;<sp/>(~pins))<sp/>|<sp/>(data<sp/>&amp;<sp/>pins);<sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>the<sp/>data<sp/>to<sp/>the<sp/>specified<sp/>set<sp/>of<sp/>pins</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="333"><highlight class="comment">*<sp/>Static<sp/>Function<sp/>Definitions</highlight></codeline>
+<codeline lineno="334"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_GPIO8_C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="343"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="344"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="EF_GPIO8.c"/>
+  </compounddef>
+</doxygen>
