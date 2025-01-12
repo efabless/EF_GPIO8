@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EF_GPIO8 APIs: Firmware Documentation</title>
+<title>EF_GPIO8 APIs: API Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">Firmware Documentation </div></div>
+  <div class="headertitle"><div class="title">API Reference </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
@@ -97,28 +97,25 @@ Macros</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadRight">Type   </th><th class="markdownTableHeadLeft">Name    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR** 1<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR** ((uint32_t)1)<br  />
 <em>Unspecified error.</em>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_BUSY** 2<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_BUSY** ((uint32_t)2)<br  />
 <em>Driver is busy.</em>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_NO\_DATA** 7<br  />
-<em>No data available.</em>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_PARAMETER** 5<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_PARAMETER** ((uint32_t)5)<br  />
 <em>Parameter error.</em>    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_SPECIFIC** 6<br  />
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_SPECIFIC** ((uint32_t)6)<br  />
 <em>Start of driver specific errors.</em>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_TIMEOUT** 3<br  />
-<em>Timeout occurred.</em>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_UNSUPPORTED** 4<br  />
-<em>Operation not supported.</em>    </td></tr>
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_TIMEOUT** ((uint32_t)3)<br  />
+<em>Timeout occurred.</em>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_OK** 0<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_ERROR\_UNSUPPORTED** ((uint32_t)4)<br  />
+<em>Operation not supported.</em>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_DRIVER\_OK** ((uint32_t)0)<br  />
 <em>Operation succeeded.</em>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md5"></a>
@@ -126,37 +123,34 @@ Structures and Types Documentation</h1>
 <h2><a class="anchor" id="autotoc_md6"></a>
 typedef &lt;tt&gt;EF_DRIVER_STATUS&lt;/tt&gt;</h2>
 <p><em>A type that is used to return the status of the driver functions.</em> </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>;</div>
-<div class="ttc" id="a_e_f___driver___common_8h_html_ad1c99136d1edfd0a7757f5b81600a351"><div class="ttname"><a href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></div><div class="ttdeci">uint32_t EF_DRIVER_STATUS</div><div class="ttdoc">A type that is used to return the status of the driver functions.</div><div class="ttdef"><b>Definition:</b> EF_Driver_Common.h:53</div></div>
+<div class="ttc" id="a_e_f___driver___common_8h_html_ad1c99136d1edfd0a7757f5b81600a351"><div class="ttname"><a href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></div><div class="ttdeci">uint32_t EF_DRIVER_STATUS</div><div class="ttdoc">A type that is used to return the status of the driver functions.</div><div class="ttdef"><b>Definition:</b> EF_Driver_Common.h:52</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Macros Documentation</h1>
 <h2><a class="anchor" id="autotoc_md8"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR&lt;/tt&gt;</h2>
-<p><em>Unspecified error.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR 1</span></div>
+<p><em>Unspecified error.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR ((uint32_t)1)</span></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR_BUSY&lt;/tt&gt;</h2>
-<p><em>Driver is busy.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_BUSY 2</span></div>
+<p><em>Driver is busy.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_BUSY ((uint32_t)2)</span></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
-define &lt;tt&gt;EF_DRIVER_ERROR_NO_DATA&lt;/tt&gt;</h2>
-<p><em>No data available.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_NO_DATA 7</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR_PARAMETER&lt;/tt&gt;</h2>
-<p><em>Parameter error.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_PARAMETER 5</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
+<p><em>Parameter error.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_PARAMETER ((uint32_t)5)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR_SPECIFIC&lt;/tt&gt;</h2>
-<p><em>Start of driver specific errors.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_SPECIFIC 6</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+<p><em>Start of driver specific errors.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_SPECIFIC ((uint32_t)6)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR_TIMEOUT&lt;/tt&gt;</h2>
-<p><em>Timeout occurred.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_TIMEOUT 3</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
+<p><em>Timeout occurred.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_TIMEOUT ((uint32_t)3)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
 define &lt;tt&gt;EF_DRIVER_ERROR_UNSUPPORTED&lt;/tt&gt;</h2>
-<p><em>Operation not supported.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_UNSUPPORTED 4</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
+<p><em>Operation not supported.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_ERROR_UNSUPPORTED ((uint32_t)4)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
 define &lt;tt&gt;EF_DRIVER_OK&lt;/tt&gt;</h2>
-<p><em>Operation succeeded.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_OK 0</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
+<p><em>Operation succeeded.</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define EF_DRIVER_OK ((uint32_t)0)</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 File EF_GPIO8.h</h1>
 <p><em>C header file for GPIO8 APIs which contains the function prototypes.</em></p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Functions</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -210,39 +204,39 @@ Functions</h1>
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_writePackedData** (**EF\_GPIO8\_TYPE\_PTR** gpio, uint8_t pins, uint8_t data) <br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Macros</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadRight">Type   </th><th class="markdownTableHeadLeft">Name    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DATAI\_MAX\_VALUE** 0x000000FF<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DATAI\_MAX\_VALUE** ((uint32_t)0x000000FF)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DATAO\_MAX\_VALUE** 0x000000FF<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DATAO\_MAX\_VALUE** ((uint32_t)0x000000FF)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DIR\_MAX\_VALUE** 0x000000FF<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_DIR\_MAX\_VALUE** ((uint32_t)0x000000FF)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_NUM\_PINS** 0x00000008<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_NUM\_PINS** ((uint32_t)0x00000008)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**GPIO8\_INPUT** 0<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**GPIO8\_INPUT** ((uint32_t)0)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**GPIO8\_OUTPUT** 1<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**GPIO8\_OUTPUT** ((uint32_t)1)<br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Functions Documentation</h1>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 function &lt;tt&gt;EF_GPIO8_getIM&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#aced8806671264bd3dc9ed067626a19dd">EF_GPIO8_getIM</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t *gpio_im</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_aced8806671264bd3dc9ed067626a19dd"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#aced8806671264bd3dc9ed067626a19dd">EF_GPIO8_getIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getIM(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_im)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:245</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_aced8806671264bd3dc9ed067626a19dd"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#aced8806671264bd3dc9ed067626a19dd">EF_GPIO8_getIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getIM(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_im)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:244</div></div>
 <div class="ttc" id="astruct___e_f___g_p_i_o8___t_y_p_e___html"><div class="ttname"><a href="struct___e_f___g_p_i_o8___t_y_p_e__.html">_EF_GPIO8_TYPE_</a></div><div class="ttdef"><b>Definition:</b> EF_GPIO8_regs.h:77</div></div>
 </div><!-- fragment --><p>returns the value of the Interrupts Masking Register; which enable and disables interrupts</p>
 <ul>
@@ -286,13 +280,13 @@ function &lt;tt&gt;EF_GPIO8_getIM&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 function &lt;tt&gt;EF_GPIO8_getMIS&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#ad682e81ce28629ff1456f1305c24e319">EF_GPIO8_getMIS</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t *gpio_mis</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_ad682e81ce28629ff1456f1305c24e319"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#ad682e81ce28629ff1456f1305c24e319">EF_GPIO8_getMIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getMIS(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_mis)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:216</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_ad682e81ce28629ff1456f1305c24e319"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#ad682e81ce28629ff1456f1305c24e319">EF_GPIO8_getMIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getMIS(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_mis)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:215</div></div>
 </div><!-- fragment --><p>returns the value of the Masked Interrupt Status Register</p>
 <ul>
 <li>bit 0 P0HI : Pin 0 is high</li>
@@ -335,13 +329,13 @@ function &lt;tt&gt;EF_GPIO8_getMIS&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 function &lt;tt&gt;EF_GPIO8_getRIS&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a3e41416bfcc55c3abbedc8fddaae761b">EF_GPIO8_getRIS</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t *gpio_ris</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a3e41416bfcc55c3abbedc8fddaae761b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a3e41416bfcc55c3abbedc8fddaae761b">EF_GPIO8_getRIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getRIS(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_ris)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:200</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a3e41416bfcc55c3abbedc8fddaae761b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a3e41416bfcc55c3abbedc8fddaae761b">EF_GPIO8_getRIS</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_getRIS(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_ris)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:199</div></div>
 </div><!-- fragment --><p>returns the value of the Raw Interrupt Status Register</p>
 <ul>
 <li>bit 0 P0HI : Pin 0 is high</li>
@@ -384,13 +378,13 @@ function &lt;tt&gt;EF_GPIO8_getRIS&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 function &lt;tt&gt;EF_GPIO8_readData&lt;/tt&gt;</h2>
 <p><em>reads the input value of the GPIOs</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a3252af5bb5b85e2922a86528e5f0cd13">EF_GPIO8_readData</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t *gpio_data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a3252af5bb5b85e2922a86528e5f0cd13"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a3252af5bb5b85e2922a86528e5f0cd13">EF_GPIO8_readData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readData(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_data)</div><div class="ttdoc">reads the input value of the GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:75</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a3252af5bb5b85e2922a86528e5f0cd13"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a3252af5bb5b85e2922a86528e5f0cd13">EF_GPIO8_readData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readData(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_data)</div><div class="ttdoc">reads the input value of the GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:74</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -398,13 +392,13 @@ function &lt;tt&gt;EF_GPIO8_readData&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 function &lt;tt&gt;EF_GPIO8_readDirection&lt;/tt&gt;</h2>
 <p><em>gets the direction of all GPIOs</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a62ca6895f83a606c0b61e55f3db62f97">EF_GPIO8_readDirection</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t *gpio_dir</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a62ca6895f83a606c0b61e55f3db62f97"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a62ca6895f83a606c0b61e55f3db62f97">EF_GPIO8_readDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_dir)</div><div class="ttdoc">gets the direction of all GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:162</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a62ca6895f83a606c0b61e55f3db62f97"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a62ca6895f83a606c0b61e55f3db62f97">EF_GPIO8_readDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t *gpio_dir)</div><div class="ttdoc">gets the direction of all GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:161</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -412,14 +406,14 @@ function &lt;tt&gt;EF_GPIO8_readDirection&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 function &lt;tt&gt;EF_GPIO8_readPackedData&lt;/tt&gt;</h2>
 <p><em>This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s).</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a0f1fdac888e9b0d2a90626ad8a0493d7">EF_GPIO8_readPackedData</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint8_t pins,</div>
 <div class="line">    uint32_t *packed_data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a0f1fdac888e9b0d2a90626ad8a0493d7"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a0f1fdac888e9b0d2a90626ad8a0493d7">EF_GPIO8_readPackedData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readPackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t *packed_data)</div><div class="ttdoc">This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed represen...</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:301</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a0f1fdac888e9b0d2a90626ad8a0493d7"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a0f1fdac888e9b0d2a90626ad8a0493d7">EF_GPIO8_readPackedData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_readPackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t *packed_data)</div><div class="ttdoc">This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed represen...</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:300</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -428,13 +422,13 @@ function &lt;tt&gt;EF_GPIO8_readPackedData&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 function &lt;tt&gt;EF_GPIO8_setGclkEnable&lt;/tt&gt;</h2>
 <p><em>sets the GCLK enable bit in the GPIO register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#ae56d9d2b99680c6e53b438675fabb37b">EF_GPIO8_setGclkEnable</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_ae56d9d2b99680c6e53b438675fabb37b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#ae56d9d2b99680c6e53b438675fabb37b">EF_GPIO8_setGclkEnable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setGclkEnable(EF_GPIO8_TYPE_PTR gpio, uint32_t value)</div><div class="ttdoc">sets the GCLK enable bit in the GPIO register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:60</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_ae56d9d2b99680c6e53b438675fabb37b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#ae56d9d2b99680c6e53b438675fabb37b">EF_GPIO8_setGclkEnable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setGclkEnable(EF_GPIO8_TYPE_PTR gpio, uint32_t value)</div><div class="ttdoc">sets the GCLK enable bit in the GPIO register to a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:59</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -442,13 +436,13 @@ function &lt;tt&gt;EF_GPIO8_setGclkEnable&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 function &lt;tt&gt;EF_GPIO8_setICR&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#af9616feb345e968f951b17178ee82e3b">EF_GPIO8_setICR</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_af9616feb345e968f951b17178ee82e3b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#af9616feb345e968f951b17178ee82e3b">EF_GPIO8_setICR</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setICR(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:261</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_af9616feb345e968f951b17178ee82e3b"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#af9616feb345e968f951b17178ee82e3b">EF_GPIO8_setICR</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setICR(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:260</div></div>
 </div><!-- fragment --><p>sets the value of the Interrupts Clear Register; write 1 to clear the flag</p>
 <ul>
 <li>bit 0 P0HI : Pin 0 is high</li>
@@ -491,13 +485,13 @@ function &lt;tt&gt;EF_GPIO8_setICR&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 function &lt;tt&gt;EF_GPIO8_setIM&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a174d9f729f90844e4505867469c90607">EF_GPIO8_setIM</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t mask</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a174d9f729f90844e4505867469c90607"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a174d9f729f90844e4505867469c90607">EF_GPIO8_setIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setIM(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:232</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a174d9f729f90844e4505867469c90607"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a174d9f729f90844e4505867469c90607">EF_GPIO8_setIM</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setIM(EF_GPIO8_TYPE_PTR gpio, uint32_t mask)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:231</div></div>
 </div><!-- fragment --><p>sets the value of the Interrupts Masking Register; which enable and disables interrupts</p>
 <ul>
 <li>bit 0 P0HI : Pin 0 is high</li>
@@ -540,14 +534,14 @@ function &lt;tt&gt;EF_GPIO8_setIM&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 function &lt;tt&gt;EF_GPIO8_setPinDirection&lt;/tt&gt;</h2>
 <p><em>sets the direction of one GPIO pin</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a2ad46517b23125771d0dd47ace9fba25">EF_GPIO8_setPinDirection</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t pin,</div>
 <div class="line">    uint32_t dir</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a2ad46517b23125771d0dd47ace9fba25"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a2ad46517b23125771d0dd47ace9fba25">EF_GPIO8_setPinDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setPinDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t gpio_dir)</div><div class="ttdoc">sets the direction of one GPIO pin</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:178</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a2ad46517b23125771d0dd47ace9fba25"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a2ad46517b23125771d0dd47ace9fba25">EF_GPIO8_setPinDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setPinDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t gpio_dir)</div><div class="ttdoc">sets the direction of one GPIO pin</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:177</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -556,14 +550,14 @@ function &lt;tt&gt;EF_GPIO8_setPinDirection&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 function &lt;tt&gt;EF_GPIO8_setPinPackedDirection&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a04430fed83ba6201f9e6e92a31714a2e">EF_GPIO8_setPinPackedDirection</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint8_t pins,</div>
 <div class="line">    uint32_t dir</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a04430fed83ba6201f9e6e92a31714a2e"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a04430fed83ba6201f9e6e92a31714a2e">EF_GPIO8_setPinPackedDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t dir)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:280</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a04430fed83ba6201f9e6e92a31714a2e"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a04430fed83ba6201f9e6e92a31714a2e">EF_GPIO8_setPinPackedDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_setPinPackedDirection(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint32_t dir)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:279</div></div>
 </div><!-- fragment --><p>This function sets the direction of a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it sets the direction of the pin(s) to the required value.</p>
 <p><b>Note:</b></p>
 <p>All the specified pins are set to the same direction (dir).</p>
@@ -577,13 +571,13 @@ function &lt;tt&gt;EF_GPIO8_setPinPackedDirection&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 function &lt;tt&gt;EF_GPIO8_waitInput&lt;/tt&gt;</h2>
 <p><em>wait until the input GPIOs have a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a7111b115a38098132696435345f5cf23">EF_GPIO8_waitInput</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t compare_value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a7111b115a38098132696435345f5cf23"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a7111b115a38098132696435345f5cf23">EF_GPIO8_waitInput</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_waitInput(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value)</div><div class="ttdoc">wait until the input GPIOs have a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:91</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a7111b115a38098132696435345f5cf23"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a7111b115a38098132696435345f5cf23">EF_GPIO8_waitInput</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_waitInput(EF_GPIO8_TYPE_PTR gpio, uint32_t compare_value)</div><div class="ttdoc">wait until the input GPIOs have a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:90</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -591,14 +585,14 @@ function &lt;tt&gt;EF_GPIO8_waitInput&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 function &lt;tt&gt;EF_GPIO8_wait_InputPin&lt;/tt&gt;</h2>
 <p><em>wait until a GPIO pin have a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#aec184e54ce749ec6c59128719bddaa25">EF_GPIO8_wait_InputPin</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t pin,</div>
 <div class="line">    uint32_t compare_value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_aec184e54ce749ec6c59128719bddaa25"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#aec184e54ce749ec6c59128719bddaa25">EF_GPIO8_wait_InputPin</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t compare_value)</div><div class="ttdoc">wait until a GPIO pin have a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:109</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_aec184e54ce749ec6c59128719bddaa25"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#aec184e54ce749ec6c59128719bddaa25">EF_GPIO8_wait_InputPin</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_wait_InputPin(EF_GPIO8_TYPE_PTR gpio, uint32_t pin, uint32_t compare_value)</div><div class="ttdoc">wait until a GPIO pin have a certain value</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:108</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -607,13 +601,13 @@ function &lt;tt&gt;EF_GPIO8_wait_InputPin&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 function &lt;tt&gt;EF_GPIO8_writeAllDirection&lt;/tt&gt;</h2>
 <p><em>sets the direction of all GPIOs</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a64a2355737be318f9fe19193e70ba4bd">EF_GPIO8_writeAllDirection</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a64a2355737be318f9fe19193e70ba4bd"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a64a2355737be318f9fe19193e70ba4bd">EF_GPIO8_writeAllDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writeAllDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</div><div class="ttdoc">sets the direction of all GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:147</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a64a2355737be318f9fe19193e70ba4bd"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a64a2355737be318f9fe19193e70ba4bd">EF_GPIO8_writeAllDirection</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writeAllDirection(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</div><div class="ttdoc">sets the direction of all GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:146</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -621,13 +615,13 @@ function &lt;tt&gt;EF_GPIO8_writeAllDirection&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 function &lt;tt&gt;EF_GPIO8_writeData&lt;/tt&gt;</h2>
 <p><em>drives the output value of the GPIOs</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a874721ec9b2c206ed51134d114290085">EF_GPIO8_writeData</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint32_t data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a874721ec9b2c206ed51134d114290085"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a874721ec9b2c206ed51134d114290085">EF_GPIO8_writeData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writeData(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</div><div class="ttdoc">drives the output value of the GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:130</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a874721ec9b2c206ed51134d114290085"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a874721ec9b2c206ed51134d114290085">EF_GPIO8_writeData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writeData(EF_GPIO8_TYPE_PTR gpio, uint32_t data)</div><div class="ttdoc">drives the output value of the GPIOs</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:129</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>gpio</code> An **EF\_GPIO8\_TYPE** pointer, which points to the base memory address of GPIO registers.**EF\_GPIO8\_TYPE** is a structure that contains the GPIO registers.</li>
@@ -635,14 +629,14 @@ function &lt;tt&gt;EF_GPIO8_writeData&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 function &lt;tt&gt;EF_GPIO8_writePackedData&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___g_p_i_o8_8c.html#a7cf44000255990ea628fb9dd6155f777">EF_GPIO8_writePackedData</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE_PTR</a> gpio,</div>
 <div class="line">    uint8_t pins,</div>
 <div class="line">    uint8_t data</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a7cf44000255990ea628fb9dd6155f777"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a7cf44000255990ea628fb9dd6155f777">EF_GPIO8_writePackedData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writePackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint8_t data)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:318</div></div>
+<div class="ttc" id="a_e_f___g_p_i_o8_8c_html_a7cf44000255990ea628fb9dd6155f777"><div class="ttname"><a href="_e_f___g_p_i_o8_8c.html#a7cf44000255990ea628fb9dd6155f777">EF_GPIO8_writePackedData</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_GPIO8_writePackedData(EF_GPIO8_TYPE_PTR gpio, uint8_t pins, uint8_t data)</div><div class="ttdef"><b>Definition:</b> EF_GPIO8.c:317</div></div>
 </div><!-- fragment --><p>This function writes the data to a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it writes the data to the pin(s). Note that all the specified pins are set to the corresponding value of the corresponding bit in the data parameter.</p>
 <p><b>Parameters:</b></p>
 <ul>
@@ -652,29 +646,29 @@ function &lt;tt&gt;EF_GPIO8_writePackedData&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</p>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Macros Documentation</h1>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 define &lt;tt&gt;EF_GPIO8_DATAI_MAX_VALUE&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DATAI_MAX_VALUE 0x000000FF</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DATAI_MAX_VALUE ((uint32_t)0x000000FF)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
 define &lt;tt&gt;EF_GPIO8_DATAO_MAX_VALUE&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DATAO_MAX_VALUE 0x000000FF</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md39"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DATAO_MAX_VALUE ((uint32_t)0x000000FF)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 define &lt;tt&gt;EF_GPIO8_DIR_MAX_VALUE&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DIR_MAX_VALUE 0x000000FF</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_DIR_MAX_VALUE ((uint32_t)0x000000FF)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md39"></a>
 define &lt;tt&gt;EF_GPIO8_NUM_PINS&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_NUM_PINS 0x00000008</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_NUM_PINS ((uint32_t)0x00000008)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
 define &lt;tt&gt;GPIO8_INPUT&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define GPIO8_INPUT 0</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md42"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define GPIO8_INPUT ((uint32_t)0)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
 define &lt;tt&gt;GPIO8_OUTPUT&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define GPIO8_OUTPUT 1</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md43"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define GPIO8_OUTPUT ((uint32_t)1)</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md42"></a>
 File EF_GPIO8_regs.h</h1>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 Structures and Types</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -689,106 +683,106 @@ Structures and Types</h1>
 <td class="markdownTableBodyRight">struct   </td><td class="markdownTableBodyLeft">**\_EF\_GPIO8\_TYPE\_** <br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md45"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Macros</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadRight">Type   </th><th class="markdownTableHeadLeft">Name    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0HI\_FLAG** 0x1<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0HI\_FLAG** ((uint32_t)0x1)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0LO\_FLAG** 0x100<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0LO\_FLAG** ((uint32_t)0x100)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0NE\_FLAG** 0x1000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0NE\_FLAG** ((uint32_t)0x1000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0PE\_FLAG** 0x10000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P0PE\_FLAG** ((uint32_t)0x10000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1HI\_FLAG** 0x2<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1HI\_FLAG** ((uint32_t)0x2)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1LO\_FLAG** 0x200<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1LO\_FLAG** ((uint32_t)0x200)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1NE\_FLAG** 0x2000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1NE\_FLAG** ((uint32_t)0x2000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1PE\_FLAG** 0x20000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P1PE\_FLAG** ((uint32_t)0x20000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2HI\_FLAG** 0x4<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2HI\_FLAG** ((uint32_t)0x4)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2LO\_FLAG** 0x400<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2LO\_FLAG** ((uint32_t)0x400)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2NE\_FLAG** 0x4000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2NE\_FLAG** ((uint32_t)0x4000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2PE\_FLAG** 0x40000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P2PE\_FLAG** ((uint32_t)0x40000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3HI\_FLAG** 0x8<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3HI\_FLAG** ((uint32_t)0x8)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3LO\_FLAG** 0x800<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3LO\_FLAG** ((uint32_t)0x800)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3NE\_FLAG** 0x8000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3NE\_FLAG** ((uint32_t)0x8000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3PE\_FLAG** 0x80000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P3PE\_FLAG** ((uint32_t)0x80000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4HI\_FLAG** 0x10<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4HI\_FLAG** ((uint32_t)0x10)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4LO\_FLAG** 0x1000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4LO\_FLAG** ((uint32_t)0x1000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4NE\_FLAG** 0x10000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4NE\_FLAG** ((uint32_t)0x10000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4PE\_FLAG** 0x100000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P4PE\_FLAG** ((uint32_t)0x100000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5HI\_FLAG** 0x20<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5HI\_FLAG** ((uint32_t)0x20)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5LO\_FLAG** 0x2000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5LO\_FLAG** ((uint32_t)0x2000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5NE\_FLAG** 0x20000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5NE\_FLAG** ((uint32_t)0x20000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5PE\_FLAG** 0x200000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P5PE\_FLAG** ((uint32_t)0x200000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6HI\_FLAG** 0x40<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6HI\_FLAG** ((uint32_t)0x40)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6LO\_FLAG** 0x4000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6LO\_FLAG** ((uint32_t)0x4000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6NE\_FLAG** 0x40000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6NE\_FLAG** ((uint32_t)0x40000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6PE\_FLAG** 0x400000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P6PE\_FLAG** ((uint32_t)0x400000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7HI\_FLAG** 0x80<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7HI\_FLAG** ((uint32_t)0x80)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7LO\_FLAG** 0x8000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7LO\_FLAG** ((uint32_t)0x8000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7NE\_FLAG** 0x80000000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7NE\_FLAG** ((uint32_t)0x80000000)<br  />
     </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7PE\_FLAG** 0x800000<br  />
+<td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**EF\_GPIO8\_P7PE\_FLAG** ((uint32_t)0x800000)<br  />
     </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**IO\_TYPES** <br  />
@@ -803,16 +797,16 @@ Macros</h1>
 <td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**\_\_W** volatile uint32_t<br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md46"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 Structures and Types Documentation</h1>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 typedef &lt;tt&gt;EF_GPIO8_TYPE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">_EF_GPIO8_TYPE_</a> <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE</a>;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md48"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md47"></a>
 typedef &lt;tt&gt;EF_GPIO8_TYPE_PTR&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code hl_struct" href="struct___e_f___g_p_i_o8___t_y_p_e__.html">EF_GPIO8_TYPE</a>* <a class="code hl_typedef" href="_e_f___g_p_i_o8__regs_8h.html#a65482e6dfefdf37a4291d52a8444d560">EF_GPIO8_TYPE_PTR</a>;</div>
 <div class="ttc" id="a_e_f___g_p_i_o8__regs_8h_html_a65482e6dfefdf37a4291d52a8444d560"><div class="ttname"><a href="_e_f___g_p_i_o8__regs_8h.html#a65482e6dfefdf37a4291d52a8444d560">EF_GPIO8_TYPE_PTR</a></div><div class="ttdeci">EF_GPIO8_TYPE * EF_GPIO8_TYPE_PTR</div><div class="ttdef"><b>Definition:</b> EF_GPIO8_regs.h:89</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md49"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md48"></a>
 struct &lt;tt&gt;_EF_GPIO8_TYPE_&lt;/tt&gt;</h2>
 <p>Variables:</p>
 <ul>
@@ -835,114 +829,114 @@ struct &lt;tt&gt;_EF_GPIO8_TYPE_&lt;/tt&gt;</h2>
 <li>**\_\_R** reserved_0 <br  />
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 Macros Documentation</h1>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 define &lt;tt&gt;EF_GPIO8_P0HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0HI_FLAG 0x1</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md52"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0HI_FLAG ((uint32_t)0x1)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md51"></a>
 define &lt;tt&gt;EF_GPIO8_P0LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0LO_FLAG 0x100</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md53"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0LO_FLAG ((uint32_t)0x100)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md52"></a>
 define &lt;tt&gt;EF_GPIO8_P0NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0NE_FLAG 0x1000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md54"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0NE_FLAG ((uint32_t)0x1000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md53"></a>
 define &lt;tt&gt;EF_GPIO8_P0PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0PE_FLAG 0x10000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md55"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P0PE_FLAG ((uint32_t)0x10000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md54"></a>
 define &lt;tt&gt;EF_GPIO8_P1HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1HI_FLAG 0x2</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1HI_FLAG ((uint32_t)0x2)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md55"></a>
 define &lt;tt&gt;EF_GPIO8_P1LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1LO_FLAG 0x200</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1LO_FLAG ((uint32_t)0x200)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
 define &lt;tt&gt;EF_GPIO8_P1NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1NE_FLAG 0x2000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md58"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1NE_FLAG ((uint32_t)0x2000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
 define &lt;tt&gt;EF_GPIO8_P1PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1PE_FLAG 0x20000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md59"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P1PE_FLAG ((uint32_t)0x20000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md58"></a>
 define &lt;tt&gt;EF_GPIO8_P2HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2HI_FLAG 0x4</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md60"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2HI_FLAG ((uint32_t)0x4)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md59"></a>
 define &lt;tt&gt;EF_GPIO8_P2LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2LO_FLAG 0x400</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md61"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2LO_FLAG ((uint32_t)0x400)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md60"></a>
 define &lt;tt&gt;EF_GPIO8_P2NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2NE_FLAG 0x4000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md62"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2NE_FLAG ((uint32_t)0x4000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md61"></a>
 define &lt;tt&gt;EF_GPIO8_P2PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2PE_FLAG 0x40000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md63"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P2PE_FLAG ((uint32_t)0x40000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md62"></a>
 define &lt;tt&gt;EF_GPIO8_P3HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3HI_FLAG 0x8</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md64"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3HI_FLAG ((uint32_t)0x8)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md63"></a>
 define &lt;tt&gt;EF_GPIO8_P3LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3LO_FLAG 0x800</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md65"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3LO_FLAG ((uint32_t)0x800)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md64"></a>
 define &lt;tt&gt;EF_GPIO8_P3NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3NE_FLAG 0x8000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md66"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3NE_FLAG ((uint32_t)0x8000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md65"></a>
 define &lt;tt&gt;EF_GPIO8_P3PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3PE_FLAG 0x80000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md67"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P3PE_FLAG ((uint32_t)0x80000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md66"></a>
 define &lt;tt&gt;EF_GPIO8_P4HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4HI_FLAG 0x10</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md68"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4HI_FLAG ((uint32_t)0x10)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md67"></a>
 define &lt;tt&gt;EF_GPIO8_P4LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4LO_FLAG 0x1000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md69"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4LO_FLAG ((uint32_t)0x1000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md68"></a>
 define &lt;tt&gt;EF_GPIO8_P4NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4NE_FLAG 0x10000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4NE_FLAG ((uint32_t)0x10000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md69"></a>
 define &lt;tt&gt;EF_GPIO8_P4PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4PE_FLAG 0x100000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md71"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P4PE_FLAG ((uint32_t)0x100000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
 define &lt;tt&gt;EF_GPIO8_P5HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5HI_FLAG 0x20</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md72"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5HI_FLAG ((uint32_t)0x20)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md71"></a>
 define &lt;tt&gt;EF_GPIO8_P5LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5LO_FLAG 0x2000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md73"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5LO_FLAG ((uint32_t)0x2000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md72"></a>
 define &lt;tt&gt;EF_GPIO8_P5NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5NE_FLAG 0x20000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md74"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5NE_FLAG ((uint32_t)0x20000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md73"></a>
 define &lt;tt&gt;EF_GPIO8_P5PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5PE_FLAG 0x200000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P5PE_FLAG ((uint32_t)0x200000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md74"></a>
 define &lt;tt&gt;EF_GPIO8_P6HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6HI_FLAG 0x40</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6HI_FLAG ((uint32_t)0x40)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
 define &lt;tt&gt;EF_GPIO8_P6LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6LO_FLAG 0x4000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6LO_FLAG ((uint32_t)0x4000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
 define &lt;tt&gt;EF_GPIO8_P6NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6NE_FLAG 0x40000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6NE_FLAG ((uint32_t)0x40000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
 define &lt;tt&gt;EF_GPIO8_P6PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6PE_FLAG 0x400000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P6PE_FLAG ((uint32_t)0x400000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
 define &lt;tt&gt;EF_GPIO8_P7HI_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7HI_FLAG 0x80</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7HI_FLAG ((uint32_t)0x80)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
 define &lt;tt&gt;EF_GPIO8_P7LO_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7LO_FLAG 0x8000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7LO_FLAG ((uint32_t)0x8000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
 define &lt;tt&gt;EF_GPIO8_P7NE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7NE_FLAG 0x80000000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7NE_FLAG ((uint32_t)0x80000000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md81"></a>
 define &lt;tt&gt;EF_GPIO8_P7PE_FLAG&lt;/tt&gt;</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7PE_FLAG 0x800000</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#define EF_GPIO8_P7PE_FLAG ((uint32_t)0x800000)</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
 define &lt;tt&gt;IO_TYPES&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define IO_TYPES </span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md84"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
 define &lt;tt&gt;__R&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __R volatile const uint32_t</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md85"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md84"></a>
 define &lt;tt&gt;__RW&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __RW volatile       uint32_t</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md86"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md85"></a>
 define &lt;tt&gt;__W&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __W volatile       uint32_t</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->
