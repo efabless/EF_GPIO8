@@ -76,21 +76,43 @@
 
 
 
-module EF_GPIO8_WB (
 
 
 
 
-    input  wire         clk_i,
-    input  wire         rst_i,
-    input  wire [ 31:0] adr_i,
-    input  wire [ 31:0] dat_i,
-    output wire [ 31:0] dat_o,
-    input  wire [  3:0] sel_i,
-    input  wire         cyc_i,
-    input  wire         stb_i,
-    output reg          ack_o,
-    input  wire         we_i,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module EF_GPIO8_APB (
+
+
+
+
+    input  wire         sc_testmode,
+    input  wire         PCLK,
+    input  wire         PRESETn,
+    input  wire         PWRITE,
+    input  wire [ 31:0] PWDATA,
+    input  wire [ 31:0] PADDR,
+    input  wire         PENABLE,
+    input  wire         PSEL,
+    output wire         PREADY,
+    output wire [ 31:0] PRDATA,
     output wire         IRQ,
     input  wire [8-1:0] io_in,
     output wire [8-1:0] io_out,
@@ -108,25 +130,24 @@ module EF_GPIO8_WB (
   reg [0:0] GCLK_REG;
   wire clk_g;
 
-  wire clk_gated_en = GCLK_REG[0];
+  wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
 
 
       // USE_POWER_PINS
-      .clk(clk_i),
+      .clk(PCLK),
       .clk_en(clk_gated_en),
       .clk_o(clk_g)
   );
 
   wire         clk = clk_g;
-  wire         rst_n = (~rst_i);
+  wire         rst_n = PRESETn;
 
 
-  wire         wb_valid = cyc_i & stb_i;
-  wire         wb_we = we_i & wb_valid;
-  wire         wb_re = ~we_i & wb_valid;
-  wire [  3:0] wb_byte_sel = sel_i & {4{wb_we}};
+  wire         apb_valid = PSEL & PENABLE;
+  wire         apb_we = PWRITE & apb_valid;
+  wire         apb_re = ~PWRITE & apb_valid;
 
   wire [8-1:0] bus_in;
   wire [8-1:0] bus_out;
@@ -170,32 +191,32 @@ module EF_GPIO8_WB (
 
   reg [7:0] DATAO_REG;
   assign bus_out = DATAO_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) DATAO_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == DATAO_REG_OFFSET)) DATAO_REG <= dat_i[8-1:0];
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) DATAO_REG <= 0;
+    else if (apb_we & (PADDR[16-1:0] == DATAO_REG_OFFSET)) DATAO_REG <= PWDATA[8-1:0];
 
   reg [7:0] DIR_REG;
   assign bus_oe = DIR_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) DIR_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == DIR_REG_OFFSET)) DIR_REG <= dat_i[8-1:0];
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) DIR_REG <= 0;
+    else if (apb_we & (PADDR[16-1:0] == DIR_REG_OFFSET)) DIR_REG <= PWDATA[8-1:0];
 
   localparam GCLK_REG_OFFSET = 16'hFF10;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) GCLK_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) GCLK_REG <= 0;
+    else if (apb_we & (PADDR[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= PWDATA[1-1:0];
 
   reg  [  31:0] IM_REG;
   reg  [  31:0] IC_REG;
   reg  [  31:0] RIS_REG;
 
   wire [32-1:0] MIS_REG = RIS_REG & IM_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) IM_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == IM_REG_OFFSET)) IM_REG <= dat_i[32-1:0];
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) IC_REG <= 32'b0;
-    else if (wb_we & (adr_i[16-1:0] == IC_REG_OFFSET)) IC_REG <= dat_i[32-1:0];
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) IM_REG <= 0;
+    else if (apb_we & (PADDR[16-1:0] == IM_REG_OFFSET)) IM_REG <= PWDATA[32-1:0];
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) IC_REG <= 32'b0;
+    else if (apb_we & (PADDR[16-1:0] == IC_REG_OFFSET)) IC_REG <= PWDATA[32-1:0];
     else IC_REG <= 32'd0;
 
   wire [0:0] P0HI = pin0_hi;
@@ -233,8 +254,8 @@ module EF_GPIO8_WB (
 
 
   integer _i_;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) RIS_REG <= 0;
+  always @(posedge PCLK or negedge PRESETn)
+    if (~PRESETn) RIS_REG <= 0;
     else begin
       for (_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
         if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0;
@@ -411,18 +432,16 @@ module EF_GPIO8_WB (
       .io_oe(io_oe)
   );
 
-  assign	dat_o = 
-			(adr_i[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
-			(adr_i[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
-			(adr_i[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
-			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+  assign	PRDATA = 
+			(PADDR[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
+			(PADDR[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
+			(PADDR[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
+			(PADDR[16-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(PADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(PADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(PADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) ack_o <= 1'b0;
-    else if (wb_valid & ~ack_o) ack_o <= 1'b1;
-    else ack_o <= 1'b0;
+  assign PREADY = 1'b1;
+
 endmodule

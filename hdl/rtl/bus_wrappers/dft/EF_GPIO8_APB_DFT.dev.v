@@ -1,7 +1,7 @@
 /*
 	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@efabless.com)
+	Author: Efabless Corp. (ip_admin@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -22,111 +22,49 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+`define				APB_AW		16
 
+`include			"apb_wrapper.vh"
 
-/*
-	Copyright 2020 AUCOHL
-
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-	
-	Licensed under the Apache License, Version 2.0 (the "License"); 
-	you may not use this file except in compliance with the License. 
-	You may obtain a copy of the License at:
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software 
-	distributed under the License is distributed on an "AS IS" BASIS, 
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	See the License for the specific language governing permissions and 
-	limitations under the License.
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        
-
-
-module EF_GPIO8_WB (
-
-
-
-
-	input   wire            ext_clk,
-                                        input   wire            clk_i,
-                                        input   wire            rst_i,
-                                        input   wire [31:0]     adr_i,
-                                        input   wire [31:0]     dat_i,
-                                        output  wire [31:0]     dat_o,
-                                        input   wire [3:0]      sel_i,
-                                        input   wire            cyc_i,
-                                        input   wire            stb_i,
-                                        output  reg             ack_o,
-                                        input   wire            we_i,
-                                        output  wire            IRQ,
+module EF_GPIO8_APB (
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
+	input	wire	sc_testmode,
+	`APB_SLAVE_PORTS,
 	input	wire	[8-1:0]	io_in,
 	output	wire	[8-1:0]	io_out,
 	output	wire	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = 16'h0000;
-	localparam	DATAO_REG_OFFSET = 16'h0004;
-	localparam	DIR_REG_OFFSET = 16'h0008;
-	localparam	IM_REG_OFFSET = 16'hFF00;
-	localparam	MIS_REG_OFFSET = 16'hFF04;
-	localparam	RIS_REG_OFFSET = 16'hFF08;
-	localparam	IC_REG_OFFSET = 16'hFF0C;
+	localparam	DATAI_REG_OFFSET = `APB_AW'h0000;
+	localparam	DATAO_REG_OFFSET = `APB_AW'h0004;
+	localparam	DIR_REG_OFFSET = `APB_AW'h0008;
+	localparam	IM_REG_OFFSET = `APB_AW'hFF00;
+	localparam	MIS_REG_OFFSET = `APB_AW'hFF04;
+	localparam	RIS_REG_OFFSET = `APB_AW'hFF08;
+	localparam	IC_REG_OFFSET = `APB_AW'hFF0C;
 
     reg [0:0] GCLK_REG;
     wire clk_g;
-    wire clk_gated_en = GCLK_REG[0];
-    ef_gating_cell clk_gate_cell(
-        
 
-
- // USE_POWER_PINS
-        .clk(clk_i),
+    wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
+    ef_util_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
+        .clk(PCLK),
         .clk_en(clk_gated_en),
         .clk_o(clk_g)
     );
     
 	wire		clk = clk_g;
-	wire		rst_n = (~rst_i);
+	wire		rst_n = PRESETn;
 
 
-	wire            wb_valid    = cyc_i & stb_i;
-                                        wire            wb_we       = we_i & wb_valid;
-                                        wire            wb_re       = ~we_i & wb_valid;
-                                        wire[3:0]       wb_byte_sel = sel_i & {4{wb_we}};
+	`APB_CTRL_SIGNALS
 
 	wire [8-1:0]	bus_in;
 	wire [8-1:0]	bus_out;
@@ -170,26 +108,22 @@ module EF_GPIO8_WB (
 
 	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) DATAO_REG <= 0; else if(wb_we & (adr_i[16-1:0]==DATAO_REG_OFFSET)) DATAO_REG <= dat_i[8-1:0];
+	`APB_REG(DATAO_REG, 0, 8)
 
 	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) DIR_REG <= 0; else if(wb_we & (adr_i[16-1:0]==DIR_REG_OFFSET)) DIR_REG <= dat_i[8-1:0];
+	`APB_REG(DIR_REG, 0, 8)
 
-	localparam	GCLK_REG_OFFSET = 16'hFF10;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) GCLK_REG <= 0; else if(wb_we & (adr_i[16-1:0]==GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
+	localparam	GCLK_REG_OFFSET = `APB_AW'hFF10;
+	`APB_REG(GCLK_REG, 0, 1)
 
 	reg [31:0] IM_REG;
 	reg [31:0] IC_REG;
 	reg [31:0] RIS_REG;
 
-	wire[32-1:0]      MIS_REG	= RIS_REG & IM_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) IM_REG <= 0; else if(wb_we & (adr_i[16-1:0]==IM_REG_OFFSET)) IM_REG <= dat_i[32-1:0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) IC_REG <= 32'b0;
-                                        else if(wb_we & (adr_i[16-1:0]==IC_REG_OFFSET))
-                                            IC_REG <= dat_i[32-1:0];
-                                        else
-                                            IC_REG <= 32'd0;
+	`APB_MIS_REG(32)
+	`APB_REG(IM_REG, 0, 32)
+	`APB_IC_REG(32)
 
 	wire [0:0] P0HI = pin0_hi;
 	wire [0:0] P1HI = pin1_hi;
@@ -226,7 +160,7 @@ module EF_GPIO8_WB (
 
 
 	integer _i_;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) RIS_REG <= 0; else begin
+	`APB_BLOCK(RIS_REG, 0) else begin
 		for(_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
 			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(P0HI[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
@@ -370,21 +304,16 @@ module EF_GPIO8_WB (
 		.io_oe(io_oe)
 	);
 
-	assign	dat_o = 
-			(adr_i[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
-			(adr_i[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
-			(adr_i[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
-			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+	assign	PRDATA = 
+			(PADDR[`APB_AW-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
+			(PADDR[`APB_AW-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
+			(PADDR[`APB_AW-1:0] == DIR_REG_OFFSET)	? DIR_REG :
+			(PADDR[`APB_AW-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(PADDR[`APB_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(PADDR[`APB_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(PADDR[`APB_AW-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
-	always @ (posedge clk_i or posedge rst_i)
-		if(rst_i)
-			ack_o <= 1'b0;
-		else if(wb_valid & ~ack_o)
-			ack_o <= 1'b1;
-		else
-			ack_o <= 1'b0;
+	assign	PREADY = 1'b1;
+
 endmodule

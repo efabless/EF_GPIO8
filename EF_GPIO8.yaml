@@ -14,8 +14,8 @@ info:
   repo: github.com/efabless/EF_GPIO8
   owner: Efabless Corp.
   license: APACHE 2.0
-  author: Mohamed Shalan
-  email: mshalan@efabless.com
+  author: Efabless Corp.
+  email: ip_admin@efabless.com
   version: v1.0.11
   date: 17-09-2024
   category: digital

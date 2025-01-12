@@ -1,7 +1,7 @@
 /*
 	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@efabless.com)
+	Author: Efabless Corp. (ip_admin@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -22,121 +22,38 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+`define				AHBL_AW		16
 
-
-/*
-	Copyright 2020 AUCOHL
-
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-	
-	Licensed under the Apache License, Version 2.0 (the "License"); 
-	you may not use this file except in compliance with the License. 
-	You may obtain a copy of the License at:
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software 
-	distributed under the License is distributed on an "AS IS" BASIS, 
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	See the License for the specific language governing permissions and 
-	limitations under the License.
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-                                                
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`include			"ahbl_wrapper.vh"
 
 module EF_GPIO8_AHBL (
-
-
-
-
-	input wire          HCLK,
-                                        input wire          HRESETn,
-                                        input wire          HWRITE,
-                                        input wire [31:0]   HWDATA,
-                                        input wire [31:0]   HADDR,
-                                        input wire [1:0]    HTRANS,
-                                        input wire          HSEL,
-                                        input wire          HREADY,
-                                        output wire         HREADYOUT,
-                                        output wire [31:0]  HRDATA,
-                                        output wire         IRQ
-,
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
+	`AHBL_SLAVE_PORTS,
 	input	wire	[8-1:0]	io_in,
 	output	wire	[8-1:0]	io_out,
 	output	wire	[8-1:0]	io_oe
 );
 
-	localparam	DATAI_REG_OFFSET = 16'h0000;
-	localparam	DATAO_REG_OFFSET = 16'h0004;
-	localparam	DIR_REG_OFFSET = 16'h0008;
-	localparam	IM_REG_OFFSET = 16'hFF00;
-	localparam	MIS_REG_OFFSET = 16'hFF04;
-	localparam	RIS_REG_OFFSET = 16'hFF08;
-	localparam	IC_REG_OFFSET = 16'hFF0C;
+	localparam	DATAI_REG_OFFSET = `AHBL_AW'h0000;
+	localparam	DATAO_REG_OFFSET = `AHBL_AW'h0004;
+	localparam	DIR_REG_OFFSET = `AHBL_AW'h0008;
+	localparam	IM_REG_OFFSET = `AHBL_AW'hFF00;
+	localparam	MIS_REG_OFFSET = `AHBL_AW'hFF04;
+	localparam	RIS_REG_OFFSET = `AHBL_AW'hFF08;
+	localparam	IC_REG_OFFSET = `AHBL_AW'hFF0C;
 
     reg [0:0] GCLK_REG;
     wire clk_g;
+
     wire clk_gated_en = GCLK_REG[0];
-    ef_gating_cell clk_gate_cell(
-        
-
-
- // USE_POWER_PINS
+    ef_util_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
         .clk(HCLK),
         .clk_en(clk_gated_en),
         .clk_o(clk_g)
@@ -146,23 +63,7 @@ module EF_GPIO8_AHBL (
 	wire		rst_n = HRESETn;
 
 
-	reg  last_HSEL, last_HWRITE; reg [31:0] last_HADDR; reg [1:0] last_HTRANS;
-                                        always@ (posedge HCLK or negedge HRESETn) begin
-					   if(~HRESETn) begin
-					       last_HSEL       <= 1'b0;
-					       last_HADDR      <= 1'b0;
-					       last_HWRITE     <= 1'b0;
-					       last_HTRANS     <= 1'b0;
-				            end else if(HREADY) begin
-                                                last_HSEL       <= HSEL;
-                                                last_HADDR      <= HADDR;
-                                                last_HWRITE     <= HWRITE;
-                                                last_HTRANS     <= HTRANS;
-                                            end
-                                        end
-                                        wire    ahbl_valid	= last_HSEL & last_HTRANS[1];
-	                                    wire	ahbl_we	= last_HWRITE & ahbl_valid;
-	                                    wire	ahbl_re	= ~last_HWRITE & ahbl_valid;
+	`AHBL_CTRL_SIGNALS
 
 	wire [8-1:0]	bus_in;
 	wire [8-1:0]	bus_out;
@@ -206,33 +107,22 @@ module EF_GPIO8_AHBL (
 
 	reg [7:0]	DATAO_REG;
 	assign	bus_out = DATAO_REG;
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) DATAO_REG <= 0;
-                                        else if(ahbl_we & (last_HADDR[16-1:0]==DATAO_REG_OFFSET))
-                                            DATAO_REG <= HWDATA[8-1:0];
+	`AHBL_REG(DATAO_REG, 0, 8)
 
 	reg [7:0]	DIR_REG;
 	assign	bus_oe = DIR_REG;
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) DIR_REG <= 0;
-                                        else if(ahbl_we & (last_HADDR[16-1:0]==DIR_REG_OFFSET))
-                                            DIR_REG <= HWDATA[8-1:0];
+	`AHBL_REG(DIR_REG, 0, 8)
 
-	localparam	GCLK_REG_OFFSET = 16'hFF10;
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) GCLK_REG <= 0;
-                                        else if(ahbl_we & (last_HADDR[16-1:0]==GCLK_REG_OFFSET))
-                                            GCLK_REG <= HWDATA[1-1:0];
+	localparam	GCLK_REG_OFFSET = `AHBL_AW'hFF10;
+	`AHBL_REG(GCLK_REG, 0, 1)
 
 	reg [31:0] IM_REG;
 	reg [31:0] IC_REG;
 	reg [31:0] RIS_REG;
 
-	wire[32-1:0]      MIS_REG	= RIS_REG & IM_REG;
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) IM_REG <= 0;
-                                        else if(ahbl_we & (last_HADDR[16-1:0]==IM_REG_OFFSET))
-                                            IM_REG <= HWDATA[32-1:0];
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) IC_REG <= 32'b0;
-                                        else if(ahbl_we & (last_HADDR[16-1:0]==IC_REG_OFFSET))
-                                            IC_REG <= HWDATA[32-1:0];
-                                        else IC_REG <= 32'd0;
+	`AHBL_MIS_REG(32)
+	`AHBL_REG(IM_REG, 0, 32)
+	`AHBL_IC_REG(32)
 
 	wire [0:0] P0HI = pin0_hi;
 	wire [0:0] P1HI = pin1_hi;
@@ -269,7 +159,7 @@ module EF_GPIO8_AHBL (
 
 
 	integer _i_;
-	always @(posedge HCLK or negedge HRESETn) if(~HRESETn) RIS_REG <= 0; else begin
+	`AHBL_BLOCK(RIS_REG, 0) else begin
 		for(_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
 			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(P0HI[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
@@ -414,14 +304,13 @@ module EF_GPIO8_AHBL (
 	);
 
 	assign	HRDATA = 
-			(last_HADDR[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
-			(last_HADDR[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
-			(last_HADDR[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
-			(last_HADDR[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(last_HADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(last_HADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(last_HADDR[16-1:0] == IC_REG_OFFSET)	? IC_REG :
-			(last_HADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
+			(last_HADDR[`AHBL_AW-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
+			(last_HADDR[`AHBL_AW-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
+			(last_HADDR[`AHBL_AW-1:0] == DIR_REG_OFFSET)	? DIR_REG :
+			(last_HADDR[`AHBL_AW-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(last_HADDR[`AHBL_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(last_HADDR[`AHBL_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(last_HADDR[`AHBL_AW-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	HREADYOUT = 1'b1;

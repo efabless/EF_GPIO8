@@ -1,9 +1,9 @@
 PLUSARGS += "+UVM_VERBOSITY=UVM_MEDUIM"
 TOPLEVEL := top
 MODULE   ?= top_module
-AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_AHBL.pp.v
-APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_APB.pp.v
-WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_WB.pp.v
+AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_AHBL.v
+APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_APB.v
+WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_GPIO8_WB.v
 HDL_FILES ?= $(PWD)/../../hdl/rtl/EF_GPIO8.v $(PWD)/../../ip/IP_Utilities/rtl/aucohl_lib.v
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""

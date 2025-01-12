@@ -76,21 +76,45 @@
 
 
 
-module EF_GPIO8_WB (
 
 
 
 
-    input  wire         clk_i,
-    input  wire         rst_i,
-    input  wire [ 31:0] adr_i,
-    input  wire [ 31:0] dat_i,
-    output wire [ 31:0] dat_o,
-    input  wire [  3:0] sel_i,
-    input  wire         cyc_i,
-    input  wire         stb_i,
-    output reg          ack_o,
-    input  wire         we_i,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module EF_GPIO8_AHBL (
+
+
+
+
+    input  wire         sc_testmode,
+    input  wire         HCLK,
+    input  wire         HRESETn,
+    input  wire         HWRITE,
+    input  wire [ 31:0] HWDATA,
+    input  wire [ 31:0] HADDR,
+    input  wire [  1:0] HTRANS,
+    input  wire         HSEL,
+    input  wire         HREADY,
+    output wire         HREADYOUT,
+    output wire [ 31:0] HRDATA,
     output wire         IRQ,
     input  wire [8-1:0] io_in,
     output wire [8-1:0] io_out,
@@ -108,25 +132,40 @@ module EF_GPIO8_WB (
   reg [0:0] GCLK_REG;
   wire clk_g;
 
-  wire clk_gated_en = GCLK_REG[0];
+  wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
 
 
       // USE_POWER_PINS
-      .clk(clk_i),
+      .clk(HCLK),
       .clk_en(clk_gated_en),
       .clk_o(clk_g)
   );
 
-  wire         clk = clk_g;
-  wire         rst_n = (~rst_i);
+  wire clk = clk_g;
+  wire rst_n = HRESETn;
 
 
-  wire         wb_valid = cyc_i & stb_i;
-  wire         wb_we = we_i & wb_valid;
-  wire         wb_re = ~we_i & wb_valid;
-  wire [  3:0] wb_byte_sel = sel_i & {4{wb_we}};
+  reg last_HSEL, last_HWRITE;
+  reg [31:0] last_HADDR;
+  reg [ 1:0] last_HTRANS;
+  always @(posedge HCLK or negedge HRESETn) begin
+    if (~HRESETn) begin
+      last_HSEL   <= 1'b0;
+      last_HADDR  <= 1'b0;
+      last_HWRITE <= 1'b0;
+      last_HTRANS <= 1'b0;
+    end else if (HREADY) begin
+      last_HSEL   <= HSEL;
+      last_HADDR  <= HADDR;
+      last_HWRITE <= HWRITE;
+      last_HTRANS <= HTRANS;
+    end
+  end
+  wire    ahbl_valid = last_HSEL & last_HTRANS[1];
+  wire ahbl_we = last_HWRITE & ahbl_valid;
+  wire ahbl_re = ~last_HWRITE & ahbl_valid;
 
   wire [8-1:0] bus_in;
   wire [8-1:0] bus_out;
@@ -170,32 +209,32 @@ module EF_GPIO8_WB (
 
   reg [7:0] DATAO_REG;
   assign bus_out = DATAO_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) DATAO_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == DATAO_REG_OFFSET)) DATAO_REG <= dat_i[8-1:0];
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) DATAO_REG <= 0;
+    else if (ahbl_we & (last_HADDR[16-1:0] == DATAO_REG_OFFSET)) DATAO_REG <= HWDATA[8-1:0];
 
   reg [7:0] DIR_REG;
   assign bus_oe = DIR_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) DIR_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == DIR_REG_OFFSET)) DIR_REG <= dat_i[8-1:0];
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) DIR_REG <= 0;
+    else if (ahbl_we & (last_HADDR[16-1:0] == DIR_REG_OFFSET)) DIR_REG <= HWDATA[8-1:0];
 
   localparam GCLK_REG_OFFSET = 16'hFF10;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) GCLK_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) GCLK_REG <= 0;
+    else if (ahbl_we & (last_HADDR[16-1:0] == GCLK_REG_OFFSET)) GCLK_REG <= HWDATA[1-1:0];
 
   reg  [  31:0] IM_REG;
   reg  [  31:0] IC_REG;
   reg  [  31:0] RIS_REG;
 
   wire [32-1:0] MIS_REG = RIS_REG & IM_REG;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) IM_REG <= 0;
-    else if (wb_we & (adr_i[16-1:0] == IM_REG_OFFSET)) IM_REG <= dat_i[32-1:0];
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) IC_REG <= 32'b0;
-    else if (wb_we & (adr_i[16-1:0] == IC_REG_OFFSET)) IC_REG <= dat_i[32-1:0];
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) IM_REG <= 0;
+    else if (ahbl_we & (last_HADDR[16-1:0] == IM_REG_OFFSET)) IM_REG <= HWDATA[32-1:0];
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) IC_REG <= 32'b0;
+    else if (ahbl_we & (last_HADDR[16-1:0] == IC_REG_OFFSET)) IC_REG <= HWDATA[32-1:0];
     else IC_REG <= 32'd0;
 
   wire [0:0] P0HI = pin0_hi;
@@ -233,8 +272,8 @@ module EF_GPIO8_WB (
 
 
   integer _i_;
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) RIS_REG <= 0;
+  always @(posedge HCLK or negedge HRESETn)
+    if (~HRESETn) RIS_REG <= 0;
     else begin
       for (_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
         if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0;
@@ -411,18 +450,16 @@ module EF_GPIO8_WB (
       .io_oe(io_oe)
   );
 
-  assign	dat_o = 
-			(adr_i[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
-			(adr_i[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
-			(adr_i[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
-			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+  assign	HRDATA = 
+			(last_HADDR[16-1:0] == DATAI_REG_OFFSET)	? DATAI_WIRE :
+			(last_HADDR[16-1:0] == DATAO_REG_OFFSET)	? DATAO_REG :
+			(last_HADDR[16-1:0] == DIR_REG_OFFSET)	? DIR_REG :
+			(last_HADDR[16-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(last_HADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(last_HADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(last_HADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
-  always @(posedge clk_i or posedge rst_i)
-    if (rst_i) ack_o <= 1'b0;
-    else if (wb_valid & ~ack_o) ack_o <= 1'b1;
-    else ack_o <= 1'b0;
+  assign HREADYOUT = 1'b1;
+
 endmodule
