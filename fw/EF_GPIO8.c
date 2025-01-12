@@ -233,9 +233,9 @@ EF_DRIVER_STATUS EF_GPIO8_setIM(EF_GPIO8_TYPE_PTR gpio, uint32_t mask){
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
     if (gpio == NULL){
-        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
+        status = EF_DRIVER_ERROR_PARAMETER;     // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
     }else {
-        gpio->IM |= mask;                       // Set the IM register with the required mask value
+        gpio->IM = mask;                        // Set the IM register with the required mask value
     }
 
     return status;
