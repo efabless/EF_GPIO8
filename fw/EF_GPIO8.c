@@ -264,7 +264,7 @@ EF_DRIVER_STATUS EF_GPIO8_setICR(EF_GPIO8_TYPE_PTR gpio, uint32_t mask){
     if (gpio == NULL){
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if gpio is NULL
     }else {
-        gpio->IC |= mask;                       // Set the IC register with the required mask value
+        gpio->IC = mask;                       // Set the IC register with the required mask value
     }
 
     return status;
