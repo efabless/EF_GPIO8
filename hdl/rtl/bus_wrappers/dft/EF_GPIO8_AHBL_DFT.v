@@ -189,100 +189,100 @@ module EF_GPIO8_AHBL (input	wire	sc_testmode,
     integer _i_;
     always @(posedge HCLK or negedge HRESETn) if (~HRESETn) RIS_REG <= 0; else begin
         for(_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P0HI[_i_ - 0] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P0HI[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 1; _i_ < 2; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P1HI[_i_ - 1] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P1HI[_i_ - 1] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 2; _i_ < 3; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P2HI[_i_ - 2] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P2HI[_i_ - 2] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 3; _i_ < 4; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P3HI[_i_ - 3] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P3HI[_i_ - 3] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 4; _i_ < 5; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P4HI[_i_ - 4] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P4HI[_i_ - 4] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 5; _i_ < 6; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P5HI[_i_ - 5] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P5HI[_i_ - 5] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 6; _i_ < 7; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P6HI[_i_ - 6] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P6HI[_i_ - 6] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 7; _i_ < 8; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P7HI[_i_ - 7] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P7HI[_i_ - 7] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 8; _i_ < 9; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P0LO[_i_ - 8] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P0LO[_i_ - 8] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 9; _i_ < 10; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P1LO[_i_ - 9] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P1LO[_i_ - 9] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 10; _i_ < 11; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P2LO[_i_ - 10] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P2LO[_i_ - 10] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 11; _i_ < 12; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P3LO[_i_ - 11] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P3LO[_i_ - 11] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 12; _i_ < 13; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P4LO[_i_ - 12] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P4LO[_i_ - 12] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 13; _i_ < 14; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P5LO[_i_ - 13] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P5LO[_i_ - 13] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 14; _i_ < 15; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P6LO[_i_ - 14] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P6LO[_i_ - 14] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 15; _i_ < 16; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P7LO[_i_ - 15] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P7LO[_i_ - 15] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 16; _i_ < 17; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P0PE[_i_ - 16] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P0PE[_i_ - 16] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 17; _i_ < 18; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P1PE[_i_ - 17] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P1PE[_i_ - 17] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 18; _i_ < 19; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P2PE[_i_ - 18] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P2PE[_i_ - 18] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 19; _i_ < 20; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P3PE[_i_ - 19] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P3PE[_i_ - 19] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 20; _i_ < 21; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P4PE[_i_ - 20] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P4PE[_i_ - 20] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 21; _i_ < 22; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P5PE[_i_ - 21] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P5PE[_i_ - 21] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 22; _i_ < 23; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P6PE[_i_ - 22] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P6PE[_i_ - 22] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 23; _i_ < 24; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P7PE[_i_ - 23] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P7PE[_i_ - 23] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 24; _i_ < 25; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P0NE[_i_ - 24] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P0NE[_i_ - 24] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 25; _i_ < 26; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P1NE[_i_ - 25] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P1NE[_i_ - 25] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 26; _i_ < 27; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P2NE[_i_ - 26] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P2NE[_i_ - 26] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 27; _i_ < 28; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P3NE[_i_ - 27] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P3NE[_i_ - 27] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 28; _i_ < 29; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P4NE[_i_ - 28] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P4NE[_i_ - 28] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 29; _i_ < 30; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P5NE[_i_ - 29] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P5NE[_i_ - 29] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 30; _i_ < 31; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P6NE[_i_ - 30] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P6NE[_i_ - 30] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
         for(_i_ = 31; _i_ < 32; _i_ = _i_ + 1) begin
-            if (IC_REG[_i_]) RIS_REG[_i_] < = 1'b0; else if (P7NE[_i_ - 31] == 1'b1) RIS_REG[_i_] < = 1'b1;
+            if (IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if (P7NE[_i_ - 31] == 1'b1) RIS_REG[_i_] <= 1'b1;
         end
     end
     
