@@ -139,9 +139,9 @@ The following are the bit definitions for the interrupt registers:
 |30|P6NE|1|Pin 6 has observed a falling edge|
 |31|P7NE|1|Pin 7 has observed a falling edge|
 ### Clock Gating
-The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_util_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``CLKG_SKY130_HD`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
+The IP includes a clock gating feature that allows selective activation and deactivation of the clock using the ``GCLK`` register. This capability is implemented through the ``ef_util_gating_cell`` module, which is part of the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the clock gating is disabled. To enable behavioral implmentation clock gating, only for simulation purposes, you should define the ``CLKG_GENERIC`` macro. Alternatively, define the ``CLKG_SKY130_HD`` macro if you wish to use the SKY130 HD library clock gating cell, ``sky130_fd_sc_hd__dlclkp_4``.
 
-**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``CLKG_SKY130_HD`` macro to the ``VERILOG_DEFINES`` configuration variable. Update the YAML configuration file as follows: 
+**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to enable the clock gating feature, you need to add ``CLKG_SKY130_HD`` macro to the ``VERILOG_DEFINES`` configuration variable. Update OpenLane2 YAML configuration file as follows: 
 ```
 VERILOG_DEFINES:
 - CLKG_SKY130_HD
@@ -197,10 +197,13 @@ VERILOG_DEFINES:
 Firmware drivers for EF_GPIO8 can be found in the [fw](https://github.com/efabless/EF_GPIO8/tree/main/fw) directory. EF_GPIO8 driver documentation  is available [here](https://github.com/efabless/EF_GPIO8/blob/main/fw/README.md).
 You can also find an example C application using the EF_GPIO8 drivers [here]().
 ## Installation:
-You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
-* To clone repo:
-```git clone https://github.com/efabless/EF_GPIO8```
-> **Note:** If you choose this method, you need to clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, as it includes required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v)
-* To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md) then run 
-```ipm install EF_GPIO8```
+You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
+##### 1. Using [IPM](https://github.com/efabless/IPM):
+- [Optional] If you do not have IPM installed, follow the installation guide [here](https://github.com/efabless/IPM/blob/main/README.md)
+- After installing IPM, execute the following command ```ipm install EF_GPIO8```.
 > **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) as a dependency.
+##### 2. Cloning this repo: 
+- Clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, which includes the required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v).
+```git clone https://github.com/efabless/EF_IP_UTIL.git```
+- Clone the IP repository
+```git clone github.com/efabless/EF_GPIO8```
