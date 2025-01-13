@@ -21,65 +21,7 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_GPIO8_WB (
-
-
-
 
     input  wire         sc_testmode,
     input  wire         clk_i,
@@ -112,8 +54,6 @@ module EF_GPIO8_WB (
   wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(clk_i),
       .clk_en(clk_gated_en),
@@ -122,7 +62,6 @@ module EF_GPIO8_WB (
 
   wire         clk = clk_g;
   wire         rst_n = (~rst_i);
-
 
   wire         wb_valid = cyc_i & stb_i;
   wire         wb_we = we_i & wb_valid;
@@ -231,7 +170,6 @@ module EF_GPIO8_WB (
   wire [0:0] P5NE = pin5_ne;
   wire [0:0] P6NE = pin6_ne;
   wire [0:0] P7NE = pin7_ne;
-
 
   integer _i_;
   always @(posedge clk_i or posedge rst_i)

@@ -21,88 +21,7 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_GPIO8_AHBL (
-
-
-
 
     input  wire         HCLK,
     input  wire         HRESETn,
@@ -134,8 +53,6 @@ module EF_GPIO8_AHBL (
   wire clk_gated_en = GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(HCLK),
       .clk_en(clk_gated_en),
@@ -144,7 +61,6 @@ module EF_GPIO8_AHBL (
 
   wire clk = clk_g;
   wire rst_n = HRESETn;
-
 
   reg last_HSEL, last_HWRITE;
   reg [31:0] last_HADDR;
@@ -268,7 +184,6 @@ module EF_GPIO8_AHBL (
   wire [0:0] P5NE = pin5_ne;
   wire [0:0] P6NE = pin6_ne;
   wire [0:0] P7NE = pin7_ne;
-
 
   integer _i_;
   always @(posedge HCLK or negedge HRESETn)
