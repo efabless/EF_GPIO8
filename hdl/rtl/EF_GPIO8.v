@@ -66,7 +66,7 @@ module EF_GPIO8 (
 );
     wire [7:0] sync_io_in;
 
-    aucohl_sync synchronizer[7:0] (.clk(clk), .in(io_in), .out(sync_io_in));
+    ef_util_sync synchronizer[7:0] (.clk(clk), .in(io_in), .out(sync_io_in));
     
     assign bus_in = sync_io_in;
     assign io_out = bus_out;
@@ -90,23 +90,23 @@ module EF_GPIO8 (
     assign pin6_lo = (sync_io_in[6] == 1'b0);
     assign pin7_lo = (sync_io_in[7] == 1'b0);
 
-    aucohl_ped ped_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_pe));
-    aucohl_ped ped_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_pe));
-    aucohl_ped ped_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_pe));
-    aucohl_ped ped_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_pe));
-    aucohl_ped ped_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_pe));
-    aucohl_ped ped_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_pe));
-    aucohl_ped ped_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_pe));
-    aucohl_ped ped_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_pe));
+    ef_util_ped ped_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_pe));
+    ef_util_ped ped_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_pe));
+    ef_util_ped ped_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_pe));
+    ef_util_ped ped_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_pe));
+    ef_util_ped ped_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_pe));
+    ef_util_ped ped_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_pe));
+    ef_util_ped ped_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_pe));
+    ef_util_ped ped_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_pe));
 
-    aucohl_ned ned_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_ne));
-    aucohl_ned ned_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_ne));
-    aucohl_ned ned_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_ne));
-    aucohl_ned ned_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_ne));
-    aucohl_ned ned_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_ne));
-    aucohl_ned ned_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_ne));
-    aucohl_ned ned_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_ne));
-    aucohl_ned ned_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_ne));
+    ef_util_ned ned_0 (.clk(clk), .in(sync_io_in[0]), .out(pin0_ne));
+    ef_util_ned ned_1 (.clk(clk), .in(sync_io_in[1]), .out(pin1_ne));
+    ef_util_ned ned_2 (.clk(clk), .in(sync_io_in[2]), .out(pin2_ne));
+    ef_util_ned ned_3 (.clk(clk), .in(sync_io_in[3]), .out(pin3_ne));
+    ef_util_ned ned_4 (.clk(clk), .in(sync_io_in[4]), .out(pin4_ne));
+    ef_util_ned ned_5 (.clk(clk), .in(sync_io_in[5]), .out(pin5_ne));
+    ef_util_ned ned_6 (.clk(clk), .in(sync_io_in[6]), .out(pin6_ne));
+    ef_util_ned ned_7 (.clk(clk), .in(sync_io_in[7]), .out(pin7_ne));
 
     
 
