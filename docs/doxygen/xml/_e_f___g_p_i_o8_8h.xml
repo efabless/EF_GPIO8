@@ -135,7 +135,7 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>sets the GCLK enable bit in the GPIO register to a certain value </para>
+<para>sets the GCLK enable bit in the GCLK register to a certain value </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>

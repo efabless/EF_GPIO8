@@ -52,7 +52,7 @@
 * Function Prototypes
 ******************************************************************************/
 
-//! sets the GCLK enable bit in the GPIO register to a certain value
+//! sets the GCLK enable bit in the GCLK register to a certain value
     /*!
         \param [in] "gpio" An \ref EF_GPIO8_TYPE pointer, which points to the base memory address of GPIO registers. \ref EF_GPIO8_TYPE is a structure that contains the GPIO registers.
         \param [in] "value" The value of the GCLK enable bit

@@ -111,7 +111,7 @@ _C header file for GPIO8 APIs which contains the function prototypes._
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_readData**](#function-ef_gpio8_readdata) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t \*gpio\_data) <br>_reads the input value of the GPIOs_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_readDirection**](#function-ef_gpio8_readdirection) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t \*gpio\_dir) <br>_gets the direction of all GPIOs_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_readPackedData**](#function-ef_gpio8_readpackeddata) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint8\_t pins, uint32\_t \*packed\_data) <br>_This function reads the data from a specified set of pins in a GPIO port. Given a bit-packed representation of the pin(s), it reads the data from the pin(s)._ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_setGclkEnable**](#function-ef_gpio8_setgclkenable) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t value) <br>_sets the GCLK enable bit in the GPIO register to a certain value_ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_setGclkEnable**](#function-ef_gpio8_setgclkenable) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t value) <br>_sets the GCLK enable bit in the GCLK register to a certain value_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_setICR**](#function-ef_gpio8_seticr) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t mask) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_setIM**](#function-ef_gpio8_setim) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t mask) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_GPIO8\_setPinDirection**](#function-ef_gpio8_setpindirection) ([**EF\_GPIO8\_TYPE\_PTR**](#typedef-ef_gpio8_type_ptr) gpio, uint32\_t pin, uint32\_t dir) <br>_sets the direction of one GPIO pin_ |
@@ -374,7 +374,7 @@ EF_DRIVER_STATUS EF_GPIO8_readPackedData (
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 ### function `EF_GPIO8_setGclkEnable`
 
-_sets the GCLK enable bit in the GPIO register to a certain value_
+_sets the GCLK enable bit in the GCLK register to a certain value_
 ```c
 EF_DRIVER_STATUS EF_GPIO8_setGclkEnable (
     EF_GPIO8_TYPE_PTR gpio,
