@@ -195,17 +195,17 @@ external_interface:
     port: io_in
     direction: input
     width: 8
-    description: GPIOs input (external interface)
+    description: GPIOs input 
   - name: io_out
     port: io_out
     direction: output
     width: 8
-    description: GPIOs output (external interface)
+    description: GPIOs output
   - name: io_oe
     port: io_oe
     direction: output
     width: 8
-    description : GPIOs output enable (external interface)
+    description : GPIOs output enable
 
 
 clock:

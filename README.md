@@ -14,7 +14,7 @@ A generic 8-bit General Purpose I/O (GPIO) Peripheral with the following feature
 
  APB, AHBL, and Wishbone wrappers are provided. All wrappers provide the same programmer's interface as outlined in the following sections.
 
-#### Wrapped IP System Integration
+### Wrapped IP System Integration
 
 Based on your use case, use one of the provided wrappers or create a wrapper for your system bus type. For an example of how to integrate the wishbone wrapper:
 ```verilog
@@ -35,12 +35,20 @@ EF_GPIO8_WB INST (
 	.io_oe(io_oe)
 );
 ```
-#### Wrappers with DFT support
+### Wrappers with DFT support
 Wrappers in the directory ``/hdl/rtl/bus_wrappers/DFT`` have an extra input port ``sc_testmode`` to disable the clock gate whenever the scan chain testmode is enabled.
+### External IO interfaces
+|IO name|Direction|Width|Description|
+|---|---|---|---|
+|io_in|input|8|GPIOs input|
+|io_out|output|8|GPIOs output|
+|io_oe|output|8|GPIOs output enable|
+### Interrupt Request Line (irq)
+This IP generates interrupts on specific events, which are described in the [Interrupt Flags](#interrupt-flags) section bellow. The IRQ port should be connected to the system interrupt controller.
 
 ## Implementation example  
 
-The following table is the result for implementing the EF_GPIO8 IP with different wrappers using Sky130 PDK and [OpenLane2](https://github.com/efabless/openlane2) flow.
+The following table is the result for implementing the EF_GPIO8 IP with different wrappers using Sky130 HD library and [OpenLane2](https://github.com/efabless/openlane2) flow.
 |Module | Number of cells | Max. freq |
 |---|---|---|
 |EF_GPIO8|72| 1666 |
@@ -93,13 +101,13 @@ Direction Register; One bit per pin 1: output, 0: input
 The wrapped IP provides four registers to deal with interrupts: IM, RIS, MIS and IC. These registers exist for all wrapper types.
 
 Each register has a group of bits for the interrupt sources/flags.
-- `IM` [offset: 0xff00]: is used to enable/disable interrupt sources.
+- `IM` [offset: ``0xff00``]: is used to enable/disable interrupt sources.
 
-- `RIS` [offset: 0xff08]: has the current interrupt status (interrupt flags) whether they are enabled or disabled.
+- `RIS` [offset: ``0xff08``]: has the current interrupt status (interrupt flags) whether they are enabled or disabled.
 
-- `MIS` [offset: 0xff04]: is the result of masking (ANDing) RIS by IM.
+- `MIS` [offset: ``0xff04``]: is the result of masking (ANDing) RIS by IM.
 
-- `IC` [offset: 0xff0c]: is used to clear an interrupt flag.
+- `IC` [offset: ``0xff0c``]: is used to clear an interrupt flag.
 
 
 The following are the bit definitions for the interrupt registers:
@@ -146,8 +154,24 @@ The IP includes a clock gating feature that allows selective activation and deac
 VERILOG_DEFINES:
 - CLKG_SKY130_HD
 ```
+## Firmware Drivers:
+Firmware drivers for EF_GPIO8 can be found in the [EF_GPIO8](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_GPIO8) directory in the [EF_APIs_HUB](https://github.com/efabless/EF_APIs_HUB) repo. EF_GPIO8 driver documentation  is available [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_GPIO8/README.md).
+You can also find an example C application using the EF_GPIO8 drivers [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_GPIO8/EF_GPIO8_example.c).
+## Installation:
+You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
+### 1. Using [IPM](https://github.com/efabless/IPM):
+- [Optional] If you do not have IPM installed, follow the installation guide [here](https://github.com/efabless/IPM/blob/main/README.md)
+- After installing IPM, execute the following command ```ipm install EF_GPIO8```.
+> **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) as a dependency.
+### 2. Cloning this repo: 
+- Clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, which includes the required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v).
+```git clone https://github.com/efabless/EF_IP_UTIL.git```
+- Clone the IP repository
+```git clone github.com/efabless/EF_GPIO8```
 
-### The Interface 
+### The Wrapped IP Interface 
+
+>**_NOTE:_** This section is intended for advanced users who wish to gain more information about the interface of the wrapped IP, in case they want to create their own wrappers.
 
 <img src="docs/_static/EF_GPIO8.svg" width="600"/>
 
@@ -155,9 +179,9 @@ VERILOG_DEFINES:
 
 |Port|Direction|Width|Description|
 |---|---|---|---|
-|io_in|input|8|GPIOs input (external interface)|
-|io_out|output|8|GPIOs output (external interface)|
-|io_oe|output|8|GPIOs output enable (external interface)|
+|io_in|input|8|GPIOs input|
+|io_out|output|8|GPIOs output|
+|io_oe|output|8|GPIOs output enable|
 |bus_in|output|8|Synchronized GPIOs input connected to the bus (it drives the DATAI register)|
 |bus_out|input|8|GPIOs output connected to the bus (it's driven by writing to DATAO register)|
 |bus_oe|input|8|GPIOs output enable connected to the bus (it's driven by writing to DIR register)|
@@ -193,17 +217,3 @@ VERILOG_DEFINES:
 |pin5_ne|output|1|Pin 5 negative edge flag|
 |pin6_ne|output|1|Pin 6 negative edge flag|
 |pin7_ne|output|1|Pin 7 negative edge flag|
-## Firmware Drivers:
-Firmware drivers for EF_GPIO8 can be found in the [fw](https://github.com/efabless/EF_GPIO8/tree/main/fw) directory. EF_GPIO8 driver documentation  is available [here](https://github.com/efabless/EF_GPIO8/blob/main/fw/README.md).
-You can also find an example C application using the EF_GPIO8 drivers [here]().
-## Installation:
-You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
-##### 1. Using [IPM](https://github.com/efabless/IPM):
-- [Optional] If you do not have IPM installed, follow the installation guide [here](https://github.com/efabless/IPM/blob/main/README.md)
-- After installing IPM, execute the following command ```ipm install EF_GPIO8```.
-> **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) as a dependency.
-##### 2. Cloning this repo: 
-- Clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, which includes the required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v).
-```git clone https://github.com/efabless/EF_IP_UTIL.git```
-- Clone the IP repository
-```git clone github.com/efabless/EF_GPIO8```
