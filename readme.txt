@@ -23,9 +23,6 @@ Directory Structure:
 
     - fw 
         - **EF_GPIO8_regs.h**: Header file containing the register definitions for the EF_GPIO8 interface.
-        - **EF_GPIO8.c**: C source file implementing the low-level driver functions for the EF_GPIO8.
-        - **EF_GPIO8.h**: Header file declaring the API functions and data structures for the EF_GPIO8 driver.
-        - **DEVICE_DRIVER.pdf**: Documentation for users to understand how to use the EF_GPIO8 driver and interface with the IP.
 
     - hdl 
         - rtl 
