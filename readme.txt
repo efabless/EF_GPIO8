@@ -26,7 +26,7 @@ Directory Structure:
 
     - hdl 
         - rtl 
-            - **EF_GPIO8.v**: Verilog source code for the EF_GPIO8 design, including the core logic of the UART module.
+            - **EF_GPIO8.v**: Verilog source code for the EF_GPIO8 design
             - **bus_wrappers**
                 - **EF_GPIO8_AHBL.v**: Verilog wrapper to interface the EF_GPIO8 with the AMBA High-performance Bus (AHB-Lite) protocol.
                 - **EF_GPIO8_APB.v**: Verilog wrapper to interface the EF_GPIO8 with the Advanced Peripheral Bus (APB) protocol.
