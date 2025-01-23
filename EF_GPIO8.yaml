@@ -16,8 +16,8 @@ info:
   license: APACHE 2.0
   author: Efabless Corp.
   email: ip_admin@efabless.com
-  version: v1.0.11
-  date: 17-09-2024
+  version: v1.2.0
+  date: 2025-01-23
   category: digital
   tags:
     - peripheral
